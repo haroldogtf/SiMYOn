@@ -1,22 +1,22 @@
 //
-//  ViewController.m
+//  GameViewController.m
 //  SiMYOn
 //
 //  Created by Haroldo Gondim on 07/02/15.
 //
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
 
-@interface ViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

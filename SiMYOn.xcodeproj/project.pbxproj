@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		097400191A8630B30012E465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400181A8630B30012E465 /* main.m */; };
 		0974001C1A8630B30012E465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974001B1A8630B30012E465 /* AppDelegate.m */; };
-		0974001F1A8630B30012E465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974001E1A8630B30012E465 /* ViewController.m */; };
-		097400221A8630B30012E465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 097400201A8630B30012E465 /* Main.storyboard */; };
 		097400241A8630B30012E465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097400231A8630B30012E465 /* Images.xcassets */; };
 		097400271A8630B30012E465 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400251A8630B30012E465 /* LaunchScreen.xib */; };
 		097400331A8630B30012E465 /* SiMYOnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400321A8630B30012E465 /* SiMYOnTests.m */; };
+		0974003F1A86358D0012E465 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974003D1A86358D0012E465 /* MainViewController.m */; };
+		097400401A86358D0012E465 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974003E1A86358D0012E465 /* MainViewController.xib */; };
+		097400461A8635DA0012E465 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400441A8635DA0012E465 /* GameViewController.m */; };
+		097400471A8635DA0012E465 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400451A8635DA0012E465 /* GameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,17 @@
 		097400181A8630B30012E465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0974001A1A8630B30012E465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0974001B1A8630B30012E465 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0974001D1A8630B30012E465 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0974001E1A8630B30012E465 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		097400211A8630B30012E465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		097400231A8630B30012E465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		097400261A8630B30012E465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0974002C1A8630B30012E465 /* SiMYOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiMYOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		097400311A8630B30012E465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		097400321A8630B30012E465 /* SiMYOnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiMYOnTests.m; sourceTree = "<group>"; };
+		0974003C1A86358D0012E465 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0974003D1A86358D0012E465 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		0974003E1A86358D0012E465 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		097400431A8635DA0012E465 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		097400441A8635DA0012E465 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		097400451A8635DA0012E465 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +88,10 @@
 			children = (
 				0974001A1A8630B30012E465 /* AppDelegate.h */,
 				0974001B1A8630B30012E465 /* AppDelegate.m */,
-				0974001D1A8630B30012E465 /* ViewController.h */,
-				0974001E1A8630B30012E465 /* ViewController.m */,
-				097400201A8630B30012E465 /* Main.storyboard */,
+				097400421A8635A10012E465 /* View */,
 				097400231A8630B30012E465 /* Images.xcassets */,
 				097400251A8630B30012E465 /* LaunchScreen.xib */,
+				097400411A8635990012E465 /* Frameworks */,
 				097400161A8630B30012E465 /* Supporting Files */,
 			);
 			path = SiMYOn;
@@ -117,6 +121,26 @@
 				097400311A8630B30012E465 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		097400411A8635990012E465 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		097400421A8635A10012E465 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0974003C1A86358D0012E465 /* MainViewController.h */,
+				0974003D1A86358D0012E465 /* MainViewController.m */,
+				0974003E1A86358D0012E465 /* MainViewController.xib */,
+				097400431A8635DA0012E465 /* GameViewController.h */,
+				097400441A8635DA0012E465 /* GameViewController.m */,
+				097400451A8635DA0012E465 /* GameViewController.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097400221A8630B30012E465 /* Main.storyboard in Resources */,
+				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
+				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0974001F1A8630B30012E465 /* ViewController.m in Sources */,
+				097400461A8635DA0012E465 /* GameViewController.m in Sources */,
 				0974001C1A8630B30012E465 /* AppDelegate.m in Sources */,
+				0974003F1A86358D0012E465 /* MainViewController.m in Sources */,
 				097400191A8630B30012E465 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,14 +269,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		097400201A8630B30012E465 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				097400211A8630B30012E465 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		097400251A8630B30012E465 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SiMYOn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SiMYOn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +431,7 @@
 				097400381A8630B30012E465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		097400391A8630B30012E465 /* Build configuration list for PBXNativeTarget "SiMYOnTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +440,7 @@
 				0974003B1A8630B30012E465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
