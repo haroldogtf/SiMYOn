@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MyoKit/MyoKit.h>
 #import "MainViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
