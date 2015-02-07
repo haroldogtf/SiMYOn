@@ -20,6 +20,13 @@
     [self prepareMyoForNotifications];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    if([[TLMHub sharedHub] myoDevices].count == 0) {
+        [self configureMyo];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -73,7 +80,7 @@
 }
 
 - (void)didDisconnectDevice:(NSNotification*)notification {
-    NSLog(@"disconnet");
+    [self configureMyo];
 }
 
 - (void)didUnsyncArm:(NSNotification*)notification {

@@ -17,8 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configureMyo];
     [self prepareMyoForNotifications];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    if([[TLMHub sharedHub] myoDevices].count == 0) {
+        [self configureMyo];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,10 +33,8 @@
 }
 
 - (void) gameStarter {
-    //self.gameViewController = [[GameViewController alloc]init];
-    //[self presentModalViewController:self.gameViewController animated:YES];
-    
-    [self configureMyo];
+    self.gameViewController = [[GameViewController alloc]init];
+    [self presentModalViewController:self.gameViewController animated:YES];
 }
 
 - (IBAction)gameStarterClick:(id)sender {
@@ -64,7 +68,7 @@
 - (void)didReceivePoseChange:(NSNotification*)notification {
     TLMPose *pose = notification.userInfo[kTLMKeyPose];
     
-    if(pose.type == TLMPoseTypeWaveOut) {
+    if(pose.type == TLMPoseTypeFist) {
         [self gameStarter];
         
         NSLog(@"pose ok");
@@ -74,7 +78,7 @@
 }
 
 - (void)didDisconnectDevice:(NSNotification*)notification {
-    NSLog(@"disconnet");
+    [self configureMyo];
 }
 
 - (void)didUnsyncArm:(NSNotification*)notification {
