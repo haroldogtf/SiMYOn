@@ -112,7 +112,7 @@
         case TLMPoseTypeRest:
         case TLMPoseTypeDoubleTap:
         default:
-            NSLog(@"pose");
+            [pose.myo unlockWithType:TLMUnlockTypeHold];
             break;
     }
     
