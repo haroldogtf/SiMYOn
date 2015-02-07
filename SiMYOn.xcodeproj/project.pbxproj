@@ -94,6 +94,7 @@
 				097400421A8635A10012E465 /* View */,
 				097400231A8630B30012E465 /* Images.xcassets */,
 				097400251A8630B30012E465 /* LaunchScreen.xib */,
+				0974004A1A864BBE0012E465 /* Assets */,
 				097400411A8635990012E465 /* Frameworks */,
 				097400161A8630B30012E465 /* Supporting Files */,
 			);
@@ -145,6 +146,14 @@
 				097400451A8635DA0012E465 /* GameViewController.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0974004A1A864BBE0012E465 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

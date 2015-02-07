@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self prepareMyoNotifications];
+    [self configureMyo];
+    [self prepareMyoForNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +42,7 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
-- (void) prepareMyoNotifications {
+- (void) prepareMyoForNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceivePoseChange:)
                                                  name:TLMMyoDidReceivePoseChangedNotification
@@ -63,8 +64,10 @@
 - (void)didReceivePoseChange:(NSNotification*)notification {
     TLMPose *pose = notification.userInfo[kTLMKeyPose];
     
-    if(pose.type == TLMPoseTypeFist) {
+    if(pose.type == TLMPoseTypeWaveOut) {
         [self gameStarter];
+        
+        NSLog(@"pose ok");
     }
     
     NSLog(@"pose");
