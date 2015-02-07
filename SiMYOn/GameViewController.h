@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MyoKit/MyoKit.h>import
+#import <MyoKit/MyoKit.h>
 
 @interface GameViewController : UIViewController
+
+- (IBAction)btnTopAction:   (id)sender;
+- (IBAction)btnBottomAction:(id)sender;
+- (IBAction)btnLeftAction:  (id)sender;
+- (IBAction)btnRightAction: (id)sender;
 
 @end

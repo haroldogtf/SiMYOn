@@ -22,19 +22,54 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
-        [self configureMyo];
-    }
+    [self ifMyoDisconneted];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void) topAction {
+    NSLog(@"spread");
+}
+
+- (void) bottomAction {
+    NSLog(@"first");
+}
+
+- (void) leftAction {
+    NSLog(@"left");
+}
+
+- (void) rightAction {
+    NSLog(@"right");
+}
+
+- (IBAction)btnTopAction:(id)sender {
+    [self topAction];
+}
+
+- (IBAction)btnBottomAction:(id)sender {
+    [self bottomAction];
+}
+
+- (IBAction)btnLeftAction:(id)sender {
+    [self leftAction];
+}
+
+- (IBAction)btnRightAction:(id)sender {
+    [self rightAction];
 }
 
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
     [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void) ifMyoDisconneted {
+    if([[TLMHub sharedHub] myoDevices].count == 0) {
+        [self configureMyo];
+    }
 }
 
 - (void) prepareMyoForNotifications {
@@ -60,23 +95,27 @@
     TLMPose *pose = notification.userInfo[kTLMKeyPose];
     
     switch (pose.type) {
+        case TLMPoseTypeFingersSpread:
+            [self topAction];
+            break;
+        case TLMPoseTypeFist:
+            [self bottomAction];
+            break;
+        case TLMPoseTypeWaveIn:
+            [self leftAction];
+            break;
+        case TLMPoseTypeWaveOut:
+            [self rightAction];
+            break;
+
         case TLMPoseTypeUnknown:
         case TLMPoseTypeRest:
         case TLMPoseTypeDoubleTap:
-            break;
-        case TLMPoseTypeFist:
-            break;
-        case TLMPoseTypeWaveIn:
-            break;
-        case TLMPoseTypeWaveOut:
-            break;
-        case TLMPoseTypeFingersSpread:
-            break;
         default:
+            NSLog(@"pose");
             break;
     }
     
-    NSLog(@"pose");
 }
 
 - (void)didDisconnectDevice:(NSNotification*)notification {

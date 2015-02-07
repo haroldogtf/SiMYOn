@@ -16,73 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self prepareMyoForNotifications];
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
-        [self configureMyo];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (void) gameStarter {
+- (IBAction)gameStarterAction:(id)sender {
     self.gameViewController = [[GameViewController alloc]init];
     [self presentModalViewController:self.gameViewController animated:YES];
-}
-
-- (IBAction)gameStarterClick:(id)sender {
-    [self gameStarter];
-}
-
-- (void) configureMyo {
-    UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
-    [self presentViewController:controller animated:YES completion:nil];
-}
-
-- (void) prepareMyoForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceivePoseChange:)
-                                                 name:TLMMyoDidReceivePoseChangedNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didDisconnectDevice:)
-                                                 name:TLMHubDidDisconnectDeviceNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didUnsyncArm:)
-                                                 name:TLMMyoDidReceiveArmUnsyncEventNotification
-                                               object:nil];
-    
-    
-}
-
-- (void)didReceivePoseChange:(NSNotification*)notification {
-    TLMPose *pose = notification.userInfo[kTLMKeyPose];
-    
-    if(pose.type == TLMPoseTypeFist) {
-        [self gameStarter];
-        
-        NSLog(@"pose ok");
-    }
-    
-    NSLog(@"pose");
-}
-
-- (void)didDisconnectDevice:(NSNotification*)notification {
-    [self configureMyo];
-}
-
-- (void)didUnsyncArm:(NSNotification*)notification {
-    NSLog(@"unsync");
 }
 
 @end

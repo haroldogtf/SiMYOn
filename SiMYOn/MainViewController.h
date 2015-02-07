@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) GameViewController *gameViewController;
 
-- (IBAction)gameStarterClick:(id)sender;
+- (IBAction)gameStarterAction:(id)sender;
 
 @end
