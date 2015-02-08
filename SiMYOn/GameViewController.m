@@ -22,7 +22,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [self ifMyoDisconneted];
+    //[self ifMyoDisconneted];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,11 +30,8 @@
 }
 
 - (void) topAction {
+    self.btnTop.hidden = NO;
     NSLog(@"spread");
-}
-
-- (void) bottomAction {
-    NSLog(@"first");
 }
 
 - (void) leftAction {
@@ -45,12 +42,14 @@
     NSLog(@"right");
 }
 
-- (IBAction)btnTopAction:(id)sender {
-    [self topAction];
+- (void) bottomAction {
+    self.btnTop.hidden = YES;
+
+    NSLog(@"first");
 }
 
-- (IBAction)btnBottomAction:(id)sender {
-    [self bottomAction];
+- (IBAction)btnTopAction:(id)sender {
+    [self topAction];
 }
 
 - (IBAction)btnLeftAction:(id)sender {
@@ -59,6 +58,10 @@
 
 - (IBAction)btnRightAction:(id)sender {
     [self rightAction];
+}
+
+- (IBAction)btnBottomAction:(id)sender {
+    [self bottomAction];
 }
 
 - (IBAction)pauseContinueAction:(id)sender {

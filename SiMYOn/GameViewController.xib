@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController">
             <connections>
+                <outlet property="btnBottom" destination="873-75-74n" id="t7E-jO-6sU"/>
+                <outlet property="btnLeft" destination="KOa-cd-AL7" id="3Aa-rf-aas"/>
+                <outlet property="btnRight" destination="351-d9-bDa" id="sPm-S6-Pbg"/>
+                <outlet property="btnTop" destination="AZV-uY-nNO" id="qtf-qh-TgP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,40 +21,40 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game.png" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-Pz-ddC">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-uY-nNO">
-                    <rect key="frame" x="135" y="159" width="50" height="30"/>
-                    <state key="normal" title="Spread">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-uY-nNO">
+                    <rect key="frame" x="120" y="156" width="80" height="30"/>
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="btnTopAction:" destination="-1" eventType="touchUpInside" id="B0W-zU-FeP"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-cd-AL7">
-                    <rect key="frame" x="28" y="269" width="51" height="30"/>
-                    <state key="normal" title="WaveIn">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnLeftAction:" destination="-1" eventType="touchUpInside" id="3hg-fo-4Kk"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873-75-74n">
-                    <rect key="frame" x="135" y="382" width="30" height="30"/>
-                    <state key="normal" title="First">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873-75-74n">
+                    <rect key="frame" x="120" y="380" width="80" height="34"/>
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="btnBottomAction:" destination="-1" eventType="touchUpInside" id="Jo1-1F-Zx0"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="351-d9-bDa">
-                    <rect key="frame" x="235" y="276" width="63" height="30"/>
-                    <state key="normal" title="WaveOut">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="351-d9-bDa">
+                    <rect key="frame" x="257" y="244" width="30" height="80"/>
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="btnRightAction:" destination="-1" eventType="touchUpInside" id="Iry-bW-cnS"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66">
+                    <rect key="frame" x="144" y="461" width="32" height="32"/>
+                    <state key="normal" image="btn_return.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgT-xv-qtj">
@@ -62,13 +66,13 @@
                         <action selector="pauseContinueAction:" destination="-1" eventType="touchUpInside" id="XWc-bx-D6d"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66">
-                    <rect key="frame" x="144" y="461" width="32" height="32"/>
-                    <state key="normal" image="btn_return.png">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-cd-AL7">
+                    <rect key="frame" x="31" y="244" width="30" height="80"/>
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
+                        <action selector="btnLeftAction:" destination="-1" eventType="touchUpInside" id="3hg-fo-4Kk"/>
                     </connections>
                 </button>
             </subviews>
