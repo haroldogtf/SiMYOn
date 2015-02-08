@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y">
@@ -54,7 +54,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDU-UF-j6a">
-                    <rect key="frame" x="257" y="510" width="50" height="50"/>
+                    <rect key="frame" x="267" y="515" width="45" height="45"/>
                     <state key="normal" image="btn_exit.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -64,12 +64,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="24u-Xk-c7K"/>
-                <constraint firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="OJa-aH-0wh"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SAI-1N-zd0"/>
-                <constraint firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" id="u1t-Ta-GQB"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="418" y="356"/>
         </view>

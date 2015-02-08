@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game.png" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-Pz-ddC">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game.png" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-Pz-ddC">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-uY-nNO">
@@ -53,18 +53,32 @@
                         <action selector="btnRightAction:" destination="-1" eventType="touchUpInside" id="Iry-bW-cnS"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgT-xv-qtj">
+                    <rect key="frame" x="141" y="68" width="38" height="38"/>
+                    <state key="normal" image="btn_pause.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="pauseContinueAction:" destination="-1" eventType="touchUpInside" id="XWc-bx-D6d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66">
+                    <rect key="frame" x="144" y="461" width="32" height="32"/>
+                    <state key="normal" image="btn_return.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="SM3-Pz-ddC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3D9-zX-ni2"/>
-                <constraint firstAttribute="bottom" secondItem="SM3-Pz-ddC" secondAttribute="bottom" id="Ct0-kn-fPj"/>
-                <constraint firstAttribute="trailing" secondItem="SM3-Pz-ddC" secondAttribute="trailing" id="LkZ-aK-CjX"/>
-                <constraint firstItem="SM3-Pz-ddC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x1S-Ra-BIM"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
+        <image name="btn_pause.png" width="68" height="66"/>
+        <image name="btn_return.png" width="68" height="66"/>
         <image name="game.png" width="640" height="1136"/>
     </resources>
 </document>

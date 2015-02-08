@@ -61,6 +61,13 @@
     [self rightAction];
 }
 
+- (IBAction)pauseContinueAction:(id)sender {
+}
+
+- (IBAction)returnAction:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
     [self presentViewController:controller animated:YES completion:nil];

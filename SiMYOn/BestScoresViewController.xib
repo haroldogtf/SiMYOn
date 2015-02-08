@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-t9-670">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-t9-670">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-tM-x3H">
@@ -28,12 +28,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="nbt-t9-670" secondAttribute="trailing" id="Czs-95-UPE"/>
-                <constraint firstItem="nbt-t9-670" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IQ9-YZ-bRf"/>
-                <constraint firstItem="nbt-t9-670" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zde-Yb-1LE"/>
-                <constraint firstAttribute="bottom" secondItem="nbt-t9-670" secondAttribute="bottom" id="yud-Y9-i6T"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

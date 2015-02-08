@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instructions.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cri-yO-sJ9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instructions.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cri-yO-sJ9">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGx-8W-NnZ">
@@ -28,12 +28,6 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="Cri-yO-sJ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="862-LL-TTs"/>
-                <constraint firstItem="Cri-yO-sJ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GuU-Zt-gCs"/>
-                <constraint firstAttribute="trailing" secondItem="Cri-yO-sJ9" secondAttribute="trailing" id="IfK-EK-Wov"/>
-                <constraint firstAttribute="bottom" secondItem="Cri-yO-sJ9" secondAttribute="bottom" id="mlG-N4-Q1Y"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

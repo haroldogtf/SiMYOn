@@ -36,6 +36,8 @@
 		097400921A880A130012E465 /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400861A880A130012E465 /* instructions.png */; };
 		097400931A880A130012E465 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400871A880A130012E465 /* menu.png */; };
 		097400971A880B280012E465 /* btn_return.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400961A880B280012E465 /* btn_return.png */; };
+		0974009A1A88112E0012E465 /* btn_continue.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400981A88112E0012E465 /* btn_continue.png */; };
+		0974009B1A88112E0012E465 /* btn_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400991A88112E0012E465 /* btn_pause.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		097400861A880A130012E465 /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions.png; path = SiMYOn/Assets/instructions.png; sourceTree = "<group>"; };
 		097400871A880A130012E465 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = SiMYOn/Assets/menu.png; sourceTree = "<group>"; };
 		097400961A880B280012E465 /* btn_return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_return.png; path = SiMYOn/Assets/btn_return.png; sourceTree = "<group>"; };
+		097400981A88112E0012E465 /* btn_continue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_continue.png; path = SiMYOn/Assets/btn_continue.png; sourceTree = "<group>"; };
+		097400991A88112E0012E465 /* btn_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_pause.png; path = SiMYOn/Assets/btn_pause.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +211,10 @@
 				0974007F1A880A130012E465 /* blip4.mp3 */,
 				097400801A880A130012E465 /* btn_best_scores.png */,
 				097400811A880A130012E465 /* btn_credits.png */,
+				097400981A88112E0012E465 /* btn_continue.png */,
 				097400821A880A130012E465 /* btn_exit.png */,
 				097400831A880A130012E465 /* btn_instructions.png */,
+				097400991A88112E0012E465 /* btn_pause.png */,
 				097400841A880A130012E465 /* btn_play.png */,
 				097400961A880B280012E465 /* btn_return.png */,
 				097400851A880A130012E465 /* game.png */,
@@ -307,8 +313,10 @@
 				0974008D1A880A130012E465 /* btn_credits.png in Resources */,
 				097400891A880A130012E465 /* blip2.mp3 in Resources */,
 				0974007B1A87EFD20012E465 /* CreditsViewController.xib in Resources */,
+				0974009B1A88112E0012E465 /* btn_pause.png in Resources */,
 				097400911A880A130012E465 /* game.png in Resources */,
 				0974008C1A880A130012E465 /* btn_best_scores.png in Resources */,
+				0974009A1A88112E0012E465 /* btn_continue.png in Resources */,
 				097400901A880A130012E465 /* btn_play.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
 				097400931A880A130012E465 /* menu.png in Resources */,

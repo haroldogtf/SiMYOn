@@ -16,4 +16,7 @@
 - (IBAction)btnLeftAction:  (id)sender;
 - (IBAction)btnRightAction: (id)sender;
 
+- (IBAction)pauseContinueAction:(id)sender;
+- (IBAction)returnAction:(id)sender;
+
 @end
