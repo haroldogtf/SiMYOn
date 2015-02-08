@@ -10,4 +10,6 @@
 
 @interface BestScoresViewController : UIViewController
 
+- (IBAction)returnAction:(id)sender;
+
 @end

@@ -19,7 +19,7 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y">
                     <rect key="frame" x="79" y="124" width="158" height="62"/>
-                    <state key="normal" image="play.png">
+                    <state key="normal" image="btn_play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -28,7 +28,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg">
                     <rect key="frame" x="79" y="220" width="158" height="62"/>
-                    <state key="normal" image="instructions.png">
+                    <state key="normal" image="btn_instructions.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -37,7 +37,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-4N-AnA">
                     <rect key="frame" x="79" y="316" width="158" height="62"/>
-                    <state key="normal" image="best_scores.png">
+                    <state key="normal" image="btn_best_scores.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -46,7 +46,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq">
                     <rect key="frame" x="79" y="413" width="158" height="62"/>
-                    <state key="normal" image="credits.png">
+                    <state key="normal" image="btn_credits.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -55,7 +55,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDU-UF-j6a">
                     <rect key="frame" x="257" y="510" width="50" height="50"/>
-                    <state key="normal" image="exit.png">
+                    <state key="normal" image="btn_exit.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -75,11 +75,11 @@
         </view>
     </objects>
     <resources>
-        <image name="best_scores.png" width="313" height="126"/>
-        <image name="credits.png" width="313" height="126"/>
-        <image name="exit.png" width="82" height="83"/>
-        <image name="instructions.png" width="313" height="126"/>
+        <image name="btn_best_scores.png" width="313" height="126"/>
+        <image name="btn_credits.png" width="313" height="126"/>
+        <image name="btn_exit.png" width="82" height="83"/>
+        <image name="btn_instructions.png" width="313" height="126"/>
+        <image name="btn_play.png" width="313" height="126"/>
         <image name="menu.png" width="640" height="1136"/>
-        <image name="play.png" width="313" height="126"/>
     </resources>
 </document>

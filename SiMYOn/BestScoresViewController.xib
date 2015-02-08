@@ -14,15 +14,30 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCK-0C-VMe">
-                    <rect key="frame" x="63" y="105" width="35" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nbt-t9-670">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-tM-x3H">
+                    <rect key="frame" x="137" y="460" width="32" height="32"/>
+                    <state key="normal" image="btn_return.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="V0b-zl-jqe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nbt-t9-670" secondAttribute="trailing" id="Czs-95-UPE"/>
+                <constraint firstItem="nbt-t9-670" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IQ9-YZ-bRf"/>
+                <constraint firstItem="nbt-t9-670" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Zde-Yb-1LE"/>
+                <constraint firstAttribute="bottom" secondItem="nbt-t9-670" secondAttribute="bottom" id="yud-Y9-i6T"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="btn_return.png" width="68" height="66"/>
+    </resources>
 </document>
