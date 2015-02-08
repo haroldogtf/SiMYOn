@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MyoKit/MyoKit.h>
 #import "GameViewController.h"
+#import "InstructionsViewController.h"
+#import "BestScoresViewController.h"
+#import "CreditsViewController.h"
 
 @interface MainViewController : UIViewController
-
-@property (strong, nonatomic) GameViewController *gameViewController;
 
 - (IBAction)gameStarterAction:(id)sender;
 - (IBAction)intructionsAction:(id)sender;

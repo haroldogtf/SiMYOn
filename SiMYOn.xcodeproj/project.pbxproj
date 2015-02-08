@@ -24,6 +24,12 @@
 		097400691A87EDFB0012E465 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400631A87EDFB0012E465 /* menu.png */; };
 		0974006A1A87EDFB0012E465 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400641A87EDFB0012E465 /* play.png */; };
 		0974006C1A87EE380012E465 /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 0974006B1A87EE380012E465 /* instructions.png */; };
+		097400701A87EF3E0012E465 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974006E1A87EF3E0012E465 /* InstructionsViewController.m */; };
+		097400711A87EF3E0012E465 /* InstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974006F1A87EF3E0012E465 /* InstructionsViewController.xib */; };
+		097400751A87EFBE0012E465 /* BestScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400731A87EFBE0012E465 /* BestScoresViewController.m */; };
+		097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400741A87EFBE0012E465 /* BestScoresViewController.xib */; };
+		0974007A1A87EFD20012E465 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400781A87EFD20012E465 /* CreditsViewController.m */; };
+		0974007B1A87EFD20012E465 /* CreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400791A87EFD20012E465 /* CreditsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,15 @@
 		097400631A87EDFB0012E465 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = SiMYOn/Assets/menu.png; sourceTree = "<group>"; };
 		097400641A87EDFB0012E465 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = SiMYOn/Assets/play.png; sourceTree = "<group>"; };
 		0974006B1A87EE380012E465 /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions.png; path = SiMYOn/Assets/instructions.png; sourceTree = "<group>"; };
+		0974006D1A87EF3E0012E465 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
+		0974006E1A87EF3E0012E465 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
+		0974006F1A87EF3E0012E465 /* InstructionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionsViewController.xib; sourceTree = "<group>"; };
+		097400721A87EFBE0012E465 /* BestScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BestScoresViewController.h; sourceTree = "<group>"; };
+		097400731A87EFBE0012E465 /* BestScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestScoresViewController.m; sourceTree = "<group>"; };
+		097400741A87EFBE0012E465 /* BestScoresViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestScoresViewController.xib; sourceTree = "<group>"; };
+		097400771A87EFD20012E465 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		097400781A87EFD20012E465 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		097400791A87EFD20012E465 /* CreditsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +173,15 @@
 				097400431A8635DA0012E465 /* GameViewController.h */,
 				097400441A8635DA0012E465 /* GameViewController.m */,
 				097400451A8635DA0012E465 /* GameViewController.xib */,
+				0974006D1A87EF3E0012E465 /* InstructionsViewController.h */,
+				0974006E1A87EF3E0012E465 /* InstructionsViewController.m */,
+				0974006F1A87EF3E0012E465 /* InstructionsViewController.xib */,
+				097400721A87EFBE0012E465 /* BestScoresViewController.h */,
+				097400731A87EFBE0012E465 /* BestScoresViewController.m */,
+				097400741A87EFBE0012E465 /* BestScoresViewController.xib */,
+				097400771A87EFD20012E465 /* CreditsViewController.h */,
+				097400781A87EFD20012E465 /* CreditsViewController.m */,
+				097400791A87EFD20012E465 /* CreditsViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -259,10 +283,13 @@
 				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
 				0974006A1A87EDFB0012E465 /* play.png in Resources */,
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
+				0974007B1A87EFD20012E465 /* CreditsViewController.xib in Resources */,
 				097400691A87EDFB0012E465 /* menu.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
+				097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */,
 				097400651A87EDFB0012E465 /* best_scores.png in Resources */,
 				097400661A87EDFB0012E465 /* credits.png in Resources */,
+				097400711A87EF3E0012E465 /* InstructionsViewController.xib in Resources */,
 				0974006C1A87EE380012E465 /* instructions.png in Resources */,
 				097400681A87EDFB0012E465 /* game.png in Resources */,
 				097400671A87EDFB0012E465 /* exit.png in Resources */,
@@ -287,6 +314,9 @@
 				097400461A8635DA0012E465 /* GameViewController.m in Sources */,
 				0974001C1A8630B30012E465 /* AppDelegate.m in Sources */,
 				0974003F1A86358D0012E465 /* MainViewController.m in Sources */,
+				097400751A87EFBE0012E465 /* BestScoresViewController.m in Sources */,
+				097400701A87EF3E0012E465 /* InstructionsViewController.m in Sources */,
+				0974007A1A87EFD20012E465 /* CreditsViewController.m in Sources */,
 				097400191A8630B30012E465 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
