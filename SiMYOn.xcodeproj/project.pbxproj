@@ -17,6 +17,13 @@
 		097400461A8635DA0012E465 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400441A8635DA0012E465 /* GameViewController.m */; };
 		097400471A8635DA0012E465 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400451A8635DA0012E465 /* GameViewController.xib */; };
 		097400491A8641130012E465 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097400481A8641130012E465 /* MyoKit.framework */; };
+		097400651A87EDFB0012E465 /* best_scores.png in Resources */ = {isa = PBXBuildFile; fileRef = 0974005F1A87EDFB0012E465 /* best_scores.png */; };
+		097400661A87EDFB0012E465 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400601A87EDFB0012E465 /* credits.png */; };
+		097400671A87EDFB0012E465 /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400611A87EDFB0012E465 /* exit.png */; };
+		097400681A87EDFB0012E465 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400621A87EDFB0012E465 /* game.png */; };
+		097400691A87EDFB0012E465 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400631A87EDFB0012E465 /* menu.png */; };
+		0974006A1A87EDFB0012E465 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400641A87EDFB0012E465 /* play.png */; };
+		0974006C1A87EE380012E465 /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 0974006B1A87EE380012E465 /* instructions.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		097400441A8635DA0012E465 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		097400451A8635DA0012E465 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		097400481A8641130012E465 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		0974005F1A87EDFB0012E465 /* best_scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores.png; path = SiMYOn/Assets/best_scores.png; sourceTree = "<group>"; };
+		097400601A87EDFB0012E465 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = credits.png; path = SiMYOn/Assets/credits.png; sourceTree = "<group>"; };
+		097400611A87EDFB0012E465 /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exit.png; path = SiMYOn/Assets/exit.png; sourceTree = "<group>"; };
+		097400621A87EDFB0012E465 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = SiMYOn/Assets/game.png; sourceTree = "<group>"; };
+		097400631A87EDFB0012E465 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = SiMYOn/Assets/menu.png; sourceTree = "<group>"; };
+		097400641A87EDFB0012E465 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = SiMYOn/Assets/play.png; sourceTree = "<group>"; };
+		0974006B1A87EE380012E465 /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = instructions.png; path = SiMYOn/Assets/instructions.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +165,13 @@
 		0974004A1A864BBE0012E465 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0974006B1A87EE380012E465 /* instructions.png */,
+				0974005F1A87EDFB0012E465 /* best_scores.png */,
+				097400601A87EDFB0012E465 /* credits.png */,
+				097400611A87EDFB0012E465 /* exit.png */,
+				097400621A87EDFB0012E465 /* game.png */,
+				097400631A87EDFB0012E465 /* menu.png */,
+				097400641A87EDFB0012E465 /* play.png */,
 			);
 			name = Assets;
 			path = ..;
@@ -236,8 +257,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
+				0974006A1A87EDFB0012E465 /* play.png in Resources */,
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
+				097400691A87EDFB0012E465 /* menu.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
+				097400651A87EDFB0012E465 /* best_scores.png in Resources */,
+				097400661A87EDFB0012E465 /* credits.png in Resources */,
+				0974006C1A87EE380012E465 /* instructions.png in Resources */,
+				097400681A87EDFB0012E465 /* game.png in Resources */,
+				097400671A87EDFB0012E465 /* exit.png in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

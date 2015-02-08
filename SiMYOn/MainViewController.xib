@@ -11,26 +11,75 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92c-VZ-K72">
-                    <rect key="frame" x="41" y="73" width="38" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y">
-                    <rect key="frame" x="41" y="183" width="92" height="30"/>
-                    <state key="normal" title="Game Starter">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y">
+                    <rect key="frame" x="79" y="124" width="158" height="62"/>
+                    <state key="normal" image="play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="gameStarterAction:" destination="-1" eventType="touchUpInside" id="mF4-6j-PbF"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg">
+                    <rect key="frame" x="79" y="220" width="158" height="62"/>
+                    <state key="normal" image="instructions.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="intructionsAction:" destination="-1" eventType="touchUpInside" id="1ZC-Ff-dxY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-4N-AnA">
+                    <rect key="frame" x="79" y="316" width="158" height="62"/>
+                    <state key="normal" image="best_scores.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bestScoresAction:" destination="-1" eventType="touchUpInside" id="a8h-DF-9db"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq">
+                    <rect key="frame" x="79" y="413" width="158" height="62"/>
+                    <state key="normal" image="credits.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="creditsAction:" destination="-1" eventType="touchUpInside" id="WaQ-8r-ff1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDU-UF-j6a">
+                    <rect key="frame" x="257" y="510" width="50" height="50"/>
+                    <state key="normal" image="exit.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="exitAction:" destination="-1" eventType="touchUpInside" id="ytQ-7i-YpD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="24u-Xk-c7K"/>
+                <constraint firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="OJa-aH-0wh"/>
+                <constraint firstItem="wvs-tB-Wuv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SAI-1N-zd0"/>
+                <constraint firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" id="u1t-Ta-GQB"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="418" y="356"/>
         </view>
     </objects>
+    <resources>
+        <image name="best_scores.png" width="313" height="126"/>
+        <image name="credits.png" width="313" height="126"/>
+        <image name="exit.png" width="82" height="83"/>
+        <image name="instructions.png" width="313" height="126"/>
+        <image name="menu.png" width="640" height="1136"/>
+        <image name="play.png" width="313" height="126"/>
+    </resources>
 </document>

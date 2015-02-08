@@ -15,5 +15,9 @@
 @property (strong, nonatomic) GameViewController *gameViewController;
 
 - (IBAction)gameStarterAction:(id)sender;
+- (IBAction)intructionsAction:(id)sender;
+- (IBAction)bestScoresAction: (id)sender;
+- (IBAction)creditsAction:    (id)sender;
+- (IBAction)exitAction:       (id)sender;
 
 @end

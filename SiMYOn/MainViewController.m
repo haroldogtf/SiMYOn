@@ -27,4 +27,16 @@
     [self presentModalViewController:self.gameViewController animated:YES];
 }
 
+- (IBAction)intructionsAction:(id)sender {
+}
+
+- (IBAction)bestScoresAction:(id)sender {
+}
+
+- (IBAction)creditsAction:(id)sender {
+}
+
+- (IBAction)exitAction:(id)sender {
+}
+
 @end
