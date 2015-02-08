@@ -6,10 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController">
             <connections>
-                <outlet property="btnBottom" destination="873-75-74n" id="t7E-jO-6sU"/>
-                <outlet property="btnLeft" destination="KOa-cd-AL7" id="3Aa-rf-aas"/>
-                <outlet property="btnRight" destination="351-d9-bDa" id="sPm-S6-Pbg"/>
-                <outlet property="btnTop" destination="AZV-uY-nNO" id="qtf-qh-TgP"/>
+                <outlet property="btnPauseContinue" destination="DgT-xv-qtj" id="pW9-yW-YzO"/>
+                <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

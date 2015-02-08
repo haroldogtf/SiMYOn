@@ -30,21 +30,22 @@
 }
 
 - (void) topAction {
-    self.btnTop.hidden = NO;
+    self.imgBackground.image = [UIImage imageNamed:@"game_top.png"];
     NSLog(@"spread");
 }
 
 - (void) leftAction {
+    self.imgBackground.image = [UIImage imageNamed:@"game_left.png"];
     NSLog(@"left");
 }
 
 - (void) rightAction {
+    self.imgBackground.image = [UIImage imageNamed:@"game_right.png"];
     NSLog(@"right");
 }
 
 - (void) bottomAction {
-    self.btnTop.hidden = YES;
-
+    self.imgBackground.image = [UIImage imageNamed:@"game_bottom.png"];
     NSLog(@"first");
 }
 
@@ -68,7 +69,19 @@
 }
 
 - (IBAction)returnAction:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
+                                                      message:@"Are you sure to go back to menu?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"No"
+                                            otherButtonTitles:@"Yes", nil];
+    [message show];
+}
+    
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
+{
+    if(buttonIndex) {
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
 
 - (void) configureMyo {

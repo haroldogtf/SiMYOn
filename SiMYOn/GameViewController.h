@@ -11,10 +11,8 @@
 
 @interface GameViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *btnTop;
-@property (weak, nonatomic) IBOutlet UIButton *btnLeft;
-@property (weak, nonatomic) IBOutlet UIButton *btnRight;
-@property (weak, nonatomic) IBOutlet UIButton *btnBottom;
+@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
+@property (weak, nonatomic) IBOutlet UIButton *btnPauseContinue;
 
 - (IBAction)btnTopAction:   (id)sender;
 - (IBAction)btnLeftAction:  (id)sender;
