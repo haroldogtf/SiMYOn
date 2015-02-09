@@ -12,40 +12,50 @@
 
 @end
 
-@implementation GameViewController
+@implementation GameViewController {
+    bool lock;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    lock = NO;
     
     [self prepareMyoForNotifications];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    //[self ifMyoDisconneted];
+    [self ifMyoDisconneted];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (void) action:(NSString *)imageName {
+    lock = YES;
+    self.imgBackground.image = [UIImage imageNamed:imageName];
+    lock = NO;
+}
+
 - (void) topAction {
-    self.imgBackground.image = [UIImage imageNamed:@"game_top.png"];
+    [self action:@"game_top.png"];
     NSLog(@"spread");
 }
 
 - (void) leftAction {
-    self.imgBackground.image = [UIImage imageNamed:@"game_left.png"];
+    [self action:@"game_left.png"];
     NSLog(@"left");
 }
 
 - (void) rightAction {
-    self.imgBackground.image = [UIImage imageNamed:@"game_right.png"];
+    [self action:@"game_right.png"];
     NSLog(@"right");
 }
 
 - (void) bottomAction {
-    self.imgBackground.image = [UIImage imageNamed:@"game_bottom.png"];
+    [self action:@"game_bottom.png"];
     NSLog(@"first");
 }
 
@@ -115,30 +125,32 @@
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
-    TLMPose *pose = notification.userInfo[kTLMKeyPose];
-    
-    switch (pose.type) {
-        case TLMPoseTypeFingersSpread:
-            [self topAction];
-            break;
-        case TLMPoseTypeFist:
-            [self bottomAction];
-            break;
-        case TLMPoseTypeWaveIn:
-            [self leftAction];
-            break;
-        case TLMPoseTypeWaveOut:
-            [self rightAction];
-            break;
+    if(!lock) {
 
-        case TLMPoseTypeUnknown:
-        case TLMPoseTypeRest:
-        case TLMPoseTypeDoubleTap:
-        default:
-            [pose.myo unlockWithType:TLMUnlockTypeHold];
-            break;
+        TLMPose *pose = notification.userInfo[kTLMKeyPose];
+        
+        switch (pose.type) {
+            case TLMPoseTypeFingersSpread:
+                [self topAction];
+                break;
+            case TLMPoseTypeFist:
+                [self bottomAction];
+                break;
+            case TLMPoseTypeWaveIn:
+                [self leftAction];
+                break;
+            case TLMPoseTypeWaveOut:
+                [self rightAction];
+                break;
+
+            case TLMPoseTypeUnknown:
+            case TLMPoseTypeRest:
+            case TLMPoseTypeDoubleTap:
+            default:
+                [pose.myo unlockWithType:TLMUnlockTypeHold];
+                break;
+        }
     }
-    
 }
 
 - (void)didDisconnectDevice:(NSNotification*)notification {
