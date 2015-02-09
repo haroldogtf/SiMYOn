@@ -26,7 +26,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [self ifMyoDisconneted];
+    //[self ifMyoDisconneted];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +36,11 @@
 - (void) action:(NSString *)imageName {
     lock = YES;
     self.imgBackground.image = [UIImage imageNamed:imageName];
+    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(unlockTheGame:) userInfo:nil repeats:NO];
+}
+
+- (void)unlockTheGame:(id)sender {
+    self.imgBackground.image = [UIImage imageNamed:@"game.png"];
     lock = NO;
 }
 
@@ -125,10 +130,9 @@
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
+    TLMPose *pose = notification.userInfo[kTLMKeyPose];
+    
     if(!lock) {
-
-        TLMPose *pose = notification.userInfo[kTLMKeyPose];
-        
         switch (pose.type) {
             case TLMPoseTypeFingersSpread:
                 [self topAction];
@@ -142,15 +146,12 @@
             case TLMPoseTypeWaveOut:
                 [self rightAction];
                 break;
-
-            case TLMPoseTypeUnknown:
-            case TLMPoseTypeRest:
-            case TLMPoseTypeDoubleTap:
             default:
-                [pose.myo unlockWithType:TLMUnlockTypeHold];
                 break;
         }
     }
+    
+    [pose.myo unlockWithType:TLMUnlockTypeHold];
 }
 
 - (void)didDisconnectDevice:(NSNotification*)notification {
