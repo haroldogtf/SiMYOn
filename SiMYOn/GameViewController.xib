@@ -12,7 +12,7 @@
                 <outlet property="btnRight" destination="351-d9-bDa" id="G7P-1g-Sqo"/>
                 <outlet property="btnTop" destination="AZV-uY-nNO" id="wt9-n9-0Qd"/>
                 <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sh7-Cr-MhM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

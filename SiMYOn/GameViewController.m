@@ -200,8 +200,7 @@
             NSLog(@"ok");
             turn++;
         } else {
-            [self dismissViewControllerAnimated:YES completion:nil];
-            turn = 0;
+            [self loseGame];
         }
         
         if(turn >= [movementsList count]) {
@@ -223,11 +222,6 @@
     self.btnLeft.enabled   = !enable;
     self.btnRight.enabled  = !enable;
     self.btnBottom.enabled = !enable;
-}
-
-- (void) playGame {
-    [self moreOneMovement];
-    [self playMovements];
 }
 
 - (Movement) getRandomMovement {
@@ -290,6 +284,15 @@
 - (void) executeMovement:(id) movement {
     NSInteger codeMovement = [(NSNumber *)[[movement userInfo]  objectForKey:@"movement"] integerValue];
     [self doMovement:[self getMovement:codeMovement]];
+}
+
+- (void) playGame {
+    [self moreOneMovement];
+    [self playMovements];
+}
+
+- (void) loseGame {
+    [self presentViewController:[[GameOverViewController alloc]init] animated:YES completion:nil];
 }
 
 @end

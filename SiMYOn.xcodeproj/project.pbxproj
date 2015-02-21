@@ -45,6 +45,8 @@
 		09A3E0FE1A9904280016FC24 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FA1A9904280016FC24 /* gameover.png */; };
 		09A3E1001A9904280016FC24 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FC1A9904280016FC24 /* splash.png */; };
 		09A3E1021A99045E0016FC24 /* best_scores.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1011A99045E0016FC24 /* best_scores.png */; };
+		09A3E1061A990F200016FC24 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A3E1041A990F200016FC24 /* GameOverViewController.m */; };
+		09A3E1071A990F200016FC24 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1051A990F200016FC24 /* GameOverViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,9 @@
 		09A3E0FA1A9904280016FC24 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameover.png; path = SiMYOn/Assets/gameover.png; sourceTree = "<group>"; };
 		09A3E0FC1A9904280016FC24 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = SiMYOn/Assets/splash.png; sourceTree = "<group>"; };
 		09A3E1011A99045E0016FC24 /* best_scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores.png; path = SiMYOn/Assets/best_scores.png; sourceTree = "<group>"; };
+		09A3E1031A990F200016FC24 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		09A3E1041A990F200016FC24 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
+		09A3E1051A990F200016FC24 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +179,9 @@
 				097400771A87EFD20012E465 /* CreditsViewController.h */,
 				097400781A87EFD20012E465 /* CreditsViewController.m */,
 				097400791A87EFD20012E465 /* CreditsViewController.xib */,
+				09A3E1031A990F200016FC24 /* GameOverViewController.h */,
+				09A3E1041A990F200016FC24 /* GameOverViewController.m */,
+				09A3E1051A990F200016FC24 /* GameOverViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 				0974008F1A880A130012E465 /* btn_instructions.png in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
 				097400AD1A8826120012E465 /* game_top.png in Resources */,
+				09A3E1071A990F200016FC24 /* GameOverViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A3E1061A990F200016FC24 /* GameOverViewController.m in Sources */,
 				097400461A8635DA0012E465 /* GameViewController.m in Sources */,
 				0974001C1A8630B30012E465 /* AppDelegate.m in Sources */,
 				0974003F1A86358D0012E465 /* MainViewController.m in Sources */,

@@ -23,7 +23,7 @@
 }
 
 - (void) openViewController:(UIViewController *) viewController {
-    [self presentModalViewController:viewController animated:YES];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (IBAction)gameStarterAction:(id)sender {

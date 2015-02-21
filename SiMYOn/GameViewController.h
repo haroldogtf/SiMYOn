@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <stdlib.h>
 #import <MyoKit/MyoKit.h>
-#include <stdlib.h>
+#import "GameOverViewController.h"
 
 @interface GameViewController : UIViewController
 
@@ -20,17 +21,19 @@ typedef enum {
     BottomMovement = 3
 } Movement;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
-@property (weak, nonatomic) IBOutlet UIButton *btnPauseContinue;
-@property (weak, nonatomic) IBOutlet UIButton *btnTop;
-@property (weak, nonatomic) IBOutlet UIButton *btnLeft;
-@property (weak, nonatomic) IBOutlet UIButton *btnRight;
-@property (weak, nonatomic) IBOutlet UIButton *btnBottom;
+@property (strong, nonatomic) IBOutlet UIView      *view;
+@property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
+@property (weak, nonatomic)   IBOutlet UIButton    *btnPauseContinue;
+@property (weak, nonatomic)   IBOutlet UIButton    *btnTop;
+@property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
+@property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
+@property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
+@property (weak, nonatomic)            UIView      *popup;
 
-- (IBAction)btnTopAction:   (id)sender;
-- (IBAction)btnLeftAction:  (id)sender;
-- (IBAction)btnRightAction: (id)sender;
-- (IBAction)btnBottomAction:(id)sender;
+- (IBAction)btnTopAction:       (id)sender;
+- (IBAction)btnLeftAction:      (id)sender;
+- (IBAction)btnRightAction:     (id)sender;
+- (IBAction)btnBottomAction:    (id)sender;
 - (IBAction)pauseContinueAction:(id)sender;
 - (IBAction)returnAction:       (id)sender;
 
