@@ -14,25 +14,91 @@
 
 @implementation GameViewController {
     AVAudioPlayer* audio;
-    bool lock;
+    BOOL lock;
+    NSMutableArray* movementsList;
 }
 
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    lock = NO;
+    movementsList = [[NSMutableArray alloc]init];
     
+    [self blockAllComponents:YES];
     [self prepareMyoForNotifications];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     //[self ifMyoDisconneted];
+    
+    [self playGame];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Myo
+- (void) configureMyo {
+    UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void) ifMyoDisconneted {
+    if([[TLMHub sharedHub] myoDevices].count == 0) {
+        [self configureMyo];
+    }
+}
+
+- (void) prepareMyoForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceivePoseChange:)
+                                                 name:TLMMyoDidReceivePoseChangedNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didDisconnectDevice:)
+                                                 name:TLMHubDidDisconnectDeviceNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didUnsyncArm:)
+                                                 name:TLMMyoDidReceiveArmUnsyncEventNotification
+                                               object:nil];
+}
+
+- (void)didReceivePoseChange:(NSNotification*)notification {
+    TLMPose *pose = notification.userInfo[kTLMKeyPose];
+    
+    if(!lock) {
+        switch (pose.type) {
+            case TLMPoseTypeFingersSpread:
+                [self topAction];
+                break;
+            case TLMPoseTypeFist:
+                [self bottomAction];
+                break;
+            case TLMPoseTypeWaveIn:
+                [self leftAction];
+                break;
+            case TLMPoseTypeWaveOut:
+                [self rightAction];
+                break;
+            default:
+                break;
+        }
+    }
+    
+    [pose.myo unlockWithType:TLMUnlockTypeHold];
+}
+
+- (void)didDisconnectDevice:(NSNotification*)notification {
+    [self configureMyo];
+}
+
+- (void)didUnsyncArm:(NSNotification*)notification {
+    NSLog(@"unsync");
 }
 
 #pragma mark - Actions
@@ -76,8 +142,17 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
 {
     if(buttonIndex) {
-        [self dismissModalViewControllerAnimated:YES];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (void) playSound:(NSString*) music {
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    [audio play];
 }
 
 #pragma mark - Game
@@ -105,82 +180,66 @@
     NSLog(@"first");
 }
 
-- (void) playSound:(NSString*) music {
-    NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    
-    [audio play];
-}
-
 - (void)unlockTheGame:(id)sender {
     self.imgBackground.image = [UIImage imageNamed:@"game.png"];
-    lock = NO;
+    [self blockAllComponents:NO];
 }
 
-#pragma mark - Myo
-- (void) configureMyo {
-    UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
-    [self presentViewController:controller animated:YES completion:nil];
+- (void) blockAllComponents:(BOOL) enable {
+    lock                   = !enable;
+    self.btnTop.enabled    = !enable;
+    self.btnLeft.enabled   = !enable;
+    self.btnRight.enabled  = !enable;
+    self.btnBottom.enabled = !enable;
 }
 
-- (void) ifMyoDisconneted {
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
-        [self configureMyo];
+- (void) playGame {
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(moreOneMovement:)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+- (Movement) getRandomMovement {
+    switch (arc4random_uniform(4)) {
+        case 0:
+            return TopMovement;
+            break;
+        case 1:
+            return LeftMovement;
+            break;
+        case 2:
+            return RightMovement;
+            break;
+        case 3:
+        default:
+            return BottomMovement;
+            break;
     }
 }
 
-- (void) prepareMyoForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceivePoseChange:)
-                                                 name:TLMMyoDidReceivePoseChangedNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didDisconnectDevice:)
-                                                 name:TLMHubDidDisconnectDeviceNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didUnsyncArm:)
-                                                 name:TLMMyoDidReceiveArmUnsyncEventNotification
-                                               object:nil];
-    
-    
-}
-
-- (void)didReceivePoseChange:(NSNotification*)notification {
-    TLMPose *pose = notification.userInfo[kTLMKeyPose];
-    
-    if(!lock) {
-        switch (pose.type) {
-            case TLMPoseTypeFingersSpread:
-                [self topAction];
-                break;
-            case TLMPoseTypeFist:
-                [self bottomAction];
-                break;
-            case TLMPoseTypeWaveIn:
-                [self leftAction];
-                break;
-            case TLMPoseTypeWaveOut:
-                [self rightAction];
-                break;
-            default:
-                break;
-        }
+- (void) doMovement:(Movement) movement {
+    switch (movement) {
+        case TopMovement:
+            [self topAction];
+            break;
+        case LeftMovement:
+            [self leftAction];
+            break;
+        case RightMovement:
+            [self rightAction];
+            break;
+        case BottomMovement:
+        default:
+            [self bottomAction];
+            break;
     }
-    
-    [pose.myo unlockWithType:TLMUnlockTypeHold];
 }
 
-- (void)didDisconnectDevice:(NSNotification*)notification {
-    [self configureMyo];
-}
-
-- (void)didUnsyncArm:(NSNotification*)notification {
-    NSLog(@"unsync");
+- (void) moreOneMovement:(id)sender {
+    Movement movement = [self getRandomMovement];
+    [self doMovement:movement];
 }
 
 @end

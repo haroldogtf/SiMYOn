@@ -6,7 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController">
             <connections>
+                <outlet property="btnBottom" destination="873-75-74n" id="Dvd-gI-u2y"/>
+                <outlet property="btnLeft" destination="KOa-cd-AL7" id="ZMh-be-MxT"/>
                 <outlet property="btnPauseContinue" destination="DgT-xv-qtj" id="pW9-yW-YzO"/>
+                <outlet property="btnRight" destination="351-d9-bDa" id="G7P-1g-Sqo"/>
+                <outlet property="btnTop" destination="AZV-uY-nNO" id="wt9-n9-0Qd"/>
                 <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

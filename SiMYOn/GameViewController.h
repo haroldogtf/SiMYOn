@@ -9,11 +9,24 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MyoKit/MyoKit.h>
+#include <stdlib.h>
 
 @interface GameViewController : UIViewController
 
+typedef enum {
+    TopMovement    = 0,
+    LeftMovement   = 1,
+    RightMovement  = 2,
+    BottomMovement = 3
+} Movement;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic) IBOutlet UIButton *btnPauseContinue;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnTop;
+@property (weak, nonatomic) IBOutlet UIButton *btnLeft;
+@property (weak, nonatomic) IBOutlet UIButton *btnRight;
+@property (weak, nonatomic) IBOutlet UIButton *btnBottom;
 
 - (IBAction)btnTopAction:   (id)sender;
 - (IBAction)btnLeftAction:  (id)sender;
