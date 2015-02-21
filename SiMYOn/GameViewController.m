@@ -114,7 +114,11 @@
 }
 
 - (void) cleanAction {
-    [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(unlockTheGame:) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:.5
+                                     target:self
+                                   selector:@selector(unlockTheGame:)
+                                   userInfo:nil
+                                    repeats:NO];
 }
 
 - (IBAction)btnTopAction:(id)sender {
@@ -272,9 +276,20 @@
 
 - (void) playMovements {
     for(NSObject* movement in movementsList) {
-        //[NSThread sleepForTimeInterval:1];
-        [self doMovement:[self getMovement:(int)movement]];
+        
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(executeMovement:)
+                                       userInfo:[NSDictionary dictionaryWithObjectsAndKeys:movement, @"movement", nil]
+                                        repeats:NO];
+        
+        
     }
+}
+
+- (void) executeMovement:(id) movement {
+    NSInteger codeMovement = [(NSNumber *)[[movement userInfo]  objectForKey:@"movement"] integerValue];
+    [self doMovement:[self getMovement:codeMovement]];
 }
 
 @end

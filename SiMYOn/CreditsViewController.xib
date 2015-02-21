@@ -14,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-g0-hcH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="credits.png" translatesAutoresizingMaskIntoConstraints="NO" id="4dN-g0-hcH">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-7f-uhN">
-                    <rect key="frame" x="131" y="457" width="32" height="32"/>
+                    <rect key="frame" x="142" y="509" width="36" height="36"/>
                     <state key="normal" image="btn_return.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -33,5 +33,6 @@
     </objects>
     <resources>
         <image name="btn_return.png" width="68" height="66"/>
+        <image name="credits.png" width="640" height="1136"/>
     </resources>
 </document>
