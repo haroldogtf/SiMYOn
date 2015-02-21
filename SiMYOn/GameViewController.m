@@ -17,6 +17,7 @@
     bool lock;
 }
 
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,22 +28,14 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    [self ifMyoDisconneted];
+    //[self ifMyoDisconneted];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (void) playSound:(NSString*) music {
-    NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    
-    [audio play];
-}
-
+#pragma mark - Actions
 - (void) actionWithImage:(NSString *)imageName
            andMusic:(NSString *)music {
     
@@ -50,35 +43,6 @@
     self.imgBackground.image = [UIImage imageNamed:imageName];
     [self playSound:music];
     [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(unlockTheGame:) userInfo:nil repeats:NO];
-}
-
-- (void)unlockTheGame:(id)sender {
-    self.imgBackground.image = [UIImage imageNamed:@"game.png"];
-    lock = NO;
-}
-
-- (void) topAction {
-    [self actionWithImage:@"game_top.png"
-                 andMusic:@"blip1.mp3"];
-    NSLog(@"spread");
-}
-
-- (void) leftAction {
-    [self actionWithImage:@"game_left.png"
-                 andMusic:@"blip2.mp3"];
-    NSLog(@"left");
-}
-
-- (void) rightAction {
-    [self actionWithImage:@"game_right.png"
-                 andMusic:@"blip3.mp3"];
-    NSLog(@"right");
-}
-
-- (void) bottomAction {
-    [self actionWithImage:@"game_bottom.png"
-                 andMusic:@"blip4.mp3"];
-    NSLog(@"first");
 }
 
 - (IBAction)btnTopAction:(id)sender {
@@ -108,7 +72,7 @@
                                             otherButtonTitles:@"Yes", nil];
     [message show];
 }
-    
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
 {
     if(buttonIndex) {
@@ -116,6 +80,46 @@
     }
 }
 
+#pragma mark - Game
+- (void) topAction {
+    [self actionWithImage:@"game_top.png"
+                 andMusic:@"blip1.mp3"];
+    NSLog(@"spread");
+}
+
+- (void) leftAction {
+    [self actionWithImage:@"game_left.png"
+                 andMusic:@"blip2.mp3"];
+    NSLog(@"left");
+}
+
+- (void) rightAction {
+    [self actionWithImage:@"game_right.png"
+                 andMusic:@"blip3.mp3"];
+    NSLog(@"right");
+}
+
+- (void) bottomAction {
+    [self actionWithImage:@"game_bottom.png"
+                 andMusic:@"blip4.mp3"];
+    NSLog(@"first");
+}
+
+- (void) playSound:(NSString*) music {
+    NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    [audio play];
+}
+
+- (void)unlockTheGame:(id)sender {
+    self.imgBackground.image = [UIImage imageNamed:@"game.png"];
+    lock = NO;
+}
+
+#pragma mark - Myo
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
     [self presentViewController:controller animated:YES completion:nil];

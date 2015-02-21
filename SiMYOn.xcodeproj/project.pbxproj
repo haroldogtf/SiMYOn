@@ -11,7 +11,6 @@
 		0974001C1A8630B30012E465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974001B1A8630B30012E465 /* AppDelegate.m */; };
 		097400241A8630B30012E465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097400231A8630B30012E465 /* Images.xcassets */; };
 		097400271A8630B30012E465 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400251A8630B30012E465 /* LaunchScreen.xib */; };
-		097400331A8630B30012E465 /* SiMYOnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400321A8630B30012E465 /* SiMYOnTests.m */; };
 		0974003F1A86358D0012E465 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974003D1A86358D0012E465 /* MainViewController.m */; };
 		097400401A86358D0012E465 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0974003E1A86358D0012E465 /* MainViewController.xib */; };
 		097400461A8635DA0012E465 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400441A8635DA0012E465 /* GameViewController.m */; };
@@ -63,8 +62,6 @@
 		097400231A8630B30012E465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		097400261A8630B30012E465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0974002C1A8630B30012E465 /* SiMYOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiMYOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		097400311A8630B30012E465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		097400321A8630B30012E465 /* SiMYOnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SiMYOnTests.m; sourceTree = "<group>"; };
 		0974003C1A86358D0012E465 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0974003D1A86358D0012E465 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0974003E1A86358D0012E465 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -125,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				097400151A8630B30012E465 /* SiMYOn */,
-				0974002F1A8630B30012E465 /* SiMYOnTests */,
 				097400141A8630B30012E465 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,23 +155,6 @@
 			children = (
 				097400171A8630B30012E465 /* Info.plist */,
 				097400181A8630B30012E465 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0974002F1A8630B30012E465 /* SiMYOnTests */ = {
-			isa = PBXGroup;
-			children = (
-				097400321A8630B30012E465 /* SiMYOnTests.m */,
-				097400301A8630B30012E465 /* Supporting Files */,
-			);
-			path = SiMYOnTests;
-			sourceTree = "<group>";
-		};
-		097400301A8630B30012E465 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				097400311A8630B30012E465 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -373,7 +352,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097400331A8630B30012E465 /* SiMYOnTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
