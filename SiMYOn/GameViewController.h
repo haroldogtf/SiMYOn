@@ -22,7 +22,6 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic) IBOutlet UIButton *btnPauseContinue;
-
 @property (weak, nonatomic) IBOutlet UIButton *btnTop;
 @property (weak, nonatomic) IBOutlet UIButton *btnLeft;
 @property (weak, nonatomic) IBOutlet UIButton *btnRight;
@@ -32,8 +31,7 @@ typedef enum {
 - (IBAction)btnLeftAction:  (id)sender;
 - (IBAction)btnRightAction: (id)sender;
 - (IBAction)btnBottomAction:(id)sender;
-
 - (IBAction)pauseContinueAction:(id)sender;
-- (IBAction)returnAction:(id)sender;
+- (IBAction)returnAction:       (id)sender;
 
 @end
