@@ -43,16 +43,6 @@
 		097400AD1A8826120012E465 /* game_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400A91A8826120012E465 /* game_top.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0974002D1A8630B30012E465 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0974000B1A8630B30012E465 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 097400121A8630B30012E465;
-			remoteInfo = SiMYOn;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		097400131A8630B30012E465 /* SiMYOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiMYOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097400171A8630B30012E465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +51,6 @@
 		0974001B1A8630B30012E465 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		097400231A8630B30012E465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		097400261A8630B30012E465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0974002C1A8630B30012E465 /* SiMYOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiMYOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0974003C1A86358D0012E465 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0974003D1A86358D0012E465 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0974003E1A86358D0012E465 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -108,13 +97,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		097400291A8630B30012E465 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				097400131A8630B30012E465 /* SiMYOn.app */,
-				0974002C1A8630B30012E465 /* SiMYOnTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,24 +217,6 @@
 			productReference = 097400131A8630B30012E465 /* SiMYOn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0974002B1A8630B30012E465 /* SiMYOnTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 097400391A8630B30012E465 /* Build configuration list for PBXNativeTarget "SiMYOnTests" */;
-			buildPhases = (
-				097400281A8630B30012E465 /* Sources */,
-				097400291A8630B30012E465 /* Frameworks */,
-				0974002A1A8630B30012E465 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0974002E1A8630B30012E465 /* PBXTargetDependency */,
-			);
-			name = SiMYOnTests;
-			productName = SiMYOnTests;
-			productReference = 0974002C1A8630B30012E465 /* SiMYOnTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,10 +227,6 @@
 				TargetAttributes = {
 					097400121A8630B30012E465 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					0974002B1A8630B30012E465 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 097400121A8630B30012E465;
 					};
 				};
 			};
@@ -285,7 +244,6 @@
 			projectRoot = "";
 			targets = (
 				097400121A8630B30012E465 /* SiMYOn */,
-				0974002B1A8630B30012E465 /* SiMYOnTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,13 +282,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0974002A1A8630B30012E465 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -348,22 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		097400281A8630B30012E465 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0974002E1A8630B30012E465 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 097400121A8630B30012E465 /* SiMYOn */;
-			targetProxy = 0974002D1A8630B30012E465 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		097400251A8630B30012E465 /* LaunchScreen.xib */ = {
@@ -477,40 +413,6 @@
 			};
 			name = Release;
 		};
-		0974003A1A8630B30012E465 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SiMYOnTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SiMYOn.app/SiMYOn";
-			};
-			name = Debug;
-		};
-		0974003B1A8630B30012E465 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SiMYOnTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SiMYOn.app/SiMYOn";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -528,15 +430,6 @@
 			buildConfigurations = (
 				097400371A8630B30012E465 /* Debug */,
 				097400381A8630B30012E465 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		097400391A8630B30012E465 /* Build configuration list for PBXNativeTarget "SiMYOnTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0974003A1A8630B30012E465 /* Debug */,
-				0974003B1A8630B30012E465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
