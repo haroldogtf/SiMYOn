@@ -75,16 +75,16 @@
     if(!lock) {
         switch (pose.type) {
             case TLMPoseTypeFingersSpread:
-                [self topAction];
+                [self topAction:NO];
                 break;
             case TLMPoseTypeFist:
-                [self bottomAction];
+                [self bottomAction:NO];
                 break;
             case TLMPoseTypeWaveIn:
-                [self leftAction];
+                [self leftAction:NO];
                 break;
             case TLMPoseTypeWaveOut:
-                [self rightAction];
+                [self rightAction:NO];
                 break;
             default:
                 break;
@@ -122,19 +122,19 @@
 }
 
 - (IBAction)btnTopAction:(id)sender {
-    [self topAction];
+    [self topAction:NO];
 }
 
 - (IBAction)btnLeftAction:(id)sender {
-    [self leftAction];
+    [self leftAction:NO];
 }
 
 - (IBAction)btnRightAction:(id)sender {
-    [self rightAction];
+    [self rightAction:NO];
 }
 
 - (IBAction)btnBottomAction:(id)sender {
-    [self bottomAction];
+    [self bottomAction:NO];
 }
 
 - (IBAction)pauseContinueAction:(id)sender {
@@ -165,61 +165,90 @@
 }
 
 #pragma mark - Game
-- (void) topAction {
-    [self generalAction:TopMovement];
+- (void) topAction:(BOOL)automatic {
     [self changeImage:@"game_top.png"
                  andPlaySound:@"blip1.mp3"];
-    NSLog(@"spread");
+    
+    if(!automatic) {
+        [self generalAction:TopMovement];
+        [self blockAllComponents:NO];
+    }
+    
+    if(!automatic) {
+        NSLog(@"spread click");
+    } else {
+        NSLog(@"spread automatic");
+    }
+
 }
 
-- (void) leftAction {
-    [self generalAction:LeftMovement];
+- (void) leftAction:(BOOL)automatic {
     [self changeImage:@"game_left.png"
                  andPlaySound:@"blip2.mp3"];
-    NSLog(@"left");
-}
 
-- (void) rightAction {
-    [self generalAction:RightMovement];
+    if(!automatic) {
+        [self generalAction:LeftMovement];
+        [self blockAllComponents:NO];
+    }
+
+    if(!automatic) {
+        NSLog(@"left click");
+    } else {
+        NSLog(@"left automatic");
+    }}
+
+- (void) rightAction:(BOOL)automatic {
     [self changeImage:@"game_right.png"
                  andPlaySound:@"blip3.mp3"];
-    NSLog(@"right");
-}
 
-- (void) bottomAction {
-    [self generalAction:BottomMovement];
+    if(!automatic) {
+        [self generalAction:RightMovement];
+        [self blockAllComponents:NO];
+    }
+
+    if(!automatic) {
+        NSLog(@"right click");
+    } else {
+        NSLog(@"right automatic");
+    }}
+
+- (void) bottomAction:(BOOL)automatic {
     [self changeImage:@"game_bottom.png"
                  andPlaySound:@"blip4.mp3"];
-    NSLog(@"first");
-}
+
+    if(!automatic) {
+        [self generalAction:BottomMovement];
+        [self blockAllComponents:NO];
+    }
+
+    if(!automatic) {
+        NSLog(@"first click");
+    } else {
+        NSLog(@"first automatic");
+    }}
 
 - (void) generalAction:(Movement) movement {
-    if(!lock) {
+    NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
+    Movement turnMoviment = [self getMovement:(int)number];
+    
+    turn++;
+    
+    if(turnMoviment == movement) {
+        NSLog(@"turnMoviment==movement %d", (int)turn);
         
-        NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
-        Movement turnMoviment = [self getMovement:(int)number];
-        
-        if(turnMoviment == movement) {
-            NSLog(@"%d", (int)turn);
-            turn++;
-            
-            if(turn >= [movementsList count]) {
-                [self blockAllComponents:YES];
-                [self playGame];
-                turn = 0;
-            }
-            
-        } else {
-            NSLog(@"%d", (int)turn);
-            [self loseGame];
+        if(turn >= [movementsList count]) {
+            [self blockAllComponents:YES];
+            [self playGame];
+            turn = 0;
         }
-
+        
+    } else {
+        [self loseGame];
     }
 }
 
 - (void)unlockTheGame:(id)sender {
     self.imgBackground.image = [UIImage imageNamed:@"game.png"];
-    [self blockAllComponents:NO];
 }
 
 - (void) blockAllComponents:(BOOL)enable {
@@ -237,7 +266,6 @@
 }
 
 - (Movement) getMovement:(int)movement {
-    NSLog(@"Movement: %d", movement);
     switch (movement) {
         case 0:
             return TopMovement;
@@ -258,17 +286,17 @@
 - (void) doMovement:(Movement) movement {
     switch (movement) {
         case TopMovement:
-            [self topAction];
+            [self topAction:YES];
             break;
         case LeftMovement:
-            [self leftAction];
+            [self leftAction:YES];
             break;
         case RightMovement:
-            [self rightAction];
+            [self rightAction:YES];
             break;
         case BottomMovement:
         default:
-            [self bottomAction];
+            [self bottomAction:YES];
             break;
     }
 }
@@ -278,18 +306,32 @@
 }
 
 - (void) playMovements {
-    for (int i = 0; i < [movementsList count]; i++) {
-        [NSTimer scheduledTimerWithTimeInterval:1
-                                         target:self
-                                       selector:@selector(executeMovement:)
-                                       userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[movementsList objectAtIndex:i], @"movement", nil]
-                                        repeats:NO];
-    }
+    [self playMovements:0];
 }
 
-- (void) executeMovement:(id) movement {
-    NSInteger number = [(NSNumber *)[[movement userInfo] objectForKey:@"movement"] integerValue];
-    [self doMovement:[self getMovement:(int)number]];
+- (void) playMovements:(int)turnMovement {
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(executeMovement:)
+                                   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:turnMovement], @"turn",nil]
+                                    repeats:NO];
+}
+
+
+- (void) executeMovement:(id)dictionary {
+    NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:@"turn"] integerValue];
+    NSInteger number = [[movementsList objectAtIndex:turnMovement] integerValue];
+    Movement movement = [self getMovement:(int)number];
+    
+    [self doMovement:[self getMovement:(int)movement]];
+    
+    turnMovement++;
+    
+    if (turnMovement < [movementsList count]) {
+        [self playMovements:(int)turnMovement];
+    } else {
+        [self blockAllComponents:NO];
+    }
 }
 
 - (void) playGame {
