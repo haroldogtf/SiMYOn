@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <stdlib.h>
+#include <stdlib.h>
 #import <MyoKit/MyoKit.h>
 #import "GameOverViewController.h"
 

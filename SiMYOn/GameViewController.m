@@ -94,11 +94,11 @@
     [pose.myo unlockWithType:TLMUnlockTypeHold];
 }
 
-- (void)didDisconnectDevice:(NSNotification*)notification {
+- (void)didDisconnectDevice:(NSNotification *)notification {
     [self configureMyo];
 }
 
-- (void)didUnsyncArm:(NSNotification*)notification {
+- (void)didUnsyncArm:(NSNotification *)notification {
     NSLog(@"unsync");
 }
 
@@ -196,18 +196,24 @@
 - (void) generalAction:(Movement) movement {
     if(!lock) {
         
-        if([self getMovement:(int)[movementsList objectAtIndex:turn]] == (int)movement) {
-            NSLog(@"ok");
+        NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
+        Movement turnMoviment = [self getMovement:(int)number];
+        
+        if(turnMoviment == movement) {
+            NSLog(@"%d", (int)turn);
             turn++;
+            
+            if(turn >= [movementsList count]) {
+                [self blockAllComponents:YES];
+                [self playGame];
+                turn = 0;
+            }
+            
         } else {
+            NSLog(@"%d", (int)turn);
             [self loseGame];
         }
-        
-        if(turn >= [movementsList count]) {
-            [self blockAllComponents:YES];
-            [self playGame];
-            turn = 0;
-        }
+
     }
 }
 
@@ -216,7 +222,7 @@
     [self blockAllComponents:NO];
 }
 
-- (void) blockAllComponents:(BOOL) enable {
+- (void) blockAllComponents:(BOOL)enable {
     lock = enable;
     self.btnTop.enabled    = !enable;
     self.btnLeft.enabled   = !enable;
@@ -224,11 +230,14 @@
     self.btnBottom.enabled = !enable;
 }
 
-- (Movement) getRandomMovement {
-    return [self getMovement:arc4random_uniform(4)];
+- (int) getRandomMovement {
+    int random = arc4random_uniform(400) % 4;
+    NSLog(@"Random: %d", random);
+    return random;
 }
 
-- (Movement) getMovement:(NSInteger) movement {
+- (Movement) getMovement:(int)movement {
+    NSLog(@"Movement: %d", movement);
     switch (movement) {
         case 0:
             return TopMovement;
@@ -269,21 +278,18 @@
 }
 
 - (void) playMovements {
-    for(NSObject* movement in movementsList) {
-        
+    for (int i = 0; i < [movementsList count]; i++) {
         [NSTimer scheduledTimerWithTimeInterval:1
                                          target:self
                                        selector:@selector(executeMovement:)
-                                       userInfo:[NSDictionary dictionaryWithObjectsAndKeys:movement, @"movement", nil]
+                                       userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[movementsList objectAtIndex:i], @"movement", nil]
                                         repeats:NO];
-        
-        
     }
 }
 
 - (void) executeMovement:(id) movement {
-    NSInteger codeMovement = [(NSNumber *)[[movement userInfo]  objectForKey:@"movement"] integerValue];
-    [self doMovement:[self getMovement:codeMovement]];
+    NSInteger number = [(NSNumber *)[[movement userInfo] objectForKey:@"movement"] integerValue];
+    [self doMovement:[self getMovement:(int)number]];
 }
 
 - (void) playGame {
@@ -292,6 +298,8 @@
 }
 
 - (void) loseGame {
+    turn = 0;
+    [self blockAllComponents:YES];
     [self presentViewController:[[GameOverViewController alloc]init] animated:YES completion:nil];
 }
 
