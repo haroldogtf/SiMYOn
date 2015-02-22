@@ -31,7 +31,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-   // [self ConfigureMyoIfDisconneted];
+    //[self ConfigureMyoIfDisconneted];
     
     [self playGame];
 }
@@ -152,7 +152,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
 {
     if(buttonIndex) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -326,7 +326,7 @@
 - (void) loseGame {
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
-    [self presentViewController:[[GameOverViewController alloc]init] animated:YES completion:nil];
+    [self.navigationController pushViewController:[[GameOverViewController alloc]init] animated:YES];
 }
 
 @end

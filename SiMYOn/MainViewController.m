@@ -23,7 +23,10 @@
 }
 
 - (void) openViewController:(UIViewController *) viewController {
-    [self presentViewController:viewController animated:YES completion:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+    
+    //[self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (IBAction)gameStarterAction:(id)sender {

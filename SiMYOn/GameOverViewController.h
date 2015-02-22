@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameOverViewController.h"
 
 @interface GameOverViewController : UIViewController
-
-@property (nonatomic) UIView *game;
 
 - (IBAction)returnAction:(id)sender;
 
