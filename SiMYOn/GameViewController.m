@@ -211,11 +211,11 @@
     
     turn++;
     
-    if(turnMoviment == movement) {
-        NSLog(@"turnMoviment==movement %d", (int)turn);
-        
+    if(turnMoviment == movement) {        
         if(turn >= [movementsList count]) {
             [self blockAllComponents:YES];
+            
+            self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
             
             [NSTimer scheduledTimerWithTimeInterval:.25
                                              target:self

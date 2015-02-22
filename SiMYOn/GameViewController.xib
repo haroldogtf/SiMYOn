@@ -12,6 +12,7 @@
                 <outlet property="btnRight" destination="351-d9-bDa" id="G7P-1g-Sqo"/>
                 <outlet property="btnTop" destination="AZV-uY-nNO" id="wt9-n9-0Qd"/>
                 <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>
+                <outlet property="lblCount" destination="8ua-Jm-k3R" id="f6z-KB-yf8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sh7-Cr-MhM"/>
             </connections>
         </placeholder>
@@ -77,6 +78,12 @@
                         <action selector="btnLeftAction:" destination="-1" eventType="touchUpInside" id="3hg-fo-4Kk"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ua-Jm-k3R">
+                    <rect key="frame" x="119" y="267" width="80" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <color key="textColor" red="0.18431372549019609" green="0.58823529411764708" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

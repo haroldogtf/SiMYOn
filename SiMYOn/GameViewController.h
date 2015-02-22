@@ -23,12 +23,12 @@ typedef enum {
 
 @property (strong, nonatomic) IBOutlet UIView      *view;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
+@property (weak, nonatomic)   IBOutlet UILabel     *lblCount;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnPauseContinue;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnTop;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
-@property (weak, nonatomic)            UIView      *popup;
 
 - (IBAction)btnTopAction:       (id)sender;
 - (IBAction)btnLeftAction:      (id)sender;
