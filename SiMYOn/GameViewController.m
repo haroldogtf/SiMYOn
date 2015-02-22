@@ -31,7 +31,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    //[self ConfigureMyoIfDisconneted];
+   // [self ConfigureMyoIfDisconneted];
     
     [self playGame];
 }
@@ -173,13 +173,6 @@
         [self generalAction:TopMovement];
         [self blockAllComponents:NO];
     }
-    
-    if(!automatic) {
-        NSLog(@"spread click");
-    } else {
-        NSLog(@"spread automatic");
-    }
-
 }
 
 - (void) leftAction:(BOOL)automatic {
@@ -190,12 +183,7 @@
         [self generalAction:LeftMovement];
         [self blockAllComponents:NO];
     }
-
-    if(!automatic) {
-        NSLog(@"left click");
-    } else {
-        NSLog(@"left automatic");
-    }}
+}
 
 - (void) rightAction:(BOOL)automatic {
     [self changeImage:@"game_right.png"
@@ -205,12 +193,7 @@
         [self generalAction:RightMovement];
         [self blockAllComponents:NO];
     }
-
-    if(!automatic) {
-        NSLog(@"right click");
-    } else {
-        NSLog(@"right automatic");
-    }}
+}
 
 - (void) bottomAction:(BOOL)automatic {
     [self changeImage:@"game_bottom.png"
@@ -220,12 +203,7 @@
         [self generalAction:BottomMovement];
         [self blockAllComponents:NO];
     }
-
-    if(!automatic) {
-        NSLog(@"first click");
-    } else {
-        NSLog(@"first automatic");
-    }}
+}
 
 - (void) generalAction:(Movement) movement {
     NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
@@ -238,7 +216,12 @@
         
         if(turn >= [movementsList count]) {
             [self blockAllComponents:YES];
-            [self playGame];
+            
+            [NSTimer scheduledTimerWithTimeInterval:.25
+                                             target:self
+                                           selector:@selector(playGame)
+                                           userInfo:nil
+                                            repeats:NO];
             turn = 0;
         }
         
@@ -306,6 +289,7 @@
 }
 
 - (void) playMovements {
+    [self blockAllComponents:YES];
     [self playMovements:0];
 }
 
@@ -340,8 +324,8 @@
 }
 
 - (void) loseGame {
+    movementsList = [[NSMutableArray alloc]init];
     turn = 0;
-    [self blockAllComponents:YES];
     [self presentViewController:[[GameOverViewController alloc]init] animated:YES completion:nil];
 }
 
