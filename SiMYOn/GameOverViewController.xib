@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverViewController">
             <connections>
+                <outlet property="lblFinalScore" destination="zRu-iW-yaU" id="22Y-Z0-XRW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,15 +18,21 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gameover.png" translatesAutoresizingMaskIntoConstraints="NO" id="1BD-0g-Qfn">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-z4-SoM">
-                    <rect key="frame" x="110" y="283" width="101" height="62"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-z4-SoM">
+                    <rect key="frame" x="82" y="450" width="155" height="76"/>
+                    <state key="normal" title="Button" image="btn_back_to_menu.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="fEU-hR-sPD"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRu-iW-yaU">
+                    <rect key="frame" x="125" y="274" width="69" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <color key="textColor" red="0.20392156862745098" green="0.63921568627450975" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -33,6 +40,7 @@
         </view>
     </objects>
     <resources>
-        <image name="gameover.png" width="640" height="1136"/>
+        <image name="btn_back_to_menu.png" width="306" height="149"/>
+        <image name="gameover.png" width="641" height="1136"/>
     </resources>
 </document>

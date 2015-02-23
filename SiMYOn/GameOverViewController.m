@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.lblFinalScore.text = [NSString stringWithFormat:@"%d", (int)self.score];
 }
 
 - (void)didReceiveMemoryWarning {

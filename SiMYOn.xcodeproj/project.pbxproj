@@ -59,6 +59,7 @@
 		09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E11E1A9BE23B0016FC24 /* miss.mp3 */; };
 		09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1211A9BE3BA0016FC24 /* game_ready.png */; };
 		09A3E1241A9BE4FA0016FC24 /* game_good.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1231A9BE4FA0016FC24 /* game_good.png */; };
+		09A3E1261A9BEC380016FC24 /* btn_back_to_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1251A9BEC380016FC24 /* btn_back_to_menu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		09A3E11E1A9BE23B0016FC24 /* miss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = miss.mp3; path = SiMYOn/Assets/miss.mp3; sourceTree = "<group>"; };
 		09A3E1211A9BE3BA0016FC24 /* game_ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_ready.png; path = SiMYOn/Assets/game_ready.png; sourceTree = "<group>"; };
 		09A3E1231A9BE4FA0016FC24 /* game_good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_good.png; path = SiMYOn/Assets/game_good.png; sourceTree = "<group>"; };
+		09A3E1251A9BEC380016FC24 /* btn_back_to_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_back_to_menu.png; path = SiMYOn/Assets/btn_back_to_menu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				097400991A88112E0012E465 /* btn_pause.png */,
 				097400841A880A130012E465 /* btn_play.png */,
 				097400961A880B280012E465 /* btn_return.png */,
+				09A3E1251A9BEC380016FC24 /* btn_back_to_menu.png */,
 				097400A91A8826120012E465 /* game_top.png */,
 				097400A71A8826120012E465 /* game_left.png */,
 				097400A81A8826120012E465 /* game_right.png */,
@@ -322,6 +325,7 @@
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
 				09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */,
 				09A3E1021A99045E0016FC24 /* best_scores.png in Resources */,
+				09A3E1261A9BEC380016FC24 /* btn_back_to_menu.png in Resources */,
 				097400921A880A130012E465 /* instructions.png in Resources */,
 				0974008D1A880A130012E465 /* btn_credits.png in Resources */,
 				097400891A880A130012E465 /* blip2.mp3 in Resources */,

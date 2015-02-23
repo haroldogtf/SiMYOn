@@ -11,6 +11,9 @@
 
 @interface GameOverViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel   *lblFinalScore;
+@property (nonatomic)                NSInteger  score;
+
 - (IBAction)returnAction:(id)sender;
 
 @end

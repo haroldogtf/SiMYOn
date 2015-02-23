@@ -25,6 +25,7 @@ typedef enum {
 @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgReady;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgGo;
+@property (weak, nonatomic)   IBOutlet UIImageView *imgPlay;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgGood;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgMiss;
 @property (weak, nonatomic)   IBOutlet UILabel     *lblCount;
