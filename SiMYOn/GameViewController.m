@@ -366,6 +366,9 @@
 - (void) goToGameOver {
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc]init];
     gameOverViewController.score = [self.lblCount.text integerValue];
     [self.navigationController pushViewController:gameOverViewController animated:YES];
