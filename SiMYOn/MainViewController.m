@@ -24,13 +24,14 @@
 
 - (void) openViewController:(UIViewController *) viewController {
     [self.navigationController pushViewController:viewController animated:YES];
-    
-    
-    //[self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (IBAction)gameStarterAction:(id)sender {
-    [self openViewController:[[GameViewController alloc]init]];
+    if([[TLMHub sharedHub] myoDevices].count == 0) {
+        [self openViewController:[[SyncViewController alloc]init]];
+    } else {
+        [self openViewController:[[GameViewController alloc]init]];
+    }
 }
 
 - (IBAction)intructionsAction:(id)sender {

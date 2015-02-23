@@ -30,9 +30,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated
-{
-    //[self ConfigureMyoIfDisconneted];
-    
+{    
     [self playGame];
 }
 
@@ -95,11 +93,15 @@
 }
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
-    [self configureMyo];
+    if(self.useMyo) {
+        [self configureMyo];
+    }
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
-    NSLog(@"unsync");
+    if(self.useMyo) {
+        [self configureMyo];
+    }
 }
 
 #pragma mark - Actions
@@ -152,7 +154,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
 {
     if(buttonIndex) {
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
 
@@ -216,6 +218,7 @@
             [self blockAllComponents:YES];
             
             self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
+            self.imgGood.hidden = NO;
             
             [NSTimer scheduledTimerWithTimeInterval:.25
                                              target:self
@@ -244,7 +247,6 @@
 
 - (int) getRandomMovement {
     int random = arc4random_uniform(400) % 4;
-    NSLog(@"Random: %d", random);
     return random;
 }
 
@@ -290,6 +292,7 @@
 
 - (void) playMovements {
     [self blockAllComponents:YES];
+    self.imgReady.hidden = NO;
     [self playMovements:0];
 }
 
@@ -303,6 +306,8 @@
 
 
 - (void) executeMovement:(id)dictionary {
+    self.imgGood.hidden = YES;
+    
     NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:@"turn"] integerValue];
     NSInteger number = [[movementsList objectAtIndex:turnMovement] integerValue];
     Movement movement = [self getMovement:(int)number];
@@ -314,8 +319,30 @@
     if (turnMovement < [movementsList count]) {
         [self playMovements:(int)turnMovement];
     } else {
-        [self blockAllComponents:NO];
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(go)
+                                       userInfo:nil
+                                        repeats:NO];
     }
+}
+
+- (void) go {
+    self.imgReady.hidden = YES;
+    self.imgGo.hidden = NO;
+    
+    [self playSound:@"go.mp3"];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2
+                                     target:self
+                                   selector:@selector(cleanGo)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+- (void) cleanGo {
+    self.imgGo.hidden = YES;
+    [self blockAllComponents:NO];
 }
 
 - (void) playGame {
@@ -324,6 +351,19 @@
 }
 
 - (void) loseGame {
+    self.imgMiss.hidden = NO;
+    
+    [self playSound:@"miss.mp3"];
+    
+    [NSTimer scheduledTimerWithTimeInterval:2
+                                     target:self
+                                   selector:@selector(goToGameOver)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+
+- (void) goToGameOver {
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
     [self.navigationController pushViewController:[[GameOverViewController alloc]init] animated:YES];

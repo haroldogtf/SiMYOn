@@ -47,6 +47,18 @@
 		09A3E1021A99045E0016FC24 /* best_scores.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1011A99045E0016FC24 /* best_scores.png */; };
 		09A3E1061A990F200016FC24 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A3E1041A990F200016FC24 /* GameOverViewController.m */; };
 		09A3E1071A990F200016FC24 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1051A990F200016FC24 /* GameOverViewController.xib */; };
+		09A3E10B1A9BCA120016FC24 /* SyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A3E1091A9BCA120016FC24 /* SyncViewController.m */; };
+		09A3E10C1A9BCA120016FC24 /* SyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */; };
+		09A3E1111A9BCB280016FC24 /* game_go.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E10D1A9BCB280016FC24 /* game_go.png */; };
+		09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E10E1A9BCB280016FC24 /* game_miss.png */; };
+		09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1151A9BD1EB0016FC24 /* sync1.png */; };
+		09A3E1181A9BD1EB0016FC24 /* sync2.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1161A9BD1EB0016FC24 /* sync2.png */; };
+		09A3E11B1A9BD2340016FC24 /* btn_sync_myo.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */; };
+		09A3E11C1A9BD2340016FC24 /* btn_sync_no_myo.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */; };
+		09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E11D1A9BE23B0016FC24 /* go.mp3 */; };
+		09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E11E1A9BE23B0016FC24 /* miss.mp3 */; };
+		09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1211A9BE3BA0016FC24 /* game_ready.png */; };
+		09A3E1241A9BE4FA0016FC24 /* game_good.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E1231A9BE4FA0016FC24 /* game_good.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +111,19 @@
 		09A3E1031A990F200016FC24 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		09A3E1041A990F200016FC24 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		09A3E1051A990F200016FC24 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		09A3E1081A9BCA120016FC24 /* SyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncViewController.h; sourceTree = "<group>"; };
+		09A3E1091A9BCA120016FC24 /* SyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncViewController.m; sourceTree = "<group>"; };
+		09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SyncViewController.xib; sourceTree = "<group>"; };
+		09A3E10D1A9BCB280016FC24 /* game_go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_go.png; path = SiMYOn/Assets/game_go.png; sourceTree = "<group>"; };
+		09A3E10E1A9BCB280016FC24 /* game_miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_miss.png; path = SiMYOn/Assets/game_miss.png; sourceTree = "<group>"; };
+		09A3E1151A9BD1EB0016FC24 /* sync1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sync1.png; path = SiMYOn/Assets/sync1.png; sourceTree = "<group>"; };
+		09A3E1161A9BD1EB0016FC24 /* sync2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sync2.png; path = SiMYOn/Assets/sync2.png; sourceTree = "<group>"; };
+		09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sync_myo.png; path = SiMYOn/Assets/btn_sync_myo.png; sourceTree = "<group>"; };
+		09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sync_no_myo.png; path = SiMYOn/Assets/btn_sync_no_myo.png; sourceTree = "<group>"; };
+		09A3E11D1A9BE23B0016FC24 /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = go.mp3; path = SiMYOn/Assets/go.mp3; sourceTree = "<group>"; };
+		09A3E11E1A9BE23B0016FC24 /* miss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = miss.mp3; path = SiMYOn/Assets/miss.mp3; sourceTree = "<group>"; };
+		09A3E1211A9BE3BA0016FC24 /* game_ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_ready.png; path = SiMYOn/Assets/game_ready.png; sourceTree = "<group>"; };
+		09A3E1231A9BE4FA0016FC24 /* game_good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_good.png; path = SiMYOn/Assets/game_good.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +192,9 @@
 				0974003C1A86358D0012E465 /* MainViewController.h */,
 				0974003D1A86358D0012E465 /* MainViewController.m */,
 				0974003E1A86358D0012E465 /* MainViewController.xib */,
+				09A3E1081A9BCA120016FC24 /* SyncViewController.h */,
+				09A3E1091A9BCA120016FC24 /* SyncViewController.m */,
+				09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */,
 				097400431A8635DA0012E465 /* GameViewController.h */,
 				097400441A8635DA0012E465 /* GameViewController.m */,
 				097400451A8635DA0012E465 /* GameViewController.xib */,
@@ -191,6 +219,8 @@
 			children = (
 				09A3E0FC1A9904280016FC24 /* splash.png */,
 				097400871A880A130012E465 /* menu.png */,
+				09A3E1151A9BD1EB0016FC24 /* sync1.png */,
+				09A3E1161A9BD1EB0016FC24 /* sync2.png */,
 				097400851A880A130012E465 /* game.png */,
 				097400861A880A130012E465 /* instructions.png */,
 				09A3E1011A99045E0016FC24 /* best_scores.png */,
@@ -208,10 +238,18 @@
 				097400A71A8826120012E465 /* game_left.png */,
 				097400A81A8826120012E465 /* game_right.png */,
 				097400A61A8826120012E465 /* game_bottom.png */,
+				09A3E1211A9BE3BA0016FC24 /* game_ready.png */,
+				09A3E10D1A9BCB280016FC24 /* game_go.png */,
+				09A3E1231A9BE4FA0016FC24 /* game_good.png */,
+				09A3E10E1A9BCB280016FC24 /* game_miss.png */,
+				09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */,
+				09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */,
 				0974007C1A880A130012E465 /* blip1.mp3 */,
 				0974007D1A880A130012E465 /* blip2.mp3 */,
 				0974007E1A880A130012E465 /* blip3.mp3 */,
 				0974007F1A880A130012E465 /* blip4.mp3 */,
+				09A3E11D1A9BE23B0016FC24 /* go.mp3 */,
+				09A3E11E1A9BE23B0016FC24 /* miss.mp3 */,
 			);
 			name = Assets;
 			path = ..;
@@ -276,11 +314,13 @@
 				0974008E1A880A130012E465 /* btn_exit.png in Resources */,
 				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
 				097400AA1A8826120012E465 /* game_bottom.png in Resources */,
+				09A3E10C1A9BCA120016FC24 /* SyncViewController.xib in Resources */,
 				097400971A880B280012E465 /* btn_return.png in Resources */,
 				09A3E1001A9904280016FC24 /* splash.png in Resources */,
 				09A3E0FD1A9904280016FC24 /* credits.png in Resources */,
 				0974008A1A880A130012E465 /* blip3.mp3 in Resources */,
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
+				09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */,
 				09A3E1021A99045E0016FC24 /* best_scores.png in Resources */,
 				097400921A880A130012E465 /* instructions.png in Resources */,
 				0974008D1A880A130012E465 /* btn_credits.png in Resources */,
@@ -295,15 +335,24 @@
 				09A3E0FE1A9904280016FC24 /* gameover.png in Resources */,
 				097400901A880A130012E465 /* btn_play.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
+				09A3E1181A9BD1EB0016FC24 /* sync2.png in Resources */,
 				097400931A880A130012E465 /* menu.png in Resources */,
+				09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */,
+				09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */,
+				09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */,
 				097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */,
 				0974008B1A880A130012E465 /* blip4.mp3 in Resources */,
 				097400711A87EF3E0012E465 /* InstructionsViewController.xib in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 				0974008F1A880A130012E465 /* btn_instructions.png in Resources */,
+				09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
+				09A3E1241A9BE4FA0016FC24 /* game_good.png in Resources */,
 				097400AD1A8826120012E465 /* game_top.png in Resources */,
+				09A3E1111A9BCB280016FC24 /* game_go.png in Resources */,
+				09A3E11C1A9BD2340016FC24 /* btn_sync_no_myo.png in Resources */,
 				09A3E1071A990F200016FC24 /* GameOverViewController.xib in Resources */,
+				09A3E11B1A9BD2340016FC24 /* btn_sync_myo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +366,7 @@
 				09A3E1061A990F200016FC24 /* GameOverViewController.m in Sources */,
 				097400461A8635DA0012E465 /* GameViewController.m in Sources */,
 				0974001C1A8630B30012E465 /* AppDelegate.m in Sources */,
+				09A3E10B1A9BCA120016FC24 /* SyncViewController.m in Sources */,
 				0974003F1A86358D0012E465 /* MainViewController.m in Sources */,
 				097400751A87EFBE0012E465 /* BestScoresViewController.m in Sources */,
 				097400701A87EF3E0012E465 /* InstructionsViewController.m in Sources */,

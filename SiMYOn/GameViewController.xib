@@ -12,6 +12,10 @@
                 <outlet property="btnRight" destination="351-d9-bDa" id="G7P-1g-Sqo"/>
                 <outlet property="btnTop" destination="AZV-uY-nNO" id="wt9-n9-0Qd"/>
                 <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>
+                <outlet property="imgGo" destination="E4p-ee-Ioy" id="5g9-rn-a2J"/>
+                <outlet property="imgGood" destination="qXp-6Y-J50" id="FYf-rc-Xn9"/>
+                <outlet property="imgMiss" destination="dat-Ve-LT3" id="c1c-Yl-pU0"/>
+                <outlet property="imgReady" destination="FPB-fG-69Y" id="sdZ-Zq-Etj"/>
                 <outlet property="lblCount" destination="8ua-Jm-k3R" id="f6z-KB-yf8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sh7-Cr-MhM"/>
             </connections>
@@ -25,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-uY-nNO">
-                    <rect key="frame" x="120" y="156" width="80" height="70"/>
+                    <rect key="frame" x="98" y="146" width="124" height="80"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873-75-74n">
-                    <rect key="frame" x="120" y="344" width="80" height="70"/>
+                    <rect key="frame" x="98" y="344" width="124" height="80"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -43,7 +47,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="351-d9-bDa">
-                    <rect key="frame" x="217" y="244" width="70" height="80"/>
+                    <rect key="frame" x="217" y="223" width="80" height="124"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -70,7 +74,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-cd-AL7">
-                    <rect key="frame" x="31" y="244" width="70" height="80"/>
+                    <rect key="frame" x="21" y="223" width="80" height="124"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -84,6 +88,18 @@
                     <color key="textColor" red="0.18431372549019609" green="0.58823529411764708" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_go.png" translatesAutoresizingMaskIntoConstraints="NO" id="E4p-ee-Ioy">
+                    <rect key="frame" x="140" y="248" width="38" height="16"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_miss.png" translatesAutoresizingMaskIntoConstraints="NO" id="dat-Ve-LT3">
+                    <rect key="frame" x="134" y="248" width="50" height="15"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPB-fG-69Y">
+                    <rect key="frame" x="138" y="247" width="46" height="16"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50">
+                    <rect key="frame" x="134" y="248" width="50" height="15"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -93,5 +109,9 @@
         <image name="btn_pause.png" width="68" height="66"/>
         <image name="btn_return.png" width="68" height="66"/>
         <image name="game.png" width="640" height="1136"/>
+        <image name="game_go.png" width="62" height="56"/>
+        <image name="game_good.png" width="118" height="56"/>
+        <image name="game_miss.png" width="78" height="46"/>
+        <image name="game_ready.png" width="140" height="49"/>
     </resources>
 </document>
