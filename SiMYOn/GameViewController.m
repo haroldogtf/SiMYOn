@@ -368,7 +368,6 @@
                                     repeats:NO];
 }
 
-
 - (void) goToGameOver {
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
