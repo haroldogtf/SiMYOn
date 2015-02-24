@@ -218,6 +218,7 @@
             [self blockAllComponents:YES];
             
             self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
+            self.imgGo.hidden = YES;
             self.imgGood.hidden = NO;
             
             [NSTimer scheduledTimerWithTimeInterval:.25
@@ -292,7 +293,6 @@
 
 - (void) playMovements {
     [self blockAllComponents:YES];
-    self.imgReady.hidden = NO;
     [self playMovements:0];
 }
 
@@ -307,6 +307,7 @@
 
 - (void) executeMovement:(id)dictionary {
     self.imgGood.hidden = YES;
+    self.imgReady.hidden = NO;
     
     NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:@"turn"] integerValue];
     NSInteger number = [[movementsList objectAtIndex:turnMovement] integerValue];
@@ -329,8 +330,10 @@
 
 - (void) go {
     self.imgReady.hidden = YES;
+    self.imgGood.hidden = YES;
     self.imgGo.hidden = NO;
     
+    [self blockAllComponents:NO];
     [self playSound:@"go.mp3"];
     
     [NSTimer scheduledTimerWithTimeInterval:2
@@ -342,7 +345,6 @@
 
 - (void) cleanGo {
     self.imgGo.hidden = YES;
-    [self blockAllComponents:NO];
 }
 
 - (void) playGame {
@@ -351,6 +353,10 @@
 }
 
 - (void) loseGame {
+    [self blockAllComponents:YES];
+    
+    self.imgGood.hidden = YES;
+    self.imgGo.hidden = YES;
     self.imgMiss.hidden = NO;
     
     [self playSound:@"miss.mp3"];
