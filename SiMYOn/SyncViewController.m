@@ -71,15 +71,15 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 
-- (void) ConfigureMyoIfDisconneted {
+- (void) configureMyoIfDisconneted {
     if([[TLMHub sharedHub] myoDevices].count == 0) {
         [self configureMyo];
     }
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
-//    TLMPose *pose = notification.userInfo[kTLMKeyPose];
-//    [pose.myo unlockWithType:TLMUnlockTypeHold];
+    TLMPose *pose = notification.userInfo[kTLMKeyPose];
+    [pose.myo unlockWithType:TLMUnlockTypeHold];
     
     NSLog(@"pose");
 }
