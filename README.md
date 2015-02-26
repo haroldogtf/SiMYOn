@@ -1,5 +1,5 @@
 # SiMYOn
-Simon Game controlled by Myo Armband
+Simon Game played with Myo Gesture Control Armband
 
 Myo (https://www.thalmic.com/en/myo/)
 
