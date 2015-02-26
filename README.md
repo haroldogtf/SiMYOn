@@ -5,6 +5,6 @@ Myo (https://www.thalmic.com/en/myo/)
 
 Target Devices:
 <br>
-iPhone 5S
+iPhone 5s
 <br>
 iPhone 5
