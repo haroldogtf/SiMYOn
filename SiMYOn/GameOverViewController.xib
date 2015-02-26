@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverViewController">
             <connections>
+                <outlet property="btnLogout" destination="9L6-nO-GxF" id="YtB-8k-Gc5"/>
                 <outlet property="lblFinalScore" destination="zRu-iW-yaU" id="22Y-Z0-XRW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

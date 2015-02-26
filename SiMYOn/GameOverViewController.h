@@ -13,6 +13,7 @@
 
 @interface GameOverViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton  *btnLogout;
 @property (weak, nonatomic) IBOutlet UILabel   *lblFinalScore;
 @property (nonatomic)                NSInteger  score;
 

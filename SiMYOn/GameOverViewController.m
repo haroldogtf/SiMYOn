@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.lblFinalScore.text = [NSString stringWithFormat:@"%d", (int)self.score];
+    [self updateScore];
+    [self showLogoutButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,10 +40,13 @@
     } else {
         [self getNameInFacebookAndStoreRankingInParse];
     }
+    
+    [self showLogoutButton];
 }
 
 - (IBAction)logoutAction:(id)sender {
     [FBSession.activeSession closeAndClearTokenInformation];
+    [self showLogoutButton];
 }
 
 - (IBAction)returnAction:(id)sender {
@@ -53,11 +57,20 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (void) updateScore {
+    self.lblFinalScore.text = [NSString stringWithFormat:@"%d", (int)self.score];
+}
+
+- (void) showLogoutButton {
+    self.btnLogout.hidden = !FBSession.activeSession.isOpen;
+}
+
 - (void) getNameInFacebookAndStoreRankingInParse {
     if (FBSession.activeSession.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
+                 [self showLogoutButton];
                  [self storeScoreInParse:user.name];
                  [self goBackToMenu];
              }
