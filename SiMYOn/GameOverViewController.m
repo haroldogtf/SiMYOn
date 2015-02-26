@@ -26,12 +26,19 @@
 
 - (IBAction)saveScore:(id)sender {
     
-//    PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
-//    ranking[@"name"] = @"name";
-//    ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
-//    [ranking saveInBackground];
-    
-  
+    if (!FBSession.activeSession.isOpen) {
+        FBSession.activeSession=nil;
+        
+        [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
+                                completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                    if(!error) {
+                                        [self getNameInFacebookAndStoreRankingInParse];
+                                    }
+                                }
+         ];
+    } else {
+        [self getNameInFacebookAndStoreRankingInParse];
+    }
 }
 
 - (IBAction)logoutAction:(id)sender {
@@ -39,13 +46,30 @@
 }
 
 - (IBAction)returnAction:(id)sender {
+    [self goBackToMenu];
+}
+
+- (void) goBackToMenu {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
-                            user:(id<FBGraphUser>)user {
-    
-    NSLog(@"nome: %@", user.name);
+- (void) getNameInFacebookAndStoreRankingInParse {
+    if (FBSession.activeSession.isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+             if (!error) {
+                 [self storeScoreInParse:user.name];
+                 [self goBackToMenu];
+             }
+         }];
+    }
+}
+
+- (void) storeScoreInParse:(NSString *) name {
+        PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
+        ranking[@"name"] = name;
+        ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
+        [ranking saveInBackground];
 }
 
 @end

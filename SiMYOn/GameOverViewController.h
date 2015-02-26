@@ -11,7 +11,7 @@
 #import <Parse/Parse.h>
 #import "GameOverViewController.h"
 
-@interface GameOverViewController : UIViewController <FBLoginViewDelegate>
+@interface GameOverViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel   *lblFinalScore;
 @property (nonatomic)                NSInteger  score;
