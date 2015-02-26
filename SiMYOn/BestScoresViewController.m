@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self getBestScores];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +26,21 @@
 
 - (IBAction)returnAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void) getBestScores {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
+    
+    [query addDescendingOrder:@"score"];
+    [query addAscendingOrder:@"createdAt"];
+    query.limit = 10;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+
+        for (PFObject *object in results) {
+            NSLog(@"Score: %@ - Nome: %@", object[@"score"], object[@"name"]);
+        }
+    }];
 }
 
 @end
