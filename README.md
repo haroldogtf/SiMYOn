@@ -8,3 +8,7 @@ Target Devices:
 iPhone 5s
 <br>
 iPhone 5
+
+Target Deployment:
+<br>
+iOS 8
