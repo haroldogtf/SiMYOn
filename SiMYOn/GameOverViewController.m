@@ -12,13 +12,17 @@
 
 @end
 
-@implementation GameOverViewController
+@implementation GameOverViewController {
+    BOOL isSavedRanking;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self updateScore];
     [self showLogoutButton];
+    
+    isSavedRanking = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,13 +51,13 @@
 - (IBAction)logoutAction:(id)sender {
     [FBSession.activeSession closeAndClearTokenInformation];
     [self showLogoutButton];
+    
+    if(!isSavedRanking) {
+        self.btnSaveScore.hidden = NO;
+    }
 }
 
 - (IBAction)returnAction:(id)sender {
-    [self goBackToMenu];
-}
-
-- (void) goBackToMenu {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -72,17 +76,22 @@
              if (!error) {
                  [self showLogoutButton];
                  [self storeScoreInParse:user.name];
-                 [self goBackToMenu];
              }
          }];
     }
 }
 
 - (void) storeScoreInParse:(NSString *) name {
-        PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
-        ranking[@"name"] = name;
-        ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
-        [ranking saveInBackground];
+    self.btnSaveScore.hidden = YES;
+    
+    PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
+    ranking[@"name"] = name;
+    ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
+    ranking[@"using_myo"] = [NSNumber numberWithBool:self.usingMyo];
+    
+    [ranking saveInBackground];
+    
+    isSavedRanking = YES;
 }
 
 @end
