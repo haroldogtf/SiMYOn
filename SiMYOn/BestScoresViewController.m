@@ -31,16 +31,45 @@
 - (void) getBestScores {
     
     PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
-    
     [query addDescendingOrder:@"score"];
     [query addAscendingOrder:@"createdAt"];
     query.limit = 10;
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
 
-        for (PFObject *object in results) {
-            NSLog(@"Score: %@ - Nome: %@", object[@"score"], object[@"name"]);
-        }
+        [self updateRanking:[results objectAtIndex:0]
+                   withName:self.lblPlayer1
+                   andScore:self.lblScorePlayer1];
+        
+        [self updateRanking:[results objectAtIndex:1]
+                   withName:self.lblPlayer2
+                   andScore:self.lblScorePlayer2];
+        
+        [self updateRanking:[results objectAtIndex:2]
+                   withName:self.lblPlayer3
+                   andScore:self.lblScorePlayer3];
+        
+        [self updateRanking:[results objectAtIndex:3]
+                   withName:self.lblPlayer4
+                   andScore:self.lblScorePlayer4];
+        
+        [self updateRanking:[results objectAtIndex:4]
+                   withName:self.lblPlayer5
+                   andScore:self.lblScorePlayer5];
+        
+        [self updateRanking:[results objectAtIndex:5]
+                   withName:self.lblPlayer6
+                   andScore:self.lblScorePlayer6];
+
     }];
+}
+
+- (void) updateRanking:(PFObject *)player
+              withName:(UILabel *)name
+              andScore:(UILabel *)score {
+    
+    name.text  = player[@"name"];
+    score.text = [NSString stringWithFormat:@"%@", player[@"score"]];
+    
 }
 
 @end
