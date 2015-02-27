@@ -376,6 +376,7 @@
 
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc]init];
     gameOverViewController.score = [self.lblCount.text integerValue];
+    gameOverViewController.usingMyo = self.useMyo;
     [self.navigationController pushViewController:gameOverViewController animated:YES];
 }
 
