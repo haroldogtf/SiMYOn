@@ -15,7 +15,6 @@
                 <outlet property="imgGo" destination="E4p-ee-Ioy" id="5g9-rn-a2J"/>
                 <outlet property="imgGood" destination="qXp-6Y-J50" id="FYf-rc-Xn9"/>
                 <outlet property="imgMiss" destination="dat-Ve-LT3" id="c1c-Yl-pU0"/>
-                <outlet property="imgPlay" destination="srV-aT-YKk" id="31l-c2-O3m"/>
                 <outlet property="imgReady" destination="FPB-fG-69Y" id="sdZ-Zq-Etj"/>
                 <outlet property="lblCount" destination="8ua-Jm-k3R" id="f6z-KB-yf8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sh7-Cr-MhM"/>
@@ -100,9 +99,6 @@
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50">
                     <rect key="frame" x="134" y="248" width="50" height="15"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srV-aT-YKk">
-                    <rect key="frame" x="49" y="400" width="240" height="128"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
