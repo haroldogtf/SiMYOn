@@ -73,6 +73,7 @@
 		09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547891A9E92F900985223 /* libz.dylib */; };
 		09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478B1A9E930200985223 /* libsqlite3.dylib */; };
 		09E5478E1A9E940500985223 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478D1A9E940500985223 /* Parse.framework */; };
+		09E547931AA3DE0600985223 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E547921AA3D9A000985223 /* font.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -368,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E547931AA3DE0600985223 /* font.ttf in Resources */,
 				0974008E1A880A130012E465 /* btn_exit.png in Resources */,
 				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
 				097400AA1A8826120012E465 /* game_bottom.png in Resources */,
