@@ -152,6 +152,7 @@
 		09E547891A9E92F900985223 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		09E5478B1A9E930200985223 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		09E5478D1A9E940500985223 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
+		09E547921AA3D9A000985223 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = font.ttf; path = SiMYOn/Assets/font.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +272,7 @@
 		0974004A1A864BBE0012E465 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				09E547921AA3D9A000985223 /* font.ttf */,
 				09A3E0FC1A9904280016FC24 /* splash.png */,
 				097400871A880A130012E465 /* menu.png */,
 				09A3E1151A9BD1EB0016FC24 /* sync1.png */,
