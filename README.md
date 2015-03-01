@@ -1,14 +1,13 @@
 # SiMYOn
 Simon Game played with Myo Gesture Control Armband
 
-Myo (https://www.thalmic.com/en/myo/)
-
-Target Devices:
-<br>
+#####Target Devices:
 iPhone 5s
 <br>
 iPhone 5
 
-Target Deployment:
-<br>
+#####Target Deployment:
 iOS 8
+
+#####About Myo
+https://www.thalmic.com/en/myo/
