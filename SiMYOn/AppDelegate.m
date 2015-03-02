@@ -18,6 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [[TLMHub sharedHub] setApplicationIdentifier:@"br.ufpe.cin.SiMYOn"];
+    [[TLMHub sharedHub] setShouldSendUsageData:NO];
+    [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
+    [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
     
     [Parse setApplicationId:@"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
                   clientKey:@"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"];

@@ -80,8 +80,6 @@
 - (void)didReceivePoseChange:(NSNotification*)notification {
     TLMPose *pose = notification.userInfo[kTLMKeyPose];
     [pose.myo unlockWithType:TLMUnlockTypeHold];
-    
-    NSLog(@"pose");
 }
 
 - (void)didConnectDevice:(NSNotification *)notification {
@@ -90,16 +88,10 @@
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
     self.imgBackground.image = [UIImage imageNamed:@"sync1.png"];
-    
-    NSLog(@"disconnet");
-
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
     self.imgBackground.image = [UIImage imageNamed:@"sync1.png"];
-    
-    NSLog(@"unsync");
-
 }
 
 - (void)didUnlockDevice:(NSNotification *)notification {
