@@ -61,9 +61,10 @@
     @try {
         return [self.bestScores objectAtIndex:index];
     }
-    @catch (NSException * e) {}
-    
-    return nil;
+    @catch (NSException * e) {
+        return nil;
+
+    }
 }
 
 - (void) updateRanking:(PFObject *)player

@@ -168,9 +168,7 @@
 }
 
 - (void) playSound:(NSString*) music {
-    NSString *path = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
+    NSURL *soundUrl = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music]];
     audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
     [audio play];
 }
@@ -266,18 +264,14 @@
 - (Movement) getMovement:(int)movement {
     switch (movement) {
         case 0:
-            return TopMovement;
-            break;
+            return TopMovement; break;
         case 1:
-            return LeftMovement;
-            break;
+            return LeftMovement; break;
         case 2:
-            return RightMovement;
-            break;
+            return RightMovement; break;
         case 3:
         default:
-            return BottomMovement;
-            break;
+            return BottomMovement; break;
     }
 }
 
