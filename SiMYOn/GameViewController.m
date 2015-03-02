@@ -143,19 +143,27 @@
 }
 
 - (IBAction)returnAction:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
-                                                      message:@"Are you sure to go back to menu?"
-                                                     delegate:self
-                                            cancelButtonTitle:@"No"
-                                            otherButtonTitles:@"Yes", nil];
-    [message show];
+    if([self.lblCount.text integerValue] > 0) {
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
+                                                          message:@"Are you sure to go back to menu?"
+                                                         delegate:self
+                                                cancelButtonTitle:@"No"
+                                                otherButtonTitles:@"Yes", nil];
+        [message show];
+    } else {
+        [self returnToMainMenu];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
 {
     if(buttonIndex) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self returnToMainMenu];
     }
+}
+
+-(void) returnToMainMenu {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) playSound:(NSString*) music {
