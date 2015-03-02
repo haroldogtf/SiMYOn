@@ -163,6 +163,7 @@
 }
 
 -(void) returnToMainMenu {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
