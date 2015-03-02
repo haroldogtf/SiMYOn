@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getBestScores];
+    if(self.bestScores) {
+        [self updateScoresInInterface];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,48 +30,50 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) getBestScores {
+- (void) updateScoresInInterface {
+
+    [self updateRanking:[self getScore:0]
+               withName:self.lblPlayer1
+               andScore:self.lblScorePlayer1];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
-    [query addDescendingOrder:@"score"];
-    [query addAscendingOrder:@"createdAt"];
-    query.limit = 10;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+    [self updateRanking:[self getScore:1]
+               withName:self.lblPlayer2
+               andScore:self.lblScorePlayer2];
+    
+    [self updateRanking:[self getScore:2]
+               withName:self.lblPlayer3
+               andScore:self.lblScorePlayer3];
+    
+    [self updateRanking:[self getScore:3]
+               withName:self.lblPlayer4
+               andScore:self.lblScorePlayer4];
+    
+    [self updateRanking:[self getScore:4]
+               withName:self.lblPlayer5
+               andScore:self.lblScorePlayer5];
+    
+    [self updateRanking:[self getScore:5]
+               withName:self.lblPlayer6
+               andScore:self.lblScorePlayer6];
+}
 
-        [self updateRanking:[results objectAtIndex:0]
-                   withName:self.lblPlayer1
-                   andScore:self.lblScorePlayer1];
-        
-        [self updateRanking:[results objectAtIndex:1]
-                   withName:self.lblPlayer2
-                   andScore:self.lblScorePlayer2];
-        
-        [self updateRanking:[results objectAtIndex:2]
-                   withName:self.lblPlayer3
-                   andScore:self.lblScorePlayer3];
-        
-        [self updateRanking:[results objectAtIndex:3]
-                   withName:self.lblPlayer4
-                   andScore:self.lblScorePlayer4];
-        
-        [self updateRanking:[results objectAtIndex:4]
-                   withName:self.lblPlayer5
-                   andScore:self.lblScorePlayer5];
-        
-        [self updateRanking:[results objectAtIndex:5]
-                   withName:self.lblPlayer6
-                   andScore:self.lblScorePlayer6];
-
-    }];
+- (PFObject *) getScore:(int) index {
+    @try {
+        return [self.bestScores objectAtIndex:index];
+    }
+    @catch (NSException * e) {}
+    
+    return nil;
 }
 
 - (void) updateRanking:(PFObject *)player
               withName:(UILabel *)name
               andScore:(UILabel *)score {
-    
-    name.text  = player[@"name"];
-    score.text = [NSString stringWithFormat:@"%@", player[@"score"]];
-    
+
+    if(player) {
+        name.text  = player[@"name"];
+        score.text = [NSString stringWithFormat:@"%@", player[@"score"]];
+    }
 }
 
 @end

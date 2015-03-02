@@ -11,6 +11,8 @@
 
 @interface BestScoresViewController : UIViewController
 
+@property (nonatomic)                NSArray *bestScores;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblPlayer1;
 @property (weak, nonatomic) IBOutlet UILabel *lblPlayer2;
 @property (weak, nonatomic) IBOutlet UILabel *lblPlayer3;
