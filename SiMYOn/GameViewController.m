@@ -217,30 +217,33 @@
 }
 
 - (void) generalAction:(Movement) movement {
-    NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
-    Movement turnMoviment = [self getMovement:(int)number];
-    
-    turn++;
-    
-    if(turnMoviment == movement) {        
-        if(turn >= [movementsList count]) {
-            [self blockAllComponents:YES];
-            
-            self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
-            self.imgGo.hidden = YES;
-            self.imgGood.hidden = NO;
-            
-            [NSTimer scheduledTimerWithTimeInterval:.25
-                                             target:self
-                                           selector:@selector(playGame)
-                                           userInfo:nil
-                                            repeats:NO];
-            turn = 0;
-        }
+    NSInteger number;
+    @try {
+        number = [[movementsList objectAtIndex:turn] integerValue];
+        Movement turnMoviment = [self getMovement:(int)number];
+        turn++;
         
-    } else {
-        [self loseGame];
+        if(turnMoviment == movement) {
+            if(turn >= [movementsList count]) {
+                [self blockAllComponents:YES];
+                
+                self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
+                self.imgGo.hidden = YES;
+                self.imgGood.hidden = NO;
+                
+                [NSTimer scheduledTimerWithTimeInterval:.25
+                                                 target:self
+                                               selector:@selector(playGame)
+                                               userInfo:nil
+                                                repeats:NO];
+                turn = 0;
+            }
+            
+        } else {
+            [self loseGame];
+        }
     }
+    @catch (NSException *exception) {}
 }
 
 - (void)unlockTheGame:(id)sender {
