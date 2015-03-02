@@ -24,6 +24,10 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)returnAction:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (IBAction)syncMyoAction:(id)sender {
     [self configureMyo];
 }

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 
+- (IBAction)returnAction: (id)sender;
 - (IBAction)syncMyoAction:(id)sender;
 - (IBAction)noMyoAction:  (id)sender;
 

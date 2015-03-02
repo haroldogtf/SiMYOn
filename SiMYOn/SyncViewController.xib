@@ -36,12 +36,22 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sync1.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-d3-AhL">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47s-0o-SIm">
+                    <rect key="frame" x="146" y="442" width="36" height="36"/>
+                    <state key="normal" image="btn_return.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="SKI-td-VXa"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>
+        <image name="btn_return.png" width="68" height="66"/>
         <image name="btn_sync_myo.png" width="396" height="153"/>
         <image name="btn_sync_no_myo.png" width="200" height="38"/>
         <image name="sync1.png" width="640" height="1136"/>
