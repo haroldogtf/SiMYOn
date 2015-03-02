@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
 		096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */; };
 		096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04BA1A9E8B6E006654C6 /* MyoKit.framework */; };
 		097400191A8630B30012E465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 097400181A8630B30012E465 /* main.m */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09549D461AA3FCFF002C228C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		096D04BA1A9E8B6E006654C6 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
 		097400131A8630B30012E465 /* SiMYOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiMYOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +163,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E547881A9E92F000985223 /* SystemConfiguration.framework in Frameworks */,
+				09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */,
 				09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */,
 				09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */,
-				09E547881A9E92F000985223 /* SystemConfiguration.framework in Frameworks */,
 				09E547861A9E92E700985223 /* StoreKit.framework in Frameworks */,
 				09E547841A9E92E100985223 /* Security.framework in Frameworks */,
 				09E547821A9E92DB00985223 /* QuartzCore.framework in Frameworks */,
@@ -184,6 +187,7 @@
 		0974000A1A8630B30012E465 = {
 			isa = PBXGroup;
 			children = (
+				09549D461AA3FCFF002C228C /* CoreBluetooth.framework */,
 				097400151A8630B30012E465 /* SiMYOn */,
 				097400141A8630B30012E465 /* Products */,
 			);
