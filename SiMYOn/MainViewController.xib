@@ -18,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y">
-                    <rect key="frame" x="79" y="124" width="158" height="62"/>
+                    <rect key="frame" x="78" y="146" width="158" height="62"/>
                     <state key="normal" image="btn_play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -27,7 +27,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg">
-                    <rect key="frame" x="79" y="220" width="158" height="62"/>
+                    <rect key="frame" x="78" y="242" width="158" height="62"/>
                     <state key="normal" image="btn_instructions.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -36,7 +36,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-4N-AnA">
-                    <rect key="frame" x="79" y="316" width="158" height="62"/>
+                    <rect key="frame" x="78" y="338" width="158" height="62"/>
                     <state key="normal" image="btn_best_scores.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -45,7 +45,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq">
-                    <rect key="frame" x="79" y="413" width="158" height="62"/>
+                    <rect key="frame" x="78" y="435" width="158" height="62"/>
                     <state key="normal" image="btn_credits.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
