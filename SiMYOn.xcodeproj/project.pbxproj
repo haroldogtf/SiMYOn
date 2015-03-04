@@ -277,16 +277,62 @@
 		0974004A1A864BBE0012E465 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				09E547921AA3D9A000985223 /* font.ttf */,
+				09C29CC11AA7CEDD005E4E4F /* views */,
+				09C29CC61AA7CF60005E4E4F /* labels */,
+				09C29CC51AA7CF2B005E4E4F /* buttons */,
+				09C29CC41AA7CF21005E4E4F /* fonts */,
+				09C29CC21AA7CEF8005E4E4F /* sounds */,
+			);
+			name = Assets;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		09C29CC11AA7CEDD005E4E4F /* views */ = {
+			isa = PBXGroup;
+			children = (
 				09A3E0FC1A9904280016FC24 /* splash.png */,
 				097400871A880A130012E465 /* menu.png */,
 				09A3E1151A9BD1EB0016FC24 /* sync1.png */,
 				09A3E1161A9BD1EB0016FC24 /* sync2.png */,
 				097400851A880A130012E465 /* game.png */,
+				097400A91A8826120012E465 /* game_top.png */,
+				097400A71A8826120012E465 /* game_left.png */,
+				097400A81A8826120012E465 /* game_right.png */,
+				097400A61A8826120012E465 /* game_bottom.png */,
 				097400861A880A130012E465 /* instructions.png */,
 				09A3E1011A99045E0016FC24 /* best_scores.png */,
 				09A3E0F91A9904280016FC24 /* credits.png */,
 				09A3E0FA1A9904280016FC24 /* gameover.png */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		09C29CC21AA7CEF8005E4E4F /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0974007C1A880A130012E465 /* blip1.mp3 */,
+				0974007D1A880A130012E465 /* blip2.mp3 */,
+				0974007E1A880A130012E465 /* blip3.mp3 */,
+				0974007F1A880A130012E465 /* blip4.mp3 */,
+				09A3E11D1A9BE23B0016FC24 /* go.mp3 */,
+				09A3E11E1A9BE23B0016FC24 /* miss.mp3 */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
+		09C29CC41AA7CF21005E4E4F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				09E547921AA3D9A000985223 /* font.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		09C29CC51AA7CF2B005E4E4F /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */,
+				09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */,
 				097400801A880A130012E465 /* btn_best_scores.png */,
 				097400811A880A130012E465 /* btn_credits.png */,
 				097400981A88112E0012E465 /* btn_continue.png */,
@@ -296,25 +342,19 @@
 				097400841A880A130012E465 /* btn_play.png */,
 				097400961A880B280012E465 /* btn_return.png */,
 				09A3E1251A9BEC380016FC24 /* btn_back_to_menu.png */,
-				097400A91A8826120012E465 /* game_top.png */,
-				097400A71A8826120012E465 /* game_left.png */,
-				097400A81A8826120012E465 /* game_right.png */,
-				097400A61A8826120012E465 /* game_bottom.png */,
+			);
+			name = buttons;
+			sourceTree = "<group>";
+		};
+		09C29CC61AA7CF60005E4E4F /* labels */ = {
+			isa = PBXGroup;
+			children = (
 				09A3E1211A9BE3BA0016FC24 /* game_ready.png */,
 				09A3E10D1A9BCB280016FC24 /* game_go.png */,
 				09A3E1231A9BE4FA0016FC24 /* game_good.png */,
 				09A3E10E1A9BCB280016FC24 /* game_miss.png */,
-				09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */,
-				09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */,
-				0974007C1A880A130012E465 /* blip1.mp3 */,
-				0974007D1A880A130012E465 /* blip2.mp3 */,
-				0974007E1A880A130012E465 /* blip3.mp3 */,
-				0974007F1A880A130012E465 /* blip4.mp3 */,
-				09A3E11D1A9BE23B0016FC24 /* go.mp3 */,
-				09A3E11E1A9BE23B0016FC24 /* miss.mp3 */,
 			);
-			name = Assets;
-			path = ..;
+			name = labels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
