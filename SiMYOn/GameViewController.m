@@ -139,9 +139,6 @@
     [self bottomAction:NO];
 }
 
-- (IBAction)pauseContinueAction:(id)sender {
-}
-
 - (IBAction)returnAction:(id)sender {
     if([self.lblCount.text integerValue] > 0) {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
