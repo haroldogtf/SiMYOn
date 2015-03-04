@@ -187,7 +187,6 @@
 		0974000A1A8630B30012E465 = {
 			isa = PBXGroup;
 			children = (
-				09549D461AA3FCFF002C228C /* CoreBluetooth.framework */,
 				097400151A8630B30012E465 /* SiMYOn */,
 				097400141A8630B30012E465 /* Products */,
 			);
@@ -228,6 +227,7 @@
 		097400411A8635990012E465 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09549D461AA3FCFF002C228C /* CoreBluetooth.framework */,
 				09E5478D1A9E940500985223 /* Parse.framework */,
 				09E5478B1A9E930200985223 /* libsqlite3.dylib */,
 				09E547891A9E92F900985223 /* libz.dylib */,
