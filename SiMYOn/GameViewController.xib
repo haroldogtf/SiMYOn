@@ -59,15 +59,6 @@
                         <action selector="btnRightAction:" destination="-1" eventType="touchUpInside" id="Iry-bW-cnS"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66">
-                    <rect key="frame" x="144" y="446" width="32" height="32"/>
-                    <state key="normal" image="btn_return.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-cd-AL7">
                     <rect key="frame" x="21" y="223" width="80" height="124"/>
                     <state key="normal">
@@ -89,12 +80,21 @@
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_miss.png" translatesAutoresizingMaskIntoConstraints="NO" id="dat-Ve-LT3">
                     <rect key="frame" x="135" y="242" width="50" height="15"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50">
-                    <rect key="frame" x="135" y="242" width="50" height="15"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPB-fG-69Y">
                     <rect key="frame" x="136" y="242" width="46" height="15"/>
                 </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50">
+                    <rect key="frame" x="135" y="242" width="50" height="15"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66">
+                    <rect key="frame" x="141" y="441" width="36" height="36"/>
+                    <state key="normal" image="btn_return.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
