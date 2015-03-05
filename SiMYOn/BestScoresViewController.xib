@@ -17,23 +17,48 @@
             <string>AgencyFB-Reg</string>
             <string>AgencyFB-Reg</string>
             <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
+            <string>AgencyFB-Reg</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BestScoresViewController">
             <connections>
+                <outlet property="imgBackground" destination="nbt-t9-670" id="tUh-iH-ING"/>
                 <outlet property="lblPlayer1" destination="0Ku-gH-HZl" id="zTw-HS-zxM"/>
+                <outlet property="lblPlayer10" destination="rst-ms-Hu9" id="Xb8-FN-LI7"/>
+                <outlet property="lblPlayer11" destination="t4Z-1w-e8o" id="HDO-0k-zqH"/>
+                <outlet property="lblPlayer12" destination="lUF-Fy-z0y" id="bRs-sg-j3g"/>
                 <outlet property="lblPlayer2" destination="67d-6d-nkX" id="pk8-8x-EI9"/>
                 <outlet property="lblPlayer3" destination="n0i-u5-wkz" id="Hil-5A-wu8"/>
                 <outlet property="lblPlayer4" destination="56g-ed-Iqq" id="oLV-ZM-D8Y"/>
                 <outlet property="lblPlayer5" destination="scy-r6-FVt" id="Gfd-wR-oQ1"/>
                 <outlet property="lblPlayer6" destination="ke5-dc-ECU" id="cd2-bV-URE"/>
+                <outlet property="lblPlayer7" destination="38a-gB-IBt" id="Cby-zC-pgd"/>
+                <outlet property="lblPlayer8" destination="I2n-OW-6GJ" id="g3b-7T-8mb"/>
+                <outlet property="lblPlayer9" destination="wDk-PV-bkw" id="GfR-xq-kxM"/>
                 <outlet property="lblScorePlayer1" destination="B6v-bS-vrz" id="uEB-Sl-HPn"/>
+                <outlet property="lblScorePlayer10" destination="bIc-nu-kNE" id="KBj-hT-pza"/>
+                <outlet property="lblScorePlayer11" destination="WxO-Qj-VLx" id="7r5-YE-ttF"/>
+                <outlet property="lblScorePlayer12" destination="U8g-MM-Kdl" id="YSP-EH-b7s"/>
                 <outlet property="lblScorePlayer2" destination="UBN-eV-KHs" id="a2l-GV-YVz"/>
                 <outlet property="lblScorePlayer3" destination="YX8-8L-CLM" id="ydg-fp-8LQ"/>
                 <outlet property="lblScorePlayer4" destination="PHm-Pt-o5g" id="gC1-ab-rj9"/>
                 <outlet property="lblScorePlayer5" destination="ZNf-5T-Pv7" id="2lx-1H-Lfm"/>
                 <outlet property="lblScorePlayer6" destination="UfH-Iz-xhb" id="CdR-3O-Dhc"/>
+                <outlet property="lblScorePlayer7" destination="ht4-Wj-J89" id="vYG-nO-a0K"/>
+                <outlet property="lblScorePlayer8" destination="rRF-0Z-Y3A" id="rLj-em-XqC"/>
+                <outlet property="lblScorePlayer9" destination="l9p-rO-nXX" id="KTp-1c-TMz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,75 +80,147 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ku-gH-HZl">
-                    <rect key="frame" x="117" y="82" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="77" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509803921567" green="0.64313725490196083" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67d-6d-nkX">
-                    <rect key="frame" x="117" y="135" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="113" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0i-u5-wkz">
-                    <rect key="frame" x="117" y="188" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="148" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56g-ed-Iqq">
-                    <rect key="frame" x="117" y="241" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="184" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scy-r6-FVt">
-                    <rect key="frame" x="117" y="297" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="220" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke5-dc-ECU">
-                    <rect key="frame" x="117" y="350" width="145" height="32"/>
-                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
+                    <rect key="frame" x="127" y="256" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38a-gB-IBt">
+                    <rect key="frame" x="127" y="291" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2n-OW-6GJ">
+                    <rect key="frame" x="127" y="327" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDk-PV-bkw">
+                    <rect key="frame" x="127" y="362" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rst-ms-Hu9">
+                    <rect key="frame" x="127" y="398" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-1w-e8o">
+                    <rect key="frame" x="127" y="433" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6v-bS-vrz">
+                    <rect key="frame" x="64" y="74" width="54" height="38"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.97647058823529409" green="0.99215686274509807" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBN-eV-KHs">
-                    <rect key="frame" x="63" y="135" width="44" height="38"/>
+                    <rect key="frame" x="64" y="110" width="54" height="38"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
                     <color key="textColor" red="0.52941176470588236" green="0.6588235294117647" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YX8-8L-CLM">
-                    <rect key="frame" x="63" y="188" width="44" height="32"/>
+                    <rect key="frame" x="64" y="148" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
                     <color key="textColor" red="0.78431372549019607" green="0.39215686274509803" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHm-Pt-o5g">
-                    <rect key="frame" x="63" y="241" width="44" height="32"/>
+                    <rect key="frame" x="64" y="184" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNf-5T-Pv7">
-                    <rect key="frame" x="63" y="297" width="44" height="32"/>
+                    <rect key="frame" x="64" y="220" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfH-Iz-xhb">
-                    <rect key="frame" x="63" y="350" width="44" height="32"/>
+                    <rect key="frame" x="64" y="256" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6v-bS-vrz">
-                    <rect key="frame" x="63" y="82" width="44" height="38"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht4-Wj-J89">
+                    <rect key="frame" x="64" y="291" width="54" height="32"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
-                    <color key="textColor" red="0.97647058823529409" green="0.99215686274509807" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-0Z-Y3A">
+                    <rect key="frame" x="64" y="327" width="54" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-rO-nXX">
+                    <rect key="frame" x="64" y="362" width="54" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIc-nu-kNE">
+                    <rect key="frame" x="64" y="398" width="54" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WxO-Qj-VLx">
+                    <rect key="frame" x="64" y="433" width="54" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8g-MM-Kdl">
+                    <rect key="frame" x="64" y="470" width="54" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="32"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUF-Fy-z0y">
+                    <rect key="frame" x="127" y="470" width="138" height="32"/>
+                    <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="22"/>
+                    <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
