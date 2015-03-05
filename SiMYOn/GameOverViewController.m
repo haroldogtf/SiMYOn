@@ -35,7 +35,7 @@
         FBSession.activeSession=nil;
         [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
                                 completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                    if(!error) {
+                                    if(error) {
                                         if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
                                             NSLog(@"OK");
                                         }
