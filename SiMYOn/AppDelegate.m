@@ -18,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureMyoSettings];
     [self configureParse];
+    [self configureRanking];
     [self configureNavigation];
 
     return YES;
@@ -57,6 +58,16 @@
 - (void) configureParse {
     [Parse setApplicationId:@"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
                   clientKey:@"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"];
+}
+
+- (void) configureRanking {
+    
+    for (int i = 1; i <= 8; i++) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"Player" forKey:[@"player" stringByAppendingFormat:@"%d", i]];
+        [[NSUserDefaults standardUserDefaults] setObject:@"0"  forKey:[@"scorePlayer" stringByAppendingFormat:@"%d", i]];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void) configureNavigation {
