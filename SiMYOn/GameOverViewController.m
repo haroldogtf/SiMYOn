@@ -36,9 +36,11 @@
         [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
                                 completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                                     if(!error) {
-                                        [self getNameInFacebook];
+                                        if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+                                            NSLog(@"OK");
+                                        }
                                     } else {
-                                        NSLog(@"Teste: %@", [error localizedDescription]);
+                                        [self getNameInFacebook];
                                     }
                                 }
          ];
