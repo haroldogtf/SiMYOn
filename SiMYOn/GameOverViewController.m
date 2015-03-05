@@ -38,7 +38,7 @@
                                     if(!error) {
                                         [self getNameInFacebook];
                                     } else {
-                                        NSLog(@"Teste: %@", [error ]);
+                                        NSLog(@"Teste: %@", [error localizedDescription]);
                                     }
                                 }
          ];
