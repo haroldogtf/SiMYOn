@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     [self updateScore];
-    [self showLogoutButton];
+    [self showLoginLogoutButtons];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,31 +29,26 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    if (FBSession.activeSession.isOpen) {
-        [self getNameInFacebook];
+    if([self hasInternetConnection]) {
+        [self facebookLogin];
     } else {
-        FBSession.activeSession=nil;
-        [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
-                                completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                    if(error) {
-                                        if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-                                            NSLog(@"OK");
-                                        }
-                                    } else {
-                                        [self getNameInFacebook];
-                                    }
-                                }
-         ];
+        // TODO
+        NSLog(@"No Internet Connection");
     }
 }
 
 - (IBAction)logoutAction:(id)sender {
     [FBSession.activeSession closeAndClearTokenInformation];
-    [self showLogoutButton];
+    
+    self.lblPlayerName.hidden = YES;
+    self.lblPlayerName.text = @"";
+    self.imgPlayerName.hidden = YES;
+    self.lblConnectToFacebook.hidden = NO;
+    [self showLoginLogoutButtons];
 }
 
 - (IBAction)returnAction:(id)sender {
-     if (!FBSession.activeSession.isOpen) {
+     if (FBSession.activeSession.isOpen) {
          [self saveScoreInParse];
      }
     
@@ -64,8 +59,24 @@
     self.lblFinalScore.text = [NSString stringWithFormat:@"%d", (int)self.score];
 }
 
-- (void) showLogoutButton {
+- (void) showLoginLogoutButtons {
+    self.btnLogin.hidden  = FBSession.activeSession.isOpen;
     self.btnLogout.hidden = !FBSession.activeSession.isOpen;
+}
+
+- (void) facebookLogin {
+    if (FBSession.activeSession.isOpen) {
+        [self getNameInFacebook];
+    } else {
+        FBSession.activeSession=nil;
+        [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
+                                completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                    if(!error) {
+                                        [self getNameInFacebook];
+                                    }
+                                }
+         ];
+    }
 }
 
 - (void) getNameInFacebook {
@@ -73,8 +84,11 @@
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
-                 [self showLogoutButton];
+                 [self showLoginLogoutButtons];
                  self.lblPlayerName.text = user.name;
+                 self.lblPlayerName.hidden = NO;
+                 self.imgPlayerName.hidden = NO;
+                 self.lblConnectToFacebook.hidden = YES;
              }
          }];
     }
@@ -87,6 +101,16 @@
     ranking[@"using_myo"] = [NSNumber numberWithBool:self.usingMyo];
     
     [ranking saveInBackground];
+}
+
+- (BOOL) hasInternetConnection {
+    NSURL *url = [NSURL URLWithString:@"http://www.parse.com"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"HEAD"];
+    NSHTTPURLResponse *response;
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
+    
+    return ([response statusCode] == 200) ? YES : NO;
 }
 
 @end

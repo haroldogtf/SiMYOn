@@ -15,6 +15,8 @@
             <connections>
                 <outlet property="btnLogin" destination="W8I-Ie-A97" id="FMF-RR-azJ"/>
                 <outlet property="btnLogout" destination="9L6-nO-GxF" id="YtB-8k-Gc5"/>
+                <outlet property="imgPlayerName" destination="aIh-rv-kwf" id="iKl-CH-dhd"/>
+                <outlet property="lblConnectToFacebook" destination="VeF-eV-RE1" id="042-Lf-PBj"/>
                 <outlet property="lblFinalScore" destination="zRu-iW-yaU" id="22Y-Z0-XRW"/>
                 <outlet property="lblPlayerName" destination="rqI-7B-bL3" id="hBL-bE-Azh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
