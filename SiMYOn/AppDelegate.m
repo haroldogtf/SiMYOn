@@ -16,21 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    [[TLMHub sharedHub] setApplicationIdentifier:@"br.ufpe.cin.SiMYOn"];
-    [[TLMHub sharedHub] setShouldSendUsageData:NO];
-    [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
-    [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
-    
-    [Parse setApplicationId:@"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
-                  clientKey:@"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"];
-    
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc]init]];
-    navigation.navigationBarHidden = YES;
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navigation;
-    [self.window makeKeyAndVisible];
+    [self configureMyoSettings];
+    [self configureParse];
+    [self configureNavigation];
 
     return YES;
 }
@@ -57,6 +45,27 @@
          annotation:(id)annotation {
 
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
+
+- (void) configureMyoSettings {
+    [[TLMHub sharedHub] setApplicationIdentifier:@"br.ufpe.cin.SiMYOn"];
+    [[TLMHub sharedHub] setShouldSendUsageData:NO];
+    [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
+    [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
+}
+
+- (void) configureParse {
+    [Parse setApplicationId:@"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
+                  clientKey:@"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"];
+}
+
+- (void) configureNavigation {
+    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc]init]];
+    navigation.navigationBarHidden = YES;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = navigation;
+    [self.window makeKeyAndVisible];
 }
 
 @end
