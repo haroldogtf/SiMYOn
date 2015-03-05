@@ -21,10 +21,19 @@
     
     [self updateScore];
     [self showLoginLogoutButtons];
+    [self configurePlayerName];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void) configurePlayerName {
+    if (FBSession.activeSession.isOpen) {
+        self.lblPlayerName.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"playerName"];
+        self.imgPlayerName.hidden = NO;
+        self.lblConnectToFacebook.hidden = YES;
+    }
 }
 
 - (IBAction)loginAction:(id)sender {
@@ -89,6 +98,9 @@
                  self.lblPlayerName.hidden = NO;
                  self.imgPlayerName.hidden = NO;
                  self.lblConnectToFacebook.hidden = YES;
+                 
+                 [[NSUserDefaults standardUserDefaults] setObject:user.name forKey:@"playerName"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
              }
          }];
     }
@@ -104,8 +116,7 @@
 }
 
 - (BOOL) hasInternetConnection {
-    NSURL *url = [NSURL URLWithString:@"http://www.parse.com"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.parse.com"]];
     [request setHTTPMethod:@"HEAD"];
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
