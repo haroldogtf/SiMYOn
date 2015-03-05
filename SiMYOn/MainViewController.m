@@ -31,6 +31,8 @@
 }
 
 - (void) getBestScores {
+    self.bestScores = nil;
+
     PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
     [query addDescendingOrder:@"score"];
     [query addAscendingOrder:@"createdAt"];
