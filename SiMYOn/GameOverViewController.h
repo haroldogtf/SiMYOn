@@ -13,13 +13,14 @@
 
 @interface GameOverViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton  *btnSaveScore;
+@property (weak, nonatomic) IBOutlet UIButton  *btnLogin;
 @property (weak, nonatomic) IBOutlet UIButton  *btnLogout;
 @property (weak, nonatomic) IBOutlet UILabel   *lblFinalScore;
+@property (weak, nonatomic) IBOutlet UILabel *lblPlayerName;
 @property (nonatomic)                NSInteger  score;
 @property (nonatomic)                BOOL       usingMyo;
 
-- (IBAction)saveScore:   (id)sender;
+- (IBAction)loginAction: (id)sender;
 - (IBAction)logoutAction:(id)sender;
 - (IBAction)returnAction:(id)sender;
 

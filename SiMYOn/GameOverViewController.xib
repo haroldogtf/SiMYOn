@@ -13,9 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameOverViewController">
             <connections>
+                <outlet property="btnLogin" destination="W8I-Ie-A97" id="FMF-RR-azJ"/>
                 <outlet property="btnLogout" destination="9L6-nO-GxF" id="YtB-8k-Gc5"/>
-                <outlet property="btnSaveScore" destination="W8I-Ie-A97" id="KMg-2v-k0K"/>
                 <outlet property="lblFinalScore" destination="zRu-iW-yaU" id="22Y-Z0-XRW"/>
+                <outlet property="lblPlayerName" destination="rqI-7B-bL3" id="hBL-bE-Azh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,7 +49,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="saveScore:" destination="-1" eventType="touchUpInside" id="Ukn-8C-Bwp"/>
+                        <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="nzp-jr-xBl"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L6-nO-GxF">

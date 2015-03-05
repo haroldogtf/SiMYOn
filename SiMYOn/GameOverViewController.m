@@ -21,43 +21,40 @@
     
     [self updateScore];
     [self showLogoutButton];
-    
-    isSavedRanking = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)saveScore:(id)sender {
+- (IBAction)loginAction:(id)sender {
     
-    if (!FBSession.activeSession.isOpen) {
+    if (FBSession.activeSession.isOpen) {
+        [self getNameInFacebook];
+    } else {
         FBSession.activeSession=nil;
-        
         [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
                                 completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                                     if(!error) {
-                                        [self getNameInFacebookAndStoreRankingInParse];
+                                        [self getNameInFacebook];
+                                    } else {
+                                        NSLog(@"Teste: %@", [error ]);
                                     }
                                 }
          ];
-    } else {
-        [self getNameInFacebookAndStoreRankingInParse];
     }
-    
-    [self showLogoutButton];
 }
 
 - (IBAction)logoutAction:(id)sender {
     [FBSession.activeSession closeAndClearTokenInformation];
     [self showLogoutButton];
-    
-    if(!isSavedRanking) {
-        self.btnSaveScore.hidden = NO;
-    }
 }
 
 - (IBAction)returnAction:(id)sender {
+     if (!FBSession.activeSession.isOpen) {
+         [self saveScoreInParse];
+     }
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -69,29 +66,25 @@
     self.btnLogout.hidden = !FBSession.activeSession.isOpen;
 }
 
-- (void) getNameInFacebookAndStoreRankingInParse {
+- (void) getNameInFacebook {
     if (FBSession.activeSession.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
              if (!error) {
                  [self showLogoutButton];
-                 [self storeScoreInParse:user.name];
+                 self.lblPlayerName.text = user.name;
              }
          }];
     }
 }
 
-- (void) storeScoreInParse:(NSString *) name {
-    self.btnSaveScore.hidden = YES;
-    
+- (void) saveScoreInParse {
     PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
-    ranking[@"name"] = name;
+    ranking[@"name"] = self.lblPlayerName.text;
     ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
     ranking[@"using_myo"] = [NSNumber numberWithBool:self.usingMyo];
     
     [ranking saveInBackground];
-    
-    isSavedRanking = YES;
 }
 
 @end
