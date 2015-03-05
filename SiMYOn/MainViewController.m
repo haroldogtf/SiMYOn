@@ -34,7 +34,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
     [query addDescendingOrder:@"score"];
     [query addAscendingOrder:@"createdAt"];
-    query.limit = 10;
+    query.limit = 12;
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         self.bestScores = results;
     }];
