@@ -66,6 +66,7 @@
 		09C29CCB1AA7F9D4005E4E4F /* btn_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CC91AA7F9D4005E4E4F /* btn_login.png */; };
 		09C29CCC1AA7F9D4005E4E4F /* btn_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */; };
 		09C29CCE1AA7FA05005E4E4F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCD1AA7FA05005E4E4F /* player.png */; };
+		09C29CD01AA8F996005E4E4F /* no_internet_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */; };
 		09E547781A9E92AC00985223 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547771A9E92AC00985223 /* AudioToolbox.framework */; };
 		09E5477A1A9E92BB00985223 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547791A9E92BB00985223 /* CFNetwork.framework */; };
 		09E5477C1A9E92C200985223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5477B1A9E92C200985223 /* CoreGraphics.framework */; };
@@ -151,6 +152,7 @@
 		09C29CC91AA7F9D4005E4E4F /* btn_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_login.png; path = SiMYOn/Assets/btn_login.png; sourceTree = "<group>"; };
 		09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_logout.png; path = SiMYOn/Assets/btn_logout.png; sourceTree = "<group>"; };
 		09C29CCD1AA7FA05005E4E4F /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = SiMYOn/Assets/player.png; sourceTree = "<group>"; };
+		09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_internet_connection.png; path = SiMYOn/Assets/no_internet_connection.png; sourceTree = "<group>"; };
 		09E547771A9E92AC00985223 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		09E547791A9E92BB00985223 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		09E5477B1A9E92C200985223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				09C29CC11AA7CEDD005E4E4F /* views */,
+				09C29CD11AA8F9A7005E4E4F /* popups */,
 				09C29CC61AA7CF60005E4E4F /* labels */,
 				09C29CC51AA7CF2B005E4E4F /* buttons */,
 				09C29CC41AA7CF21005E4E4F /* fonts */,
@@ -367,6 +370,14 @@
 				09C29CCD1AA7FA05005E4E4F /* player.png */,
 			);
 			name = labels;
+			sourceTree = "<group>";
+		};
+		09C29CD11AA8F9A7005E4E4F /* popups */ = {
+			isa = PBXGroup;
+			children = (
+				09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */,
+			);
+			name = popups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +478,7 @@
 				09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
 				09A3E1241A9BE4FA0016FC24 /* game_good.png in Resources */,
+				09C29CD01AA8F996005E4E4F /* no_internet_connection.png in Resources */,
 				097400AD1A8826120012E465 /* game_top.png in Resources */,
 				09C29CC81AA7D901005E4E4F /* best_scores_no_connection.png in Resources */,
 				09A3E1111A9BCB280016FC24 /* game_go.png in Resources */,

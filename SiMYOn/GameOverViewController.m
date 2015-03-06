@@ -41,9 +41,40 @@
     if([self hasInternetConnection]) {
         [self facebookLogin];
     } else {
-        // TODO
-        NSLog(@"No Internet Connection");
+        self.imgNoConnectionPopup.hidden = NO;
+        
+        CATransition* inAnimation = [CATransition animation];
+        [inAnimation setType:kCATransitionPush];
+        [inAnimation setSubtype:kCATransitionFromBottom];
+        [inAnimation setDelegate:self];
+        [inAnimation setDuration:.35];
+        [inAnimation setValue:@"inAnimation" forKey:@"inAnimation"];
+        [[self.imgNoConnectionPopup layer] addAnimation:inAnimation forKey:nil];
     }
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
+    
+    NSString* value = [theAnimation valueForKey:@"inAnimation"];
+        if ([value isEqualToString:@"inAnimation"])
+        {
+            [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self
+                                           selector:@selector(removeNoInternetConnectionPopup)
+                                           userInfo:nil
+                                            repeats:NO];
+        }
+}
+
+- (void) removeNoInternetConnectionPopup {
+    self.imgNoConnectionPopup.hidden = YES;
+    [[self.imgNoConnectionPopup layer] removeAllAnimations];
+
+    CATransition* outAnimation = [CATransition animation];
+    [outAnimation setType:kCATransitionReveal];
+    [outAnimation setSubtype:kCATransitionFromTop];
+    [outAnimation setDuration:.35];
+    [[self.imgNoConnectionPopup layer] addAnimation:outAnimation forKey:nil];
 }
 
 - (IBAction)logoutAction:(id)sender {

@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="btnLogin" destination="W8I-Ie-A97" id="FMF-RR-azJ"/>
                 <outlet property="btnLogout" destination="9L6-nO-GxF" id="YtB-8k-Gc5"/>
+                <outlet property="imgNoConnectionPopup" destination="KXf-bw-NZ9" id="QlW-JQ-04W"/>
                 <outlet property="imgPlayerName" destination="aIh-rv-kwf" id="iKl-CH-dhd"/>
                 <outlet property="lblConnectToFacebook" destination="VeF-eV-RE1" id="042-Lf-PBj"/>
                 <outlet property="lblFinalScore" destination="zRu-iW-yaU" id="22Y-Z0-XRW"/>
@@ -78,6 +79,9 @@
                     <color key="textColor" red="0.20784313725490197" green="0.64313725490196083" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_internet_connection.png" translatesAutoresizingMaskIntoConstraints="NO" id="KXf-bw-NZ9">
+                    <rect key="frame" x="41" y="-3" width="240" height="152"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -89,6 +93,7 @@
         <image name="btn_login.png" width="144" height="82"/>
         <image name="btn_logout.png" width="145" height="85"/>
         <image name="gameover.png" width="641" height="1136"/>
+        <image name="no_internet_connection.png" width="365" height="250"/>
         <image name="player.png" width="322" height="66"/>
     </resources>
 </document>

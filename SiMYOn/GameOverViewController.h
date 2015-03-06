@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel     *lblFinalScore;
 @property (weak, nonatomic) IBOutlet UILabel     *lblPlayerName;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPlayerName;
+@property (weak, nonatomic) IBOutlet UIImageView *imgNoConnectionPopup;
 @property (nonatomic)                NSInteger    score;
 @property (nonatomic)                BOOL         usingMyo;
 
