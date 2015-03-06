@@ -42,28 +42,31 @@
         [self facebookLogin];
     } else {
         self.imgNoConnectionPopup.hidden = NO;
+        self.btnLogin.enabled = NO;
         
         CATransition* inAnimation = [CATransition animation];
         [inAnimation setType:kCATransitionPush];
         [inAnimation setSubtype:kCATransitionFromBottom];
-        [inAnimation setDelegate:self];
         [inAnimation setDuration:.35];
+        [inAnimation setDelegate:self];
         [inAnimation setValue:@"inAnimation" forKey:@"inAnimation"];
         [[self.imgNoConnectionPopup layer] addAnimation:inAnimation forKey:nil];
     }
 }
 
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag{
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
     
     NSString* value = [theAnimation valueForKey:@"inAnimation"];
-        if ([value isEqualToString:@"inAnimation"])
-        {
-            [NSTimer scheduledTimerWithTimeInterval:1
-                                             target:self
-                                           selector:@selector(removeNoInternetConnectionPopup)
-                                           userInfo:nil
-                                            repeats:NO];
-        }
+    if ([value isEqualToString:@"inAnimation"])
+    {
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(removeNoInternetConnectionPopup)
+                                       userInfo:nil
+                                        repeats:NO];
+    } else {
+        self.btnLogin.enabled = YES;
+    }
 }
 
 - (void) removeNoInternetConnectionPopup {
@@ -74,6 +77,7 @@
     [outAnimation setType:kCATransitionReveal];
     [outAnimation setSubtype:kCATransitionFromTop];
     [outAnimation setDuration:.35];
+    [outAnimation setDelegate:self];
     [[self.imgNoConnectionPopup layer] addAnimation:outAnimation forKey:nil];
 }
 
