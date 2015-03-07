@@ -21,6 +21,6 @@
         </view>
     </objects>
     <resources>
-        <image name="splash.png" width="640" height="1137"/>
+        <image name="splash.png" width="640" height="1136"/>
     </resources>
 </document>
