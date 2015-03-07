@@ -311,8 +311,8 @@
 				09C29CD11AA8F9A7005E4E4F /* popups */,
 				09C29CC61AA7CF60005E4E4F /* labels */,
 				09C29CC51AA7CF2B005E4E4F /* buttons */,
-				09C29CC41AA7CF21005E4E4F /* fonts */,
 				09C29CC21AA7CEF8005E4E4F /* sounds */,
+				09C29CC41AA7CF21005E4E4F /* fonts */,
 			);
 			name = Assets;
 			path = ..;
