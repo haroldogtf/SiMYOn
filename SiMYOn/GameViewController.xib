@@ -78,10 +78,10 @@
                     <rect key="frame" x="140" y="242" width="38" height="16"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_miss.png" translatesAutoresizingMaskIntoConstraints="NO" id="dat-Ve-LT3">
-                    <rect key="frame" x="135" y="242" width="50" height="15"/>
+                    <rect key="frame" x="134" y="242" width="50" height="15"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPB-fG-69Y">
-                    <rect key="frame" x="136" y="242" width="46" height="15"/>
+                    <rect key="frame" x="137" y="242" width="46" height="15"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50">
                     <rect key="frame" x="135" y="242" width="50" height="15"/>
