@@ -12,7 +12,9 @@
 
 @end
 
-@implementation SyncViewController
+@implementation SyncViewController {
+    BOOL isLeftArm;
+}
 
 - (id) initIsPlaySound:(BOOL)value
 {
@@ -51,6 +53,7 @@
     GameViewController *gameViewController = [[GameViewController alloc]init];
     gameViewController.playSound = self.playSound;
     gameViewController.useMyo = yesOrNo;
+    gameViewController.isLeftArm = isLeftArm;
     [self.navigationController pushViewController:gameViewController animated:YES];
 }
 
@@ -69,6 +72,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didDisconnectDevice:)
                                                  name:TLMHubDidDisconnectDeviceNotification
+                                               object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didSyncArm:)
+                                                 name:TLMMyoDidReceiveArmSyncEventNotification
                                                object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -104,6 +112,14 @@
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
     self.imgBackground.image = [UIImage imageNamed:@"sync1.png"];
+}
+
+- (void)didSyncArm:(NSNotification *)notification {
+    TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
+
+    if(armEvent.arm == TLMArmLeft) {
+        isLeftArm = YES;
+    }
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {

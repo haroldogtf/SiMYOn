@@ -34,6 +34,7 @@ typedef enum {
 @property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
 @property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
+@property (nonatomic)                  BOOL        isLeftArm;
 @property (nonatomic)                  BOOL        useMyo;
 @property (nonatomic)                  BOOL        playSound;
 

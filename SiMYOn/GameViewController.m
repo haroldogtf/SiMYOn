@@ -83,18 +83,29 @@
 
     if(!lock) {
         switch (pose.type) {
+            
             case TLMPoseTypeFingersSpread:
-                [self topAction:NO];
-                break;
+                [self topAction:NO]; break;
+           
             case TLMPoseTypeFist:
-                [self bottomAction:NO];
-                break;
+                [self bottomAction:NO]; break;
+            
             case TLMPoseTypeWaveIn:
-                [self leftAction:NO];
+                if(self.isLeftArm) {
+                    [self rightAction:NO];
+                } else {
+                    [self leftAction:NO];
+                }
                 break;
+            
             case TLMPoseTypeWaveOut:
-                [self rightAction:NO];
+                if(self.isLeftArm) {
+                    [self leftAction:NO];
+                } else {
+                    [self rightAction:NO];
+                }
                 break;
+            
             default:
                 break;
         }
