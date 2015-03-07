@@ -19,6 +19,17 @@
     NSInteger turn;
 }
 
+- (id) initIsPlaySound:(BOOL)value
+{
+    self = [super init];
+    
+    if(self) {
+        self.playSound = value;
+    }
+    
+    return self;
+}
+
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -106,12 +117,12 @@
 
 #pragma mark - Actions
 - (void) changeImage:(NSString *)imageName
-           andPlaySound:(NSString *)music {
+           andPlaySound:(NSString *)sound {
     
     lock = YES;
     self.imgBackground.image = [UIImage imageNamed:imageName];
     [self.imgBackground setNeedsDisplay];
-    [self playSound:music];
+    [self playSoundWithPath:sound];
     [self cleanAction];
 }
 
@@ -164,10 +175,12 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void) playSound:(NSString*) music {
-    NSURL *soundUrl = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], music]];
-    audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-    [audio play];
+- (void) playSoundWithPath:(NSString*) sound {
+    if(self.playSound) {
+        NSURL *soundUrl = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], sound]];
+        audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        [audio play];
+    }
 }
 
 #pragma mark - Game
@@ -337,7 +350,7 @@
     self.imgGo.hidden = NO;
     
     [self blockAllComponents:NO];
-    [self playSound:@"go.mp3"];
+    [self playSoundWithPath:@"go.mp3"];
     
     [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self
@@ -362,7 +375,7 @@
     self.imgGo.hidden = YES;
     self.imgMiss.hidden = NO;
     
-    [self playSound:@"miss.mp3"];
+    [self playSoundWithPath:@"miss.mp3"];
     
     [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self

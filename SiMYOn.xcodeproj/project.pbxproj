@@ -69,6 +69,8 @@
 		09C29CD01AA8F996005E4E4F /* no_internet_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */; };
 		09CE76CE1AAA91DD00244ABF /* best_scores_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */; };
 		09CE76D21AAA925900244ABF /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CE76D11AAA925900244ABF /* Util.m */; };
+		09CE76D51AAAA31500244ABF /* btn_sound_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76D31AAAA31500244ABF /* btn_sound_off.png */; };
+		09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76D41AAAA31500244ABF /* btn_sound_on.png */; };
 		09E547781A9E92AC00985223 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547771A9E92AC00985223 /* AudioToolbox.framework */; };
 		09E5477A1A9E92BB00985223 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547791A9E92BB00985223 /* CFNetwork.framework */; };
 		09E5477C1A9E92C200985223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5477B1A9E92C200985223 /* CoreGraphics.framework */; };
@@ -158,6 +160,8 @@
 		09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores_loading.png; path = SiMYOn/Assets/best_scores_loading.png; sourceTree = "<group>"; };
 		09CE76D01AAA925900244ABF /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		09CE76D11AAA925900244ABF /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		09CE76D31AAAA31500244ABF /* btn_sound_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sound_off.png; path = SiMYOn/Assets/btn_sound_off.png; sourceTree = "<group>"; };
+		09CE76D41AAAA31500244ABF /* btn_sound_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sound_on.png; path = SiMYOn/Assets/btn_sound_on.png; sourceTree = "<group>"; };
 		09E547771A9E92AC00985223 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		09E547791A9E92BB00985223 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		09E5477B1A9E92C200985223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -350,6 +354,8 @@
 		09C29CC51AA7CF2B005E4E4F /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				09CE76D41AAAA31500244ABF /* btn_sound_on.png */,
+				09CE76D31AAAA31500244ABF /* btn_sound_off.png */,
 				09A3E1191A9BD2340016FC24 /* btn_sync_myo.png */,
 				09A3E11A1A9BD2340016FC24 /* btn_sync_no_myo.png */,
 				097400801A880A130012E465 /* btn_best_scores.png */,
@@ -464,6 +470,7 @@
 				09C29CCB1AA7F9D4005E4E4F /* btn_login.png in Resources */,
 				0974008A1A880A130012E465 /* blip3.mp3 in Resources */,
 				097400271A8630B30012E465 /* LaunchScreen.xib in Resources */,
+				09CE76D51AAAA31500244ABF /* btn_sound_off.png in Resources */,
 				09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */,
 				09A3E1021A99045E0016FC24 /* best_scores.png in Resources */,
 				09A3E1261A9BEC380016FC24 /* btn_back_to_menu.png in Resources */,
@@ -486,6 +493,7 @@
 				09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */,
 				09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */,
 				09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */,
+				09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */,
 				097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */,
 				0974008B1A880A130012E465 /* blip4.mp3 in Resources */,
 				097400711A87EF3E0012E465 /* InstructionsViewController.xib in Resources */,

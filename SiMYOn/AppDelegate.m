@@ -19,6 +19,7 @@
     [self configureMyoSettings];
     [self configureParse];
     [self configureRanking];
+    [self configureSound];
     [self configureNavigation];
 
     return YES;
@@ -68,6 +69,16 @@
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void) configureSound {
+    BOOL configured = [[NSUserDefaults standardUserDefaults] boolForKey:@"soundConfigured"];
+
+    if(!configured) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playSound"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"soundConfigured"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void) configureNavigation {

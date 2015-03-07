@@ -16,12 +16,14 @@
 
 @interface MainViewController : UIViewController
 
-@property (nonatomic) NSArray *bestScores;
+@property (nonatomic)                NSArray  *bestScores;
+@property (weak, nonatomic) IBOutlet UIButton *btnSound;
 
 - (IBAction)gameStarterAction:(id)sender;
 - (IBAction)intructionsAction:(id)sender;
 - (IBAction)bestScoresAction: (id)sender;
 - (IBAction)creditsAction:    (id)sender;
+- (IBAction)soundAction:      (id)sender;
 - (IBAction)exitAction:       (id)sender;
 
 @end

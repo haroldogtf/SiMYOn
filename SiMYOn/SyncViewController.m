@@ -14,6 +14,17 @@
 
 @implementation SyncViewController
 
+- (id) initIsPlaySound:(BOOL)value
+{
+    self = [super init];
+    
+    if(self) {
+        self.playSound = value;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,6 +49,7 @@
 
 - (void) goToGameUsingMyo:(BOOL)yesOrNo {
     GameViewController *gameViewController = [[GameViewController alloc]init];
+    gameViewController.playSound = self.playSound;
     gameViewController.useMyo = yesOrNo;
     [self.navigationController pushViewController:gameViewController animated:YES];
 }

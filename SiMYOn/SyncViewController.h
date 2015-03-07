@@ -14,6 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 
+@property (nonatomic) BOOL playSound;
+
+- (id) initIsPlaySound:(BOOL)value;
+
 - (IBAction)returnAction: (id)sender;
 - (IBAction)syncMyoAction:(id)sender;
 - (IBAction)noMyoAction:  (id)sender;
