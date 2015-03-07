@@ -38,7 +38,7 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    if([self hasInternetConnection]) {
+    if([Util hasInternetConnection]) {
         [self facebookLogin];
     } else {
         self.imgNoConnectionPopup.hidden = NO;
@@ -148,15 +148,6 @@
     ranking[@"using_myo"] = [NSNumber numberWithBool:self.usingMyo];
     
     [ranking saveInBackground];
-}
-
-- (BOOL) hasInternetConnection {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.parse.com"]];
-    [request setHTTPMethod:@"HEAD"];
-    NSHTTPURLResponse *response;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
-    
-    return ([response statusCode] == 200) ? YES : NO;
 }
 
 @end
