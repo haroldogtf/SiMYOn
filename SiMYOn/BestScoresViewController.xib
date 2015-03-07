@@ -35,6 +35,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BestScoresViewController">
             <connections>
                 <outlet property="imgBackground" destination="nbt-t9-670" id="tUh-iH-ING"/>
+                <outlet property="indicatorLoading" destination="xRg-y5-fsA" id="mQo-gr-aha"/>
                 <outlet property="lblPlayer1" destination="0Ku-gH-HZl" id="zTw-HS-zxM"/>
                 <outlet property="lblPlayer10" destination="rst-ms-Hu9" id="Xb8-FN-LI7"/>
                 <outlet property="lblPlayer11" destination="t4Z-1w-e8o" id="HDO-0k-zqH"/>
@@ -223,6 +224,11 @@
                     <color key="textColor" red="0.086274509799999996" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-y5-fsA">
+                    <rect key="frame" x="151" y="394" width="20" height="20"/>
+                    <rect key="contentStretch" x="0.0" y="0.0" width="0.84999999999999987" height="1"/>
+                    <color key="color" red="0.20784313730000001" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

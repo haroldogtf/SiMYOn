@@ -40,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblScorePlayer11;
 @property (weak, nonatomic) IBOutlet UILabel *lblScorePlayer12;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorLoading;
+
 - (IBAction)returnAction:(id)sender;
 
 @end

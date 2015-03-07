@@ -39,6 +39,7 @@
         [self updateScoresFromParse];
     } else {
         self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
+        self.indicatorLoading.hidden = YES;
     }
 }
 
@@ -48,6 +49,9 @@
     [query addAscendingOrder:@"createdAt"];
     query.limit = 12;
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        
+        self.indicatorLoading.hidden = YES;
+
         if(error) {
             self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
         } else {
