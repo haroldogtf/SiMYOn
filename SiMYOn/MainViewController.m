@@ -18,28 +18,12 @@
     [super viewDidLoad];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-    [self getBestScores];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void) openViewController:(UIViewController *) viewController {
     [self.navigationController pushViewController:viewController animated:YES];
-}
-
-- (void) getBestScores {
-    self.bestScores = nil;
-
-    PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
-    [query addDescendingOrder:@"score"];
-    [query addAscendingOrder:@"createdAt"];
-    query.limit = 12;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        self.bestScores = results;
-    }];
 }
 
 - (IBAction)gameStarterAction:(id)sender {
@@ -56,7 +40,6 @@
 
 - (IBAction)bestScoresAction:(id)sender {
     BestScoresViewController *bestScoresViewController = [[BestScoresViewController alloc]init];
-    bestScoresViewController.bestScores = self.bestScores;
     [self openViewController:bestScoresViewController];
 }
 

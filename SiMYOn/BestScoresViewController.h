@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "Util.h"
 
 @interface BestScoresViewController : UIViewController
-
-@property (nonatomic)                NSArray *bestScores;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 

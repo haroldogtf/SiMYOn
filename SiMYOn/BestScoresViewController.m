@@ -12,16 +12,18 @@
 
 @end
 
-@implementation BestScoresViewController
+@implementation BestScoresViewController {
+    NSArray *bestScores;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if(self.bestScores) {
-        [self updateScores];
-    } else {
-        [self updateScoresWithConnectionProblems];
-    }
+    [self updateScoresWithLocalScores];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self updateBestScores];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,9 +34,31 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) updateScoresWithConnectionProblems {
-    self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
-    
+- (void) updateBestScores {
+    if([Util hasInternetConnection]) {
+        [self updateScoresFromParse];
+    } else {
+        self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
+    }
+}
+
+- (void) updateScoresFromParse {
+    PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
+    [query addDescendingOrder:@"score"];
+    [query addAscendingOrder:@"createdAt"];
+    query.limit = 12;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if(error) {
+            self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
+        } else {
+            bestScores = results;
+            self.imgBackground.image = [UIImage imageNamed:@"best_scores"];
+            [self updateScoresInView];
+        }
+    }];
+}
+
+- (void) updateScoresWithLocalScores {
     self.lblPlayer1.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player1"];
     self.lblScorePlayer1.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer1"];
     
@@ -58,47 +82,35 @@
     
     self.lblPlayer8.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player8"];
     self.lblScorePlayer8.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer8"];
-    
-    self.lblPlayer9.hidden      = YES;
-    self.lblScorePlayer9.hidden = YES;
-    
-    self.lblPlayer10.hidden      = YES;
-    self.lblScorePlayer10.hidden = YES;
-    
-    self.lblPlayer11.hidden      = YES;
-    self.lblScorePlayer11.hidden = YES;
-    
-    self.lblPlayer12.hidden      = YES;
-    self.lblScorePlayer12.hidden = YES;
 }
 
-- (void) updateScores {
-    [self updateRanking:0  withName:self.lblPlayer1  andScore:self.lblScorePlayer1];
-    [self updateRanking:1  withName:self.lblPlayer2  andScore:self.lblScorePlayer2];
-    [self updateRanking:2  withName:self.lblPlayer3  andScore:self.lblScorePlayer3];
-    [self updateRanking:3  withName:self.lblPlayer4  andScore:self.lblScorePlayer4];
-    [self updateRanking:4  withName:self.lblPlayer5  andScore:self.lblScorePlayer5];
-    [self updateRanking:5  withName:self.lblPlayer6  andScore:self.lblScorePlayer6];
-    [self updateRanking:6  withName:self.lblPlayer7  andScore:self.lblScorePlayer7];
-    [self updateRanking:7  withName:self.lblPlayer8  andScore:self.lblScorePlayer8];
-    [self updateRanking:8  withName:self.lblPlayer9  andScore:self.lblScorePlayer9];
-    [self updateRanking:9  withName:self.lblPlayer10 andScore:self.lblScorePlayer10];
-    [self updateRanking:10 withName:self.lblPlayer11 andScore:self.lblScorePlayer11];
-    [self updateRanking:11 withName:self.lblPlayer12 andScore:self.lblScorePlayer12];
+- (void) updateScoresInView {
+    [self updateScoreInViewWithIndex:0  labelName:self.lblPlayer1  andLabelScore:self.lblScorePlayer1];
+    [self updateScoreInViewWithIndex:1  labelName:self.lblPlayer2  andLabelScore:self.lblScorePlayer2];
+    [self updateScoreInViewWithIndex:2  labelName:self.lblPlayer3  andLabelScore:self.lblScorePlayer3];
+    [self updateScoreInViewWithIndex:3  labelName:self.lblPlayer4  andLabelScore:self.lblScorePlayer4];
+    [self updateScoreInViewWithIndex:4  labelName:self.lblPlayer5  andLabelScore:self.lblScorePlayer5];
+    [self updateScoreInViewWithIndex:5  labelName:self.lblPlayer6  andLabelScore:self.lblScorePlayer6];
+    [self updateScoreInViewWithIndex:6  labelName:self.lblPlayer7  andLabelScore:self.lblScorePlayer7];
+    [self updateScoreInViewWithIndex:7  labelName:self.lblPlayer8  andLabelScore:self.lblScorePlayer8];
+    [self updateScoreInViewWithIndex:8  labelName:self.lblPlayer9  andLabelScore:self.lblScorePlayer9];
+    [self updateScoreInViewWithIndex:9  labelName:self.lblPlayer10 andLabelScore:self.lblScorePlayer10];
+    [self updateScoreInViewWithIndex:10 labelName:self.lblPlayer11 andLabelScore:self.lblScorePlayer11];
+    [self updateScoreInViewWithIndex:11 labelName:self.lblPlayer12 andLabelScore:self.lblScorePlayer12];
 }
 
 - (PFObject *) getScore:(int) index {
     @try {
-        return [self.bestScores objectAtIndex:index];
+        return [bestScores objectAtIndex:index];
     }
     @catch (NSException * e) {
         return nil;
     }
 }
 
-- (void) updateRanking:(int)index
-              withName:(UILabel *)name
-              andScore:(UILabel *)score {
+- (void) updateScoreInViewWithIndex:(int)index
+              labelName:(UILabel *)name
+              andLabelScore:(UILabel *)score {
 
     PFObject *player = [self getScore:index];
     
@@ -111,6 +123,21 @@
             [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[@"scorePlayer" stringByAppendingFormat:@"%d", index+1]];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
+        
+        self.lblPlayer9.hidden      = NO;
+        self.lblScorePlayer9.hidden = NO;
+        
+        self.lblPlayer10.hidden      = NO;
+        self.lblScorePlayer10.hidden = NO;
+        
+        self.lblPlayer11.hidden      = NO;
+        self.lblScorePlayer11.hidden = NO;
+        
+        self.lblPlayer12.hidden      = NO;
+        self.lblScorePlayer12.hidden = NO;
+    } else {
+        name.text  = @"Player";
+        score.text = @"0";
     }
 }
 
