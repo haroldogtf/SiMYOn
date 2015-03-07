@@ -16,7 +16,7 @@
     BOOL isLeftArm;
 }
 
-- (id) initIsPlaySound:(BOOL)value
+- (id)initIsPlaySound:(BOOL)value
 {
     self = [super init];
     

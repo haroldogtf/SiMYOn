@@ -35,7 +35,8 @@
     if([[TLMHub sharedHub] myoDevices].count == 0) {
         [self openViewController:[[SyncViewController alloc]initIsPlaySound:playSound]];
     } else {
-        [self openViewController:[[GameViewController alloc]initIsPlaySound:playSound]];
+        [self openViewController:[[GameViewController alloc]initIsPlaySound:playSound
+                                                                  andUseMyo:YES]];
     }
 }
 

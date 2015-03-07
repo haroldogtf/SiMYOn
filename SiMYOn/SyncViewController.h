@@ -16,7 +16,7 @@
 
 @property (nonatomic) BOOL playSound;
 
-- (id) initIsPlaySound:(BOOL)value;
+- (id)initIsPlaySound:(BOOL)value;
 
 - (IBAction)returnAction: (id)sender;
 - (IBAction)syncMyoAction:(id)sender;

@@ -22,6 +22,7 @@ typedef enum {
 } Movement;
 
 @property (strong, nonatomic) IBOutlet UIView      *view;
+@property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgReady;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgGo;
@@ -38,7 +39,7 @@ typedef enum {
 @property (nonatomic)                  BOOL        useMyo;
 @property (nonatomic)                  BOOL        playSound;
 
-- (id) initIsPlaySound: (BOOL)value;
+- (id)initIsPlaySound:(BOOL)isPlaySound andUseMyo:(BOOL)useMyo;
 
 - (IBAction)btnTopAction:       (id)sender;
 - (IBAction)btnLeftAction:      (id)sender;

@@ -19,12 +19,13 @@
     NSInteger turn;
 }
 
-- (id) initIsPlaySound:(BOOL)value
+- (id) initIsPlaySound:(BOOL)isPlaySound andUseMyo:(BOOL)useMyo
 {
     self = [super init];
     
     if(self) {
-        self.playSound = value;
+        self.playSound = isPlaySound;
+        self.useMyo = useMyo;
     }
     
     return self;
@@ -62,56 +63,73 @@
 }
 
 - (void) prepareMyoForNotifications {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didReceivePoseChange:)
-                                                 name:TLMMyoDidReceivePoseChangedNotification
-                                               object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didDisconnectDevice:)
-                                                 name:TLMHubDidDisconnectDeviceNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didUnsyncArm:)
-                                                 name:TLMMyoDidReceiveArmUnsyncEventNotification
-                                               object:nil];
+    if(self.useMyo) {
+
+        [[NSNotificationCenter defaultCenter]
+            addObserver:self
+               selector:@selector(didReceivePoseChange:)
+                   name:TLMMyoDidReceivePoseChangedNotification
+                object:nil];
+        
+        [[NSNotificationCenter defaultCenter]
+            addObserver:self
+               selector:@selector(didDisconnectDevice:)
+                   name:TLMHubDidDisconnectDeviceNotification
+                 object:nil];
+        
+        [[NSNotificationCenter defaultCenter]
+            addObserver:self
+               selector:@selector(didSyncArm:)
+                   name:TLMMyoDidReceiveArmSyncEventNotification
+                 object:nil];
+        
+        [[NSNotificationCenter defaultCenter]
+            addObserver:self
+               selector:@selector(didUnsyncArm:)
+                   name:TLMMyoDidReceiveArmUnsyncEventNotification
+                 object:nil];
+    }
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
-    TLMPose *pose = notification.userInfo[kTLMKeyPose];
 
-    if(!lock) {
-        switch (pose.type) {
-            
-            case TLMPoseTypeFingersSpread:
-                [self topAction:NO]; break;
-           
-            case TLMPoseTypeFist:
-                [self bottomAction:NO]; break;
-            
-            case TLMPoseTypeWaveIn:
-                if(self.isLeftArm) {
-                    [self rightAction:NO];
-                } else {
-                    [self leftAction:NO];
-                }
-                break;
-            
-            case TLMPoseTypeWaveOut:
-                if(self.isLeftArm) {
-                    [self leftAction:NO];
-                } else {
-                    [self rightAction:NO];
-                }
-                break;
-            
-            default:
-                break;
+    if(self.useMyo) {
+
+        TLMPose *pose = notification.userInfo[kTLMKeyPose];
+
+        if(!lock) {
+            switch (pose.type) {
+                
+                case TLMPoseTypeFingersSpread:
+                    [self topAction:NO]; break;
+               
+                case TLMPoseTypeFist:
+                    [self bottomAction:NO]; break;
+                
+                case TLMPoseTypeWaveIn:
+                    if(self.isLeftArm) {
+                        [self rightAction:NO];
+                    } else {
+                        [self leftAction:NO];
+                    }
+                    break;
+                
+                case TLMPoseTypeWaveOut:
+                    if(self.isLeftArm) {
+                        [self leftAction:NO];
+                    } else {
+                        [self rightAction:NO];
+                    }
+                    break;
+                
+                default:
+                    break;
+            }
         }
+        
+        [pose.myo unlockWithType:TLMUnlockTypeHold];
     }
-    
-    [pose.myo unlockWithType:TLMUnlockTypeHold];
 }
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
@@ -120,9 +138,37 @@
     }
 }
 
+- (void)didSyncArm:(NSNotification *)notification {
+    
+    TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
+    if(armEvent.arm == TLMArmLeft) {
+        self.isLeftArm = YES;
+    } else {
+        self.isLeftArm = NO;
+    }
+    
+    lock = NO;
+    self.imgPopupLostSync.hidden = YES;
+    
+    CATransition* outAnimation = [CATransition animation];
+    [outAnimation setType:kCATransitionReveal];
+    [outAnimation setSubtype:kCATransitionFromTop];
+    [outAnimation setDuration:.35];
+    [outAnimation setDelegate:self];
+    [[self.imgPopupLostSync layer] addAnimation:outAnimation forKey:nil];
+}
+
 - (void)didUnsyncArm:(NSNotification *)notification {
     if(self.useMyo) {
-        [self configureMyo];
+        
+        lock = YES;
+        self.imgPopupLostSync.hidden = NO;
+        
+        CATransition* inAnimation = [CATransition animation];
+        [inAnimation setType:kCATransitionPush];
+        [inAnimation setSubtype:kCATransitionFromBottom];
+        [inAnimation setDuration:.35];
+        [[self.imgPopupLostSync layer] addAnimation:inAnimation forKey:nil];
     }
 }
 
