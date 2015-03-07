@@ -23,7 +23,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self updateBestScores];
+    [self performSelectorInBackground:@selector(updateBestScores) withObject:nil];
 }
 
 - (void)didReceiveMemoryWarning {
