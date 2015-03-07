@@ -64,7 +64,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-56-W6h">
-                    <rect key="frame" x="267" y="26" width="35" height="35"/>
+                    <rect key="frame" x="277" y="26" width="35" height="35"/>
                     <state key="normal" image="btn_sound_on.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
