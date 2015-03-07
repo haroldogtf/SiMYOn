@@ -71,7 +71,6 @@
 
 - (void) removeNoInternetConnectionPopup {
     self.imgNoConnectionPopup.hidden = YES;
-    [[self.imgNoConnectionPopup layer] removeAllAnimations];
 
     CATransition* outAnimation = [CATransition animation];
     [outAnimation setType:kCATransitionReveal];
