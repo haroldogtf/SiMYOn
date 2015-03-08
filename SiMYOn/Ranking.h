@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Constants.h"
 
 @interface Ranking : NSObject
 
@@ -16,7 +17,7 @@ typedef void (^BestScoresBlock)(NSArray *bestScores, NSError *error);
 + (void) getScoresFromParse:(BestScoresBlock)block;
 
 + (void) saveScoresInParseWithName:(NSString *)name
-                             score:(int)score
+                             score:(NSNumber *)score
                        andUsingMyo:(BOOL)useMyo;
 
 @end
