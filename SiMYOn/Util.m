@@ -11,7 +11,7 @@
 @implementation Util
 
 + (BOOL) hasInternetConnection {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.parse.com"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:TEST_CONNECTION]];
     [request setHTTPMethod:@"HEAD"];
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
