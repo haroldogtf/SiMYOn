@@ -49,39 +49,39 @@
         self.indicatorLoading.hidden = YES;
         
         if(error) {
-            self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
+            self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         } else {
             bestScores = scores;
-            self.imgBackground.image = [UIImage imageNamed:@"best_scores"];
+            self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
             [self updateScoresInView];
         }
     }];
 }
 
 - (void) updateScoresWithLocalScores {
-    self.lblPlayer1.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player1"];
-    self.lblScorePlayer1.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer1"];
+    self.lblPlayer1.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_1];
+    self.lblScorePlayer1.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_1];
     
-    self.lblPlayer2.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player2"];
-    self.lblScorePlayer2.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer2"];
+    self.lblPlayer2.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_2];
+    self.lblScorePlayer2.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_2];
     
-    self.lblPlayer3.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player3"];
-    self.lblScorePlayer3.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer3"];
+    self.lblPlayer3.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_3];
+    self.lblScorePlayer3.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_3];
     
-    self.lblPlayer4.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player4"];
-    self.lblScorePlayer4.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer4"];
+    self.lblPlayer4.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_4];
+    self.lblScorePlayer4.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_4];
     
-    self.lblPlayer5.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player5"];
-    self.lblScorePlayer5.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer5"];
+    self.lblPlayer5.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_5];
+    self.lblScorePlayer5.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_5];
     
-    self.lblPlayer6.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player6"];
-    self.lblScorePlayer6.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer6"];
+    self.lblPlayer6.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_6];
+    self.lblScorePlayer6.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_6];
     
-    self.lblPlayer7.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player7"];
-    self.lblScorePlayer7.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer7"];
+    self.lblPlayer7.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_7];
+    self.lblScorePlayer7.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_7];
     
-    self.lblPlayer8.text      = [[NSUserDefaults standardUserDefaults] objectForKey:@"player8"];
-    self.lblScorePlayer8.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"scorePlayer8"];
+    self.lblPlayer8.text      = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_8];
+    self.lblScorePlayer8.text = [[NSUserDefaults standardUserDefaults] objectForKey:SCORE_PLAYER_8];
 }
 
 - (void) updateScoresInView {
@@ -115,12 +115,12 @@
     PFObject *player = [self getScore:index];
     
     if(player) {
-        name.text  = player[@"name"];
-        score.text = [NSString stringWithFormat:@"%@", player[@"score"]];
+        name.text  = player[NAME];
+        score.text = [NSString stringWithFormat:@"%@", player[SCORE]];
         
         if(score >=0 && index <= 7) {
-            [[NSUserDefaults standardUserDefaults] setObject:name.text  forKey:[@"player" stringByAppendingFormat:@"%d", index+1]];
-            [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[@"scorePlayer" stringByAppendingFormat:@"%d", index+1]];
+            [[NSUserDefaults standardUserDefaults] setObject:name.text  forKey:[PLAYER stringByAppendingFormat:@"%d", index+1]];
+            [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
         
@@ -136,8 +136,8 @@
         self.lblPlayer12.hidden      = NO;
         self.lblScorePlayer12.hidden = NO;
     } else {
-        name.text  = @"Player";
-        score.text = @"0";
+        name.text  = INITAL_NAME;
+        score.text = INITIAL_SCORE;
     }
 }
 
