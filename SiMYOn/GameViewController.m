@@ -13,14 +13,15 @@
 @end
 
 @implementation GameViewController {
-    AVAudioPlayer* audio;
-    NSMutableArray* movementsList;
-    BOOL lock;
-    NSInteger turn;
+    AVAudioPlayer  *audio;
+    NSMutableArray *movementsList;
+    BOOL            lock;
+    NSInteger       turn;
 }
 
-- (id) initIsPlaySound:(BOOL)isPlaySound andUseMyo:(BOOL)useMyo
-{
+- (id) initIsPlaySound:(BOOL)isPlaySound
+             andUseMyo:(BOOL)useMyo {
+
     self = [super init];
     
     if(self) {
@@ -32,13 +33,11 @@
 }
 
 #pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    movementsList = [[NSMutableArray alloc]init];
-    turn = 0;
-    [self blockAllComponents:YES];
-    [self prepareMyoForNotifications];
+    [self didLoadGame];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -62,71 +61,55 @@
     }
 }
 
-- (void) prepareMyoForNotifications {
+- (void)configureMyoObserver {
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didReceivePoseChange:)
+     name:TLMMyoDidReceivePoseChangedNotification
+     object:nil];
     
-    if(self.useMyo) {
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didDisconnectDevice:)
+     name:TLMHubDidDisconnectDeviceNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didSyncArm:)
+     name:TLMMyoDidReceiveArmSyncEventNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(didUnsyncArm:)
+     name:TLMMyoDidReceiveArmUnsyncEventNotification
+     object:nil];
+}
 
-        [[NSNotificationCenter defaultCenter]
-            addObserver:self
-               selector:@selector(didReceivePoseChange:)
-                   name:TLMMyoDidReceivePoseChangedNotification
-                object:nil];
-        
-        [[NSNotificationCenter defaultCenter]
-            addObserver:self
-               selector:@selector(didDisconnectDevice:)
-                   name:TLMHubDidDisconnectDeviceNotification
-                 object:nil];
-        
-        [[NSNotificationCenter defaultCenter]
-            addObserver:self
-               selector:@selector(didSyncArm:)
-                   name:TLMMyoDidReceiveArmSyncEventNotification
-                 object:nil];
-        
-        [[NSNotificationCenter defaultCenter]
-            addObserver:self
-               selector:@selector(didUnsyncArm:)
-                   name:TLMMyoDidReceiveArmUnsyncEventNotification
-                 object:nil];
-        
-        self.isLeftArm = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLeftArm"];
+- (void) prepareMyoForNotifications {
+    if(self.useMyo) {
+        [self configureMyoObserver];
+        self.isLeftArm = [[NSUserDefaults standardUserDefaults] boolForKey:IS_LEFT_ARM];
     }
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
-
     if(self.useMyo) {
 
         TLMPose *pose = notification.userInfo[kTLMKeyPose];
 
         if(!lock) {
             switch (pose.type) {
-                
-                case TLMPoseTypeFingersSpread:
-                    [self topAction:NO]; break;
-               
-                case TLMPoseTypeFist:
-                    [self bottomAction:NO]; break;
-                
-                case TLMPoseTypeWaveIn:
-                    if(self.isLeftArm) {
-                        [self rightAction:NO];
-                    } else {
-                        [self leftAction:NO];
-                    }
-                    break;
-                
-                case TLMPoseTypeWaveOut:
-                    if(self.isLeftArm) {
-                        [self leftAction:NO];
-                    } else {
-                        [self rightAction:NO];
-                    }
-                    break;
-                
-                default:
-                    break;
+                case TLMPoseTypeFingersSpread: [self topAction:NO];    break;
+                case TLMPoseTypeFist:          [self bottomAction:NO]; break;
+                case TLMPoseTypeWaveIn:        self.isLeftArm ? [self rightAction:NO]
+                                                              :[self leftAction:NO];
+                                               break;
+                case TLMPoseTypeWaveOut:       self.isLeftArm ? [self leftAction:NO]
+                                                              : [self rightAction:NO];
+                                               break;
+                default: break;
             }
         }
         
@@ -141,61 +124,21 @@
 }
 
 - (void)didSyncArm:(NSNotification *)notification {
-    
     TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
-    if(armEvent.arm == TLMArmLeft) {
-        self.isLeftArm = YES;
-    } else {
-        self.isLeftArm = NO;
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setBool:self.isLeftArm forKey:@"isLeftArm"];
+    self.isLeftArm = (armEvent.arm == TLMArmLeft);
+    [[NSUserDefaults standardUserDefaults] setBool:self.isLeftArm forKey:IS_LEFT_ARM];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    lock = NO;
-    self.imgPopupLostSync.hidden = YES;
-    
-    CATransition* outAnimation = [CATransition animation];
-    [outAnimation setType:kCATransitionReveal];
-    [outAnimation setSubtype:kCATransitionFromTop];
-    [outAnimation setDuration:.35];
-    [outAnimation setDelegate:self];
-    [[self.imgPopupLostSync layer] addAnimation:outAnimation forKey:nil];
+    [self syncAnimation];
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
     if(self.useMyo) {
-        
-        lock = YES;
-        self.imgPopupLostSync.hidden = NO;
-        
-        CATransition* inAnimation = [CATransition animation];
-        [inAnimation setType:kCATransitionPush];
-        [inAnimation setSubtype:kCATransitionFromBottom];
-        [inAnimation setDuration:.35];
-        [[self.imgPopupLostSync layer] addAnimation:inAnimation forKey:nil];
+        [self unsyncAnimation];
     }
 }
 
 #pragma mark - Actions
-- (void) changeImage:(NSString *)imageName
-           andPlaySound:(NSString *)sound {
-    
-    lock = YES;
-    self.imgBackground.image = [UIImage imageNamed:imageName];
-    [self.imgBackground setNeedsDisplay];
-    [self playSoundWithPath:sound];
-    [self cleanAction];
-}
-
-- (void) cleanAction {
-    [NSTimer scheduledTimerWithTimeInterval:.5
-                                     target:self
-                                   selector:@selector(unlockTheGame:)
-                                   userInfo:nil
-                                    repeats:NO];
-}
-
 - (IBAction)btnTopAction:(id)sender {
     [self topAction:NO];
 }
@@ -214,11 +157,11 @@
 
 - (IBAction)returnAction:(id)sender {
     if([self.lblCount.text integerValue] > 0) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
-                                                          message:@"Are you sure to go back to menu?"
+        UIAlertView *message = [[UIAlertView alloc] initWithTitle:SIMYON
+                                                          message:BACK_MENU_ALERT
                                                          delegate:self
-                                                cancelButtonTitle:@"No"
-                                                otherButtonTitles:@"Yes", nil];
+                                                cancelButtonTitle:STR_NO
+                                                otherButtonTitles:STR_YES, nil];
         [message show];
     } else {
         [self returnToMainMenu];
@@ -232,6 +175,72 @@
     }
 }
 
+- (void) action:(BOOL)automatic andMovemet:(Movement) movement {
+    if(!automatic) {
+        [self makeMovementAction:movement];
+        [self blockAllComponents:NO];
+    }
+}
+
+- (void) topAction:(BOOL)automatic {
+    [self changeImage:IMG_GAME_TOP andPlaySound:SOUND_TOP];
+    [self action:automatic andMovemet:TopMovement];
+}
+
+- (void) leftAction:(BOOL)automatic {
+    [self changeImage:IMG_GAME_LEFT andPlaySound:SOUND_LEFT];
+    [self action:automatic andMovemet:LeftMovement];
+}
+
+- (void) rightAction:(BOOL)automatic {
+    [self changeImage:IMG_GAME_RIGHT andPlaySound:SOUND_RIGHT];
+    [self action:automatic andMovemet:RightMovement];
+}
+
+- (void) bottomAction:(BOOL)automatic {
+    [self changeImage:IMG_GAME_BOTTOM andPlaySound:SOUND_BOTTOM];
+    [self action:automatic andMovemet:BottomMovement];
+}
+
+- (void) makeMovementAction:(Movement) movement {
+    NSInteger number;
+    @try {
+        number = [[movementsList objectAtIndex:turn] integerValue];
+        Movement turnMoviment = [self getMovement:(int)number];
+        turn++;
+        
+        (turnMoviment == movement) ? [self winTurn]
+        :[self loseGame];
+    }
+    @catch (NSException *exception) {}
+}
+
+- (void) cleanAction {
+    [NSTimer scheduledTimerWithTimeInterval:CLEAN_TIME
+                                     target:self
+                                   selector:@selector(unlockTheGame)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+#pragma mark - Game
+- (void)didLoadGame {
+    movementsList = [[NSMutableArray alloc]init];
+    turn = 0;
+    [self blockAllComponents:YES];
+    [self prepareMyoForNotifications];
+}
+
+- (void) changeImage:(NSString *)imageName
+        andPlaySound:(NSString *)sound {
+    
+    lock = YES;
+    self.imgBackground.image = [UIImage imageNamed:imageName];
+    [self.imgBackground setNeedsDisplay];
+    [self playSoundWithPath:sound];
+    [self cleanAction];
+}
+
 -(void) returnToMainMenu {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -243,81 +252,6 @@
         audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
         [audio play];
     }
-}
-
-#pragma mark - Game
-- (void) topAction:(BOOL)automatic {
-    [self changeImage:@"game_top.png"
-                 andPlaySound:@"blip1.mp3"];
-    
-    if(!automatic) {
-        [self generalAction:TopMovement];
-        [self blockAllComponents:NO];
-    }
-}
-
-- (void) leftAction:(BOOL)automatic {
-    [self changeImage:@"game_left.png"
-                 andPlaySound:@"blip2.mp3"];
-
-    if(!automatic) {
-        [self generalAction:LeftMovement];
-        [self blockAllComponents:NO];
-    }
-}
-
-- (void) rightAction:(BOOL)automatic {
-    [self changeImage:@"game_right.png"
-                 andPlaySound:@"blip3.mp3"];
-
-    if(!automatic) {
-        [self generalAction:RightMovement];
-        [self blockAllComponents:NO];
-    }
-}
-
-- (void) bottomAction:(BOOL)automatic {
-    [self changeImage:@"game_bottom.png"
-                 andPlaySound:@"blip4.mp3"];
-
-    if(!automatic) {
-        [self generalAction:BottomMovement];
-        [self blockAllComponents:NO];
-    }
-}
-
-- (void) generalAction:(Movement) movement {
-    NSInteger number;
-    @try {
-        number = [[movementsList objectAtIndex:turn] integerValue];
-        Movement turnMoviment = [self getMovement:(int)number];
-        turn++;
-        
-        if(turnMoviment == movement) {
-            if(turn >= [movementsList count]) {
-                [self blockAllComponents:YES];
-                
-                self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
-                self.imgGo.hidden = YES;
-                self.imgGood.hidden = NO;
-                
-                [NSTimer scheduledTimerWithTimeInterval:.25
-                                                 target:self
-                                               selector:@selector(playGame)
-                                               userInfo:nil
-                                                repeats:NO];
-                turn = 0;
-            }
-            
-        } else {
-            [self loseGame];
-        }
-    }
-    @catch (NSException *exception) {}
-}
-
-- (void)unlockTheGame:(id)sender {
-    self.imgBackground.image = [UIImage imageNamed:@"game.png"];
 }
 
 - (void) blockAllComponents:(BOOL)enable {
@@ -335,33 +269,21 @@
 
 - (Movement) getMovement:(int)movement {
     switch (movement) {
-        case 0:
-            return TopMovement; break;
-        case 1:
-            return LeftMovement; break;
-        case 2:
-            return RightMovement; break;
+        case 0:  return TopMovement;    break;
+        case 1:  return LeftMovement;   break;
+        case 2:  return RightMovement;  break;
         case 3:
-        default:
-            return BottomMovement; break;
+        default: return BottomMovement; break;
     }
 }
 
 - (void) doMovement:(Movement) movement {
     switch (movement) {
-        case TopMovement:
-            [self topAction:YES];
-            break;
-        case LeftMovement:
-            [self leftAction:YES];
-            break;
-        case RightMovement:
-            [self rightAction:YES];
-            break;
+        case TopMovement:    [self topAction:YES];    break;
+        case LeftMovement:   [self leftAction:YES];   break;
+        case RightMovement:  [self rightAction:YES];  break;
         case BottomMovement:
-        default:
-            [self bottomAction:YES];
-            break;
+        default:             [self bottomAction:YES]; break;
     }
 }
 
@@ -371,14 +293,16 @@
 
 - (void) playMovements {
     [self blockAllComponents:YES];
-    [self playMovements:0];
+    [self playMovementsWithTurn:0];
 }
 
-- (void) playMovements:(int)turnMovement {
-    [NSTimer scheduledTimerWithTimeInterval:1
+- (void) playMovementsWithTurn:(int)turnMovement {
+    [NSTimer scheduledTimerWithTimeInterval:MOVEMENT_TIME
                                      target:self
                                    selector:@selector(executeMovement:)
-                                   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:turnMovement], @"turn",nil]
+                                   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:turnMovement],
+                                                                                        TURN,
+                                                                                        nil]
                                     repeats:NO];
 }
 
@@ -387,18 +311,16 @@
     self.imgGood.hidden = YES;
     self.imgReady.hidden = NO;
     
-    NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:@"turn"] integerValue];
+    NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:TURN] integerValue];
     NSInteger number = [[movementsList objectAtIndex:turnMovement] integerValue];
     Movement movement = [self getMovement:(int)number];
-    
     [self doMovement:[self getMovement:(int)movement]];
-    
     turnMovement++;
     
     if (turnMovement < [movementsList count]) {
-        [self playMovements:(int)turnMovement];
+        [self playMovementsWithTurn:(int)turnMovement];
     } else {
-        [NSTimer scheduledTimerWithTimeInterval:1
+        [NSTimer scheduledTimerWithTimeInterval:MOVEMENT_TIME
                                          target:self
                                        selector:@selector(go)
                                        userInfo:nil
@@ -410,11 +332,10 @@
     self.imgReady.hidden = YES;
     self.imgGood.hidden = YES;
     self.imgGo.hidden = NO;
-    
     [self blockAllComponents:NO];
-    [self playSoundWithPath:@"go.mp3"];
     
-    [NSTimer scheduledTimerWithTimeInterval:2
+    [self playSoundWithPath:SOUND_GO];
+    [NSTimer scheduledTimerWithTimeInterval:GO_TIME
                                      target:self
                                    selector:@selector(cleanGo)
                                    userInfo:nil
@@ -425,21 +346,40 @@
     self.imgGo.hidden = YES;
 }
 
+- (void)unlockTheGame {
+    self.imgBackground.image = [UIImage imageNamed:IMG_GAME];
+}
+
 - (void) playGame {
     [self moreOneMovement];
     [self playMovements];
 }
 
+- (void)winTurn {
+    if(turn >= [movementsList count]) {
+        
+        [self blockAllComponents:YES];
+        self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
+        self.imgGo.hidden = YES;
+        self.imgGood.hidden = NO;
+        
+        [NSTimer scheduledTimerWithTimeInterval:NEW_TURN_TIME
+                                         target:self
+                                       selector:@selector(playGame)
+                                       userInfo:nil
+                                        repeats:NO];
+        turn = 0;
+    }
+}
+
 - (void) loseGame {
     [self blockAllComponents:YES];
-    
     self.imgGood.hidden = YES;
     self.imgGo.hidden = YES;
     self.imgMiss.hidden = NO;
     
-    [self playSoundWithPath:@"miss.mp3"];
-    
-    [NSTimer scheduledTimerWithTimeInterval:2
+    [self playSoundWithPath:SOUND_MISS];
+    [NSTimer scheduledTimerWithTimeInterval:GO_TIME
                                      target:self
                                    selector:@selector(goToGameOver)
                                    userInfo:nil
@@ -456,6 +396,30 @@
     gameOverViewController.score = [self.lblCount.text integerValue];
     gameOverViewController.usingMyo = self.useMyo;
     [self.navigationController pushViewController:gameOverViewController animated:YES];
+}
+
+#pragma mark - Animations
+- (void)syncAnimation {
+    lock = NO;
+    self.imgPopupLostSync.hidden = YES;
+    
+    CATransition* outAnimation = [CATransition animation];
+    [outAnimation setType:   kCATransitionReveal];
+    [outAnimation setSubtype:kCATransitionFromTop];
+    [outAnimation setDuration:ANIMATION_TIME];
+    [outAnimation setDelegate:self];
+    [[self.imgPopupLostSync layer] addAnimation:outAnimation forKey:nil];
+}
+
+- (void)unsyncAnimation {
+    lock = YES;
+    self.imgPopupLostSync.hidden = NO;
+    
+    CATransition* inAnimation = [CATransition animation];
+    [inAnimation setType:   kCATransitionPush];
+    [inAnimation setSubtype:kCATransitionFromBottom];
+    [inAnimation setDuration:ANIMATION_TIME];
+    [[self.imgPopupLostSync layer] addAnimation:inAnimation forKey:nil];
 }
 
 @end

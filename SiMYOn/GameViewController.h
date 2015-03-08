@@ -8,18 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <MyoKit/MyoKit.h>
 #import <stdlib.h>
+#import <MyoKit/MyoKit.h>
+#import "Constants.h"
 #import "GameOverViewController.h"
 
 @interface GameViewController : UIViewController
-
-typedef enum {
-    TopMovement    = 0,
-    LeftMovement   = 1,
-    RightMovement  = 2,
-    BottomMovement = 3
-} Movement;
 
 @property (strong, nonatomic) IBOutlet UIView      *view;
 @property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
