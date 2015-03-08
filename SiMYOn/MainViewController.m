@@ -45,8 +45,7 @@
 }
 
 - (IBAction)bestScoresAction:(id)sender {
-    BestScoresViewController *bestScoresViewController = [[BestScoresViewController alloc]init];
-    [self openViewController:bestScoresViewController];
+    [self openViewController:[[BestScoresViewController alloc]init]];
 }
 
 - (IBAction)creditsAction:(id)sender {

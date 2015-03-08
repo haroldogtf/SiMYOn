@@ -12,16 +12,14 @@
 
 @end
 
-@implementation SyncViewController {
-    BOOL isLeftArm;
-}
+@implementation SyncViewController
 
-- (id)initIsPlaySound:(BOOL)value
+- (id)initIsPlaySound:(BOOL)isPlaySound
 {
     self = [super init];
     
     if(self) {
-        self.playSound = value;
+        self.playSound = isPlaySound;
     }
     
     return self;
@@ -53,7 +51,6 @@
     GameViewController *gameViewController = [[GameViewController alloc]init];
     gameViewController.playSound = self.playSound;
     gameViewController.useMyo = yesOrNo;
-    gameViewController.isLeftArm = isLeftArm;
     [self.navigationController pushViewController:gameViewController animated:YES];
 }
 
@@ -115,11 +112,17 @@
 }
 
 - (void)didSyncArm:(NSNotification *)notification {
+    BOOL isLeftArm;
+    
     TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
-
     if(armEvent.arm == TLMArmLeft) {
         isLeftArm = YES;
+    } else {
+        isLeftArm = NO;
     }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:isLeftArm forKey:@"isLeftArm"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {

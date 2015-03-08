@@ -89,6 +89,8 @@
                selector:@selector(didUnsyncArm:)
                    name:TLMMyoDidReceiveArmUnsyncEventNotification
                  object:nil];
+        
+        self.isLeftArm = [[NSUserDefaults standardUserDefaults] boolForKey:@"isLeftArm"];
     }
 }
 
@@ -146,6 +148,9 @@
     } else {
         self.isLeftArm = NO;
     }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:self.isLeftArm forKey:@"isLeftArm"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     lock = NO;
     self.imgPopupLostSync.hidden = YES;
