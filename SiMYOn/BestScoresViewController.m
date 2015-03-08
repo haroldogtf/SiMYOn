@@ -44,18 +44,14 @@
 }
 
 - (void) updateScoresFromParse {
-    PFQuery *query = [PFQuery queryWithClassName:@"ranking"];
-    [query addDescendingOrder:@"score"];
-    [query addAscendingOrder:@"createdAt"];
-    query.limit = 12;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        
+    
+    [Ranking getScoresFromParse:^(NSArray *scores, NSError *error) {
         self.indicatorLoading.hidden = YES;
-
+        
         if(error) {
             self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
         } else {
-            bestScores = results;
+            bestScores = scores;
             self.imgBackground.image = [UIImage imageNamed:@"best_scores"];
             [self updateScoresInView];
         }

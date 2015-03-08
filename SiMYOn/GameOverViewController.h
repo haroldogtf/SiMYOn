@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
 #import "Util.h"
+#import "Ranking.h"
 #import "GameOverViewController.h"
 
 @interface GameOverViewController : UIViewController

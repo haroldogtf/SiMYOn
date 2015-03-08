@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 #import "Util.h"
+#import "Ranking.h"
 
 @interface BestScoresViewController : UIViewController
 

@@ -92,7 +92,7 @@
 
 - (IBAction)returnAction:(id)sender {
      if (FBSession.activeSession.isOpen) {
-         [self saveScoreInParse];
+         [self saveScores];
      }
     
     [self.navigationController popToRootViewControllerAnimated:YES];
@@ -140,13 +140,11 @@
     }
 }
 
-- (void) saveScoreInParse {
-    PFObject *ranking = [PFObject objectWithClassName:@"ranking"];
-    ranking[@"name"] = self.lblPlayerName.text;
-    ranking[@"score"] = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
-    ranking[@"using_myo"] = [NSNumber numberWithBool:self.usingMyo];
-    
-    [ranking saveInBackground];
+- (void) saveScores {
+    [Ranking saveScoresInParseWithName:self.lblPlayerName.text
+                             score:[self.lblFinalScore.text integerValue]
+                          andUsingMyo:self.usingMyo
+     ];
 }
 
 @end
