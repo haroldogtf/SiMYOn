@@ -31,11 +31,8 @@
                         <action selector="soundAction:" destination="-1" eventType="touchUpInside" id="viM-sb-PFs"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y" userLabel="btnPlay">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y" userLabel="btnPlay">
                     <rect key="frame" x="78" y="146" width="158" height="62"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="psB-Zn-q2Y" secondAttribute="height" multiplier="79:31" id="YdH-dH-4ZA"/>
-                    </constraints>
                     <state key="normal" image="btn_play.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -94,7 +91,6 @@
                 <constraint firstItem="wvs-tB-Wuv" firstAttribute="trailing" secondItem="Hvk-56-W6h" secondAttribute="trailing" constant="8" id="Ryq-Bj-CI0"/>
                 <constraint firstItem="wvs-tB-Wuv" firstAttribute="bottom" secondItem="fDU-UF-j6a" secondAttribute="bottom" constant="8" id="cVs-Bh-7A1"/>
                 <constraint firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" id="fzf-Z6-ybW"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="width" secondItem="psB-Zn-q2Y" secondAttribute="height" multiplier="160:31" id="imM-rW-L8a"/>
                 <constraint firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="uwo-18-aFj"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
