@@ -30,54 +30,15 @@
 
 - (void) configurePlayerName {
     if (FBSession.activeSession.isOpen) {
-        self.lblPlayerName.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"playerName"];
+        self.lblPlayerName.text = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_NAME];
         self.imgPlayerName.hidden = NO;
         self.lblConnectToFacebook.hidden = YES;
     }
 }
 
 - (IBAction)loginAction:(id)sender {
-    
-    if([Util hasInternetConnection]) {
-        [self facebookLogin];
-    } else {
-        self.imgNoConnectionPopup.hidden = NO;
-        self.btnLogin.enabled = NO;
-        
-        CATransition* inAnimation = [CATransition animation];
-        [inAnimation setType:kCATransitionPush];
-        [inAnimation setSubtype:kCATransitionFromBottom];
-        [inAnimation setDuration:.35];
-        [inAnimation setDelegate:self];
-        [inAnimation setValue:@"inAnimation" forKey:@"inAnimation"];
-        [[self.imgNoConnectionPopup layer] addAnimation:inAnimation forKey:nil];
-    }
-}
-
-- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-    
-    NSString* value = [theAnimation valueForKey:@"inAnimation"];
-    if ([value isEqualToString:@"inAnimation"])
-    {
-        [NSTimer scheduledTimerWithTimeInterval:1
-                                         target:self
-                                       selector:@selector(removeNoInternetConnectionPopup)
-                                       userInfo:nil
-                                        repeats:NO];
-    } else {
-        self.btnLogin.enabled = YES;
-    }
-}
-
-- (void) removeNoInternetConnectionPopup {
-    self.imgNoConnectionPopup.hidden = YES;
-
-    CATransition* outAnimation = [CATransition animation];
-    [outAnimation setType:kCATransitionReveal];
-    [outAnimation setSubtype:kCATransitionFromTop];
-    [outAnimation setDuration:.35];
-    [outAnimation setDelegate:self];
-    [[self.imgNoConnectionPopup layer] addAnimation:outAnimation forKey:nil];
+    [Util hasInternetConnection] ? [self facebookLogin]
+                                 : [self noConnetionPopupAnimation];
 }
 
 - (IBAction)logoutAction:(id)sender {
@@ -133,7 +94,7 @@
                  self.imgPlayerName.hidden = NO;
                  self.lblConnectToFacebook.hidden = YES;
                  
-                 [[NSUserDefaults standardUserDefaults] setObject:user.name forKey:@"playerName"];
+                 [[NSUserDefaults standardUserDefaults] setObject:user.name forKey:PLAYER_NAME];
                  [[NSUserDefaults standardUserDefaults] synchronize];
              }
          }];
@@ -142,9 +103,48 @@
 
 - (void) saveScores {
     [Ranking saveScoresInParseWithName:self.lblPlayerName.text
-                             score:[self.lblFinalScore.text integerValue]
-                          andUsingMyo:self.usingMyo
+                                 score:[[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]]
+                           andUsingMyo:self.usingMyo
      ];
+}
+
+- (void)noConnetionPopupAnimation {
+    self.imgNoConnectionPopup.hidden = NO;
+    self.btnLogin.enabled = NO;
+    
+    CATransition* inAnimation = [CATransition animation];
+    [inAnimation setType:kCATransitionPush];
+    [inAnimation setSubtype:kCATransitionFromBottom];
+    [inAnimation setDuration:ANIMATION_TIME];
+    [inAnimation setDelegate:self];
+    [inAnimation setValue:IN_ANIMATION forKey:IN_ANIMATION];
+    [[self.imgNoConnectionPopup layer] addAnimation:inAnimation forKey:nil];
+}
+
+- (void) removeNoInternetConnectionPopupAnimation {
+    self.imgNoConnectionPopup.hidden = YES;
+    
+    CATransition* outAnimation = [CATransition animation];
+    [outAnimation setType:kCATransitionReveal];
+    [outAnimation setSubtype:kCATransitionFromTop];
+    [outAnimation setDuration:ANIMATION_TIME];
+    [outAnimation setDelegate:self];
+    [[self.imgNoConnectionPopup layer] addAnimation:outAnimation forKey:nil];
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+    
+    NSString* value = [theAnimation valueForKey:IN_ANIMATION];
+    if ([value isEqualToString:IN_ANIMATION])
+    {
+        [NSTimer scheduledTimerWithTimeInterval:1
+                                         target:self
+                                       selector:@selector(removeNoInternetConnectionPopupAnimation)
+                                       userInfo:nil
+                                        repeats:NO];
+    } else {
+        self.btnLogin.enabled = YES;
+    }
 }
 
 @end

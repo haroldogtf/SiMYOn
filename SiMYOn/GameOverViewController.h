@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "Constants.h"
 #import "Util.h"
 #import "Ranking.h"
 #import "GameOverViewController.h"
