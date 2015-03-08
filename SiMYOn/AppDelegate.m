@@ -50,33 +50,32 @@
 }
 
 - (void) configureMyoSettings {
-    [[TLMHub sharedHub] setApplicationIdentifier:@"br.ufpe.cin.SiMYOn"];
+    [[TLMHub sharedHub] setApplicationIdentifier:APP_IDENTIFIER];
     [[TLMHub sharedHub] setShouldSendUsageData:NO];
     [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
     [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
 }
 
 - (void) configureParse {
-    [Parse setApplicationId:@"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
-                  clientKey:@"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"];
+    [Parse setApplicationId:PARSE_APPLICATION_ID
+                  clientKey:PARSE_CLIENT_KEY];
 }
 
 - (void) configureRanking {
-    
     for (int i = 1; i <= 8; i++) {
-        [[NSUserDefaults standardUserDefaults] setObject:@"Player" forKey:[@"player" stringByAppendingFormat:@"%d", i]];
-        [[NSUserDefaults standardUserDefaults] setObject:@"0"  forKey:[@"scorePlayer" stringByAppendingFormat:@"%d", i]];
+        [[NSUserDefaults standardUserDefaults] setObject:INITAL_NAME forKey:[PLAYER stringByAppendingFormat:@"%d", i]];
+        [[NSUserDefaults standardUserDefaults] setObject:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void) configureSound {
-    BOOL configured = [[NSUserDefaults standardUserDefaults] boolForKey:@"soundConfigured"];
+    BOOL configured = [[NSUserDefaults standardUserDefaults] boolForKey:SOUND_CONFIGURED];
 
     if(!configured) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playSound"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"soundConfigured"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PLAY_SOUND];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:SOUND_CONFIGURED];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
