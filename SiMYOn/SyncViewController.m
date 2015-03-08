@@ -104,29 +104,24 @@
 }
 
 - (void)didConnectDevice:(NSNotification *)notification {
-    self.imgBackground.image = [UIImage imageNamed:@"sync2.png"];
+    self.imgBackground.image = [UIImage imageNamed:IMG_SYNC2];
 }
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
-    self.imgBackground.image = [UIImage imageNamed:@"sync1.png"];
+    self.imgBackground.image = [UIImage imageNamed:IMG_SYNC1];
 }
 
 - (void)didSyncArm:(NSNotification *)notification {
-    BOOL isLeftArm;
-    
     TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
-    if(armEvent.arm == TLMArmLeft) {
-        isLeftArm = YES;
-    } else {
-        isLeftArm = NO;
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setBool:isLeftArm forKey:@"isLeftArm"];
+
+    BOOL isLeftArm = (armEvent.arm == TLMArmLeft);
+
+    [[NSUserDefaults standardUserDefaults] setBool:isLeftArm forKey:IS_LEFT_ARM];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
-    self.imgBackground.image = [UIImage imageNamed:@"sync1.png"];
+    self.imgBackground.image = [UIImage imageNamed:IMG_SYNC1];
 }
 
 - (void)didUnlockDevice:(NSNotification *)notification {

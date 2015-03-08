@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MyoKit/MyoKit.h>
+#import "Constants.h"
 #import "GameViewController.h"
 
 @interface SyncViewController : UIViewController
