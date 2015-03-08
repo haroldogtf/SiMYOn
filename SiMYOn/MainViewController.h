@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MyoKit/MyoKit.h>
-#import <Parse/Parse.h>
+#import "Constants.h"
 #import "SyncViewController.h"
 #import "InstructionsViewController.h"
 #import "BestScoresViewController.h"

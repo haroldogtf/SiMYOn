@@ -54,30 +54,30 @@
 
 - (IBAction)soundAction:(id)sender {
     BOOL playSound = [self getSoundStatus];
-    [[NSUserDefaults standardUserDefaults] setBool:!playSound forKey:@"playSound"];
+    [[NSUserDefaults standardUserDefaults] setBool:!playSound forKey:PLAY_SOUND];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self updateSoundStatus];
 }
 
 - (BOOL) getSoundStatus {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"playSound"];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:PLAY_SOUND];
 }
 
 - (void) updateSoundStatus {
     if([self getSoundStatus]) {
-        [self.btnSound setImage:[UIImage imageNamed:@"btn_sound_on.png"] forState:UIControlStateNormal];
+        [self.btnSound setImage:[UIImage imageNamed:BTN_SOUND_ON] forState:UIControlStateNormal];
     } else {
-        [self.btnSound setImage:[UIImage imageNamed:@"btn_sound_off.png"] forState:UIControlStateNormal];
+        [self.btnSound setImage:[UIImage imageNamed:BTN_SOUND_OFF] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)exitAction:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"SiMYOn"
-                                                      message:@"Are you sure to exit the game?"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:SIMYON
+                                                      message:EXIT_GAME_ALERT
                                                      delegate:self
-                                            cancelButtonTitle:@"No"
-                                            otherButtonTitles:@"Yes", nil];
+                                            cancelButtonTitle:STR_NO
+                                            otherButtonTitles:STR_YES, nil];
     [message show];
 }
 
