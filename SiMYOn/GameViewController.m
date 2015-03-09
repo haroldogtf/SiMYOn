@@ -63,28 +63,28 @@
 
 - (void)configureMyoObserver {
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(didReceivePoseChange:)
-     name:TLMMyoDidReceivePoseChangedNotification
-     object:nil];
+         addObserver:self
+            selector:@selector(didReceivePoseChange:)
+                name:TLMMyoDidReceivePoseChangedNotification
+              object:nil];
     
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(didDisconnectDevice:)
-     name:TLMHubDidDisconnectDeviceNotification
-     object:nil];
+        addObserver:self
+           selector:@selector(didDisconnectDevice:)
+               name:TLMHubDidDisconnectDeviceNotification
+             object:nil];
     
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(didSyncArm:)
-     name:TLMMyoDidReceiveArmSyncEventNotification
-     object:nil];
+        addObserver:self
+           selector:@selector(didSyncArm:)
+               name:TLMMyoDidReceiveArmSyncEventNotification
+             object:nil];
     
     [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(didUnsyncArm:)
-     name:TLMMyoDidReceiveArmUnsyncEventNotification
-     object:nil];
+        addObserver:self
+           selector:@selector(didUnsyncArm:)
+               name:TLMMyoDidReceiveArmUnsyncEventNotification
+             object:nil];
 }
 
 - (void) prepareMyoForNotifications {
@@ -203,14 +203,13 @@
 }
 
 - (void) makeMovementAction:(Movement) movement {
-    NSInteger number;
     @try {
-        number = [[movementsList objectAtIndex:turn] integerValue];
+        NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
         Movement turnMoviment = [self getMovement:(int)number];
         turn++;
         
         (turnMoviment == movement) ? [self winTurn]
-        :[self loseGame];
+                                   : [self loseGame];
     }
     @catch (NSException *exception) {}
 }
