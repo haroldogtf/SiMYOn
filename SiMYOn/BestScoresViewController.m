@@ -54,6 +54,7 @@
             bestScores = scores;
             self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
             [self updateScoresInView];
+            [self showLastRankings];
         }
     }];
 }
@@ -108,6 +109,21 @@
     }
 }
 
+- (void)showLastRankings
+{
+    self.lblPlayer9.hidden      = NO;
+    self.lblScorePlayer9.hidden = NO;
+    
+    self.lblPlayer10.hidden      = NO;
+    self.lblScorePlayer10.hidden = NO;
+    
+    self.lblPlayer11.hidden      = NO;
+    self.lblScorePlayer11.hidden = NO;
+    
+    self.lblPlayer12.hidden      = NO;
+    self.lblScorePlayer12.hidden = NO;
+}
+
 - (void) updateScoreInViewWithIndex:(int)index
               labelName:(UILabel *)name
               andLabelScore:(UILabel *)score {
@@ -123,18 +139,6 @@
             [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
-        
-        self.lblPlayer9.hidden      = NO;
-        self.lblScorePlayer9.hidden = NO;
-        
-        self.lblPlayer10.hidden      = NO;
-        self.lblScorePlayer10.hidden = NO;
-        
-        self.lblPlayer11.hidden      = NO;
-        self.lblScorePlayer11.hidden = NO;
-        
-        self.lblPlayer12.hidden      = NO;
-        self.lblScorePlayer12.hidden = NO;
     } else {
         name.text  = INITAL_NAME;
         score.text = INITIAL_SCORE;
