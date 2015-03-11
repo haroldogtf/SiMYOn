@@ -24,6 +24,5 @@
 - (IBAction)bestScoresAction: (id)sender;
 - (IBAction)creditsAction:    (id)sender;
 - (IBAction)soundAction:      (id)sender;
-- (IBAction)exitAction:       (id)sender;
 
 @end

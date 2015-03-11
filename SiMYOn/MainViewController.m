@@ -72,20 +72,4 @@
     }
 }
 
-- (IBAction)exitAction:(id)sender {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:SIMYON
-                                                      message:EXIT_GAME_ALERT
-                                                     delegate:self
-                                            cancelButtonTitle:STR_NO
-                                            otherButtonTitles:STR_YES, nil];
-    [message show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
-{
-    if(buttonIndex) {
-        exit(0);
-    }
-}
-
 @end

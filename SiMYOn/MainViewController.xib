@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
@@ -16,21 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv" userLabel="imgBackground">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv" userLabel="imgBackground">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-56-W6h" userLabel="btnSound">
-                    <rect key="frame" x="277" y="26" width="35" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Hvk-56-W6h" secondAttribute="height" multiplier="1:1" id="nnF-SW-aa0"/>
-                    </constraints>
-                    <state key="normal" image="btn_sound_on.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="soundAction:" destination="-1" eventType="touchUpInside" id="viM-sb-PFs"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y" userLabel="btnPlay">
                     <rect key="frame" x="78" y="146" width="158" height="62"/>
                     <state key="normal" image="btn_play.png">
@@ -67,32 +54,17 @@
                         <action selector="creditsAction:" destination="-1" eventType="touchUpInside" id="WaQ-8r-ff1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDU-UF-j6a" userLabel="btnExit">
-                    <rect key="frame" x="267" y="515" width="45" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="fDU-UF-j6a" secondAttribute="height" multiplier="1:1" id="Cps-Pi-Bog"/>
-                    </constraints>
-                    <state key="normal" image="btn_exit.png">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-56-W6h" userLabel="btnSound">
+                    <rect key="frame" x="277" y="26" width="35" height="35"/>
+                    <state key="normal" image="btn_sound_on.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="exitAction:" destination="-1" eventType="touchUpInside" id="ytQ-7i-YpD"/>
+                        <action selector="soundAction:" destination="-1" eventType="touchUpInside" id="viM-sb-PFs"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="width" secondItem="Hvk-56-W6h" secondAttribute="height" multiplier="64:7" id="9N6-Xz-j2p"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="Hvk-56-W6h" secondAttribute="top" constant="-26" id="DfT-bw-1dc"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="trailing" secondItem="fDU-UF-j6a" secondAttribute="trailing" constant="8" id="GSq-0z-OXP"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HTl-8L-vEH"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="L0o-cC-Hlt"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="width" secondItem="fDU-UF-j6a" secondAttribute="height" multiplier="64:9" id="Qna-hf-0cd"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="trailing" secondItem="Hvk-56-W6h" secondAttribute="trailing" constant="8" id="Ryq-Bj-CI0"/>
-                <constraint firstItem="wvs-tB-Wuv" firstAttribute="bottom" secondItem="fDU-UF-j6a" secondAttribute="bottom" constant="8" id="cVs-Bh-7A1"/>
-                <constraint firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" id="fzf-Z6-ybW"/>
-                <constraint firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="uwo-18-aFj"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="418" y="356"/>
         </view>
@@ -100,7 +72,6 @@
     <resources>
         <image name="btn_best_scores.png" width="313" height="126"/>
         <image name="btn_credits.png" width="313" height="126"/>
-        <image name="btn_exit.png" width="82" height="83"/>
         <image name="btn_instructions.png" width="313" height="126"/>
         <image name="btn_play.png" width="313" height="126"/>
         <image name="btn_sound_on.png" width="78" height="54"/>

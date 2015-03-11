@@ -22,7 +22,6 @@ typedef enum {
 
 //Strings
 #define SIMYON          @"SiMYOn"
-#define EXIT_GAME_ALERT @"Are you sure to exit the game?"
 #define BACK_MENU_ALERT @"Are you sure to go back to menu?"
 #define STR_YES         @"Yes"
 #define STR_NO          @"No"
