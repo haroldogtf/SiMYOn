@@ -91,7 +91,7 @@
                     <rect key="frame" x="162" y="285" width="50" height="15"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66" userLabel="btnReturn">
-                    <rect key="frame" x="169" y="518" width="36" height="36"/>
+                    <rect key="frame" x="165" y="516" width="44" height="44"/>
                     <state key="normal" image="btn_return.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

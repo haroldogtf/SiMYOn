@@ -54,6 +54,15 @@
                         <action selector="btnLeftAction:" destination="-1" eventType="touchUpInside" id="3hg-fo-4Kk"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="351-d9-bDa" userLabel="btnRight">
+                    <rect key="frame" x="296" y="303" width="96" height="124"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnRightAction:" destination="-1" eventType="touchUpInside" id="Iry-bW-cnS"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873-75-74n" userLabel="btnBottom">
                     <rect key="frame" x="145" y="450" width="124" height="96"/>
                     <state key="normal">
@@ -82,21 +91,12 @@
                     <rect key="frame" x="182" y="316" width="50" height="15"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Sg-r66" userLabel="btnReturn">
-                    <rect key="frame" x="189" y="577" width="36" height="36"/>
+                    <rect key="frame" x="182" y="569" width="50" height="50"/>
                     <state key="normal" image="btn_return.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="5Bf-BQ-kLf"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="351-d9-bDa" userLabel="btnRight">
-                    <rect key="frame" x="296" y="303" width="96" height="124"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="btnRightAction:" destination="-1" eventType="touchUpInside" id="Iry-bW-cnS"/>
                     </connections>
                 </button>
             </subviews>
