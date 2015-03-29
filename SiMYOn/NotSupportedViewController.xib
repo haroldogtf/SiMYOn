@@ -18,10 +18,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmH-Ac-6mu">
-                    <rect key="frame" x="81" y="264" width="438" height="72"/>
+                    <rect key="frame" x="159" y="169" width="282" height="168"/>
                     <string key="text">Sorry...
-SiMYOn is not supported in this iOS device.
-We only support iPhone 5, 5C, 5S, 6 and 6 Plus.</string>
+
+SiMYOn is not supported
+in this iOS device.
+
+We only support
+iPhone 5, 5C, 5S, 6 and 6 Plus.</string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" red="0.074509803921568626" green="0.5725490196078431" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="highlightedColor" red="0.062745098039215685" green="0.46274509803921571" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,7 +36,7 @@ We only support iPhone 5, 5C, 5S, 6 and 6 Plus.</string>
                 <constraint firstAttribute="bottom" secondItem="CQu-2f-mX1" secondAttribute="bottom" id="HeA-Nt-CMZ"/>
                 <constraint firstItem="CQu-2f-mX1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MbX-32-oUL"/>
                 <constraint firstItem="CQu-2f-mX1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QOf-BG-ftX"/>
-                <constraint firstItem="mmH-Ac-6mu" firstAttribute="centerY" secondItem="CQu-2f-mX1" secondAttribute="centerY" id="WeI-93-y0D"/>
+                <constraint firstItem="mmH-Ac-6mu" firstAttribute="centerY" secondItem="CQu-2f-mX1" secondAttribute="centerY" constant="-47" id="WeI-93-y0D"/>
                 <constraint firstItem="mmH-Ac-6mu" firstAttribute="centerX" secondItem="CQu-2f-mX1" secondAttribute="centerX" id="v4W-1g-6zR"/>
                 <constraint firstAttribute="trailing" secondItem="CQu-2f-mX1" secondAttribute="trailing" id="v6b-wT-6r1"/>
             </constraints>
