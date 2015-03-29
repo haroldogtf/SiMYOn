@@ -37,7 +37,16 @@ typedef enum {
 #define NIB_MENU_IPHONE_5_5C_5S       @"MainViewController"
 #define NIB_MENU_IPHONE_6             @"MainViewController_6"
 #define NIB_MENU_IPHONE_6_PLUS        @"MainViewController_6Plus"
-#define NIB_MENU_IPHONE_NOT_SUPPORTED @"NotSupportedViewController"
+#define NIB_GAME_IPHONE_5_5C_5S       @"GameViewController"
+#define NIB_GAME_IPHONE_6             @"GameViewController_6"
+#define NIB_GAME_IPHONE_6_PLUS        @"GameViewController_6Plus"
+#define NIB_GAMEOVER_IPHONE_5_5C_5S   @"GameOverViewController"
+#define NIB_GAMEOVER_IPHONE_6         @"GameOverViewController_6"
+#define NIB_GAMEOVER_IPHONE_6_PLUS    @"GameOverViewController_6Plus"
+#define NIB_BESTSCORES_IPHONE_5_5C_5S @"BestScoresViewController"
+#define NIB_BESTSCORES_IPHONE_6       @"BestScoresViewController_6"
+#define NIB_BESTSCORES_IPHONE_6_PLUS  @"BestScoresViewController_6Plus"
+#define NIB_NOT_SUPPORTED             @"NotSupportedViewController"
 
 //Strings
 #define SIMYON          @"SiMYOn"

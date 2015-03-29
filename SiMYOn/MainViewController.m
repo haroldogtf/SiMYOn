@@ -47,7 +47,7 @@
         case IPHONE_6_MODEL:             return NIB_MENU_IPHONE_6;             break;
         case IPHONE_6_PLUS_MODEL:        return NIB_MENU_IPHONE_6_PLUS;        break;
         case IPHONE_NOT_SUPPORTED_MODEL:
-        default:                         return NIB_MENU_IPHONE_NOT_SUPPORTED; break;
+        default:                         return NIB_NOT_SUPPORTED; break;
     }
 }
 

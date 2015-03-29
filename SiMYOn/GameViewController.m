@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "Constants.h"
+#import "Util.h"
 #import "GameOverViewController.h"
 #import <MyoKit/MyoKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -42,10 +43,16 @@
     NSInteger       turn;
 }
 
+- (id)init {
+    NSString *nibName = [self selectNibNameByModel:[Util getIphoneModel]];
+    
+    return [super initWithNibName:nibName bundle:nil];
+}
+
 - (id) initIsPlaySound:(BOOL)isPlaySound
              andUseMyo:(BOOL)useMyo {
 
-    self = [super init];
+    self = [self init];
     
     if(self) {
         self.playSound = isPlaySound;
@@ -53,6 +60,17 @@
     }
     
     return self;
+}
+
+- (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
+    
+    switch (iPhoneModel) {
+        case IPHONE_5_5C_5S_MODEL:       return NIB_GAME_IPHONE_5_5C_5S;       break;
+        case IPHONE_6_MODEL:             return NIB_GAME_IPHONE_6;             break;
+        case IPHONE_6_PLUS_MODEL:        return NIB_GAME_IPHONE_6_PLUS;        break;
+        case IPHONE_NOT_SUPPORTED_MODEL:
+        default:                         return NIB_NOT_SUPPORTED; break;
+    }
 }
 
 #pragma mark - Lifecycle
