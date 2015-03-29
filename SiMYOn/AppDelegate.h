@@ -7,11 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MyoKit/MyoKit.h>
-#import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
-#import "Constants.h"
-#import "MainViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

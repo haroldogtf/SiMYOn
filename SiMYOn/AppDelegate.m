@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
+#import "MainViewController.h"
+#import <MyoKit/MyoKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -62,7 +67,7 @@
 }
 
 - (void) configureRanking {
-    for (int i = 1; i <= 8; i++) {
+    for (int i = 1; i <= OFFLINE_RANKING; i++) {
         [[NSUserDefaults standardUserDefaults] setObject:INITAL_NAME forKey:[PLAYER stringByAppendingFormat:@"%d", i]];
         [[NSUserDefaults standardUserDefaults] setObject:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
     }

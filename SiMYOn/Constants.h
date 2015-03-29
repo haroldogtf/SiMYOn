@@ -27,13 +27,15 @@ typedef enum {
 //Application
 #define APP_IDENTIFIER @"br.ufpe.cin.SiMYOn"
 
+//Configuration
+#define OFFLINE_RANKING 8
+
 //Util
 #define IPHONE_5_5C_5S_HEIGHT      568
 #define IPHONE_6_HEIGHT            667
 #define IPHONE_6_PLUS_HEIGHT       736
 
 //Nibs
-
 #define NIB_MENU_IPHONE_5_5C_5S       @"MainViewController"
 #define NIB_MENU_IPHONE_6             @"MainViewController_6"
 #define NIB_MENU_IPHONE_6_PLUS        @"MainViewController_6Plus"
