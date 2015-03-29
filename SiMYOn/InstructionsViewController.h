@@ -10,6 +10,4 @@
 
 @interface InstructionsViewController : UIViewController
 
-- (IBAction)returnAction:(id)sender;
-
 @end

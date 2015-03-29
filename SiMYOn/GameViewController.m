@@ -7,8 +7,31 @@
 //
 
 #import "GameViewController.h"
+#import "Constants.h"
+#import "GameOverViewController.h"
+#import <MyoKit/MyoKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <stdlib.h>
 
 @interface GameViewController ()
+
+    @property (strong, nonatomic) IBOutlet UIView      *view;
+
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgReady;
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgGo;
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgGood;
+    @property (weak, nonatomic)   IBOutlet UIImageView *imgMiss;
+
+    @property (weak, nonatomic)   IBOutlet UILabel     *lblCount;
+
+    @property (weak, nonatomic)   IBOutlet UIButton    *btnTop;
+    @property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
+    @property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
+    @property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
+
+    @property (nonatomic) BOOL isLeftArm;
 
 @end
 
@@ -26,7 +49,7 @@
     
     if(self) {
         self.playSound = isPlaySound;
-        self.useMyo = useMyo;
+        self.usingMyo = useMyo;
     }
     
     return self;
@@ -88,14 +111,14 @@
 }
 
 - (void) prepareMyoForNotifications {
-    if(self.useMyo) {
+    if(self.usingMyo) {
         [self configureMyoObserver];
         self.isLeftArm = [[NSUserDefaults standardUserDefaults] boolForKey:IS_LEFT_ARM];
     }
 }
 
 - (void)didReceivePoseChange:(NSNotification*)notification {
-    if(self.useMyo) {
+    if(self.usingMyo) {
 
         TLMPose *pose = notification.userInfo[kTLMKeyPose];
 
@@ -118,7 +141,7 @@
 }
 
 - (void)didDisconnectDevice:(NSNotification *)notification {
-    if(self.useMyo) {
+    if(self.usingMyo) {
         [self configureMyo];
     }
 }
@@ -133,7 +156,7 @@
 }
 
 - (void)didUnsyncArm:(NSNotification *)notification {
-    if(self.useMyo) {
+    if(self.usingMyo) {
         [self unsyncAnimation];
     }
 }
@@ -393,7 +416,7 @@
 
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc]init];
     gameOverViewController.score = [self.lblCount.text integerValue];
-    gameOverViewController.usingMyo = self.useMyo;
+    gameOverViewController.usingMyo = self.usingMyo;
     [self.navigationController pushViewController:gameOverViewController animated:YES];
 }
 

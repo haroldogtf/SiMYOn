@@ -10,6 +10,4 @@
 
 @interface CreditsViewController : UIViewController
 
-- (IBAction)returnAction:(id)sender;
-
 @end

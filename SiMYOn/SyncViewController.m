@@ -7,8 +7,15 @@
 //
 
 #import "SyncViewController.h"
+#import "Constants.h"
+#import "GameViewController.h"
+#import <MyoKit/MyoKit.h>
 
 @interface SyncViewController ()
+
+    @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
+
+    @property (nonatomic) BOOL playSound;
 
 @end
 
@@ -50,7 +57,7 @@
 - (void) goToGameUsingMyo:(BOOL)yesOrNo {
     GameViewController *gameViewController = [[GameViewController alloc]init];
     gameViewController.playSound = self.playSound;
-    gameViewController.useMyo = yesOrNo;
+    gameViewController.usingMyo = yesOrNo;
     [self.navigationController pushViewController:gameViewController animated:YES];
 }
 

@@ -7,8 +7,23 @@
 //
 
 #import "GameOverViewController.h"
+#import "Constants.h"
+#import "Util.h"
+#import "Ranking.h"
+#import "GameOverViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface GameOverViewController ()
+
+    @property (weak, nonatomic) IBOutlet UIButton    *btnLogin;
+    @property (weak, nonatomic) IBOutlet UIButton    *btnLogout;
+
+    @property (weak, nonatomic) IBOutlet UILabel     *lblConnectToFacebook;
+    @property (weak, nonatomic) IBOutlet UILabel     *lblFinalScore;
+    @property (weak, nonatomic) IBOutlet UILabel     *lblPlayerName;
+
+    @property (weak, nonatomic) IBOutlet UIImageView *imgPlayerName;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgNoConnectionPopup;
 
 @end
 

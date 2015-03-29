@@ -7,8 +7,18 @@
 //
 
 #import "MainViewController.h"
+#import "Constants.h"
+#import "Util.h"
+#import "SyncViewController.h"
+#import "GameViewController.h"
+#import "InstructionsViewController.h"
+#import "BestScoresViewController.h"
+#import "CreditsViewController.h"
+#import <MyoKit/MyoKit.h>
 
 @interface MainViewController ()
+
+    @property (weak, nonatomic) IBOutlet UIButton *btnSound;
 
 @end
 
