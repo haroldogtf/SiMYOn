@@ -47,6 +47,13 @@
 		097400AD1A8826120012E465 /* game_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400A91A8826120012E465 /* game_top.png */; };
 		097FE4DF1AC838E20094A538 /* NotSupportedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097FE4DD1AC838E20094A538 /* NotSupportedViewController.m */; };
 		097FE4E01AC838E20094A538 /* NotSupportedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4DE1AC838E20094A538 /* NotSupportedViewController.xib */; };
+		097FE4E31AC83F450094A538 /* BestScoresViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E11AC83F450094A538 /* BestScoresViewController_6.xib */; };
+		097FE4E41AC83F450094A538 /* BestScoresViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E21AC83F450094A538 /* BestScoresViewController_6Plus.xib */; };
+		097FE4E91AC83F5E0094A538 /* GameOverViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E51AC83F5E0094A538 /* GameOverViewController_6.xib */; };
+		097FE4EA1AC83F5E0094A538 /* GameOverViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E61AC83F5E0094A538 /* GameOverViewController_6Plus.xib */; };
+		097FE4EB1AC83F5E0094A538 /* GameViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E71AC83F5E0094A538 /* GameViewController_6.xib */; };
+		097FE4EC1AC83F5E0094A538 /* GameViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E81AC83F5E0094A538 /* GameViewController_6Plus.xib */; };
+		097FE4F11AC840DA0094A538 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4F01AC840DA0094A538 /* background.png */; };
 		09A3E0FD1A9904280016FC24 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0F91A9904280016FC24 /* credits.png */; };
 		09A3E0FE1A9904280016FC24 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FA1A9904280016FC24 /* gameover.png */; };
 		09A3E1001A9904280016FC24 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FC1A9904280016FC24 /* splash.png */; };
@@ -143,6 +150,13 @@
 		097FE4DC1AC838E20094A538 /* NotSupportedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotSupportedViewController.h; sourceTree = "<group>"; };
 		097FE4DD1AC838E20094A538 /* NotSupportedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotSupportedViewController.m; sourceTree = "<group>"; };
 		097FE4DE1AC838E20094A538 /* NotSupportedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotSupportedViewController.xib; sourceTree = "<group>"; };
+		097FE4E11AC83F450094A538 /* BestScoresViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestScoresViewController_6.xib; sourceTree = "<group>"; };
+		097FE4E21AC83F450094A538 /* BestScoresViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestScoresViewController_6Plus.xib; sourceTree = "<group>"; };
+		097FE4E51AC83F5E0094A538 /* GameOverViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController_6.xib; sourceTree = "<group>"; };
+		097FE4E61AC83F5E0094A538 /* GameOverViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController_6Plus.xib; sourceTree = "<group>"; };
+		097FE4E71AC83F5E0094A538 /* GameViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController_6.xib; sourceTree = "<group>"; };
+		097FE4E81AC83F5E0094A538 /* GameViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController_6Plus.xib; sourceTree = "<group>"; };
+		097FE4F01AC840DA0094A538 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		09A3E0F91A9904280016FC24 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = credits.png; path = SiMYOn/Assets/credits.png; sourceTree = "<group>"; };
 		09A3E0FA1A9904280016FC24 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameover.png; path = SiMYOn/Assets/gameover.png; sourceTree = "<group>"; };
 		09A3E0FC1A9904280016FC24 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = SiMYOn/Assets/splash.png; sourceTree = "<group>"; };
@@ -243,15 +257,9 @@
 		0909941B1AC82CBA0068EFA2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				09A3E1081A9BCA120016FC24 /* SyncViewController.h */,
-				09A3E1091A9BCA120016FC24 /* SyncViewController.m */,
-				09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */,
-				097400431A8635DA0012E465 /* GameViewController.h */,
-				097400441A8635DA0012E465 /* GameViewController.m */,
-				097400451A8635DA0012E465 /* GameViewController.xib */,
-				09A3E1031A990F200016FC24 /* GameOverViewController.h */,
-				09A3E1041A990F200016FC24 /* GameOverViewController.m */,
-				09A3E1051A990F200016FC24 /* GameOverViewController.xib */,
+				097FE4ED1AC83F710094A538 /* Sync */,
+				097FE4EE1AC83F780094A538 /* GamePlay */,
+				097FE4EF1AC83F800094A538 /* GameOver */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -282,6 +290,8 @@
 				097400721A87EFBE0012E465 /* BestScoresViewController.h */,
 				097400731A87EFBE0012E465 /* BestScoresViewController.m */,
 				097400741A87EFBE0012E465 /* BestScoresViewController.xib */,
+				097FE4E11AC83F450094A538 /* BestScoresViewController_6.xib */,
+				097FE4E21AC83F450094A538 /* BestScoresViewController_6Plus.xib */,
 			);
 			name = BestScores;
 			sourceTree = "<group>";
@@ -387,9 +397,44 @@
 			name = NotSupported;
 			sourceTree = "<group>";
 		};
+		097FE4ED1AC83F710094A538 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				09A3E1081A9BCA120016FC24 /* SyncViewController.h */,
+				09A3E1091A9BCA120016FC24 /* SyncViewController.m */,
+				09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */,
+			);
+			name = Sync;
+			sourceTree = "<group>";
+		};
+		097FE4EE1AC83F780094A538 /* GamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				097400431A8635DA0012E465 /* GameViewController.h */,
+				097400441A8635DA0012E465 /* GameViewController.m */,
+				097400451A8635DA0012E465 /* GameViewController.xib */,
+				097FE4E71AC83F5E0094A538 /* GameViewController_6.xib */,
+				097FE4E81AC83F5E0094A538 /* GameViewController_6Plus.xib */,
+			);
+			name = GamePlay;
+			sourceTree = "<group>";
+		};
+		097FE4EF1AC83F800094A538 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				09A3E1031A990F200016FC24 /* GameOverViewController.h */,
+				09A3E1041A990F200016FC24 /* GameOverViewController.m */,
+				09A3E1051A990F200016FC24 /* GameOverViewController.xib */,
+				097FE4E51AC83F5E0094A538 /* GameOverViewController_6.xib */,
+				097FE4E61AC83F5E0094A538 /* GameOverViewController_6Plus.xib */,
+			);
+			name = GameOver;
+			sourceTree = "<group>";
+		};
 		09C29CC11AA7CEDD005E4E4F /* views */ = {
 			isa = PBXGroup;
 			children = (
+				097FE4F01AC840DA0094A538 /* background.png */,
 				09A3E0FC1A9904280016FC24 /* splash.png */,
 				097400871A880A130012E465 /* menu.png */,
 				09CEA6F01AB0F8B70035E186 /* menu_bracelet.png */,
@@ -552,6 +597,7 @@
 				09E547931AA3DE0600985223 /* font.ttf in Resources */,
 				0974008E1A880A130012E465 /* btn_exit.png in Resources */,
 				09C29CCC1AA7F9D4005E4E4F /* btn_logout.png in Resources */,
+				097FE4EB1AC83F5E0094A538 /* GameViewController_6.xib in Resources */,
 				097400471A8635DA0012E465 /* GameViewController.xib in Resources */,
 				097400AA1A8826120012E465 /* game_bottom.png in Resources */,
 				09A3E10C1A9BCA120016FC24 /* SyncViewController.xib in Resources */,
@@ -575,10 +621,13 @@
 				097400AC1A8826120012E465 /* game_right.png in Resources */,
 				090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */,
 				097400AB1A8826120012E465 /* game_left.png in Resources */,
+				097FE4EA1AC83F5E0094A538 /* GameOverViewController_6Plus.xib in Resources */,
 				0974008C1A880A130012E465 /* btn_best_scores.png in Resources */,
 				0974009A1A88112E0012E465 /* btn_continue.png in Resources */,
 				09A3E0FE1A9904280016FC24 /* gameover.png in Resources */,
+				097FE4E41AC83F450094A538 /* BestScoresViewController_6Plus.xib in Resources */,
 				09C29CCE1AA7FA05005E4E4F /* player.png in Resources */,
+				097FE4F11AC840DA0094A538 /* background.png in Resources */,
 				097400901A880A130012E465 /* btn_play.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
 				09A3E1181A9BD1EB0016FC24 /* sync2.png in Resources */,
@@ -590,11 +639,13 @@
 				090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */,
 				09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */,
 				097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */,
+				097FE4EC1AC83F5E0094A538 /* GameViewController_6Plus.xib in Resources */,
 				0974008B1A880A130012E465 /* blip4.mp3 in Resources */,
 				097400711A87EF3E0012E465 /* InstructionsViewController.xib in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 				0974008F1A880A130012E465 /* btn_instructions.png in Resources */,
 				09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */,
+				097FE4E31AC83F450094A538 /* BestScoresViewController_6.xib in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
 				09CE76CE1AAA91DD00244ABF /* best_scores_loading.png in Resources */,
 				09A3E1241A9BE4FA0016FC24 /* game_good.png in Resources */,
@@ -602,6 +653,7 @@
 				097400AD1A8826120012E465 /* game_top.png in Resources */,
 				09C29CC81AA7D901005E4E4F /* best_scores_no_connection.png in Resources */,
 				09A3E1111A9BCB280016FC24 /* game_go.png in Resources */,
+				097FE4E91AC83F5E0094A538 /* GameOverViewController_6.xib in Resources */,
 				09CEA6F11AB0F8B70035E186 /* menu_bracelet.png in Resources */,
 				09A3E11C1A9BD2340016FC24 /* btn_sync_no_myo.png in Resources */,
 				09A3E1071A990F200016FC24 /* GameOverViewController.xib in Resources */,
