@@ -12,5 +12,6 @@
 @interface Util : NSObject
 
 + (BOOL) hasInternetConnection;
++ (IPhoneModel) getIphoneModel;
 
 @end

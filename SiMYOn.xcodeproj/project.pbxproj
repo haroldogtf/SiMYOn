@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994131AC8291A0068EFA2 /* MainViewController_6.xib */; };
+		090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
 		096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */; };
 		096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04BA1A9E8B6E006654C6 /* MyoKit.framework */; };
@@ -43,6 +45,8 @@
 		097400AB1A8826120012E465 /* game_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400A71A8826120012E465 /* game_left.png */; };
 		097400AC1A8826120012E465 /* game_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400A81A8826120012E465 /* game_right.png */; };
 		097400AD1A8826120012E465 /* game_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 097400A91A8826120012E465 /* game_top.png */; };
+		097FE4DF1AC838E20094A538 /* NotSupportedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097FE4DD1AC838E20094A538 /* NotSupportedViewController.m */; };
+		097FE4E01AC838E20094A538 /* NotSupportedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4DE1AC838E20094A538 /* NotSupportedViewController.xib */; };
 		09A3E0FD1A9904280016FC24 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0F91A9904280016FC24 /* credits.png */; };
 		09A3E0FE1A9904280016FC24 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FA1A9904280016FC24 /* gameover.png */; };
 		09A3E1001A9904280016FC24 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FC1A9904280016FC24 /* splash.png */; };
@@ -90,6 +94,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090994131AC8291A0068EFA2 /* MainViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6.xib; sourceTree = "<group>"; };
+		090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6Plus.xib; sourceTree = "<group>"; };
 		09549D461AA3FCFF002C228C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		096D04BA1A9E8B6E006654C6 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
@@ -134,6 +140,9 @@
 		097400A71A8826120012E465 /* game_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_left.png; path = SiMYOn/Assets/game_left.png; sourceTree = "<group>"; };
 		097400A81A8826120012E465 /* game_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_right.png; path = SiMYOn/Assets/game_right.png; sourceTree = "<group>"; };
 		097400A91A8826120012E465 /* game_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game_top.png; path = SiMYOn/Assets/game_top.png; sourceTree = "<group>"; };
+		097FE4DC1AC838E20094A538 /* NotSupportedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotSupportedViewController.h; sourceTree = "<group>"; };
+		097FE4DD1AC838E20094A538 /* NotSupportedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotSupportedViewController.m; sourceTree = "<group>"; };
+		097FE4DE1AC838E20094A538 /* NotSupportedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotSupportedViewController.xib; sourceTree = "<group>"; };
 		09A3E0F91A9904280016FC24 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = credits.png; path = SiMYOn/Assets/credits.png; sourceTree = "<group>"; };
 		09A3E0FA1A9904280016FC24 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameover.png; path = SiMYOn/Assets/gameover.png; sourceTree = "<group>"; };
 		09A3E0FC1A9904280016FC24 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = SiMYOn/Assets/splash.png; sourceTree = "<group>"; };
@@ -211,6 +220,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090994191AC82CAC0068EFA2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0974003C1A86358D0012E465 /* MainViewController.h */,
+				0974003D1A86358D0012E465 /* MainViewController.m */,
+				0974003E1A86358D0012E465 /* MainViewController.xib */,
+				090994131AC8291A0068EFA2 /* MainViewController_6.xib */,
+				090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		0909941A1AC82CB20068EFA2 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				097400251A8630B30012E465 /* LaunchScreen.xib */,
+			);
+			name = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		0909941B1AC82CBA0068EFA2 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				09A3E1081A9BCA120016FC24 /* SyncViewController.h */,
+				09A3E1091A9BCA120016FC24 /* SyncViewController.m */,
+				09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */,
+				097400431A8635DA0012E465 /* GameViewController.h */,
+				097400441A8635DA0012E465 /* GameViewController.m */,
+				097400451A8635DA0012E465 /* GameViewController.xib */,
+				09A3E1031A990F200016FC24 /* GameOverViewController.h */,
+				09A3E1041A990F200016FC24 /* GameOverViewController.m */,
+				09A3E1051A990F200016FC24 /* GameOverViewController.xib */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		0909941C1AC82CC10068EFA2 /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				0974006D1A87EF3E0012E465 /* InstructionsViewController.h */,
+				0974006E1A87EF3E0012E465 /* InstructionsViewController.m */,
+				0974006F1A87EF3E0012E465 /* InstructionsViewController.xib */,
+			);
+			name = Instructions;
+			sourceTree = "<group>";
+		};
+		0909941D1AC82CC90068EFA2 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				097400771A87EFD20012E465 /* CreditsViewController.h */,
+				097400781A87EFD20012E465 /* CreditsViewController.m */,
+				097400791A87EFD20012E465 /* CreditsViewController.xib */,
+			);
+			name = Credits;
+			sourceTree = "<group>";
+		};
+		0909941E1AC82CD30068EFA2 /* BestScores */ = {
+			isa = PBXGroup;
+			children = (
+				097400721A87EFBE0012E465 /* BestScoresViewController.h */,
+				097400731A87EFBE0012E465 /* BestScoresViewController.m */,
+				097400741A87EFBE0012E465 /* BestScoresViewController.xib */,
+			);
+			name = BestScores;
+			sourceTree = "<group>";
+		};
 		0974000A1A8630B30012E465 = {
 			isa = PBXGroup;
 			children = (
@@ -276,28 +351,13 @@
 		097400421A8635A10012E465 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				097400251A8630B30012E465 /* LaunchScreen.xib */,
-				0974003C1A86358D0012E465 /* MainViewController.h */,
-				0974003D1A86358D0012E465 /* MainViewController.m */,
-				0974003E1A86358D0012E465 /* MainViewController.xib */,
-				09A3E1081A9BCA120016FC24 /* SyncViewController.h */,
-				09A3E1091A9BCA120016FC24 /* SyncViewController.m */,
-				09A3E10A1A9BCA120016FC24 /* SyncViewController.xib */,
-				097400431A8635DA0012E465 /* GameViewController.h */,
-				097400441A8635DA0012E465 /* GameViewController.m */,
-				097400451A8635DA0012E465 /* GameViewController.xib */,
-				0974006D1A87EF3E0012E465 /* InstructionsViewController.h */,
-				0974006E1A87EF3E0012E465 /* InstructionsViewController.m */,
-				0974006F1A87EF3E0012E465 /* InstructionsViewController.xib */,
-				097400721A87EFBE0012E465 /* BestScoresViewController.h */,
-				097400731A87EFBE0012E465 /* BestScoresViewController.m */,
-				097400741A87EFBE0012E465 /* BestScoresViewController.xib */,
-				097400771A87EFD20012E465 /* CreditsViewController.h */,
-				097400781A87EFD20012E465 /* CreditsViewController.m */,
-				097400791A87EFD20012E465 /* CreditsViewController.xib */,
-				09A3E1031A990F200016FC24 /* GameOverViewController.h */,
-				09A3E1041A990F200016FC24 /* GameOverViewController.m */,
-				09A3E1051A990F200016FC24 /* GameOverViewController.xib */,
+				0909941A1AC82CB20068EFA2 /* LaunchScreen */,
+				090994191AC82CAC0068EFA2 /* Menu */,
+				0909941B1AC82CBA0068EFA2 /* Game */,
+				0909941C1AC82CC10068EFA2 /* Instructions */,
+				0909941E1AC82CD30068EFA2 /* BestScores */,
+				0909941D1AC82CC90068EFA2 /* Credits */,
+				097FE4DB1AC838930094A538 /* NotSupported */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -315,6 +375,16 @@
 			);
 			name = Assets;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		097FE4DB1AC838930094A538 /* NotSupported */ = {
+			isa = PBXGroup;
+			children = (
+				097FE4DC1AC838E20094A538 /* NotSupportedViewController.h */,
+				097FE4DD1AC838E20094A538 /* NotSupportedViewController.m */,
+				097FE4DE1AC838E20094A538 /* NotSupportedViewController.xib */,
+			);
+			name = NotSupported;
 			sourceTree = "<group>";
 		};
 		09C29CC11AA7CEDD005E4E4F /* views */ = {
@@ -503,6 +573,7 @@
 				0974009B1A88112E0012E465 /* btn_pause.png in Resources */,
 				097400911A880A130012E465 /* game.png in Resources */,
 				097400AC1A8826120012E465 /* game_right.png in Resources */,
+				090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */,
 				097400AB1A8826120012E465 /* game_left.png in Resources */,
 				0974008C1A880A130012E465 /* btn_best_scores.png in Resources */,
 				0974009A1A88112E0012E465 /* btn_continue.png in Resources */,
@@ -515,6 +586,8 @@
 				09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */,
 				09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */,
 				09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */,
+				097FE4E01AC838E20094A538 /* NotSupportedViewController.xib in Resources */,
+				090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */,
 				09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */,
 				097400761A87EFBE0012E465 /* BestScoresViewController.xib in Resources */,
 				0974008B1A880A130012E465 /* blip4.mp3 in Resources */,
@@ -552,6 +625,7 @@
 				09CE76E51AAC8C6D00244ABF /* Ranking.m in Sources */,
 				097400751A87EFBE0012E465 /* BestScoresViewController.m in Sources */,
 				097400701A87EF3E0012E465 /* InstructionsViewController.m in Sources */,
+				097FE4DF1AC838E20094A538 /* NotSupportedViewController.m in Sources */,
 				0974007A1A87EFD20012E465 /* CreditsViewController.m in Sources */,
 				097400191A8630B30012E465 /* main.m in Sources */,
 			);

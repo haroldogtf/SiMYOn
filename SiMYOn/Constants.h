@@ -9,7 +9,7 @@
 #ifndef SiMYOn_Constants_h
 #define SiMYOn_Constants_h
 
-//Enum
+//Enums
 typedef enum {
     TopMovement    = 0,
     LeftMovement   = 1,
@@ -17,8 +17,27 @@ typedef enum {
     BottomMovement = 3
 } Movement;
 
+typedef enum {
+    IPHONE_5_5C_5S_MODEL       = 5,
+    IPHONE_6_MODEL             = -6,
+    IPHONE_6_PLUS_MODEL        = 6,
+    IPHONE_NOT_SUPPORTED_MODEL = -1
+} IPhoneModel;
+
 //Application
 #define APP_IDENTIFIER @"br.ufpe.cin.SiMYOn"
+
+//Util
+#define IPHONE_5_5C_5S_HEIGHT      568
+#define IPHONE_6_HEIGHT            667
+#define IPHONE_6_PLUS_HEIGHT       736
+
+//Nibs
+
+#define NIB_MENU_IPHONE_5_5C_5S       @"MainViewController"
+#define NIB_MENU_IPHONE_6             @"MainViewController_6"
+#define NIB_MENU_IPHONE_6_PLUS        @"MainViewController_6Plus"
+#define NIB_MENU_IPHONE_NOT_SUPPORTED @"NotSupportedViewController"
 
 //Strings
 #define SIMYON          @"SiMYOn"
@@ -80,7 +99,6 @@ typedef enum {
 #define SOUND_BOTTOM @"blip4.mp3"
 #define SOUND_GO     @"go.mp3"
 #define SOUND_MISS   @"miss.mp3"
-
 
 //Times
 #define MOVEMENT_TIME  1
