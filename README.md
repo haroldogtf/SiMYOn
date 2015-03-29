@@ -1,5 +1,5 @@
 # SiMYOn
-Simon Game played with Myo Gesture Control Armband
+Simon Game played with Myo Gesture Control Armband.
 
 #####Target Devices:
 iPhone 5 / 5c / 5s
