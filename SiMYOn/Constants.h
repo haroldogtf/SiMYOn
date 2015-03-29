@@ -18,10 +18,10 @@ typedef enum {
 } Movement;
 
 typedef enum {
-    IPHONE_5_5C_5S_MODEL       = 5,
-    IPHONE_6_MODEL             = -6,
-    IPHONE_6_PLUS_MODEL        = 6,
-    IPHONE_NOT_SUPPORTED_MODEL = -1
+    IPHONE_5_5C_5S_MODEL,
+    IPHONE_6_MODEL,
+    IPHONE_6_PLUS_MODEL,
+    IPHONE_NOT_SUPPORTED_MODEL
 } IPhoneModel;
 
 //Application
