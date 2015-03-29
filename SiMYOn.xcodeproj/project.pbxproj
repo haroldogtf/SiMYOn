@@ -53,7 +53,6 @@
 		097FE4EA1AC83F5E0094A538 /* GameOverViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E61AC83F5E0094A538 /* GameOverViewController_6Plus.xib */; };
 		097FE4EB1AC83F5E0094A538 /* GameViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E71AC83F5E0094A538 /* GameViewController_6.xib */; };
 		097FE4EC1AC83F5E0094A538 /* GameViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4E81AC83F5E0094A538 /* GameViewController_6Plus.xib */; };
-		097FE4F11AC840DA0094A538 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 097FE4F01AC840DA0094A538 /* background.png */; };
 		09A3E0FD1A9904280016FC24 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0F91A9904280016FC24 /* credits.png */; };
 		09A3E0FE1A9904280016FC24 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FA1A9904280016FC24 /* gameover.png */; };
 		09A3E1001A9904280016FC24 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 09A3E0FC1A9904280016FC24 /* splash.png */; };
@@ -78,6 +77,7 @@
 		09C29CCC1AA7F9D4005E4E4F /* btn_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */; };
 		09C29CCE1AA7FA05005E4E4F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCD1AA7FA05005E4E4F /* player.png */; };
 		09C29CD01AA8F996005E4E4F /* no_internet_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */; };
+		09C444651AC87C22003F0CF9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C444641AC87C22003F0CF9 /* background.png */; };
 		09CE76CE1AAA91DD00244ABF /* best_scores_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */; };
 		09CE76D21AAA925900244ABF /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CE76D11AAA925900244ABF /* Util.m */; };
 		09CE76D51AAAA31500244ABF /* btn_sound_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76D31AAAA31500244ABF /* btn_sound_off.png */; };
@@ -156,7 +156,6 @@
 		097FE4E61AC83F5E0094A538 /* GameOverViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController_6Plus.xib; sourceTree = "<group>"; };
 		097FE4E71AC83F5E0094A538 /* GameViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController_6.xib; sourceTree = "<group>"; };
 		097FE4E81AC83F5E0094A538 /* GameViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController_6Plus.xib; sourceTree = "<group>"; };
-		097FE4F01AC840DA0094A538 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		09A3E0F91A9904280016FC24 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = credits.png; path = SiMYOn/Assets/credits.png; sourceTree = "<group>"; };
 		09A3E0FA1A9904280016FC24 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameover.png; path = SiMYOn/Assets/gameover.png; sourceTree = "<group>"; };
 		09A3E0FC1A9904280016FC24 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = SiMYOn/Assets/splash.png; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_logout.png; path = SiMYOn/Assets/btn_logout.png; sourceTree = "<group>"; };
 		09C29CCD1AA7FA05005E4E4F /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = SiMYOn/Assets/player.png; sourceTree = "<group>"; };
 		09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_internet_connection.png; path = SiMYOn/Assets/no_internet_connection.png; sourceTree = "<group>"; };
+		09C444641AC87C22003F0CF9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = SiMYOn/Assets/background.png; sourceTree = "<group>"; };
 		09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores_loading.png; path = SiMYOn/Assets/best_scores_loading.png; sourceTree = "<group>"; };
 		09CE76D01AAA925900244ABF /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		09CE76D11AAA925900244ABF /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
@@ -434,7 +434,7 @@
 		09C29CC11AA7CEDD005E4E4F /* views */ = {
 			isa = PBXGroup;
 			children = (
-				097FE4F01AC840DA0094A538 /* background.png */,
+				09C444641AC87C22003F0CF9 /* background.png */,
 				09A3E0FC1A9904280016FC24 /* splash.png */,
 				097400871A880A130012E465 /* menu.png */,
 				09CEA6F01AB0F8B70035E186 /* menu_bracelet.png */,
@@ -627,7 +627,6 @@
 				09A3E0FE1A9904280016FC24 /* gameover.png in Resources */,
 				097FE4E41AC83F450094A538 /* BestScoresViewController_6Plus.xib in Resources */,
 				09C29CCE1AA7FA05005E4E4F /* player.png in Resources */,
-				097FE4F11AC840DA0094A538 /* background.png in Resources */,
 				097400901A880A130012E465 /* btn_play.png in Resources */,
 				097400401A86358D0012E465 /* MainViewController.xib in Resources */,
 				09A3E1181A9BD1EB0016FC24 /* sync2.png in Resources */,
@@ -635,6 +634,7 @@
 				09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */,
 				09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */,
 				09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */,
+				09C444651AC87C22003F0CF9 /* background.png in Resources */,
 				097FE4E01AC838E20094A538 /* NotSupportedViewController.xib in Resources */,
 				090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */,
 				09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */,
