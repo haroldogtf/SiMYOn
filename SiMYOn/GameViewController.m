@@ -39,6 +39,7 @@
 @implementation GameViewController {
     AVAudioPlayer  *audio;
     NSMutableArray *movementsList;
+    BOOL            hasLoseGame;
     BOOL            lock;
     NSInteger       turn;
 }
@@ -217,9 +218,13 @@
 }
 
 - (void) action:(BOOL)automatic andMovemet:(Movement) movement {
-    if(!automatic) {
-        [self makeMovementAction:movement];
-        [self blockAllComponents:NO];
+    if(!hasLoseGame) {
+        if(!automatic) {
+            [self makeMovementAction:movement];
+            [self blockAllComponents:NO];
+        }
+    } else {
+        [self blockAllComponents:YES];
     }
 }
 
@@ -267,18 +272,21 @@
 - (void)didLoadGame {
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
+    hasLoseGame = NO;
     [self blockAllComponents:YES];
     [self prepareMyoForNotifications];
 }
 
 - (void) changeImage:(NSString *)imageName
         andPlaySound:(NSString *)sound {
-    
-    lock = YES;
-    self.imgBackground.image = [UIImage imageNamed:imageName];
-    [self.imgBackground setNeedsDisplay];
-    [self playSoundWithPath:sound];
-    [self cleanAction];
+   
+    if(!hasLoseGame) {
+        lock = YES;
+        self.imgBackground.image = [UIImage imageNamed:imageName];
+        [self.imgBackground setNeedsDisplay];
+        [self playSoundWithPath:sound];
+        [self cleanAction];
+    }
 }
 
 -(void) returnToMainMenu {
@@ -413,12 +421,15 @@
 }
 
 - (void) loseGame {
+    hasLoseGame = YES;
+
     [self blockAllComponents:YES];
     self.imgGood.hidden = YES;
     self.imgGo.hidden = YES;
     self.imgMiss.hidden = NO;
     
     [self playSoundWithPath:SOUND_MISS];
+    
     [NSTimer scheduledTimerWithTimeInterval:GO_TIME
                                      target:self
                                    selector:@selector(goToGameOver)
