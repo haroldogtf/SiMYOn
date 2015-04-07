@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="font.ttf">
@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="btnBottom" destination="873-75-74n" id="Dvd-gI-u2y"/>
                 <outlet property="btnLeft" destination="KOa-cd-AL7" id="ZMh-be-MxT"/>
+                <outlet property="btnReturn" destination="Aaf-Sg-r66" id="wUK-D6-0AN"/>
                 <outlet property="btnRight" destination="351-d9-bDa" id="G7P-1g-Sqo"/>
                 <outlet property="btnTop" destination="AZV-uY-nNO" id="wt9-n9-0Qd"/>
                 <outlet property="imgBackground" destination="SM3-Pz-ddC" id="qei-EU-Z4Z"/>

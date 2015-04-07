@@ -31,6 +31,7 @@
     @property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
     @property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
     @property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
+    @property (weak, nonatomic)   IBOutlet UIButton    *btnReturn;
 
     @property (nonatomic) BOOL isLeftArm;
 
@@ -422,6 +423,8 @@
 
 - (void) loseGame {
     hasLoseGame = YES;
+    
+    self.btnReturn.enabled = NO;
 
     [self blockAllComponents:YES];
     self.imgGood.hidden = YES;
