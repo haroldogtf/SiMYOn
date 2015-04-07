@@ -95,16 +95,18 @@
 
 - (void) updateScoresFromParse {
     
+    __weak typeof(self) this = self;
+    
     [Ranking getScoresFromParse:^(NSArray *scores, NSError *error) {
-        self.indicatorLoading.hidden = YES;
+        this.indicatorLoading.hidden = YES;
         
         if(error) {
-            self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
+            this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         } else {
             bestScores = scores;
-            self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
-            [self updateScoresInView];
-            [self showLastRankings];
+            this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
+            [this updateScoresInView];
+            [this showLastRankings];
         }
     }];
 }
