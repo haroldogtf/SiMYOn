@@ -18,7 +18,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv" userLabel="imgBackground">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Iu-fhV" userLabel="imgBracelet">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Iu-fhV" userLabel="imgBracelet">
                     <rect key="frame" x="92" y="199" width="231" height="537"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y" userLabel="btnPlay">
@@ -73,12 +73,12 @@
         </view>
     </objects>
     <resources>
+        <image name="bracelet.png" width="350" height="858"/>
         <image name="btn_best_scores.png" width="313" height="126"/>
         <image name="btn_credits.png" width="313" height="126"/>
         <image name="btn_instructions.png" width="313" height="126"/>
         <image name="btn_play.png" width="313" height="126"/>
         <image name="btn_sound_on.png" width="78" height="54"/>
         <image name="menu.png" width="640" height="1136"/>
-        <image name="menu_bracelet.png" width="350" height="858"/>
     </resources>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -19,7 +19,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv" userLabel="imgBackground">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Iu-fhV" userLabel="imgBracelet">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Iu-fhV" userLabel="imgBracelet">
                     <rect key="frame" x="70" y="139" width="174" height="429"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="174" id="KAQ-Fp-TaI"/>
@@ -116,12 +116,12 @@
         </view>
     </objects>
     <resources>
+        <image name="bracelet.png" width="350" height="858"/>
         <image name="btn_best_scores.png" width="313" height="126"/>
         <image name="btn_credits.png" width="313" height="126"/>
         <image name="btn_instructions.png" width="313" height="126"/>
         <image name="btn_play.png" width="313" height="126"/>
         <image name="btn_sound_on.png" width="78" height="54"/>
         <image name="menu.png" width="640" height="1136"/>
-        <image name="menu_bracelet.png" width="350" height="858"/>
     </resources>
 </document>
