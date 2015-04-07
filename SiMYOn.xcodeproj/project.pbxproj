@@ -10,6 +10,7 @@
 		090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994131AC8291A0068EFA2 /* MainViewController_6.xib */; };
 		090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
+		09483E241AD3EEEB00FFBF6F /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 09483E231AD3EEEB00FFBF6F /* Facebook.m */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
 		096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */; };
 		096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04BA1A9E8B6E006654C6 /* MyoKit.framework */; };
@@ -101,6 +102,8 @@
 		090994131AC8291A0068EFA2 /* MainViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6.xib; sourceTree = "<group>"; };
 		090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6Plus.xib; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
+		09483E221AD3EEEB00FFBF6F /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		09483E231AD3EEEB00FFBF6F /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		09549D461AA3FCFF002C228C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		096D04BA1A9E8B6E006654C6 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
@@ -525,6 +528,8 @@
 			children = (
 				09CE76E31AAC8C6D00244ABF /* Ranking.h */,
 				09CE76E41AAC8C6D00244ABF /* Ranking.m */,
+				09483E221AD3EEEB00FFBF6F /* Facebook.h */,
+				09483E231AD3EEEB00FFBF6F /* Facebook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				09A3E10B1A9BCA120016FC24 /* SyncViewController.m in Sources */,
 				0974003F1A86358D0012E465 /* MainViewController.m in Sources */,
 				09CE76D21AAA925900244ABF /* Util.m in Sources */,
+				09483E241AD3EEEB00FFBF6F /* Facebook.m in Sources */,
 				09CE76E51AAC8C6D00244ABF /* Ranking.m in Sources */,
 				097400751A87EFBE0012E465 /* BestScoresViewController.m in Sources */,
 				097400701A87EF3E0012E465 /* InstructionsViewController.m in Sources */,

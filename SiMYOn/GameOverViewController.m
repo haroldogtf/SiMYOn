@@ -10,8 +10,7 @@
 #import "Constants.h"
 #import "Util.h"
 #import "Ranking.h"
-#import "GameOverViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import "Facebook.h"
 
 @interface GameOverViewController ()
 
@@ -50,7 +49,7 @@
 }
 
 - (void) configurePlayerName {
-    if (FBSession.activeSession.isOpen) {
+    if ([Facebook hasActiveSession]) {
         self.lblPlayerName.text = [[NSUserDefaults standardUserDefaults] objectForKey:PLAYER_NAME];
         self.imgPlayerName.hidden = NO;
         self.lblConnectToFacebook.hidden = YES;
@@ -74,7 +73,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [FBSession.activeSession closeAndClearTokenInformation];
+    [Facebook closeSession];
     
     self.lblPlayerName.hidden = YES;
     self.lblPlayerName.text = @"";
@@ -84,7 +83,7 @@
 }
 
 - (IBAction)returnAction:(id)sender {
-     if (FBSession.activeSession.isOpen) {
+     if ([Facebook hasActiveSession]) {
          [self saveScores];
      }
     
@@ -96,40 +95,43 @@
 }
 
 - (void) showLoginLogoutButtons {
-    self.btnLogin.hidden  = FBSession.activeSession.isOpen;
-    self.btnLogout.hidden = !FBSession.activeSession.isOpen;
+    self.btnLogin.hidden  = [Facebook hasActiveSession];
+    self.btnLogout.hidden = ![Facebook hasActiveSession];
 }
 
 - (void) facebookLogin {
-    if (FBSession.activeSession.isOpen) {
+    
+    if ([Facebook hasActiveSession]) {
         [self getNameInFacebook];
     } else {
-        FBSession.activeSession=nil;
-        [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
-                                completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                    if(!error) {
-                                        [self getNameInFacebook];
-                                    }
-                                }
-         ];
+        
+        __weak typeof(self) this = self;
+        [Facebook setNilInSection];
+        [Facebook login:^(NSError *error) {
+            if(!error) {
+                [this getNameInFacebook];
+            }
+        }];
     }
 }
 
 - (void) getNameInFacebook {
-    if (FBSession.activeSession.isOpen) {
-        [[FBRequest requestForMe] startWithCompletionHandler:
-         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
-             if (!error) {
-                 [self showLoginLogoutButtons];
-                 self.lblPlayerName.text = user.name;
-                 self.lblPlayerName.hidden = NO;
-                 self.imgPlayerName.hidden = NO;
-                 self.lblConnectToFacebook.hidden = YES;
-                 
-                 [[NSUserDefaults standardUserDefaults] setObject:user.name forKey:PLAYER_NAME];
-                 [[NSUserDefaults standardUserDefaults] synchronize];
-             }
-         }];
+    
+    if ([Facebook hasActiveSession]) {
+        
+        __weak typeof(self) this = self;
+        [Facebook getUserName:^(NSString *userName, NSError *error) {
+            if (!error) {
+                [this showLoginLogoutButtons];
+                this.lblPlayerName.text = userName;
+                this.lblPlayerName.hidden = NO;
+                this.imgPlayerName.hidden = NO;
+                this.lblConnectToFacebook.hidden = YES;
+
+                [[NSUserDefaults standardUserDefaults] setObject:userName forKey:PLAYER_NAME];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
+        }];
     }
 }
 
