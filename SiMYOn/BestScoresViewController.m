@@ -88,7 +88,7 @@
     if([Util hasInternetConnection]) {
         [self updateScoresFromParse];
     } else {
-        self.imgBackground.image = [UIImage imageNamed:@"best_scores_no_connection"];
+        self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         self.indicatorLoading.hidden = YES;
     }
 }
