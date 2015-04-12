@@ -16,7 +16,7 @@
 
 @interface GameViewController ()
 
-    @property (strong, nonatomic) IBOutlet UIView      *view;
+    @property (strong, nonatomic) IBOutlet UIView      *gameView;
 
     @property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
     @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
