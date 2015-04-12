@@ -138,23 +138,23 @@
 }
 
 - (void) updateScoresInView {
-    [self updateScoreInViewWithIndex:0  labelName:self.lblPlayer1  andLabelScore:self.lblScorePlayer1];
-    [self updateScoreInViewWithIndex:1  labelName:self.lblPlayer2  andLabelScore:self.lblScorePlayer2];
-    [self updateScoreInViewWithIndex:2  labelName:self.lblPlayer3  andLabelScore:self.lblScorePlayer3];
-    [self updateScoreInViewWithIndex:3  labelName:self.lblPlayer4  andLabelScore:self.lblScorePlayer4];
-    [self updateScoreInViewWithIndex:4  labelName:self.lblPlayer5  andLabelScore:self.lblScorePlayer5];
-    [self updateScoreInViewWithIndex:5  labelName:self.lblPlayer6  andLabelScore:self.lblScorePlayer6];
-    [self updateScoreInViewWithIndex:6  labelName:self.lblPlayer7  andLabelScore:self.lblScorePlayer7];
-    [self updateScoreInViewWithIndex:7  labelName:self.lblPlayer8  andLabelScore:self.lblScorePlayer8];
-    [self updateScoreInViewWithIndex:8  labelName:self.lblPlayer9  andLabelScore:self.lblScorePlayer9];
-    [self updateScoreInViewWithIndex:9  labelName:self.lblPlayer10 andLabelScore:self.lblScorePlayer10];
-    [self updateScoreInViewWithIndex:10 labelName:self.lblPlayer11 andLabelScore:self.lblScorePlayer11];
-    [self updateScoreInViewWithIndex:11 labelName:self.lblPlayer12 andLabelScore:self.lblScorePlayer12];
+    [self updateScoreWithIndex:0  labelName:self.lblPlayer1  andLabelScore:self.lblScorePlayer1];
+    [self updateScoreWithIndex:1  labelName:self.lblPlayer2  andLabelScore:self.lblScorePlayer2];
+    [self updateScoreWithIndex:2  labelName:self.lblPlayer3  andLabelScore:self.lblScorePlayer3];
+    [self updateScoreWithIndex:3  labelName:self.lblPlayer4  andLabelScore:self.lblScorePlayer4];
+    [self updateScoreWithIndex:4  labelName:self.lblPlayer5  andLabelScore:self.lblScorePlayer5];
+    [self updateScoreWithIndex:5  labelName:self.lblPlayer6  andLabelScore:self.lblScorePlayer6];
+    [self updateScoreWithIndex:6  labelName:self.lblPlayer7  andLabelScore:self.lblScorePlayer7];
+    [self updateScoreWithIndex:7  labelName:self.lblPlayer8  andLabelScore:self.lblScorePlayer8];
+    [self updateScoreWithIndex:8  labelName:self.lblPlayer9  andLabelScore:self.lblScorePlayer9];
+    [self updateScoreWithIndex:9  labelName:self.lblPlayer10 andLabelScore:self.lblScorePlayer10];
+    [self updateScoreWithIndex:10 labelName:self.lblPlayer11 andLabelScore:self.lblScorePlayer11];
+    [self updateScoreWithIndex:11 labelName:self.lblPlayer12 andLabelScore:self.lblScorePlayer12];
 }
 
 - (PFObject *) getScore:(int) index {
     @try {
-        return [bestScores objectAtIndex:index];
+        return bestScores[index];
     }
     @catch (NSException * e) {
         return nil;
@@ -176,7 +176,7 @@
     self.lblScorePlayer12.hidden = NO;
 }
 
-- (void) updateScoreInViewWithIndex:(int)index
+- (void) updateScoreWithIndex:(int)index
               labelName:(UILabel *)name
               andLabelScore:(UILabel *)score {
 
@@ -187,7 +187,7 @@
         score.text = [NSString stringWithFormat:@"%@", player[SCORE]];
         
         if(score >=0 && index <= 7) {
-            [[NSUserDefaults standardUserDefaults] setObject:name.text  forKey:[PLAYER stringByAppendingFormat:@"%d", index+1]];
+            [[NSUserDefaults standardUserDefaults] setObject:name.text  forKey:[PLAYER       stringByAppendingFormat:@"%d", index+1]];
             [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
             [[NSUserDefaults standardUserDefaults] synchronize];
         }
