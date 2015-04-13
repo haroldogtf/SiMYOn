@@ -16,7 +16,7 @@
 
 @interface GameViewController ()
 
-    @property (strong, nonatomic) IBOutlet UIView      *gameView;
+    @property (strong, nonatomic) IBOutlet UIView      *view;
 
     @property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
     @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
@@ -41,6 +41,7 @@
     AVAudioPlayer  *audio;
     NSMutableArray *movementsList;
     BOOL            hasLoseGame;
+    BOOL            returnToMainMenu;
     BOOL            lock;
     NSInteger       turn;
 }
@@ -274,6 +275,7 @@
     movementsList = [[NSMutableArray alloc]init];
     turn = 0;
     hasLoseGame = NO;
+    returnToMainMenu = NO;
     [self blockAllComponents:YES];
     [self prepareMyoForNotifications];
 }
@@ -292,11 +294,15 @@
 
 -(void) returnToMainMenu {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    returnToMainMenu = YES;
+    [audio stop];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) playSoundWithPath:(NSString*) sound {
-    if(self.playSound) {
+    if(self.playSound && !returnToMainMenu) {
         NSURL *soundUrl = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], sound]];
         audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
         [audio play];
