@@ -25,9 +25,8 @@
 @implementation MainViewController
 
 - (id)init {
-    NSString *nibName = [self selectNibNameByModel:[Util getIphoneModel]];
-    
-    return [super initWithNibName:nibName bundle:nil];
+    return [super initWithNibName:[Util selectNibNameByModel:NIB_MENU]
+                           bundle:nil];
 }
 
 - (void)viewDidLoad {
@@ -38,18 +37,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
-    
-    NSString *model;
-    switch (iPhoneModel) {
-        case IPHONE_5_5C_5S_MODEL: model = NIB_MENU_IPHONE_5_5C_5S; break;
-        case IPHONE_6_MODEL:       model = NIB_MENU_IPHONE_6;       break;
-        case IPHONE_6_PLUS_MODEL:  model = NIB_MENU_IPHONE_6_PLUS;  break;
-        default:                   model = NIB_NOT_SUPPORTED;       break;
-    }
-    return model;
 }
 
 - (void) openViewController:(UIViewController *) viewController {

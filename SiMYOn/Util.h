@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Constants.h"
 
 @interface Util : NSObject
 
-+ (int) getRandomMovement;
++ (int)  getRandomMovement;
 + (BOOL) hasInternetConnection;
-+ (IPhoneModel) getIphoneModel;
-+ (void) setString:(NSString *)string
-            forKey:(NSString *)key;
++ (void) setString:(NSString *) string
+            forKey:(NSString *) key;
++ (NSString *) selectNibNameByModel:(NSString *) nibName;
 
 @end

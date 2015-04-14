@@ -7,9 +7,12 @@
 //
 
 #import "Util.h"
+#import "Constants.h"
 #import <UIKit/UIKit.h>
 
 @implementation Util
+
+# pragma mark - Public methods
 
 + (int) getRandomMovement {
     return arc4random_uniform(400) % 4;
@@ -31,6 +34,25 @@
     return hasInternet;
 }
 
++ (NSString *) selectNibNameByModel:(NSString *) nibName {
+    
+    NSString *model;
+    switch ([self getIphoneModel]) {
+        case IPHONE_5_5C_5S_MODEL: model = NIB_IPHONE_5_5C_5S; break;
+        case IPHONE_6_MODEL:       model = NIB_IPHONE_6;       break;
+        case IPHONE_6_PLUS_MODEL:  model = NIB_IPHONE_6_PLUS;  break;
+        default:                   return NIB_NOT_SUPPORTED;   break;
+    }
+    
+    return [nibName stringByAppendingString:model];;
+}
+
++ (void) setString:(NSString *) string forKey:(NSString *) key {
+    [[NSUserDefaults standardUserDefaults] setObject:string forKey:key];
+}
+
+# pragma mark - Private methods
+
 + (IPhoneModel) getIphoneModel
 {
     CGSize result = [[UIScreen mainScreen] bounds].size;
@@ -44,10 +66,6 @@
     }
     
     return model;
-}
-
-+ (void) setString:(NSString *) string forKey:(NSString *) key {
-    [[NSUserDefaults standardUserDefaults] setObject:string forKey:key];
 }
 
 @end

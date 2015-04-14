@@ -31,10 +31,9 @@
     BOOL isSavedRanking;
 }
 
-- (id)init {
-    NSString *nibName = [self selectNibNameByModel:[Util getIphoneModel]];
-    
-    return [super initWithNibName:nibName bundle:nil];
+- (id)init {    
+    return [super initWithNibName:[Util selectNibNameByModel:NIB_GAMEOVER]
+                           bundle:nil];
 }
 
 - (void)viewDidLoad {
@@ -55,18 +54,6 @@
         self.imgPlayerName.hidden = NO;
         self.lblConnectToFacebook.hidden = YES;
     }
-}
-
-- (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
-    
-    NSString *model;
-    switch (iPhoneModel) {
-        case IPHONE_5_5C_5S_MODEL: model = NIB_GAMEOVER_IPHONE_5_5C_5S; break;
-        case IPHONE_6_MODEL:       model = NIB_GAMEOVER_IPHONE_6;       break;
-        case IPHONE_6_PLUS_MODEL:  model = NIB_GAMEOVER_IPHONE_6_PLUS;  break;
-        default:                   model = NIB_NOT_SUPPORTED;           break;
-    }
-    return model;
 }
 
 - (IBAction)loginAction:(id)sender {
