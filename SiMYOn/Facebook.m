@@ -26,9 +26,7 @@
 + (void) login:(LoginBlock)block {
     [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
                             completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                if(!error) {
-                                    block(error);
-                                }
+                                block(error);
                             }
      ];
 }

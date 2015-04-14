@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		090994151AC8291A0068EFA2 /* MainViewController_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994131AC8291A0068EFA2 /* MainViewController_6.xib */; };
 		090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */; };
+		093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		09483E241AD3EEEB00FFBF6F /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 09483E231AD3EEEB00FFBF6F /* Facebook.m */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
@@ -115,6 +116,8 @@
 /* Begin PBXFileReference section */
 		090994131AC8291A0068EFA2 /* MainViewController_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6.xib; sourceTree = "<group>"; };
 		090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController_6Plus.xib; sourceTree = "<group>"; };
+		093DD1381ADC8EA4000BC344 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SiMYOn/Libs/MBProgressHUD.h; sourceTree = "<group>"; };
+		093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SiMYOn/Libs/MBProgressHUD.m; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
 		09483E221AD3EEEB00FFBF6F /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		09483E231AD3EEEB00FFBF6F /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
@@ -307,6 +310,16 @@
 			name = BestScores;
 			sourceTree = "<group>";
 		};
+		093DD1371ADC8E96000BC344 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				093DD1381ADC8EA4000BC344 /* MBProgressHUD.h */,
+				093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */,
+			);
+			name = Libs;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		0974000A1A8630B30012E465 = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +345,7 @@
 				09CE76E21AAC8C4E00244ABF /* Model */,
 				09CE76CF1AAA922A00244ABF /* Util */,
 				0974004A1A864BBE0012E465 /* Assets */,
+				093DD1371ADC8E96000BC344 /* Libs */,
 				097400411A8635990012E465 /* Frameworks */,
 				097400161A8630B30012E465 /* Supporting Files */,
 			);
@@ -708,6 +722,7 @@
 				097FE4DF1AC838E20094A538 /* NotSupportedViewController.m in Sources */,
 				0974007A1A87EFD20012E465 /* CreditsViewController.m in Sources */,
 				097400191A8630B30012E465 /* main.m in Sources */,
+				093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +888,7 @@
 				0984984C1ADABDB20049BEB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

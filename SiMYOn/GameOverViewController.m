@@ -11,6 +11,7 @@
 #import "Util.h"
 #import "Ranking.h"
 #import "Facebook.h"
+#import "MBProgressHUD.h"
 
 @interface GameOverViewController ()
 
@@ -68,8 +69,24 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    [Util hasInternetConnection] ? [self facebookLogin]
-                                 : [self noConnetionPopupAnimation];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.dimBackground = YES;
+    hud.labelText = LOADING;
+    
+    __weak typeof(self) this = self;
+    __block BOOL hasInternet;
+    
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        hasInternet = [Util hasInternetConnection];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            hasInternet ? [this facebookLogin]
+                        : [this noConnetionPopupAnimation];
+            [MBProgressHUD hideHUDForView:this.view animated:YES];
+        });
+    });
 }
 
 - (IBAction)logoutAction:(id)sender {

@@ -55,6 +55,7 @@ typedef enum {
 #define BACK_MENU_ALERT @"Are you sure to go back to menu?"
 #define STR_YES         @"Yes"
 #define STR_NO          @"No"
+#define LOADING         @"Loading"
 
 //Keys
 #define SOUND_CONFIGURED @"soundConfigured"
