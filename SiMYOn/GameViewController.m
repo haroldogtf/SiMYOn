@@ -16,35 +16,35 @@
 
 @interface GameViewController ()
 
-    @property (strong, nonatomic) IBOutlet UIView      *view;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgPopupLostSync;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgReady;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgGo;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgGood;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgMiss;
 
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgPopupLostSync;
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgBackground;
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgReady;
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgGo;
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgGood;
-    @property (weak, nonatomic)   IBOutlet UIImageView *imgMiss;
+    @property (weak, nonatomic) IBOutlet UILabel *lblCount;
 
-    @property (weak, nonatomic)   IBOutlet UILabel     *lblCount;
+    @property (weak, nonatomic) IBOutlet UIButton *btnTop;
+    @property (weak, nonatomic) IBOutlet UIButton *btnLeft;
+    @property (weak, nonatomic) IBOutlet UIButton *btnRight;
+    @property (weak, nonatomic) IBOutlet UIButton *btnBottom;
+    @property (weak, nonatomic) IBOutlet UIButton *btnReturn;
 
-    @property (weak, nonatomic)   IBOutlet UIButton    *btnTop;
-    @property (weak, nonatomic)   IBOutlet UIButton    *btnLeft;
-    @property (weak, nonatomic)   IBOutlet UIButton    *btnRight;
-    @property (weak, nonatomic)   IBOutlet UIButton    *btnBottom;
-    @property (weak, nonatomic)   IBOutlet UIButton    *btnReturn;
+    @property (strong, nonatomic) AVAudioPlayer *audio;
 
+    @property (strong, nonatomic) NSMutableArray *movementsList;
+
+    @property (nonatomic) NSInteger turn;
+
+    @property (nonatomic) BOOL lock;
     @property (nonatomic) BOOL isLeftArm;
+    @property (nonatomic) BOOL hasLoseGame;
+    @property (nonatomic) BOOL isReturnToMainMenu;
 
 @end
 
-@implementation GameViewController {
-    AVAudioPlayer  *audio;
-    NSMutableArray *movementsList;
-    BOOL            hasLoseGame;
-    BOOL            returnToMainMenu;
-    BOOL            lock;
-    NSInteger       turn;
-}
+@implementation GameViewController
 
 - (id)init {
     NSString *nibName = [self selectNibNameByModel:[Util getIphoneModel]];
@@ -144,7 +144,7 @@
 
         TLMPose *pose = notification.userInfo[kTLMKeyPose];
 
-        if(!lock) {
+        if(!self.lock) {
             switch (pose.type) {
                 case TLMPoseTypeFingersSpread: [self topAction:NO];    break;
                 case TLMPoseTypeFist:          [self bottomAction:NO]; break;
@@ -220,7 +220,7 @@
 }
 
 - (void) action:(BOOL)automatic andMovemet:(Movement) movement {
-    if(hasLoseGame) {
+    if(self.hasLoseGame) {
         [self blockAllComponents:YES];
     } else {
         if(!automatic) {
@@ -252,9 +252,9 @@
 
 - (void) makeMovementAction:(Movement) movement {
     @try {
-        NSInteger number = [[movementsList objectAtIndex:turn] integerValue];
+        NSInteger number = [[self.movementsList objectAtIndex:self.turn] integerValue];
         Movement turnMoviment = [self getMovement:(int)number];
-        turn++;
+        self.turn++;
         
         (turnMoviment == movement) ? [self winTurn]
                                    : [self loseGame];
@@ -272,10 +272,10 @@
 
 #pragma mark - Game
 - (void)didLoadGame {
-    movementsList = [[NSMutableArray alloc]init];
-    turn = 0;
-    hasLoseGame = NO;
-    returnToMainMenu = NO;
+    self.movementsList = [[NSMutableArray alloc]init];
+    self.turn = 0;
+    self.hasLoseGame = NO;
+    self.isReturnToMainMenu = NO;
     [self blockAllComponents:YES];
     [self prepareMyoForNotifications];
 }
@@ -283,8 +283,8 @@
 - (void) changeImage:(NSString *)imageName
         andPlaySound:(NSString *)sound {
    
-    if(!hasLoseGame) {
-        lock = YES;
+    if(!self.hasLoseGame) {
+        self.lock = YES;
         self.imgBackground.image = [UIImage imageNamed:imageName];
         [self.imgBackground setNeedsDisplay];
         [self playSoundWithPath:sound];
@@ -295,26 +295,26 @@
 -(void) returnToMainMenu {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
-    returnToMainMenu = YES;
-    [audio stop];
+    self.isReturnToMainMenu = YES;
+    [self.audio stop];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void) playSoundWithPath:(NSString*) sound {
-    if(self.playSound && !returnToMainMenu) {
+    if(self.playSound && !self.isReturnToMainMenu) {
         
         NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
         NSString *path = [NSString stringWithFormat:@"%@/%@", resourcePath, sound];
         NSURL *url = [NSURL fileURLWithPath:path];
         
-        audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        [audio play];
+        self.audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        [self.audio play];
     }
 }
 
 - (void) blockAllComponents:(BOOL)enable {
-    lock = enable;
+    self.lock = enable;
     self.btnTop.enabled    = !enable;
     self.btnLeft.enabled   = !enable;
     self.btnRight.enabled  = !enable;
@@ -347,7 +347,7 @@
 }
 
 - (void) moreOneMovement {
-    [movementsList addObject:[NSNumber numberWithInt:[self getRandomMovement]]];
+    [self.movementsList addObject:[NSNumber numberWithInt:[self getRandomMovement]]];
 }
 
 - (void) playMovements {
@@ -373,12 +373,12 @@
     self.imgReady.hidden = NO;
     
     NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:TURN] integerValue];
-    NSInteger number = [[movementsList objectAtIndex:turnMovement] integerValue];
+    NSInteger number = [[self.movementsList objectAtIndex:turnMovement] integerValue];
     Movement movement = [self getMovement:(int)number];
     [self doMovement:[self getMovement:(int)movement]];
     turnMovement++;
     
-    if (turnMovement < [movementsList count]) {
+    if (turnMovement < [self.movementsList count]) {
         [self playMovementsWithTurn:(int)turnMovement];
     } else {
         [NSTimer scheduledTimerWithTimeInterval:MOVEMENT_TIME
@@ -417,10 +417,10 @@
 }
 
 - (void)winTurn {
-    if(turn >= [movementsList count]) {
+    if(self.turn >= [self.movementsList count]) {
         
         [self blockAllComponents:YES];
-        self.lblCount.text = [NSString stringWithFormat:@"%d", (int)turn];
+        self.lblCount.text = [NSString stringWithFormat:@"%d", (int)self.turn];
         self.imgGo.hidden = YES;
         self.imgGood.hidden = NO;
         
@@ -429,12 +429,12 @@
                                        selector:@selector(playGame)
                                        userInfo:nil
                                         repeats:NO];
-        turn = 0;
+        self.turn = 0;
     }
 }
 
 - (void) loseGame {
-    hasLoseGame = YES;
+    self.hasLoseGame = YES;
     
     self.btnReturn.enabled = NO;
 
@@ -453,20 +453,20 @@
 }
 
 - (void) goToGameOver {
-    movementsList = [[NSMutableArray alloc]init];
-    turn = 0;
+    self.movementsList = [[NSMutableArray alloc]init];
+    self.turn = 0;
 
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    GameOverViewController *gameOverViewController = [[GameOverViewController alloc]init];
-    gameOverViewController.score = [self.lblCount.text integerValue];
-    gameOverViewController.usingMyo = self.usingMyo;
-    [self.navigationController pushViewController:gameOverViewController animated:YES];
+    GameOverViewController *gameViewController = [[GameOverViewController alloc]init];
+    gameViewController.score = [self.lblCount.text integerValue];
+    gameViewController.usingMyo = self.usingMyo;
+    [self.navigationController pushViewController:gameViewController animated:YES];
 }
 
 #pragma mark - Animations
 - (void)syncAnimation {
-    lock = NO;
+    self.lock = NO;
     self.imgPopupLostSync.hidden = YES;
     
     CATransition* outAnimation = [CATransition animation];
@@ -478,7 +478,7 @@
 }
 
 - (void)unsyncAnimation {
-    lock = YES;
+    self.lock = YES;
     self.imgPopupLostSync.hidden = NO;
     
     CATransition* inAnimation = [CATransition animation];
