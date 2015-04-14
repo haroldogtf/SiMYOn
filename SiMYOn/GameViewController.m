@@ -31,6 +31,8 @@
     @property (weak, nonatomic) IBOutlet UIButton *btnBottom;
     @property (weak, nonatomic) IBOutlet UIButton *btnReturn;
 
+    @property (strong, nonatomic) UIAlertView *alert;
+
     @property (strong, nonatomic) AVAudioPlayer *audio;
 
     @property (strong, nonatomic) NSMutableArray *movementsList;
@@ -93,6 +95,10 @@
 - (void) viewDidAppear:(BOOL)animated
 {    
     [self playGame];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    [self.alert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -207,12 +213,12 @@
 
 - (IBAction)returnAction:(id)sender {
     if([self.lblCount.text integerValue] > 0) {
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:SIMYON
-                                                          message:BACK_MENU_ALERT
-                                                         delegate:self
-                                                cancelButtonTitle:STR_NO
-                                                otherButtonTitles:STR_YES, nil];
-        [message show];
+        self.alert = [[UIAlertView alloc] initWithTitle:SIMYON
+                                               message:BACK_MENU_ALERT
+                                              delegate:self
+                                     cancelButtonTitle:STR_NO
+                                     otherButtonTitles:STR_YES, nil];
+        [self.alert show];
     } else {
         [self returnToMainMenu];
     }
