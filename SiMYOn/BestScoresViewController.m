@@ -71,13 +71,14 @@
 
 - (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
     
+    NSString *model;
     switch (iPhoneModel) {
-        case IPHONE_5_5C_5S_MODEL:       return NIB_BESTSCORES_IPHONE_5_5C_5S;       break;
-        case IPHONE_6_MODEL:             return NIB_BESTSCORES_IPHONE_6;             break;
-        case IPHONE_6_PLUS_MODEL:        return NIB_BESTSCORES_IPHONE_6_PLUS;        break;
-        case IPHONE_NOT_SUPPORTED_MODEL:
-        default:                         return NIB_NOT_SUPPORTED; break;
+        case IPHONE_5_5C_5S_MODEL: model = NIB_BESTSCORES_IPHONE_5_5C_5S; break;
+        case IPHONE_6_MODEL:       model = NIB_BESTSCORES_IPHONE_6;       break;
+        case IPHONE_6_PLUS_MODEL:  model = NIB_BESTSCORES_IPHONE_6_PLUS;  break;
+        default:                   model = NIB_NOT_SUPPORTED;             break;
     }
+    return model;
 }
 
 - (IBAction)returnAction:(id)sender {
@@ -187,9 +188,9 @@
         score.text = [NSString stringWithFormat:@"%@", player[SCORE]];
         
         if(score >=0 && index <= 7) {
-            [[NSUserDefaults standardUserDefaults] setObject:name.text  forKey:[PLAYER       stringByAppendingFormat:@"%d", index+1]];
-            [[NSUserDefaults standardUserDefaults] setObject:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+           [Util setString:name.text  forKey:[PLAYER       stringByAppendingFormat:@"%d", index+1]];
+           [Util setString:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
+           [[NSUserDefaults standardUserDefaults] synchronize];
         }
     } else {
         name.text  = INITAL_NAME;

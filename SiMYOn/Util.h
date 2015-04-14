@@ -13,5 +13,6 @@
 
 + (BOOL) hasInternetConnection;
 + (IPhoneModel) getIphoneModel;
++ (void) setString:(NSString *) string forKey:(NSString *) key;
 
 @end

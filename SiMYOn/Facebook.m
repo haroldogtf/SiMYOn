@@ -25,14 +25,18 @@
 
 + (void) login:(LoginBlock)block {
     [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
-                            completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                            completionHandler:^(FBSession *session,
+                                             FBSessionState status,
+                                                    NSError *error) {
                                 block(error);
                             }
      ];
 }
 
 + (void) getUserName:(UserNameBlock)block {
-    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
+                                                           NSDictionary<FBGraphUser> *user,
+                                                                            NSError *error) {
                                   block(user.name, error);
                               }
      ];

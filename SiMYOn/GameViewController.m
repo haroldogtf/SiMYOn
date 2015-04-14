@@ -67,13 +67,14 @@
 
 - (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
     
+    NSString *model;
     switch (iPhoneModel) {
-        case IPHONE_5_5C_5S_MODEL:       return NIB_GAME_IPHONE_5_5C_5S;       break;
-        case IPHONE_6_MODEL:             return NIB_GAME_IPHONE_6;             break;
-        case IPHONE_6_PLUS_MODEL:        return NIB_GAME_IPHONE_6_PLUS;        break;
-        case IPHONE_NOT_SUPPORTED_MODEL:
-        default:                         return NIB_NOT_SUPPORTED; break;
+        case IPHONE_5_5C_5S_MODEL: model = NIB_GAME_IPHONE_5_5C_5S; break;
+        case IPHONE_6_MODEL:       model = NIB_GAME_IPHONE_6;       break;
+        case IPHONE_6_PLUS_MODEL:  model = NIB_GAME_IPHONE_6_PLUS;  break;
+        default:                   model = NIB_NOT_SUPPORTED;       break;
     }
+    return model;
 }
 
 #pragma mark - Lifecycle
@@ -220,13 +221,13 @@
 }
 
 - (void) action:(BOOL)automatic andMovemet:(Movement) movement {
-    if(!hasLoseGame) {
+    if(hasLoseGame) {
+        [self blockAllComponents:YES];
+    } else {
         if(!automatic) {
             [self makeMovementAction:movement];
             [self blockAllComponents:NO];
         }
-    } else {
-        [self blockAllComponents:YES];
     }
 }
 
@@ -318,18 +319,19 @@
 }
 
 - (int) getRandomMovement {
-    int random = arc4random_uniform(400) % 4;
-    return random;
+    return arc4random_uniform(400) % 4;
 }
 
 - (Movement) getMovement:(int)movement {
+    
+    Movement type;
     switch (movement) {
-        case 0:  return TopMovement;    break;
-        case 1:  return LeftMovement;   break;
-        case 2:  return RightMovement;  break;
-        case 3:
-        default: return BottomMovement; break;
+        case 0:  type = TopMovement;    break;
+        case 1:  type = LeftMovement;   break;
+        case 2:  type = RightMovement;  break;
+        default: type = BottomMovement; break;
     }
+    return type;
 }
 
 - (void) doMovement:(Movement) movement {
@@ -337,8 +339,7 @@
         case TopMovement:    [self topAction:YES];    break;
         case LeftMovement:   [self leftAction:YES];   break;
         case RightMovement:  [self rightAction:YES];  break;
-        case BottomMovement:
-        default:             [self bottomAction:YES]; break;
+        case BottomMovement: [self bottomAction:YES]; break;
     }
 }
 

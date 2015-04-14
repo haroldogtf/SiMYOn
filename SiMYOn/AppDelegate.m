@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Constants.h"
+#import "Util.h"
 #import "MainViewController.h"
 #import <MyoKit/MyoKit.h>
 #import <FacebookSDK/FacebookSDK.h>
@@ -19,8 +20,8 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)          application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureMyoSettings];
     [self configureParse];
     [self configureRanking];
@@ -68,8 +69,8 @@
 
 - (void) configureRanking {
     for (int i = 1; i <= OFFLINE_RANKING; i++) {
-        [[NSUserDefaults standardUserDefaults] setObject:INITAL_NAME forKey:[PLAYER stringByAppendingFormat:@"%d", i]];
-        [[NSUserDefaults standardUserDefaults] setObject:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
+        [Util setString:INITAL_NAME   forKey:[PLAYER       stringByAppendingFormat:@"%d", i]];
+        [Util setString:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];

@@ -25,13 +25,19 @@
 {
     CGSize result = [[UIScreen mainScreen] bounds].size;
     
+    IPhoneModel model;
     switch ((int)result.height) {
-            
-        case IPHONE_5_5C_5S_HEIGHT: return IPHONE_5_5C_5S_MODEL;       break;
-        case IPHONE_6_HEIGHT:       return IPHONE_6_MODEL;             break;
-        case IPHONE_6_PLUS_HEIGHT:  return IPHONE_6_PLUS_MODEL;        break;
-        default:                    return IPHONE_NOT_SUPPORTED_MODEL; break;
+        case IPHONE_5_5C_5S_HEIGHT: model = IPHONE_5_5C_5S_MODEL;       break;
+        case IPHONE_6_HEIGHT:       model = IPHONE_6_MODEL;             break;
+        case IPHONE_6_PLUS_HEIGHT:  model = IPHONE_6_PLUS_MODEL;        break;
+        default:                    model = IPHONE_NOT_SUPPORTED_MODEL; break;
     }
+    
+    return model;
+}
+
++ (void) setString:(NSString *) string forKey:(NSString *) key {
+    [[NSUserDefaults standardUserDefaults] setObject:string forKey:key];
 }
 
 @end

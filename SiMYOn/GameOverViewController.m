@@ -59,13 +59,14 @@
 
 - (NSString *) selectNibNameByModel:(IPhoneModel) iPhoneModel {
     
+    NSString *model;
     switch (iPhoneModel) {
-        case IPHONE_5_5C_5S_MODEL:       return NIB_GAMEOVER_IPHONE_5_5C_5S;       break;
-        case IPHONE_6_MODEL:             return NIB_GAMEOVER_IPHONE_6;             break;
-        case IPHONE_6_PLUS_MODEL:        return NIB_GAMEOVER_IPHONE_6_PLUS;        break;
-        case IPHONE_NOT_SUPPORTED_MODEL:
-        default:                         return NIB_NOT_SUPPORTED; break;
+        case IPHONE_5_5C_5S_MODEL: model = NIB_GAMEOVER_IPHONE_5_5C_5S; break;
+        case IPHONE_6_MODEL:       model = NIB_GAMEOVER_IPHONE_6;       break;
+        case IPHONE_6_PLUS_MODEL:  model = NIB_GAMEOVER_IPHONE_6_PLUS;  break;
+        default:                   model = NIB_NOT_SUPPORTED;           break;
     }
+    return model;
 }
 
 - (IBAction)loginAction:(id)sender {
@@ -153,8 +154,11 @@
 }
 
 - (void) saveScores {
+    
+    NSNumber *score = [[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]];
+    
     [Ranking saveScoresInParseWithName:self.lblPlayerName.text
-                                 score:[[NSNumber alloc] initWithInteger:[self.lblFinalScore.text integerValue]]
+                                 score:score
                            andUsingMyo:self.usingMyo
      ];
 }
