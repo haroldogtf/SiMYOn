@@ -11,8 +11,10 @@
 
 @interface Util : NSObject
 
++ (int) getRandomMovement;
 + (BOOL) hasInternetConnection;
 + (IPhoneModel) getIphoneModel;
-+ (void) setString:(NSString *) string forKey:(NSString *) key;
++ (void) setString:(NSString *)string
+            forKey:(NSString *)key;
 
 @end

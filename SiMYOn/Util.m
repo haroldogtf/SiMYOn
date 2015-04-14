@@ -11,6 +11,10 @@
 
 @implementation Util
 
++ (int) getRandomMovement {
+    return arc4random_uniform(400) % 4;
+}
+
 + (BOOL) hasInternetConnection {
     NSMutableURLRequest *request;
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:TEST_CONNECTION]];

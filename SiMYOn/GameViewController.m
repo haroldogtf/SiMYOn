@@ -259,7 +259,7 @@
         (turnMoviment == movement) ? [self winTurn]
                                    : [self loseGame];
     }
-    @catch (NSException *exception) {}
+    @catch (NSException *exception) { return; }
 }
 
 - (void) cleanAction {
@@ -321,10 +321,6 @@
     self.btnBottom.enabled = !enable;
 }
 
-- (int) getRandomMovement {
-    return arc4random_uniform(400) % 4;
-}
-
 - (Movement) getMovement:(int)movement {
     
     Movement type;
@@ -344,15 +340,6 @@
         case RightMovement:  [self rightAction:YES];  break;
         case BottomMovement: [self bottomAction:YES]; break;
     }
-}
-
-- (void) moreOneMovement {
-    [self.movementsList addObject:[NSNumber numberWithInt:[self getRandomMovement]]];
-}
-
-- (void) playMovements {
-    [self blockAllComponents:YES];
-    [self playMovementsWithTurn:0];
 }
 
 - (void) playMovementsWithTurn:(int)turnMovement {
@@ -412,8 +399,9 @@
 }
 
 - (void) playGame {
-    [self moreOneMovement];
-    [self playMovements];
+    [self.movementsList addObject:[NSNumber numberWithInt:[Util getRandomMovement]]];
+    [self blockAllComponents:YES];
+    [self playMovementsWithTurn:0];
 }
 
 - (void)winTurn {
@@ -444,7 +432,6 @@
     self.imgMiss.hidden = NO;
     
     [self playSoundWithPath:SOUND_MISS];
-    
     [NSTimer scheduledTimerWithTimeInterval:GO_TIME
                                      target:self
                                    selector:@selector(goToGameOver)
