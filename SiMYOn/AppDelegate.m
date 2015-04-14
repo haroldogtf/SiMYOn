@@ -87,7 +87,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 }
 
 - (void) configureNavigation {
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc]init]];
+    MainViewController *mainViewController = [[MainViewController alloc]init];
+    UINavigationController *navigation;
+    navigation = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     navigation.navigationBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

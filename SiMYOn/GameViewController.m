@@ -115,7 +115,7 @@
     
     [[NSNotificationCenter defaultCenter]
         addObserver:self
-           selector:@selector(didDisconnectDevice:)
+           selector:@selector(didDisconnectDevice)
                name:TLMHubDidDisconnectDeviceNotification
              object:nil];
     
@@ -127,7 +127,7 @@
     
     [[NSNotificationCenter defaultCenter]
         addObserver:self
-           selector:@selector(didUnsyncArm:)
+           selector:@selector(didUnsyncArm)
                name:TLMMyoDidReceiveArmUnsyncEventNotification
              object:nil];
 }
@@ -162,7 +162,7 @@
     }
 }
 
-- (void)didDisconnectDevice:(NSNotification *)notification {
+- (void)didDisconnectDevice {
     if(self.usingMyo) {
         [self configureMyo];
     }
@@ -177,7 +177,7 @@
     [self syncAnimation];
 }
 
-- (void)didUnsyncArm:(NSNotification *)notification {
+- (void)didUnsyncArm {
     if(self.usingMyo) {
         [self unsyncAnimation];
     }
@@ -213,8 +213,7 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex
-{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex {
     if(buttonIndex) {
         [self returnToMainMenu];
     }
@@ -304,8 +303,12 @@
 
 - (void) playSoundWithPath:(NSString*) sound {
     if(self.playSound && !returnToMainMenu) {
-        NSURL *soundUrl = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] resourcePath], sound]];
-        audio = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        
+        NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *path = [NSString stringWithFormat:@"%@/%@", resourcePath, sound];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        
+        audio = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         [audio play];
     }
 }
@@ -353,12 +356,14 @@
 }
 
 - (void) playMovementsWithTurn:(int)turnMovement {
+    
+    NSNumber *turnNumber = [NSNumber numberWithInt:turnMovement];
+    id dictionary = [NSDictionary dictionaryWithObjectsAndKeys:turnNumber, TURN, nil];
+    
     [NSTimer scheduledTimerWithTimeInterval:MOVEMENT_TIME
                                      target:self
                                    selector:@selector(executeMovement:)
-                                   userInfo:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:turnMovement],
-                                                                                        TURN,
-                                                                                        nil]
+                                   userInfo:dictionary
                                     repeats:NO];
 }
 

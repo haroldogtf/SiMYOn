@@ -12,13 +12,19 @@
 @implementation Util
 
 + (BOOL) hasInternetConnection {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:TEST_CONNECTION]];
+    NSMutableURLRequest *request;
+    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:TEST_CONNECTION]];
     [request setHTTPMethod:@"HEAD"];
     
     NSHTTPURLResponse *response;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
     
-    return ([response statusCode] == 200) ? YES : NO;
+    BOOL hasInternet = NO;
+    if([response statusCode] == 200) {
+        hasInternet = YES;
+    }
+    
+    return hasInternet;
 }
 
 + (IPhoneModel) getIphoneModel

@@ -13,7 +13,7 @@
 
 @interface BestScoresViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
+    @property (weak, nonatomic) IBOutlet UIImageView *imgBackground;
 
     @property (weak, nonatomic) IBOutlet UILabel *lblPlayer1;
     @property (weak, nonatomic) IBOutlet UILabel *lblPlayer2;
@@ -43,11 +43,11 @@
 
     @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorLoading;
 
+    @property (weak, nonatomic) NSArray *bestScores;
+
 @end
 
-@implementation BestScoresViewController {
-    NSArray *bestScores;
-}
+@implementation BestScoresViewController
 
 - (id)init {
     NSString *nibName = [self selectNibNameByModel:[Util getIphoneModel]];
@@ -104,7 +104,7 @@
         if(error) {
             this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         } else {
-            bestScores = scores;
+            self.bestScores = scores;
             this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
             [this updateScoresInView];
             [this showLastRankings];
@@ -155,7 +155,7 @@
 
 - (PFObject *) getScore:(int) index {
     @try {
-        return bestScores[index];
+        return self.bestScores[index];
     }
     @catch (NSException * e) {
         return nil;

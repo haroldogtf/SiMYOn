@@ -69,12 +69,12 @@
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didConnectDevice:)
+                                             selector:@selector(didConnectDevice)
                                                  name:TLMHubDidConnectDeviceNotification
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didDisconnectDevice:)
+                                             selector:@selector(didDisconnectDevice)
                                                  name:TLMHubDidDisconnectDeviceNotification
                                                object:nil];
 
@@ -84,7 +84,7 @@
                                                object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didUnsyncArm:)
+                                             selector:@selector(didUnsyncArm)
                                                  name:TLMMyoDidReceiveArmUnsyncEventNotification
                                                object:nil];
 
@@ -110,11 +110,11 @@
     [pose.myo unlockWithType:TLMUnlockTypeHold];
 }
 
-- (void)didConnectDevice:(NSNotification *)notification {
+- (void)didConnectDevice {
     self.imgBackground.image = [UIImage imageNamed:IMG_SYNC2];
 }
 
-- (void)didDisconnectDevice:(NSNotification *)notification {
+- (void)didDisconnectDevice {
     self.imgBackground.image = [UIImage imageNamed:IMG_SYNC1];
 }
 
@@ -127,7 +127,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)didUnsyncArm:(NSNotification *)notification {
+- (void)didUnsyncArm {
     self.imgBackground.image = [UIImage imageNamed:IMG_SYNC1];
 }
 
