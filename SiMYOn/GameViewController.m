@@ -82,7 +82,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self didLoadGame];
+    self.movementsList = [[NSMutableArray alloc]init];
+    self.turn = 0;
+    self.hasLoseGame = NO;
+    self.isReturnToMainMenu = NO;
+    [self blockAllComponents:YES];
+    [self prepareMyoForNotifications];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -149,7 +154,7 @@
                 case TLMPoseTypeFingersSpread: [self topAction:NO];    break;
                 case TLMPoseTypeFist:          [self bottomAction:NO]; break;
                 case TLMPoseTypeWaveIn:        self.isLeftArm ? [self rightAction:NO]
-                                                              :[self leftAction:NO];
+                                                              : [self leftAction:NO];
                                                break;
                 case TLMPoseTypeWaveOut:       self.isLeftArm ? [self leftAction:NO]
                                                               : [self rightAction:NO];
@@ -271,15 +276,6 @@
 }
 
 #pragma mark - Game
-- (void)didLoadGame {
-    self.movementsList = [[NSMutableArray alloc]init];
-    self.turn = 0;
-    self.hasLoseGame = NO;
-    self.isReturnToMainMenu = NO;
-    [self blockAllComponents:YES];
-    [self prepareMyoForNotifications];
-}
-
 - (void) changeImage:(NSString *)imageName
         andPlaySound:(NSString *)sound {
    
