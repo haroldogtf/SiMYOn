@@ -434,10 +434,10 @@
 
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    GameOverViewController *gameViewController = [[GameOverViewController alloc]init];
-    gameViewController.score = [self.lblCount.text integerValue];
-    gameViewController.usingMyo = self.usingMyo;
-    [self.navigationController pushViewController:gameViewController animated:YES];
+    GameOverViewController *gameOver = [[GameOverViewController alloc]init];
+    gameOver.score = [self.lblCount.text integerValue];
+    gameOver.usingMyo = self.usingMyo;
+    [self.navigationController pushViewController:gameOver animated:YES];
 }
 
 #pragma mark - Animations
