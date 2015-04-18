@@ -27,9 +27,7 @@
 
 @end
 
-@implementation GameOverViewController {
-    BOOL isSavedRanking;
-}
+@implementation GameOverViewController
 
 - (id)init {    
     return [super initWithNibName:[Util selectNibNameByModel:NIB_GAMEOVER]
