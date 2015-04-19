@@ -6,18 +6,19 @@
 //
 //
 
+#import "Player.h"
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
-#import "Constants.h"
 
 @interface Ranking : NSObject
 
 typedef void (^BestScoresBlock)(NSArray *bestScores, NSError *error);
 
++ (void) configureParse;
++ (void) configureInitialRanking;
 + (void) getScoresFromParse:(BestScoresBlock)block;
-
 + (void) saveScoresInParseWithName:(NSString *)name
                              score:(NSNumber *)score
                        andUsingMyo:(BOOL)useMyo;
++ (Player *) getPlayer:(id)object;
 
 @end

@@ -7,12 +7,28 @@
 //
 
 #import "Ranking.h"
+#import "Constants.h"
+#import "Util.h"
+#import <Parse/Parse.h>
 
 @implementation Ranking
 
 + (void) configureParse {
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
+}
+
++ (void) configureInitialRanking {
+    for (int i = 1; i <= OFFLINE_RANKING; i++) {
+        
+        NSString *player = [PLAYER stringByAppendingFormat:@"%d", i];
+        
+        if(![[NSUserDefaults standardUserDefaults] objectForKey:player]) {
+            [Util setString:INITAL_NAME   forKey:player];
+            [Util setString:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void) getScoresFromParse:(BestScoresBlock)block {
@@ -36,6 +52,16 @@
     ranking[USING_MYO] = [NSNumber numberWithBool:useMyo];
     
     [ranking saveInBackground];
+}
+
++ (Player *) getPlayer:(id)object {
+    PFObject * parsePlayer = (PFObject *)object;
+    
+    Player *player = [[Player alloc]init];
+    player.name = parsePlayer[NAME];
+    player.score = [NSString stringWithFormat:@"%@", parsePlayer[SCORE]];
+    
+    return player;
 }
 
 @end

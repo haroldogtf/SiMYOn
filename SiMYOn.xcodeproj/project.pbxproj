@@ -25,6 +25,7 @@
 		090994181AC8296F0068EFA2 /* MainViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090994171AC8296F0068EFA2 /* MainViewController_6Plus.xib */; };
 		093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */; };
 		094487521AE32A7F00573F8E /* Myo.m in Sources */ = {isa = PBXBuildFile; fileRef = 094487511AE32A7F00573F8E /* Myo.m */; };
+		094487561AE33AB100573F8E /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 094487551AE33AB100573F8E /* Player.m */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		09483E241AD3EEEB00FFBF6F /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 09483E231AD3EEEB00FFBF6F /* Facebook.m */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
@@ -121,6 +122,8 @@
 		093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SiMYOn/Libs/MBProgressHUD.m; sourceTree = "<group>"; };
 		094487501AE32A7F00573F8E /* Myo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myo.h; sourceTree = "<group>"; };
 		094487511AE32A7F00573F8E /* Myo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myo.m; sourceTree = "<group>"; };
+		094487541AE33AB100573F8E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		094487551AE33AB100573F8E /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
 		09483E221AD3EEEB00FFBF6F /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		09483E231AD3EEEB00FFBF6F /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
@@ -323,6 +326,19 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		094487531AE33A9A00573F8E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				09483E221AD3EEEB00FFBF6F /* Facebook.h */,
+				09483E231AD3EEEB00FFBF6F /* Facebook.m */,
+				094487501AE32A7F00573F8E /* Myo.h */,
+				094487511AE32A7F00573F8E /* Myo.m */,
+				09CE76E31AAC8C6D00244ABF /* Ranking.h */,
+				09CE76E41AAC8C6D00244ABF /* Ranking.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		0974000A1A8630B30012E465 = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +362,7 @@
 				0974001B1A8630B30012E465 /* AppDelegate.m */,
 				097400421A8635A10012E465 /* View */,
 				09CE76E21AAC8C4E00244ABF /* Model */,
+				094487531AE33A9A00573F8E /* Controller */,
 				09CE76CF1AAA922A00244ABF /* Util */,
 				0974004A1A864BBE0012E465 /* Assets */,
 				093DD1371ADC8E96000BC344 /* Libs */,
@@ -557,12 +574,8 @@
 		09CE76E21AAC8C4E00244ABF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				09483E221AD3EEEB00FFBF6F /* Facebook.h */,
-				09483E231AD3EEEB00FFBF6F /* Facebook.m */,
-				094487501AE32A7F00573F8E /* Myo.h */,
-				094487511AE32A7F00573F8E /* Myo.m */,
-				09CE76E31AAC8C6D00244ABF /* Ranking.h */,
-				09CE76E41AAC8C6D00244ABF /* Ranking.m */,
+				094487541AE33AB100573F8E /* Player.h */,
+				094487551AE33AB100573F8E /* Player.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -714,6 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				094487561AE33AB100573F8E /* Player.m in Sources */,
 				094487521AE32A7F00573F8E /* Myo.m in Sources */,
 				09A3E1061A990F200016FC24 /* GameOverViewController.m in Sources */,
 				097400461A8635DA0012E465 /* GameViewController.m in Sources */,

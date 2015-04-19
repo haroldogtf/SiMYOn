@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Util.h"
 #import "Myo.h"
+#import "Ranking.h"
 #import "MainViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
@@ -23,8 +24,8 @@
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Myo configureMyo];
-    [self configureParse];
-    [self configureRanking];
+    [Ranking configureParse];
+    [Ranking configureInitialRanking];
     [self configureSound];
     [self configureNavigation];
 
@@ -53,24 +54,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
          annotation:(id)annotation {
 
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-}
-
-- (void) configureParse {
-    [Parse setApplicationId:PARSE_APPLICATION_ID
-                  clientKey:PARSE_CLIENT_KEY];
-}
-
-- (void) configureRanking {
-    for (int i = 1; i <= OFFLINE_RANKING; i++) {
-        
-        NSString *player = [PLAYER stringByAppendingFormat:@"%d", i];
-        
-        if(![[NSUserDefaults standardUserDefaults] objectForKey:player]) {
-            [Util setString:INITAL_NAME   forKey:player];
-            [Util setString:INITIAL_SCORE forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", i]];
-        }
-    }
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void) configureSound {

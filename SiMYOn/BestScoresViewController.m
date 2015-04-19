@@ -9,6 +9,7 @@
 #import "BestScoresViewController.h"
 #import "Constants.h"
 #import "Util.h"
+#import "Player.h"
 #import "Ranking.h"
 
 @interface BestScoresViewController ()
@@ -140,9 +141,9 @@
     [self updateScoreWithIndex:11 labelName:self.lblPlayer12 andLabelScore:self.lblScorePlayer12];
 }
 
-- (PFObject *) getScore:(int) index {
+- (Player *) getScore:(int) index {
     @try {
-        return self.bestScores[index];
+        return [Ranking getPlayer:self.bestScores[index]];
     }
     @catch (NSException * e) {
         return nil;
@@ -168,11 +169,11 @@
               labelName:(UILabel *)name
               andLabelScore:(UILabel *)score {
 
-    PFObject *player = [self getScore:index];
+    Player *player = [self getScore:index];
     
     if(player) {
-        name.text  = player[NAME];
-        score.text = [NSString stringWithFormat:@"%@", player[SCORE]];
+        name.text  = player.name;
+        score.text = player.score;
         
         if(score >=0 && index <= 7) {
            [Util setString:name.text  forKey:[PLAYER       stringByAppendingFormat:@"%d", index+1]];
