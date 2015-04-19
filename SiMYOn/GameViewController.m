@@ -78,10 +78,7 @@
     self.isReturnToMainMenu = NO;
     [self blockAllComponents:YES];
     [self prepareMyoForNotifications];
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{    
+    
     [self playGame];
 }
 
