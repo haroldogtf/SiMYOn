@@ -45,6 +45,8 @@
 }
 
 - (IBAction)returnAction:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -101,7 +103,6 @@
         [self didConnectDevice];
     }
 }
-
 
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
