@@ -10,6 +10,11 @@
 
 @implementation Ranking
 
++ (void) configureParse {
+    [Parse setApplicationId:PARSE_APPLICATION_ID
+                  clientKey:PARSE_CLIENT_KEY];
+}
+
 + (void) getScoresFromParse:(BestScoresBlock)block {
     
     PFQuery *query = [PFQuery queryWithClassName:RANKING];

@@ -8,6 +8,7 @@
 
 #import "SyncViewController.h"
 #import "Constants.h"
+#import "Myo.h"
 #import "GameViewController.h"
 #import <MyoKit/MyoKit.h>
 
@@ -36,6 +37,7 @@
     [super viewDidLoad];
     
     [self prepareMyoForSync];
+    [self checkIfConnected];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,13 +96,20 @@
                                                object:nil];
 }
 
+- (void) checkIfConnected {
+    if([Myo isConnected]) {
+        [self didConnectDevice];
+    }
+}
+
+
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
     [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void) configureMyoIfDisconneted {
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
+    if(![Myo isConnected]) {
         [self configureMyo];
     }
 }
@@ -116,6 +125,7 @@
 
 - (void)didDisconnectDevice {
     self.imgBackground.image = [UIImage imageNamed:IMG_SYNC1];
+
 }
 
 - (void)didSyncArm:(NSNotification *)notification {

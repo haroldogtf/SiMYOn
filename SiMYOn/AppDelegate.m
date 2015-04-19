@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "Util.h"
+#import "Myo.h"
 #import "MainViewController.h"
-#import <MyoKit/MyoKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 
@@ -22,7 +22,7 @@
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self configureMyoSettings];
+    [Myo configureMyo];
     [self configureParse];
     [self configureRanking];
     [self configureSound];
@@ -53,13 +53,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
          annotation:(id)annotation {
 
     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-}
-
-- (void) configureMyoSettings {
-    [[TLMHub sharedHub] setApplicationIdentifier:APP_IDENTIFIER];
-    [[TLMHub sharedHub] setShouldSendUsageData:NO];
-    [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
-    [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
 }
 
 - (void) configureParse {

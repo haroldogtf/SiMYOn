@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Constants.h"
 #import "Util.h"
+#import "Myo.h"
 #import "SyncViewController.h"
 #import "GameViewController.h"
 #import "InstructionsViewController.h"
@@ -47,7 +48,7 @@
     
     BOOL playSound = [self getSoundStatus];
     
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
+    if(![Myo isConnected] || ![Myo isSynced]) {
         [self openViewController:[[SyncViewController alloc]initIsPlaySound:playSound]];
     } else {
         [self openViewController:[[GameViewController alloc]initIsPlaySound:playSound

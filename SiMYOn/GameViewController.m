@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "Constants.h"
 #import "Util.h"
+#import "Myo.h"
 #import "GameOverViewController.h"
 #import <MyoKit/MyoKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -99,7 +100,7 @@
 }
 
 - (void) configureMyoIfDisconneted {
-    if([[TLMHub sharedHub] myoDevices].count == 0) {
+    if(![Myo isConnected]) {
         [self configureMyo];
     }
 }
