@@ -117,5 +117,6 @@ typedef enum {
 //Parse
 #define PARSE_APPLICATION_ID @"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
 #define PARSE_CLIENT_KEY     @"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"
+#define TOP_RANKING          12
 
 #endif

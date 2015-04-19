@@ -86,10 +86,6 @@
     [self.alert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 #pragma mark - Myo
 - (void) configureMyo {
     UINavigationController *controller = [TLMSettingsViewController settingsInNavigationController];
