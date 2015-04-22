@@ -39,7 +39,7 @@ BOOL isSynced    = NO;
     
     [[TLMHub sharedHub] setApplicationIdentifier:APP_IDENTIFIER];
     [[TLMHub sharedHub] setShouldSendUsageData:NO];
-    [[TLMHub sharedHub] setShouldNotifyInBackground:NO];
+    [[TLMHub sharedHub] setShouldNotifyInBackground:YES];
     [[TLMHub sharedHub] setLockingPolicy:TLMLockingPolicyNone];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -73,10 +73,12 @@ BOOL isSynced    = NO;
 
 + (void) didSyncArm {
     [Myo setSynced:YES];
+    NSLog(@"sync");
 }
 
 + (void) didUnsyncArm {
     [Myo setSynced:NO];
+    NSLog(@"unsync");
 }
 
 @end

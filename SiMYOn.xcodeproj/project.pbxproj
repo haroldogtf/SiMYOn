@@ -107,7 +107,6 @@
 		09E547801A9E92D300985223 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5477F1A9E92D300985223 /* MobileCoreServices.framework */; };
 		09E547821A9E92DB00985223 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547811A9E92DB00985223 /* QuartzCore.framework */; };
 		09E547841A9E92E100985223 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547831A9E92E100985223 /* Security.framework */; };
-		09E547861A9E92E700985223 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547851A9E92E700985223 /* StoreKit.framework */; };
 		09E547881A9E92F000985223 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547871A9E92F000985223 /* SystemConfiguration.framework */; };
 		09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547891A9E92F900985223 /* libz.dylib */; };
 		09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478B1A9E930200985223 /* libsqlite3.dylib */; };
@@ -220,7 +219,6 @@
 		09E5477F1A9E92D300985223 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		09E547811A9E92DB00985223 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		09E547831A9E92E100985223 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		09E547851A9E92E700985223 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		09E547871A9E92F000985223 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		09E547891A9E92F900985223 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		09E5478B1A9E930200985223 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -237,7 +235,6 @@
 				09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */,
 				09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */,
 				09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */,
-				09E547861A9E92E700985223 /* StoreKit.framework in Frameworks */,
 				09E547841A9E92E100985223 /* Security.framework in Frameworks */,
 				09E547821A9E92DB00985223 /* QuartzCore.framework in Frameworks */,
 				09E547801A9E92D300985223 /* MobileCoreServices.framework in Frameworks */,
@@ -389,7 +386,6 @@
 				09E5478B1A9E930200985223 /* libsqlite3.dylib */,
 				09E547891A9E92F900985223 /* libz.dylib */,
 				09E547871A9E92F000985223 /* SystemConfiguration.framework */,
-				09E547851A9E92E700985223 /* StoreKit.framework */,
 				09E547831A9E92E100985223 /* Security.framework */,
 				09E547811A9E92DB00985223 /* QuartzCore.framework */,
 				09E5477F1A9E92D300985223 /* MobileCoreServices.framework */,
@@ -610,6 +606,15 @@
 				TargetAttributes = {
 					097400121A8630B30012E465 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3E597ZUCQ8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					0984984A1ADABDB20049BEB1 = {
 						CreatedOnToolsVersion = 6.3;
