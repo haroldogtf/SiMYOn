@@ -41,10 +41,14 @@
         case IPHONE_5_5C_5S_MODEL: model = NIB_IPHONE_5_5C_5S; break;
         case IPHONE_6_MODEL:       model = NIB_IPHONE_6;       break;
         case IPHONE_6_PLUS_MODEL:  model = NIB_IPHONE_6_PLUS;  break;
-        default:                   return NIB_NOT_SUPPORTED;   break;
+        default:                   model = NIB_NOT_SUPPORTED;  break;
     }
     
-    return [nibName stringByAppendingString:model];;
+    if([model isEqualToString:NIB_NOT_SUPPORTED]) {
+        return model;
+    }
+    
+    return  [nibName stringByAppendingString:model];
 }
 
 + (void) setString:(NSString *) string forKey:(NSString *) key {
