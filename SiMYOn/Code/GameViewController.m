@@ -206,7 +206,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex {
-    if(buttonIndex) {
+    if(alertView && buttonIndex) {
         [self returnToMainMenu];
     }
 }
