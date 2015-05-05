@@ -43,6 +43,7 @@
     @property (nonatomic) BOOL lock;
     @property (nonatomic) BOOL isLeftArm;
     @property (nonatomic) BOOL hasLoseGame;
+    @property (nonatomic) BOOL hasStartTheGame;
     @property (nonatomic) BOOL isReturnToMainMenu;
 
 @end
@@ -72,6 +73,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.hasStartTheGame = YES;
     self.movementsList = [[NSMutableArray alloc]init];
     self.turn = 0;
     self.hasLoseGame = NO;
@@ -82,7 +84,22 @@
     [self playGame];
 }
 
--(void) viewWillDisappear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
+    if(self.usingMyo && !self.hasStartTheGame) {
+        
+        self.alert = [[UIAlertView alloc] initWithTitle:SIMYON
+                                                message:CONNECT_ALERT
+                                               delegate:self
+                                      cancelButtonTitle:STR_NO
+                                      otherButtonTitles:STR_YES, nil];
+        self.alert.tag = CONFIGURE_MYO;
+        [self.alert show];
+    }
+    
+    self.hasStartTheGame = NO;
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
     [self.alert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
@@ -199,6 +216,7 @@
                                               delegate:self
                                      cancelButtonTitle:STR_NO
                                      otherButtonTitles:STR_YES, nil];
+        self.alert.tag = RETURN_TO_MENU;
         [self.alert show];
     } else {
         [self returnToMainMenu];
@@ -206,7 +224,17 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex {
-    if(alertView && buttonIndex) {
+    
+    if(self.alert.tag == CONFIGURE_MYO) {
+        
+        if(buttonIndex) {
+            [self configureMyoIfDisconneted];
+        } else {
+            self.usingMyo = NO;
+            self.imgPopupLostSync.hidden = YES;
+        }
+        
+    } else if(self.alert.tag == RETURN_TO_MENU && buttonIndex) {
         [self returnToMainMenu];
     }
 }

@@ -48,6 +48,7 @@ typedef enum {
 //Strings
 #define SIMYON          @"SiMYOn"
 #define BACK_MENU_ALERT @"Are you sure to go back to menu?"
+#define CONNECT_ALERT   @"Try to connect again?"
 #define STR_YES         @"Yes"
 #define STR_NO          @"No"
 #define LOADING         @"Loading"
@@ -85,6 +86,10 @@ typedef enum {
 #define RANKING          @"ranking"
 #define CREATED_AT       @"createdAt"
 #define USING_MYO        @"using_myo"
+
+//Tags
+#define RETURN_TO_MENU 0
+#define CONFIGURE_MYO  1
 
 //Assets
 #define BTN_SOUND_ON                  @"btn_sound_on.png"
