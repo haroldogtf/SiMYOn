@@ -53,7 +53,7 @@ BOOL isSynced    = NO;
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didSyncArm)
+                                             selector:@selector(didSyncArm:)
                                                  name:TLMMyoDidReceiveArmSyncEventNotification
                                                object:nil];
     
@@ -71,14 +71,20 @@ BOOL isSynced    = NO;
     [Myo setConnected:NO];
 }
 
-+ (void) didSyncArm {
++ (void) didSyncArm:(NSNotification *)notification {
+    
+    TLMArmSyncEvent *armEvent = notification.userInfo[kTLMKeyArmSyncEvent];
+    
+    BOOL isLeftArm = (armEvent.arm == TLMArmLeft);
+    
+    [[NSUserDefaults standardUserDefaults] setBool:isLeftArm forKey:IS_LEFT_ARM];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [Myo setSynced:YES];
-    NSLog(@"sync");
 }
 
 + (void) didUnsyncArm {
     [Myo setSynced:NO];
-    NSLog(@"unsync");
 }
 
 @end
