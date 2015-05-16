@@ -606,7 +606,7 @@
 				TargetAttributes = {
 					097400121A8630B30012E465 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 3E597ZUCQ8;
+						DevelopmentTeam = 8Q6HQ96RC4;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -845,6 +845,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
@@ -860,6 +861,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
