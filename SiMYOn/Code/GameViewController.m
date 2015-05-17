@@ -225,7 +225,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger *)buttonIndex {
     
-    if(self.alert.tag == CONFIGURE_MYO) {
+    if(alertView.tag == CONFIGURE_MYO) {
         
         if(buttonIndex) {
             [self configureMyoIfDisconneted];
@@ -234,7 +234,7 @@
             self.imgPopupLostSync.hidden = YES;
         }
         
-    } else if(self.alert.tag == RETURN_TO_MENU && buttonIndex) {
+    } else if(alertView.tag == RETURN_TO_MENU && buttonIndex) {
         [self returnToMainMenu];
     }
 }
@@ -354,14 +354,12 @@
 }
 
 - (void) playMovementsWithTurn:(int)turnMovement {
-    
     NSNumber *turnNumber = [NSNumber numberWithInt:turnMovement];
-    id dictionary = [NSDictionary dictionaryWithObjectsAndKeys:turnNumber, TURN, nil];
-    
+
     [NSTimer scheduledTimerWithTimeInterval:MOVEMENT_TIME
                                      target:self
                                    selector:@selector(executeMovement:)
-                                   userInfo:dictionary
+                                   userInfo:@{TURN:turnNumber}
                                     repeats:NO];
 }
 
@@ -370,7 +368,7 @@
     self.imgGood.hidden = YES;
     self.imgReady.hidden = NO;
     
-    NSInteger turnMovement = [(NSNumber *)[[dictionary userInfo] objectForKey:TURN] integerValue];
+    NSInteger turnMovement = [(NSNumber *)[dictionary userInfo][TURN] integerValue];
     NSInteger number = [[self.movementsList objectAtIndex:turnMovement] integerValue];
     Movement movement = [self getMovement:(int)number];
     [self doMovement:[self getMovement:(int)movement]];
