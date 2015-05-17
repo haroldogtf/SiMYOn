@@ -25,7 +25,7 @@ typedef enum {
 } IPhoneModel;
 
 //Application
-#define APP_IDENTIFIER @"br.ufpe.cin.SiMYOn"
+#define APP_IDENTIFIER [[NSBundle mainBundle] bundleIdentifier]
 
 //Configuration
 #define OFFLINE_RANKING 8
