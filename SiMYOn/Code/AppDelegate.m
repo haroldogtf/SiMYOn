@@ -13,7 +13,6 @@
 #import "Ranking.h"
 #import "MainViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
