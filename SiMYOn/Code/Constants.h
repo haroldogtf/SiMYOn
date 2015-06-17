@@ -36,14 +36,15 @@ typedef enum {
 #define IPHONE_6_PLUS_HEIGHT       736
 
 //Nibs
-#define NIB_MENU          @"MainViewController"
-#define NIB_GAME          @"GameViewController"
-#define NIB_GAMEOVER      @"GameOverViewController"
-#define NIB_BESTSCORES    @"BestScoresViewController"
-#define NIB_NOT_SUPPORTED @"NotSupportedViewController"
+#define NIB_MENU           @"MainViewController"
+#define NIB_GAME           @"GameViewController"
+#define NIB_GAMEOVER       @"GameOverViewController"
+#define NIB_BESTSCORES     @"BestScoresViewController"
+#define NIB_NOT_SUPPORTED  @"NotSupportedViewController"
 #define NIB_IPHONE_5_5C_5S @""
 #define NIB_IPHONE_6       @"_6"
 #define NIB_IPHONE_6_PLUS  @"_6Plus"
+#define NIB_IPAD           @"_iPad"
 
 //Strings
 #define SIMYON          @"SiMYOn"

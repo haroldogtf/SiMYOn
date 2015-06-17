@@ -23,6 +23,11 @@
 /* Begin PBXBuildFile section */
 		093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
+		095060D31B30E6A400911A4D /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D21B30E6A400911A4D /* MainViewController_iPad.xib */; };
+		095060D51B30E6B500911A4D /* SyncViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */; };
+		095060D71B30E6C700911A4D /* GameViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D61B30E6C700911A4D /* GameViewController_iPad.xib */; };
+		095060D91B30E6DA00911A4D /* GameOverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */; };
+		095060E01B30EFF000911A4D /* BestScoresViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
 		096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */; };
 		096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04BA1A9E8B6E006654C6 /* MyoKit.framework */; };
@@ -118,6 +123,11 @@
 		093DD1381ADC8EA4000BC344 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SiMYOn/Libs/MBProgressHUD.h; sourceTree = "<group>"; };
 		093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SiMYOn/Libs/MBProgressHUD.m; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
+		095060D21B30E6A400911A4D /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_iPad.xib; path = Code/MainViewController_iPad.xib; sourceTree = "<group>"; };
+		095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad.xib; path = Code/SyncViewController_iPad.xib; sourceTree = "<group>"; };
+		095060D61B30E6C700911A4D /* GameViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameViewController_iPad.xib; path = Code/GameViewController_iPad.xib; sourceTree = "<group>"; };
+		095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameOverViewController_iPad.xib; path = Code/GameOverViewController_iPad.xib; sourceTree = "<group>"; };
+		095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BestScoresViewController_iPad.xib; path = Code/BestScoresViewController_iPad.xib; sourceTree = "<group>"; };
 		09549D461AA3FCFF002C228C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
 		096D04BA1A9E8B6E006654C6 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
@@ -259,6 +269,7 @@
 				09AC60441AF6E76D00963EB6 /* MainViewController.xib */,
 				09AC60401AF6E76D00963EB6 /* MainViewController_6.xib */,
 				09AC60411AF6E76D00963EB6 /* MainViewController_6Plus.xib */,
+				095060D21B30E6A400911A4D /* MainViewController_iPad.xib */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 				09AC602B1AF6E76D00963EB6 /* BestScoresViewController.xib */,
 				09AC60271AF6E76D00963EB6 /* BestScoresViewController_6.xib */,
 				09AC60281AF6E76D00963EB6 /* BestScoresViewController_6Plus.xib */,
+				095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */,
 			);
 			name = BestScores;
 			sourceTree = "<group>";
@@ -444,6 +456,7 @@
 				09AC604E1AF6E76D00963EB6 /* SyncViewController.h */,
 				09AC604F1AF6E76D00963EB6 /* SyncViewController.m */,
 				09AC60501AF6E76D00963EB6 /* SyncViewController.xib */,
+				095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */,
 			);
 			name = Sync;
 			sourceTree = "<group>";
@@ -456,6 +469,7 @@
 				09AC603B1AF6E76D00963EB6 /* GameViewController.xib */,
 				09AC60371AF6E76D00963EB6 /* GameViewController_6.xib */,
 				09AC60381AF6E76D00963EB6 /* GameViewController_6Plus.xib */,
+				095060D61B30E6C700911A4D /* GameViewController_iPad.xib */,
 			);
 			name = GamePlay;
 			sourceTree = "<group>";
@@ -468,6 +482,7 @@
 				09AC60361AF6E76D00963EB6 /* GameOverViewController.xib */,
 				09AC60321AF6E76D00963EB6 /* GameOverViewController_6.xib */,
 				09AC60331AF6E76D00963EB6 /* GameOverViewController_6Plus.xib */,
+				095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */,
 			);
 			name = GameOver;
 			sourceTree = "<group>";
@@ -662,6 +677,7 @@
 				09A3E1021A99045E0016FC24 /* best_scores.png in Resources */,
 				09A3E1261A9BEC380016FC24 /* btn_back_to_menu.png in Resources */,
 				097400921A880A130012E465 /* instructions.png in Resources */,
+				095060E01B30EFF000911A4D /* BestScoresViewController_iPad.xib in Resources */,
 				0974008D1A880A130012E465 /* btn_credits.png in Resources */,
 				097400891A880A130012E465 /* blip2.mp3 in Resources */,
 				097400911A880A130012E465 /* game.png in Resources */,
@@ -669,8 +685,10 @@
 				097400AB1A8826120012E465 /* game_left.png in Resources */,
 				0974008C1A880A130012E465 /* btn_best_scores.png in Resources */,
 				09AC60671AF6E76D00963EB6 /* MainViewController_6Plus.xib in Resources */,
+				095060D91B30E6DA00911A4D /* GameOverViewController_iPad.xib in Resources */,
 				09A3E0FE1A9904280016FC24 /* gameover.png in Resources */,
 				09C29CCE1AA7FA05005E4E4F /* player.png in Resources */,
+				095060D51B30E6B500911A4D /* SyncViewController_iPad.xib in Resources */,
 				097400901A880A130012E465 /* btn_play.png in Resources */,
 				09AC60621AF6E76D00963EB6 /* GameViewController.xib in Resources */,
 				09AC60701AF6E76D00963EB6 /* SyncViewController.xib in Resources */,
@@ -678,10 +696,12 @@
 				097400931A880A130012E465 /* menu.png in Resources */,
 				09A3E1171A9BD1EB0016FC24 /* sync1.png in Resources */,
 				09A3E1201A9BE23B0016FC24 /* miss.mp3 in Resources */,
+				095060D71B30E6C700911A4D /* GameViewController_iPad.xib in Resources */,
 				09AC60641AF6E76D00963EB6 /* InstructionsViewController.xib in Resources */,
 				09AC60591AF6E76D00963EB6 /* CreditsViewController.xib in Resources */,
 				09AC605C1AF6E76D00963EB6 /* GameOverViewController_6Plus.xib in Resources */,
 				09A3E11F1A9BE23B0016FC24 /* go.mp3 in Resources */,
+				095060D31B30E6A400911A4D /* MainViewController_iPad.xib in Resources */,
 				09AC60691AF6E76D00963EB6 /* MainViewController.xib in Resources */,
 				09AC60661AF6E76D00963EB6 /* MainViewController_6.xib in Resources */,
 				09C444651AC87C22003F0CF9 /* background.png in Resources */,
@@ -855,6 +875,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -872,6 +893,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
