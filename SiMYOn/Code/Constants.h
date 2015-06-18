@@ -37,6 +37,7 @@ typedef enum {
 
 //Nibs
 #define NIB_MENU           @"MainViewController"
+#define NIB_SYNC           @"SyncViewController"
 #define NIB_GAME           @"GameViewController"
 #define NIB_GAMEOVER       @"GameOverViewController"
 #define NIB_BESTSCORES     @"BestScoresViewController"

@@ -20,8 +20,8 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sync1.png" translatesAutoresizingMaskIntoConstraints="NO" id="N5J-d3-AhL" userLabel="imgBackground">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIQ-bO-XHg" userLabel="btnSync">
-                    <rect key="frame" x="64" y="132" width="200" height="80"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIQ-bO-XHg" userLabel="btnSync">
+                    <rect key="frame" x="64" y="121" width="200" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tIQ-bO-XHg" secondAttribute="height" multiplier="5:2" id="Ed7-H9-eGy"/>
                     </constraints>
@@ -56,8 +56,8 @@
                         <action selector="returnAction:" destination="-1" eventType="touchUpInside" id="SKI-td-VXa"/>
                     </connections>
                 </button>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-4Z-89M" userLabel="lblCenter">
-                    <rect key="frame" x="138" y="285" width="52" height="37"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g3-4Z-89M" userLabel="lblCenter">
+                    <rect key="frame" x="91" y="274" width="147" height="60"/>
                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>

@@ -8,6 +8,7 @@
 
 #import "SyncViewController.h"
 #import "Constants.h"
+#import "Util.h"
 #import "Myo.h"
 #import "GameViewController.h"
 #import <MyoKit/MyoKit.h>
@@ -23,8 +24,13 @@
 @implementation SyncViewController
 
 - (id)initIsPlaySound:(BOOL)isPlaySound
-{
-    self = [super init];
+{    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self = [super initWithNibName:[Util selectNibNameByModel:NIB_SYNC]
+                               bundle:nil];
+    } else {
+        self = [super init];
+    }
     
     if(self) {
         self.playSound = isPlaySound;
