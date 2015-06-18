@@ -222,7 +222,7 @@
                     <color key="color" red="0.20784313730000001" green="0.64313725489999995" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-tM-x3H" userLabel="btnReturn">
-                    <rect key="frame" x="359" y="931" width="50" height="50"/>
+                    <rect key="frame" x="349" y="927" width="70" height="70"/>
                     <state key="normal" image="btn_return.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
