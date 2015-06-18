@@ -34,22 +34,10 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="284" y="339" width="200" height="70"/>
+                        <rect key="frame" x="274" y="323" width="220" height="100"/>
                     </variation>
                     <connections>
                         <action selector="gameStarterAction:" destination="-1" eventType="touchUpInside" id="mF4-6j-PbF"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg" userLabel="btnInstructions">
-                    <rect key="frame" x="78" y="242" width="158" height="62"/>
-                    <state key="normal" image="btn_instructions.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="284" y="496" width="200" height="70"/>
-                    </variation>
-                    <connections>
-                        <action selector="intructionsAction:" destination="-1" eventType="touchUpInside" id="1ZC-Ff-dxY"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-4N-AnA" userLabel="btnBestScores">
@@ -58,10 +46,22 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="284" y="658" width="200" height="70"/>
+                        <rect key="frame" x="274" y="641" width="220" height="100"/>
                     </variation>
                     <connections>
                         <action selector="bestScoresAction:" destination="-1" eventType="touchUpInside" id="a8h-DF-9db"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq" userLabel="btnCredits">
+                    <rect key="frame" x="78" y="435" width="158" height="62"/>
+                    <state key="normal" image="btn_credits.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="274" y="805" width="220" height="100"/>
+                    </variation>
+                    <connections>
+                        <action selector="creditsAction:" destination="-1" eventType="touchUpInside" id="WaQ-8r-ff1"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-56-W6h" userLabel="btnSound">
@@ -76,16 +76,16 @@
                         <action selector="soundAction:" destination="-1" eventType="touchUpInside" id="viM-sb-PFs"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq" userLabel="btnCredits">
-                    <rect key="frame" x="78" y="435" width="158" height="62"/>
-                    <state key="normal" image="btn_credits.png">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg" userLabel="btnInstructions">
+                    <rect key="frame" x="78" y="242" width="158" height="62"/>
+                    <state key="normal" image="btn_instructions.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="284" y="822" width="200" height="70"/>
+                        <rect key="frame" x="274" y="481" width="220" height="100"/>
                     </variation>
                     <connections>
-                        <action selector="creditsAction:" destination="-1" eventType="touchUpInside" id="WaQ-8r-ff1"/>
+                        <action selector="intructionsAction:" destination="-1" eventType="touchUpInside" id="1ZC-Ff-dxY"/>
                     </connections>
                 </button>
             </subviews>
