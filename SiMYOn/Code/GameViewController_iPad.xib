@@ -35,9 +35,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game.png" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-Pz-ddC" userLabel="imgBackground">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                 </imageView>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lost_sync.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Ia-HEv" userLabel="imgPopupLostSync">
-                    <rect key="frame" x="259" y="8" width="250" height="164"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-uY-nNO" userLabel="btnTop">
                     <rect key="frame" x="289" y="245" width="185" height="140"/>
                     <state key="normal">
@@ -100,6 +97,9 @@
                 </button>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50" userLabel="imgGood">
                     <rect key="frame" x="344" y="440" width="80" height="20"/>
+                </imageView>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lost_sync.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Ia-HEv" userLabel="imgPopupLostSync">
+                    <rect key="frame" x="259" y="-4" width="250" height="164"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
