@@ -81,7 +81,7 @@
                     <rect key="frame" x="344" y="437" width="75" height="25"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_miss.png" translatesAutoresizingMaskIntoConstraints="NO" id="dat-Ve-LT3" userLabel="imgMiss">
-                    <rect key="frame" x="344" y="442" width="75" height="20"/>
+                    <rect key="frame" x="344" y="441" width="75" height="20"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="FPB-fG-69Y" userLabel="imgReady">
                     <rect key="frame" x="344" y="440" width="75" height="20"/>
@@ -96,7 +96,7 @@
                     </connections>
                 </button>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_good.png" translatesAutoresizingMaskIntoConstraints="NO" id="qXp-6Y-J50" userLabel="imgGood">
-                    <rect key="frame" x="344" y="440" width="80" height="20"/>
+                    <rect key="frame" x="343" y="440" width="80" height="20"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lost_sync.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Ia-HEv" userLabel="imgPopupLostSync">
                     <rect key="frame" x="259" y="-4" width="250" height="164"/>
