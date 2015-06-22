@@ -29,20 +29,20 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gameover.png" translatesAutoresizingMaskIntoConstraints="NO" id="1BD-0g-Qfn" userLabel="imgBackgroung">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gameover_ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="1BD-0g-Qfn" userLabel="imgBackgroung">
                     <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_internet_connection.png" translatesAutoresizingMaskIntoConstraints="NO" id="KXf-bw-NZ9" userLabel="imgPopupNoConnection">
                     <rect key="frame" x="266" y="-1" width="250" height="164"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRu-iW-yaU" userLabel="lblScore">
-                    <rect key="frame" x="211" y="480" width="360" height="60"/>
+                    <rect key="frame" x="204" y="503" width="360" height="60"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="60"/>
                     <color key="textColor" red="0.20392156862745098" green="0.63921568627450975" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8I-Ie-A97" userLabel="btnLogin">
-                    <rect key="frame" x="56" y="616" width="160" height="85"/>
+                    <rect key="frame" x="56" y="637" width="160" height="85"/>
                     <state key="normal" image="btn_login.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L6-nO-GxF" userLabel="btnLogout">
-                    <rect key="frame" x="555" y="616" width="160" height="85"/>
+                    <rect key="frame" x="555" y="637" width="160" height="85"/>
                     <state key="normal" image="btn_logout.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -60,16 +60,19 @@
                     </connections>
                 </button>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="player.png" translatesAutoresizingMaskIntoConstraints="NO" id="aIh-rv-kwf" userLabel="imgLabelName">
-                    <rect key="frame" x="204" y="555" width="366" height="60"/>
+                    <rect key="frame" x="204" y="580" width="366" height="60"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqI-7B-bL3" userLabel="lblPlayerName">
-                    <rect key="frame" x="213" y="562" width="348" height="45"/>
+                    <rect key="frame" x="213" y="587" width="348" height="45"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="36"/>
                     <color key="textColor" red="0.20784313725490197" green="0.64313725490196083" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_to_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="TTC-Nh-poD">
+                    <rect key="frame" x="229" y="819" width="310" height="234"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTt-z4-SoM" userLabel="btnReturnToMenu">
-                    <rect key="frame" x="239" y="813" width="305" height="132"/>
+                    <rect key="frame" x="267" y="851" width="235" height="115"/>
                     <state key="normal" image="btn_back_to_menu.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -78,7 +81,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connect to facebook to save your score." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeF-eV-RE1" userLabel="lblConnectToFacebook">
-                    <rect key="frame" x="219" y="759" width="330" height="30"/>
+                    <rect key="frame" x="219" y="787" width="330" height="30"/>
                     <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
                     <color key="textColor" red="0.20392156862745098" green="0.63921568627450975" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -90,10 +93,11 @@
         </view>
     </objects>
     <resources>
+        <image name="back_to_menu.png" width="410" height="316"/>
         <image name="btn_back_to_menu.png" width="306" height="149"/>
         <image name="btn_login.png" width="144" height="82"/>
         <image name="btn_logout.png" width="145" height="85"/>
-        <image name="gameover.png" width="641" height="1136"/>
+        <image name="gameover_ipad.png" width="641" height="1136"/>
         <image name="no_internet_connection.png" width="365" height="250"/>
         <image name="player.png" width="322" height="66"/>
     </resources>
