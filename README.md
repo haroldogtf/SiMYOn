@@ -4,14 +4,11 @@ Simon Game played with Myo Gesture Control Armband.
 https://itunes.apple.com/us/app/simyon/id995841124
 # ![GamePlay](https://github.com/haroldogtf/SiMYOn/blob/master/screens.png)
 
-
 #####Target Devices:
-iPhone 5 / 5c / 5s
-<br>
-iPhone 6 / 6 Plus
+iPhone 6s, 6s+, 6, 6+, 5s, 5c, 5.
 
 #####Target Deployment:
-iOS 7.0 or greater.
+iOS 7, 8, 9.
 
 #####About Myo
-https://www.thalmic.com/en/myo/
+https://www.myo.com/
