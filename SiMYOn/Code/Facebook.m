@@ -7,39 +7,40 @@
 //
 
 #import "Facebook.h"
-#import <FacebookSDK/FacebookSDK.h>
+//#import <FacebookSDK/FacebookSDK.h>
 
 @implementation Facebook
 
 + (BOOL) hasActiveSession {
-    return FBSession.activeSession.isOpen;
+//    return FBSession.activeSession.isOpen;
+    return YES;
 }
 
 + (void) closeSession {
-   [FBSession.activeSession closeAndClearTokenInformation];
+//   [FBSession.activeSession closeAndClearTokenInformation];
 }
 
 + (void) setNilInSection {
-    FBSession.activeSession = nil;
+//    FBSession.activeSession = nil;
 }
 
 + (void) login:(LoginBlock)block {
-    [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
-                            completionHandler:^(FBSession *session,
-                                             FBSessionState status,
-                                                    NSError *error) {
-                                block(error);
-                            }
-     ];
+//    [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
+//                            completionHandler:^(FBSession *session,
+//                                             FBSessionState status,
+//                                                    NSError *error) {
+//                                block(error);
+//                            }
+ //    ];
 }
 
 + (void) getUserName:(UserNameBlock)block {
-    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
-                                                           NSDictionary<FBGraphUser> *user,
-                                                                            NSError *error) {
-                                  block(user.name, error);
-                              }
-     ];
+//    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
+//                                                           NSDictionary<FBGraphUser> *user,
+//                                                                            NSError *error) {
+//                                  block(user.name, error);
+//                              }
+//     ];
 }
 
 @end

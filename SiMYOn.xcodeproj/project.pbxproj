@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		095060D31B30E6A400911A4D /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D21B30E6A400911A4D /* MainViewController_iPad.xib */; };
 		095060D51B30E6B500911A4D /* SyncViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */; };
@@ -29,8 +28,6 @@
 		095060D91B30E6DA00911A4D /* GameOverViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */; };
 		095060E01B30EFF000911A4D /* BestScoresViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
-		096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */; };
-		096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096D04BA1A9E8B6E006654C6 /* MyoKit.framework */; };
 		097400241A8630B30012E465 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097400231A8630B30012E465 /* Images.xcassets */; };
 		097400271A8630B30012E465 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 097400251A8630B30012E465 /* LaunchScreen.xib */; };
 		097400881A880A130012E465 /* blip1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0974007C1A880A130012E465 /* blip1.mp3 */; };
@@ -97,6 +94,7 @@
 		09AC606F1AF6E76D00963EB6 /* SyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AC604F1AF6E76D00963EB6 /* SyncViewController.m */; };
 		09AC60701AF6E76D00963EB6 /* SyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AC60501AF6E76D00963EB6 /* SyncViewController.xib */; };
 		09AC60711AF6E76D00963EB6 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AC60521AF6E76D00963EB6 /* Util.m */; };
+		09B891B31C028ED20088F1AA /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B891B21C028ED20088F1AA /* MyoKit.framework */; };
 		09C29CC81AA7D901005E4E4F /* best_scores_no_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CC71AA7D901005E4E4F /* best_scores_no_connection.png */; };
 		09C29CCB1AA7F9D4005E4E4F /* btn_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CC91AA7F9D4005E4E4F /* btn_login.png */; };
 		09C29CCC1AA7F9D4005E4E4F /* btn_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */; };
@@ -117,13 +115,11 @@
 		09E547881A9E92F000985223 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547871A9E92F000985223 /* SystemConfiguration.framework */; };
 		09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547891A9E92F900985223 /* libz.dylib */; };
 		09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478B1A9E930200985223 /* libsqlite3.dylib */; };
-		09E5478E1A9E940500985223 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478D1A9E940500985223 /* Parse.framework */; };
 		09E547931AA3DE0600985223 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E547921AA3D9A000985223 /* font.ttf */; };
+		6E60B038A522F0BB99C8CC3D /* libPods-SiMYOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		093DD1381ADC8EA4000BC344 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SiMYOn/Libs/MBProgressHUD.h; sourceTree = "<group>"; };
-		093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SiMYOn/Libs/MBProgressHUD.m; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
 		095060D21B30E6A400911A4D /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_iPad.xib; path = Code/MainViewController_iPad.xib; sourceTree = "<group>"; };
 		095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad.xib; path = Code/SyncViewController_iPad.xib; sourceTree = "<group>"; };
@@ -131,8 +127,6 @@
 		095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameOverViewController_iPad.xib; path = Code/GameOverViewController_iPad.xib; sourceTree = "<group>"; };
 		095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BestScoresViewController_iPad.xib; path = Code/BestScoresViewController_iPad.xib; sourceTree = "<group>"; };
 		09549D461AA3FCFF002C228C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = Frameworks/FacebookSDK.framework; sourceTree = "<group>"; };
-		096D04BA1A9E8B6E006654C6 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
 		097400131A8630B30012E465 /* SiMYOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiMYOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097400171A8630B30012E465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		097400231A8630B30012E465 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SiMYOn/Images.xcassets; sourceTree = "<group>"; };
@@ -216,6 +210,7 @@
 		09AC60501AF6E76D00963EB6 /* SyncViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController.xib; path = Code/SyncViewController.xib; sourceTree = "<group>"; };
 		09AC60511AF6E76D00963EB6 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = Code/Util.h; sourceTree = "<group>"; };
 		09AC60521AF6E76D00963EB6 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = Code/Util.m; sourceTree = "<group>"; };
+		09B891B21C028ED20088F1AA /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MyoKit.framework; path = Frameworks/MyoKit.framework; sourceTree = "<group>"; };
 		09C29CC71AA7D901005E4E4F /* best_scores_no_connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores_no_connection.png; path = SiMYOn/Assets/best_scores_no_connection.png; sourceTree = "<group>"; };
 		09C29CC91AA7F9D4005E4E4F /* btn_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_login.png; path = SiMYOn/Assets/btn_login.png; sourceTree = "<group>"; };
 		09C29CCA1AA7F9D4005E4E4F /* btn_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_logout.png; path = SiMYOn/Assets/btn_logout.png; sourceTree = "<group>"; };
@@ -236,8 +231,10 @@
 		09E547871A9E92F000985223 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		09E547891A9E92F900985223 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		09E5478B1A9E930200985223 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		09E5478D1A9E940500985223 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
 		09E547921AA3D9A000985223 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = font.ttf; path = SiMYOn/Assets/font.ttf; sourceTree = "<group>"; };
+		4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SiMYOn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.release.xcconfig"; sourceTree = "<group>"; };
+		AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E547881A9E92F000985223 /* SystemConfiguration.framework in Frameworks */,
+				09B891B31C028ED20088F1AA /* MyoKit.framework in Frameworks */,
 				09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */,
 				09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */,
 				09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */,
@@ -255,10 +253,8 @@
 				09E5477E1A9E92CA00985223 /* CoreLocation.framework in Frameworks */,
 				09E5477C1A9E92C200985223 /* CoreGraphics.framework in Frameworks */,
 				09E5477A1A9E92BB00985223 /* CFNetwork.framework in Frameworks */,
-				09E5478E1A9E940500985223 /* Parse.framework in Frameworks */,
 				09E547781A9E92AC00985223 /* AudioToolbox.framework in Frameworks */,
-				096D04BC1A9E8B6E006654C6 /* MyoKit.framework in Frameworks */,
-				096D04BB1A9E8B6E006654C6 /* FacebookSDK.framework in Frameworks */,
+				6E60B038A522F0BB99C8CC3D /* libPods-SiMYOn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,16 +325,6 @@
 			name = BestScores;
 			sourceTree = "<group>";
 		};
-		093DD1371ADC8E96000BC344 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				093DD1381ADC8EA4000BC344 /* MBProgressHUD.h */,
-				093DD1391ADC8EA4000BC344 /* MBProgressHUD.m */,
-			);
-			name = Libs;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		094487531AE33A9A00573F8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +343,8 @@
 			children = (
 				097400151A8630B30012E465 /* SiMYOn */,
 				097400141A8630B30012E465 /* Products */,
+				22D1902C248C420B81DCCB3F /* Pods */,
+				50241349377E3F1A517C79BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -377,9 +365,6 @@
 				09CE76E21AAC8C4E00244ABF /* Model */,
 				094487531AE33A9A00573F8E /* Controller */,
 				09CE76CF1AAA922A00244ABF /* Util */,
-				0974004A1A864BBE0012E465 /* Assets */,
-				093DD1371ADC8E96000BC344 /* Libs */,
-				097400411A8635990012E465 /* Frameworks */,
 				097400161A8630B30012E465 /* Supporting Files */,
 			);
 			path = SiMYOn;
@@ -388,6 +373,8 @@
 		097400161A8630B30012E465 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0974004A1A864BBE0012E465 /* Assets */,
+				097400411A8635990012E465 /* Frameworks */,
 				097400171A8630B30012E465 /* Info.plist */,
 				09AC603F1AF6E76D00963EB6 /* main.m */,
 			);
@@ -397,8 +384,8 @@
 		097400411A8635990012E465 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09B891B21C028ED20088F1AA /* MyoKit.framework */,
 				09549D461AA3FCFF002C228C /* CoreBluetooth.framework */,
-				09E5478D1A9E940500985223 /* Parse.framework */,
 				09E5478B1A9E930200985223 /* libsqlite3.dylib */,
 				09E547891A9E92F900985223 /* libz.dylib */,
 				09E547871A9E92F000985223 /* SystemConfiguration.framework */,
@@ -409,8 +396,6 @@
 				09E5477B1A9E92C200985223 /* CoreGraphics.framework */,
 				09E547791A9E92BB00985223 /* CFNetwork.framework */,
 				09E547771A9E92AC00985223 /* AudioToolbox.framework */,
-				096D04B91A9E8B6E006654C6 /* FacebookSDK.framework */,
-				096D04BA1A9E8B6E006654C6 /* MyoKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -597,6 +582,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		22D1902C248C420B81DCCB3F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */,
+				932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		50241349377E3F1A517C79BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -604,9 +606,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 097400361A8630B30012E465 /* Build configuration list for PBXNativeTarget "SiMYOn" */;
 			buildPhases = (
+				23AD62B3DDD91A489BB52072 /* Check Pods Manifest.lock */,
 				0974000F1A8630B30012E465 /* Sources */,
 				097400101A8630B30012E465 /* Frameworks */,
 				097400111A8630B30012E465 /* Resources */,
+				1C4C3AFD7E4BE56FE1871FDA /* Embed Pods Frameworks */,
+				9556A41AE01A2200708CD449 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -753,6 +758,51 @@
 			shellPath = /bin/sh;
 			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\ncd ${TARGET_TEMP_DIR}\n\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT/Code}\n\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\n\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
 		};
+		1C4C3AFD7E4BE56FE1871FDA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23AD62B3DDD91A489BB52072 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9556A41AE01A2200708CD449 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -775,7 +825,6 @@
 				09AC60561AF6E76D00963EB6 /* BestScoresViewController.m in Sources */,
 				09AC605D1AF6E76D00963EB6 /* GameOverViewController.m in Sources */,
 				09AC60651AF6E76D00963EB6 /* main.m in Sources */,
-				093DD13A1ADC8EA4000BC344 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,7 +876,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -862,7 +911,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -871,6 +920,7 @@
 		};
 		097400371A8630B30012E465 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -889,6 +939,7 @@
 		};
 		097400381A8630B30012E465 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

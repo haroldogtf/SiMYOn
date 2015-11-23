@@ -12,7 +12,7 @@
 #import "Myo.h"
 #import "Ranking.h"
 #import "MainViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
+//#import <FacebookSDK/FacebookSDK.h>
 
 @interface AppDelegate ()
 
@@ -41,7 +41,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [FBAppEvents activateApp];
+//    [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -52,7 +52,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
 
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+//    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return YES;
 }
 
 - (void) configureSound {
