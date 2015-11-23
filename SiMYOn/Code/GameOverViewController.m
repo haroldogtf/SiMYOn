@@ -25,6 +25,8 @@
     @property (weak, nonatomic) IBOutlet UIImageView *imgPlayerName;
     @property (weak, nonatomic) IBOutlet UIImageView *imgNoConnectionPopup;
 
+    @property (strong, nonatomic)        UIAlertView *alert;
+
 @end
 
 @implementation GameOverViewController
@@ -76,7 +78,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [Facebook closeSession];
+    [Facebook logout];
     
     self.lblPlayerName.hidden = YES;
     self.lblPlayerName.text = @"";
@@ -109,9 +111,17 @@
     } else {
         
         __weak typeof(self) this = self;
-        [Facebook setNilInSection];
-        [Facebook login:^(NSError *error) {
-            if(!error) {
+        [Facebook login:self withBlock:^(BOOL logged, NSError *error) {
+            if(error.code == FACEBOOK_ACCESS_DENIED) {
+
+                self.alert = [[UIAlertView alloc] initWithTitle:SIMYON
+                                                        message:PERMISSION_ALERT
+                                                       delegate:self
+                                              cancelButtonTitle:STR_OK
+                                              otherButtonTitles:nil];
+                [self.alert show];
+                                
+            } else if(!error && logged) {
                 [this getNameInFacebook];
             }
         }];

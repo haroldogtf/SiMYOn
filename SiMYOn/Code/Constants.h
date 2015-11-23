@@ -48,12 +48,14 @@ typedef enum {
 #define NIB_IPAD           @"_iPad"
 
 //Strings
-#define SIMYON          @"SiMYOn"
-#define BACK_MENU_ALERT @"Are you sure to go back to menu?"
-#define CONNECT_ALERT   @"Try to connect again?"
-#define STR_YES         @"Yes"
-#define STR_NO          @"No"
-#define LOADING         @"Loading"
+#define SIMYON           @"SiMYOn"
+#define BACK_MENU_ALERT  @"Are you sure to go back to menu?"
+#define CONNECT_ALERT    @"Try to connect again?"
+#define PERMISSION_ALERT @"To use Facebook data you must go to \"Settings > Facebook\" and allow SiMYOn to use your account"
+#define STR_YES          @"Yes"
+#define STR_NO           @"No"
+#define STR_OK           @"Ok"
+#define LOADING          @"Loading"
 
 //Keys
 #define SOUND_CONFIGURED @"soundConfigured"
