@@ -41,6 +41,21 @@ extern NSString *const TLMHubDidDisconnectDeviceNotification;
 
 /** @} */
 
+/**
+ @defgroup hubNotificationDataKeys NSNotificationCenter Hub Data Key Constants
+ These keys correspond to data stored in a notifications userInfo dictionary.
+ @see hubNotifications
+
+ @{
+ */
+
+/**
+ NSNotification userInfo key for a TLMMyo object.
+ */
+extern NSString *const kTLMKeyMyo;
+
+/** @} */
+
 //--------
 // TLMHub
 //--------
