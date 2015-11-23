@@ -113,7 +113,6 @@
         __weak typeof(self) this = self;
         [Facebook login:self withBlock:^(BOOL logged, NSError *error) {
             if(error.code == FACEBOOK_ACCESS_DENIED) {
-
                 self.alert = [[UIAlertView alloc] initWithTitle:SIMYON
                                                         message:PERMISSION_ALERT
                                                        delegate:self
