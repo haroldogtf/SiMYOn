@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0984984A1ADABDB20049BEB1 /* OCLint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 0984984D1ADABDB20049BEB1 /* Build configuration list for PBXAggregateTarget "OCLint" */;
-			buildPhases = (
-				0984984E1ADABE780049BEB1 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = OCLint;
-			productName = OCLint;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		095060D31B30E6A400911A4D /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D21B30E6A400911A4D /* MainViewController_iPad.xib */; };
@@ -642,9 +628,6 @@
 							};
 						};
 					};
-					0984984A1ADABDB20049BEB1 = {
-						CreatedOnToolsVersion = 6.3;
-					};
 				};
 			};
 			buildConfigurationList = 0974000E1A8630B30012E465 /* Build configuration list for PBXProject "SiMYOn" */;
@@ -661,7 +644,6 @@
 			projectRoot = "";
 			targets = (
 				097400121A8630B30012E465 /* SiMYOn */,
-				0984984A1ADABDB20049BEB1 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -745,19 +727,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0984984E1ADABE780049BEB1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\ncd ${TARGET_TEMP_DIR}\n\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT/Code}\n\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\n\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
-		};
 		1C4C3AFD7E4BE56FE1871FDA /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -956,20 +925,6 @@
 			};
 			name = Release;
 		};
-		0984984B1ADABDB20049BEB1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0984984C1ADABDB20049BEB1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -987,15 +942,6 @@
 			buildConfigurations = (
 				097400371A8630B30012E465 /* Debug */,
 				097400381A8630B30012E465 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0984984D1ADABDB20049BEB1 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0984984B1ADABDB20049BEB1 /* Debug */,
-				0984984C1ADABDB20049BEB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
