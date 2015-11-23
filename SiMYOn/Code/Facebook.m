@@ -7,40 +7,54 @@
 //
 
 #import "Facebook.h"
-//#import <FacebookSDK/FacebookSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @implementation Facebook
 
 + (BOOL) hasActiveSession {
-//    return FBSession.activeSession.isOpen;
-    return YES;
+    
+    if([FBSDKAccessToken currentAccessToken]) {
+        return YES;
+    }
+    return NO;
 }
 
-+ (void) closeSession {
-//   [FBSession.activeSession closeAndClearTokenInformation];
++ (void) login:(UIViewController *)view withBlock:(LoginBlock)block {
+    
+    [FBSDKAccessToken setCurrentAccessToken:nil];
+    [FBSDKProfile setCurrentProfile:nil];
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    login.loginBehavior = FBSDKLoginBehaviorSystemAccount;
+    [login logInWithReadPermissions: @[@"public_profile"]
+                 fromViewController:view
+                            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                if (error || result.isCancelled) {
+                                    block(NO, error);
+                                } else {
+                                    block(YES, error);
+                                }
+     }];
 }
 
-+ (void) setNilInSection {
-//    FBSession.activeSession = nil;
-}
-
-+ (void) login:(LoginBlock)block {
-//    [FBSession.activeSession openWithBehavior:FBSessionLoginBehaviorForcingWebView
-//                            completionHandler:^(FBSession *session,
-//                                             FBSessionState status,
-//                                                    NSError *error) {
-//                                block(error);
-//                            }
- //    ];
++ (void) logout {
+    FBSDKLoginManager *logMeOut = [[FBSDKLoginManager alloc] init];
+    [logMeOut logOut];
 }
 
 + (void) getUserName:(UserNameBlock)block {
-//    [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
-//                                                           NSDictionary<FBGraphUser> *user,
-//                                                                            NSError *error) {
-//                                  block(user.name, error);
-//                              }
-//     ];
+    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me"
+                                       parameters:@{@"fields": @"name"}]
+                       startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        
+         NSString *name;
+         if (!error) {
+             name = result[@"name"];
+         }
+         block(name, error);
+     }];
 }
 
 @end
