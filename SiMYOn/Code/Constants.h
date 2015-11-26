@@ -56,6 +56,9 @@ typedef enum {
 #define STR_NO           @"No"
 #define STR_OK           @"Ok"
 #define LOADING          @"Loading"
+#define PLAY_WITH_MYO    @"Play with Myo"
+#define PLAY_WITHOUT_MYO @"Play without Myo"
+#define BEST_SCORES      @"Best Scores"
 
 //Keys
 #define SOUND_CONFIGURED @"soundConfigured"

@@ -12,9 +12,14 @@
 #import "Myo.h"
 #import "Ranking.h"
 #import "MainViewController.h"
+#import "BestScoresViewController.h"
+#import "SyncViewController.h"
+#import "GameViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
+
+@property UINavigationController *navigation;
 
 @end
 
@@ -27,6 +32,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Ranking configureInitialRanking];
     [self configureSound];
     [self configureNavigation];
+    [self configure3DTouch:launchOptions];
 
     return YES;
 }
@@ -70,13 +76,56 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 - (void) configureNavigation {
     MainViewController *mainViewController = [[MainViewController alloc]init];
-    UINavigationController *navigation;
-    navigation = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    navigation.navigationBarHidden = YES;
+    self.navigation = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.navigation.navigationBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = navigation;
+    self.window.rootViewController = self.navigation;
     [self.window makeKeyAndVisible];
+}
+
+- (void)configure3DTouch:(NSDictionary *)launchOptions {
+
+    UIApplicationShortcutItem *withMyo
+        = [[UIApplicationShortcutItem alloc]initWithType:PLAY_WITH_MYO
+                                          localizedTitle:PLAY_WITH_MYO
+                                       localizedSubtitle:nil
+                                                    icon:[UIApplicationShortcutIcon iconWithType: UIApplicationShortcutIconTypePlay]
+                                                userInfo:nil];
+    
+    UIApplicationShortcutItem *withoutMyo
+        = [[UIApplicationShortcutItem alloc]initWithType:PLAY_WITHOUT_MYO
+                                          localizedTitle:PLAY_WITHOUT_MYO
+                                       localizedSubtitle:nil
+                                                    icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePlay]
+                                                userInfo:nil];
+    
+    UIApplicationShortcutItem * bestScores
+        = [[UIApplicationShortcutItem alloc]initWithType:BEST_SCORES
+                                          localizedTitle:BEST_SCORES
+                                       localizedSubtitle:nil
+                                                    icon:[UIApplicationShortcutIcon iconWithType: UIApplicationShortcutIconTypeTaskCompleted]
+                                                userInfo:nil];
+    
+    [UIApplication sharedApplication].shortcutItems = @[withMyo, withoutMyo, bestScores];
+}
+
+- (void)         application:(UIApplication *)application
+performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem
+           completionHandler:(void (^)(BOOL))completionHandler {
+    
+                if([shortcutItem.localizedTitle isEqualToString:BEST_SCORES]) {
+                    [self.navigation pushViewController:[[BestScoresViewController alloc]init] animated:YES];
+                    
+                } else if([shortcutItem.localizedTitle isEqualToString:PLAY_WITH_MYO]) {
+                    [self.navigation pushViewController:[[SyncViewController alloc]init] animated:YES];
+                    
+                } else if([shortcutItem.localizedTitle isEqualToString:PLAY_WITHOUT_MYO]) {
+                    BOOL sound = [[NSUserDefaults standardUserDefaults] boolForKey:PLAY_SOUND];
+                    [self.navigation pushViewController:[[GameViewController alloc]initIsPlaySound:sound andUseMyo:NO] animated:YES];
+                }
+
+                completionHandler(YES);
 }
 
 @end
