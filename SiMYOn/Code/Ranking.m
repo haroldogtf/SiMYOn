@@ -13,9 +13,11 @@
 
 @implementation Ranking
 
-+ (void) configureParse {
++ (void) configureParse:(NSDictionary *)launchOptions {
     [Parse setApplicationId:PARSE_APPLICATION_ID
                   clientKey:PARSE_CLIENT_KEY];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 
 + (void) configureInitialRanking {

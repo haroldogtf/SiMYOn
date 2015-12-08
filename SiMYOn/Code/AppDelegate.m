@@ -28,7 +28,7 @@
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Myo configureMyo];
-    [Ranking configureParse];
+    [Ranking configureParse:launchOptions];
     [Ranking configureInitialRanking];
     [self configureSound];
     [self configureNavigation];
