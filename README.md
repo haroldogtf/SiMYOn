@@ -5,7 +5,7 @@ https://itunes.apple.com/us/app/simyon/id995841124
 # ![GamePlay](https://github.com/haroldogtf/SiMYOn/blob/master/screens.png)
 
 #####Target Devices:
-iPhone 6s, 6s+, 6, 6+, 5s, 5c, 5.
+iPhone 6s, 6s+, 6, 6+, SE, 5s, 5c, 5.
 
 #####Target Deployment:
 iOS 7, 8, 9.
