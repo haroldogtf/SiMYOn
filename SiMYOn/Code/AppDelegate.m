@@ -18,6 +18,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -29,6 +30,8 @@
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [FIRApp configure];
     [Fabric with:@[[Crashlytics class]]];
     [Myo configureMyo];
     [Ranking configureParse:launchOptions];

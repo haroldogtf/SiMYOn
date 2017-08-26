@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>380749608666-8rpvvvj9ajfuecj1bkhsdgpe6ig70pif.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.380749608666-8rpvvvj9ajfuecj1bkhsdgpe6ig70pif</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBpmNE4liCBD0e7XsZ0ggc_-_1qLiomU0Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>380749608666</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.ufpe.cin.games.SiMYOn</string>
+	<key>PROJECT_ID</key>
+	<string>simyon-game</string>
+	<key>STORAGE_BUCKET</key>
+	<string>simyon-game.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:380749608666:ios:3978b57cf850dbea</string>
+	<key>DATABASE_URL</key>
+	<string>https://simyon-game.firebaseio.com</string>
+</dict>
+</plist>

@@ -6,5 +6,6 @@ target 'SiMYOn' do
 	pod 'Parse'
 	pod 'Fabric'
 	pod 'Crashlytics'
+    pod 'Firebase/Core'
 
 end

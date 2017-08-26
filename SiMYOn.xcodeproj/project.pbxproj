@@ -87,6 +87,7 @@
 		09C29CCE1AA7FA05005E4E4F /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCD1AA7FA05005E4E4F /* player.png */; };
 		09C29CD01AA8F996005E4E4F /* no_internet_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */; };
 		09C444651AC87C22003F0CF9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C444641AC87C22003F0CF9 /* background.png */; };
+		09C82BA31F51C778004E745F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09C82BA21F51C778004E745F /* GoogleService-Info.plist */; };
 		09CE76CE1AAA91DD00244ABF /* best_scores_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */; };
 		09CE76D51AAAA31500244ABF /* btn_sound_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76D31AAAA31500244ABF /* btn_sound_off.png */; };
 		09CE76D61AAAA31500244ABF /* btn_sound_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE76D41AAAA31500244ABF /* btn_sound_on.png */; };
@@ -203,6 +204,7 @@
 		09C29CCD1AA7FA05005E4E4F /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = SiMYOn/Assets/player.png; sourceTree = "<group>"; };
 		09C29CCF1AA8F996005E4E4F /* no_internet_connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_internet_connection.png; path = SiMYOn/Assets/no_internet_connection.png; sourceTree = "<group>"; };
 		09C444641AC87C22003F0CF9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = SiMYOn/Assets/background.png; sourceTree = "<group>"; };
+		09C82BA21F51C778004E745F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09CE76CD1AAA91DD00244ABF /* best_scores_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = best_scores_loading.png; path = SiMYOn/Assets/best_scores_loading.png; sourceTree = "<group>"; };
 		09CE76D31AAAA31500244ABF /* btn_sound_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sound_off.png; path = SiMYOn/Assets/btn_sound_off.png; sourceTree = "<group>"; };
 		09CE76D41AAAA31500244ABF /* btn_sound_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_sound_on.png; path = SiMYOn/Assets/btn_sound_on.png; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				0974004A1A864BBE0012E465 /* Assets */,
 				097400411A8635990012E465 /* Frameworks */,
 				097400171A8630B30012E465 /* Info.plist */,
+				09C82BA21F51C778004E745F /* GoogleService-Info.plist */,
 				09AC603F1AF6E76D00963EB6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -719,6 +722,7 @@
 				097400AD1A8826120012E465 /* game_top.png in Resources */,
 				09C29CC81AA7D901005E4E4F /* best_scores_no_connection.png in Resources */,
 				09A3E1111A9BCB280016FC24 /* game_go.png in Resources */,
+				09C82BA31F51C778004E745F /* GoogleService-Info.plist in Resources */,
 				09AC60601AF6E76D00963EB6 /* GameViewController_6Plus.xib in Resources */,
 				09A3E11C1A9BD2340016FC24 /* btn_sync_no_myo.png in Resources */,
 				09A3E11B1A9BD2340016FC24 /* btn_sync_myo.png in Resources */,
