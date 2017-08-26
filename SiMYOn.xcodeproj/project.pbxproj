@@ -102,7 +102,7 @@
 		09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547891A9E92F900985223 /* libz.dylib */; };
 		09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478B1A9E930200985223 /* libsqlite3.dylib */; };
 		09E547931AA3DE0600985223 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E547921AA3D9A000985223 /* font.ttf */; };
-		6E60B038A522F0BB99C8CC3D /* libPods-SiMYOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */; };
+		2C72282CEA7F82A7F8B8A3E7 /* libPods-SiMYOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6AB0A5DBBF0FFD9B46AFE /* libPods-SiMYOn.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,9 +218,9 @@
 		09E547891A9E92F900985223 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		09E5478B1A9E930200985223 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		09E547921AA3D9A000985223 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = font.ttf; path = SiMYOn/Assets/font.ttf; sourceTree = "<group>"; };
-		4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SiMYOn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.release.xcconfig"; sourceTree = "<group>"; };
-		AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.debug.xcconfig"; sourceTree = "<group>"; };
+		263B8C490DC5606848657BEA /* Pods-SiMYOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.release.xcconfig"; sourceTree = "<group>"; };
+		4FB6AB0A5DBBF0FFD9B46AFE /* libPods-SiMYOn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SiMYOn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB68EB20EDF53B253600FB2 /* Pods-SiMYOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +240,7 @@
 				09E5477C1A9E92C200985223 /* CoreGraphics.framework in Frameworks */,
 				09E5477A1A9E92BB00985223 /* CFNetwork.framework in Frameworks */,
 				09E547781A9E92AC00985223 /* AudioToolbox.framework in Frameworks */,
-				6E60B038A522F0BB99C8CC3D /* libPods-SiMYOn.a in Frameworks */,
+				2C72282CEA7F82A7F8B8A3E7 /* libPods-SiMYOn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +329,8 @@
 			children = (
 				097400151A8630B30012E465 /* SiMYOn */,
 				097400141A8630B30012E465 /* Products */,
-				22D1902C248C420B81DCCB3F /* Pods */,
-				50241349377E3F1A517C79BE /* Frameworks */,
+				AD7804AEAEC0C8356D234BF5 /* Pods */,
+				E634A23A01AF311D915C15C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -568,19 +568,19 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		22D1902C248C420B81DCCB3F /* Pods */ = {
+		AD7804AEAEC0C8356D234BF5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */,
-				932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */,
+				CAB68EB20EDF53B253600FB2 /* Pods-SiMYOn.debug.xcconfig */,
+				263B8C490DC5606848657BEA /* Pods-SiMYOn.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		50241349377E3F1A517C79BE /* Frameworks */ = {
+		E634A23A01AF311D915C15C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4382D1DE59925D72155F6BD5 /* libPods-SiMYOn.a */,
+				4FB6AB0A5DBBF0FFD9B46AFE /* libPods-SiMYOn.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -592,12 +592,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 097400361A8630B30012E465 /* Build configuration list for PBXNativeTarget "SiMYOn" */;
 			buildPhases = (
-				23AD62B3DDD91A489BB52072 /* Check Pods Manifest.lock */,
+				7463B26470969ABCC08F9FFC /* [CP] Check Pods Manifest.lock */,
 				0974000F1A8630B30012E465 /* Sources */,
 				097400101A8630B30012E465 /* Frameworks */,
 				097400111A8630B30012E465 /* Resources */,
-				1C4C3AFD7E4BE56FE1871FDA /* Embed Pods Frameworks */,
-				9556A41AE01A2200708CD449 /* Copy Pods Resources */,
+				2FAEF72B99525897EFDFADF9 /* [CP] Embed Pods Frameworks */,
+				173935A7431C00D37D844DA5 /* [CP] Copy Pods Resources */,
+				09256A7D1F510EC80029E00A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -614,7 +615,7 @@
 		0974000B1A8630B30012E465 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0830;
 				TargetAttributes = {
 					097400121A8630B30012E465 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -727,14 +728,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C4C3AFD7E4BE56FE1871FDA /* Embed Pods Frameworks */ = {
+		09256A7D1F510EC80029E00A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 52330e2d25a374bbac1e821f0405e4f5343afb00 6661aeca9977e92e4857098c2c1eab0e9d136b0d36d0ce8670fe66b090a051d1";
+		};
+		173935A7431C00D37D844DA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"${PODS_ROOT}/Parse/Parse/Resources/en.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FAEF72B99525897EFDFADF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,34 +775,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		23AD62B3DDD91A489BB52072 /* Check Pods Manifest.lock */ = {
+		7463B26470969ABCC08F9FFC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SiMYOn-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9556A41AE01A2200708CD449 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -824,16 +845,20 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -846,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -866,8 +891,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -876,13 +903,14 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -891,18 +919,20 @@
 		};
 		097400371A8630B30012E465 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAD9A63556BA691B6AB81DBC /* Pods-SiMYOn.debug.xcconfig */;
+			baseConfigurationReference = CAB68EB20EDF53B253600FB2 /* Pods-SiMYOn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8Q6HQ96RC4;
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.games.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -910,18 +940,20 @@
 		};
 		097400381A8630B30012E465 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932F5BE343E3EA324CA87159 /* Pods-SiMYOn.release.xcconfig */;
+			baseConfigurationReference = 263B8C490DC5606848657BEA /* Pods-SiMYOn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8Q6HQ96RC4;
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.games.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
