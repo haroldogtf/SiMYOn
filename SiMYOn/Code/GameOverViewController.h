@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameOverViewController : UIViewController
+@interface GameOverViewController : UIViewController <CAAnimationDelegate>
 
 @property (nonatomic) NSInteger score;
 @property (nonatomic) BOOL      usingMyo;

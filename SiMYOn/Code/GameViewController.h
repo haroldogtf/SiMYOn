@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController <CAAnimationDelegate>
 
 @property (nonatomic) BOOL playSound;
 @property (nonatomic) BOOL usingMyo;
