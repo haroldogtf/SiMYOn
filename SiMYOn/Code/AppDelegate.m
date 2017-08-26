@@ -16,6 +16,8 @@
 #import "SyncViewController.h"
 #import "GameViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -27,6 +29,7 @@
 
 - (BOOL)          application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Fabric with:@[[Crashlytics class]]];
     [Myo configureMyo];
     [Ranking configureParse:launchOptions];
     [Ranking configureInitialRanking];
