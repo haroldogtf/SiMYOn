@@ -928,6 +928,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -949,6 +950,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					SiMYOn,
 					"$(PROJECT_DIR)/SiMYOn/Frameworks",
+					"$(inherited)",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
