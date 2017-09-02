@@ -249,79 +249,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090994191AC82CAC0068EFA2 /* Menu */ = {
+		094487531AE33A9A00573F8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				09AC60421AF6E76D00963EB6 /* MainViewController.h */,
 				09AC60431AF6E76D00963EB6 /* MainViewController.m */,
-				09AC60441AF6E76D00963EB6 /* MainViewController.xib */,
-				09AC60401AF6E76D00963EB6 /* MainViewController_6.xib */,
-				09AC60411AF6E76D00963EB6 /* MainViewController_6Plus.xib */,
-				095060D21B30E6A400911A4D /* MainViewController_iPad.xib */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
-		0909941A1AC82CB20068EFA2 /* LaunchScreen */ = {
-			isa = PBXGroup;
-			children = (
-				097400251A8630B30012E465 /* LaunchScreen.xib */,
-			);
-			name = LaunchScreen;
-			sourceTree = "<group>";
-		};
-		0909941B1AC82CBA0068EFA2 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				097FE4ED1AC83F710094A538 /* Sync */,
-				097FE4EE1AC83F780094A538 /* GamePlay */,
-				097FE4EF1AC83F800094A538 /* GameOver */,
-			);
-			name = Game;
-			sourceTree = "<group>";
-		};
-		0909941C1AC82CC10068EFA2 /* Instructions */ = {
-			isa = PBXGroup;
-			children = (
+				09AC604E1AF6E76D00963EB6 /* SyncViewController.h */,
+				09AC604F1AF6E76D00963EB6 /* SyncViewController.m */,
+				09AC60391AF6E76D00963EB6 /* GameViewController.h */,
+				09AC603A1AF6E76D00963EB6 /* GameViewController.m */,
+				09AC60341AF6E76D00963EB6 /* GameOverViewController.h */,
+				09AC60351AF6E76D00963EB6 /* GameOverViewController.m */,
 				09AC603C1AF6E76D00963EB6 /* InstructionsViewController.h */,
 				09AC603D1AF6E76D00963EB6 /* InstructionsViewController.m */,
-				09AC603E1AF6E76D00963EB6 /* InstructionsViewController.xib */,
-			);
-			name = Instructions;
-			sourceTree = "<group>";
-		};
-		0909941D1AC82CC90068EFA2 /* Credits */ = {
-			isa = PBXGroup;
-			children = (
-				09AC602D1AF6E76D00963EB6 /* CreditsViewController.h */,
-				09AC602E1AF6E76D00963EB6 /* CreditsViewController.m */,
-				09AC602F1AF6E76D00963EB6 /* CreditsViewController.xib */,
-			);
-			name = Credits;
-			sourceTree = "<group>";
-		};
-		0909941E1AC82CD30068EFA2 /* BestScores */ = {
-			isa = PBXGroup;
-			children = (
 				09AC60291AF6E76D00963EB6 /* BestScoresViewController.h */,
 				09AC602A1AF6E76D00963EB6 /* BestScoresViewController.m */,
-				09AC602B1AF6E76D00963EB6 /* BestScoresViewController.xib */,
-				09AC60271AF6E76D00963EB6 /* BestScoresViewController_6.xib */,
-				09AC60281AF6E76D00963EB6 /* BestScoresViewController_6Plus.xib */,
-				095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */,
-			);
-			name = BestScores;
-			sourceTree = "<group>";
-		};
-		094487531AE33A9A00573F8E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				09AC60301AF6E76D00963EB6 /* Facebook.h */,
-				09AC60311AF6E76D00963EB6 /* Facebook.m */,
-				09AC60451AF6E76D00963EB6 /* Myo.h */,
-				09AC60461AF6E76D00963EB6 /* Myo.m */,
-				09AC604C1AF6E76D00963EB6 /* Ranking.h */,
-				09AC604D1AF6E76D00963EB6 /* Ranking.m */,
+				09AC602D1AF6E76D00963EB6 /* CreditsViewController.h */,
+				09AC602E1AF6E76D00963EB6 /* CreditsViewController.m */,
+				09AC60471AF6E76D00963EB6 /* NotSupportedViewController.h */,
+				09AC60481AF6E76D00963EB6 /* NotSupportedViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -350,8 +296,8 @@
 				09AC60251AF6E75A00963EB6 /* AppDelegate.h */,
 				09AC60261AF6E76D00963EB6 /* AppDelegate.m */,
 				097400421A8635A10012E465 /* View */,
-				09CE76E21AAC8C4E00244ABF /* Model */,
 				094487531AE33A9A00573F8E /* Controller */,
+				09CE76E21AAC8C4E00244ABF /* Model */,
 				09CE76CF1AAA922A00244ABF /* Util */,
 				097400161A8630B30012E465 /* Supporting Files */,
 			);
@@ -392,13 +338,28 @@
 		097400421A8635A10012E465 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0909941A1AC82CB20068EFA2 /* LaunchScreen */,
-				090994191AC82CAC0068EFA2 /* Menu */,
-				0909941B1AC82CBA0068EFA2 /* Game */,
-				0909941C1AC82CC10068EFA2 /* Instructions */,
-				0909941E1AC82CD30068EFA2 /* BestScores */,
-				0909941D1AC82CC90068EFA2 /* Credits */,
-				097FE4DB1AC838930094A538 /* NotSupported */,
+				097400251A8630B30012E465 /* LaunchScreen.xib */,
+				09AC60441AF6E76D00963EB6 /* MainViewController.xib */,
+				09AC60401AF6E76D00963EB6 /* MainViewController_6.xib */,
+				09AC60411AF6E76D00963EB6 /* MainViewController_6Plus.xib */,
+				095060D21B30E6A400911A4D /* MainViewController_iPad.xib */,
+				09AC60501AF6E76D00963EB6 /* SyncViewController.xib */,
+				095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */,
+				09AC603B1AF6E76D00963EB6 /* GameViewController.xib */,
+				09AC60371AF6E76D00963EB6 /* GameViewController_6.xib */,
+				09AC60381AF6E76D00963EB6 /* GameViewController_6Plus.xib */,
+				095060D61B30E6C700911A4D /* GameViewController_iPad.xib */,
+				09AC60361AF6E76D00963EB6 /* GameOverViewController.xib */,
+				09AC60321AF6E76D00963EB6 /* GameOverViewController_6.xib */,
+				09AC60331AF6E76D00963EB6 /* GameOverViewController_6Plus.xib */,
+				095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */,
+				09AC603E1AF6E76D00963EB6 /* InstructionsViewController.xib */,
+				09AC602B1AF6E76D00963EB6 /* BestScoresViewController.xib */,
+				09AC60271AF6E76D00963EB6 /* BestScoresViewController_6.xib */,
+				09AC60281AF6E76D00963EB6 /* BestScoresViewController_6Plus.xib */,
+				095060DF1B30EFF000911A4D /* BestScoresViewController_iPad.xib */,
+				09AC602F1AF6E76D00963EB6 /* CreditsViewController.xib */,
+				09AC60491AF6E76D00963EB6 /* NotSupportedViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -416,53 +377,6 @@
 			);
 			name = Assets;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		097FE4DB1AC838930094A538 /* NotSupported */ = {
-			isa = PBXGroup;
-			children = (
-				09AC60471AF6E76D00963EB6 /* NotSupportedViewController.h */,
-				09AC60481AF6E76D00963EB6 /* NotSupportedViewController.m */,
-				09AC60491AF6E76D00963EB6 /* NotSupportedViewController.xib */,
-			);
-			name = NotSupported;
-			sourceTree = "<group>";
-		};
-		097FE4ED1AC83F710094A538 /* Sync */ = {
-			isa = PBXGroup;
-			children = (
-				09AC604E1AF6E76D00963EB6 /* SyncViewController.h */,
-				09AC604F1AF6E76D00963EB6 /* SyncViewController.m */,
-				09AC60501AF6E76D00963EB6 /* SyncViewController.xib */,
-				095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */,
-			);
-			name = Sync;
-			sourceTree = "<group>";
-		};
-		097FE4EE1AC83F780094A538 /* GamePlay */ = {
-			isa = PBXGroup;
-			children = (
-				09AC60391AF6E76D00963EB6 /* GameViewController.h */,
-				09AC603A1AF6E76D00963EB6 /* GameViewController.m */,
-				09AC603B1AF6E76D00963EB6 /* GameViewController.xib */,
-				09AC60371AF6E76D00963EB6 /* GameViewController_6.xib */,
-				09AC60381AF6E76D00963EB6 /* GameViewController_6Plus.xib */,
-				095060D61B30E6C700911A4D /* GameViewController_iPad.xib */,
-			);
-			name = GamePlay;
-			sourceTree = "<group>";
-		};
-		097FE4EF1AC83F800094A538 /* GameOver */ = {
-			isa = PBXGroup;
-			children = (
-				09AC60341AF6E76D00963EB6 /* GameOverViewController.h */,
-				09AC60351AF6E76D00963EB6 /* GameOverViewController.m */,
-				09AC60361AF6E76D00963EB6 /* GameOverViewController.xib */,
-				09AC60321AF6E76D00963EB6 /* GameOverViewController_6.xib */,
-				09AC60331AF6E76D00963EB6 /* GameOverViewController_6Plus.xib */,
-				095060D81B30E6DA00911A4D /* GameOverViewController_iPad.xib */,
-			);
-			name = GameOver;
 			sourceTree = "<group>";
 		};
 		09C29CC11AA7CEDD005E4E4F /* views */ = {
@@ -565,8 +479,14 @@
 		09CE76E21AAC8C4E00244ABF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09AC60451AF6E76D00963EB6 /* Myo.h */,
+				09AC60461AF6E76D00963EB6 /* Myo.m */,
 				09AC604A1AF6E76D00963EB6 /* Player.h */,
 				09AC604B1AF6E76D00963EB6 /* Player.m */,
+				09AC604C1AF6E76D00963EB6 /* Ranking.h */,
+				09AC604D1AF6E76D00963EB6 /* Ranking.m */,
+				09AC60301AF6E76D00963EB6 /* Facebook.h */,
+				09AC60311AF6E76D00963EB6 /* Facebook.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
