@@ -39,7 +39,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self configureSound];
     [self configureNavigation];
     [self configure3DTouch:launchOptions];
-
+        
     return YES;
 }
 

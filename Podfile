@@ -1,3 +1,5 @@
+platform :ios, '9.0'
+
 target 'SiMYOn' do
 
 	pod 'FBSDKCoreKit'
@@ -7,5 +9,6 @@ target 'SiMYOn' do
 	pod 'Fabric'
 	pod 'Crashlytics'
     pod 'Firebase/Core'
+    pod 'Firebase/Database'
 
 end

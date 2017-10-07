@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0922C2001F885A5600CC6739 /* RankingFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922C1FF1F885A5600CC6739 /* RankingFirebase.swift */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		095060D31B30E6A400911A4D /* MainViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D21B30E6A400911A4D /* MainViewController_iPad.xib */; };
 		095060D51B30E6B500911A4D /* SyncViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */; };
@@ -107,6 +108,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0922C1FC1F885A2E00CC6739 /* SiMYOn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SiMYOn-Bridging-Header.h"; sourceTree = "<group>"; };
+		0922C1FF1F885A5600CC6739 /* RankingFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankingFirebase.swift; path = Code/RankingFirebase.swift; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
 		095060D21B30E6A400911A4D /* MainViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_iPad.xib; path = Code/MainViewController_iPad.xib; sourceTree = "<group>"; };
 		095060D41B30E6B500911A4D /* SyncViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad.xib; path = Code/SyncViewController_iPad.xib; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 				097400171A8630B30012E465 /* Info.plist */,
 				09C82BA21F51C778004E745F /* GoogleService-Info.plist */,
 				09AC603F1AF6E76D00963EB6 /* main.m */,
+				0922C1FC1F885A2E00CC6739 /* SiMYOn-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -485,6 +489,7 @@
 				09AC604B1AF6E76D00963EB6 /* Player.m */,
 				09AC604C1AF6E76D00963EB6 /* Ranking.h */,
 				09AC604D1AF6E76D00963EB6 /* Ranking.m */,
+				0922C1FF1F885A5600CC6739 /* RankingFirebase.swift */,
 				09AC60301AF6E76D00963EB6 /* Facebook.h */,
 				09AC60311AF6E76D00963EB6 /* Facebook.m */,
 			);
@@ -538,11 +543,12 @@
 		0974000B1A8630B30012E465 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				TargetAttributes = {
 					097400121A8630B30012E465 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 8Q6HQ96RC4;
+						LastSwiftMigration = 0900;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -728,6 +734,7 @@
 				09AC60681AF6E76D00963EB6 /* MainViewController.m in Sources */,
 				09AC606E1AF6E76D00963EB6 /* Ranking.m in Sources */,
 				09AC605A1AF6E76D00963EB6 /* Facebook.m in Sources */,
+				0922C2001F885A5600CC6739 /* RankingFirebase.swift in Sources */,
 				09AC60631AF6E76D00963EB6 /* InstructionsViewController.m in Sources */,
 				09AC606D1AF6E76D00963EB6 /* Player.m in Sources */,
 				09AC60711AF6E76D00963EB6 /* Util.m in Sources */,
@@ -764,19 +771,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -810,19 +824,26 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -847,6 +868,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8Q6HQ96RC4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -855,10 +877,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.games.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SiMYOn/SiMYOn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -869,6 +894,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8Q6HQ96RC4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -877,10 +903,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SiMYOn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.games.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SiMYOn/SiMYOn-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
