@@ -10,5 +10,5 @@ iPhone 8+, 8, 7+, 7, 6s, 6s+, 6, 6+, SE
 **Target Deployment:**
 iOS 11, 10, 9
 
-**About Myo**
+**About Myo:**
 https://www.myo.com/
