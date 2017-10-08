@@ -21,7 +21,7 @@ class RankingFirebase: NSObject {
         return sharedInstance
     }
     
-    func getBestScores() {
+    func getBestScores (completion: @escaping (_ result: [Player]) -> Void) {
         sharedInstance.firebase.child(RANKING)
             .queryOrdered(byChild: SCORE)
             .queryLimited(toLast: UInt(TOP_RANKING))
@@ -43,6 +43,7 @@ class RankingFirebase: NSObject {
                 
                 array = array.sorted(by: { $0.score == $1.score ? ($0.dateTime < $1.dateTime)
                                                                 : ($0.score > $1.score)})
+                completion(array)
             })
     }
     

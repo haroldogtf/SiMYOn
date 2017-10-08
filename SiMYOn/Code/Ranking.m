@@ -27,14 +27,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (void) getScoresFromParse:(BestScoresBlock)block {
-    block(nil, nil);
++ (void) getBestScores:(BestScoresBlock)block {
+    [[RankingFirebase getInstance] getBestScoresWithCompletion:^(NSArray<Player *> * players) {
+        block(players);
+    }];
 }
-
-+ (void) getBestScores {
-    [[RankingFirebase getInstance] getBestScores];
-}
-
 
 + (void) saveScoresWithName:(NSString *)name
                       score:(NSString *)score {

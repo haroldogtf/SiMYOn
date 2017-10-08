@@ -11,11 +11,10 @@
 
 @interface Ranking : NSObject
 
-typedef void (^BestScoresBlock)(NSArray *bestScores, NSError *error);
+typedef void (^BestScoresBlock)(NSArray *bestScores);
 
 + (void) configureInitialRanking;
-+ (void) getScoresFromParse:(BestScoresBlock)block;
-+ (void) getBestScores;
++ (void) getBestScores:(BestScoresBlock)block;
 + (void) saveScoresWithName:(NSString *)name
                       score:(NSString *)score;
 + (Player *) getPlayer:(id)object;

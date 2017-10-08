@@ -57,8 +57,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self updateScoresWithLocalScores];
+    [self updateScoresWithLocalScores];    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -75,24 +74,32 @@
 
 - (void) updateBestScores {
     if([Util hasInternetConnection]) {
-        [self updateScoresFromParse];
+        [self updateScores];
     } else {
         self.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         self.indicatorLoading.hidden = YES;
     }
 }
 
-- (void) updateScoresFromParse {
-    
+- (void) updateScores {
+
     __weak typeof(self) this = self;
     
-    [Ranking getScoresFromParse:^(NSArray *scores, NSError *error) {
+    [Ranking getBestScores:^(NSArray *scores) {
         this.indicatorLoading.hidden = YES;
         
-        if(error) {
+        if(scores.count == 0) {
             this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES_NO_CONNECTION];
         } else {
-            self.bestScores = scores;
+            NSMutableArray *scoresArray = [scores mutableCopy];
+            while (scoresArray.count <= TOP_RANKING) {
+                Player *player = [Player new];
+                player.name = INITAL_NAME;
+                player.score = INITIAL_SCORE;
+                [scoresArray addObject: player];
+            }
+            
+            self.bestScores = scoresArray;
             this.imgBackground.image = [UIImage imageNamed:IMG_BEST_SCORES];
             [this updateScoresInView];
             [this showLastRankings];
@@ -169,8 +176,7 @@
               labelName:(UILabel *)name
               andLabelScore:(UILabel *)score {
 
-    Player *player = [self getScore:index];
-    
+    Player *player = self.bestScores[index];
     if(player) {
         name.text  = player.name;
         score.text = player.score;
@@ -180,9 +186,6 @@
            [Util setString:score.text forKey:[SCORE_PLAYER stringByAppendingFormat:@"%d", index+1]];
            [[NSUserDefaults standardUserDefaults] synchronize];
         }
-    } else {
-        name.text  = INITAL_NAME;
-        score.text = INITIAL_SCORE;
     }
 }
 
