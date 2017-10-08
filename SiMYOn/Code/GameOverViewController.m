@@ -12,7 +12,6 @@
 #import "Ranking.h"
 #import "Facebook.h"
 #import "MBProgressHUD.h"
-#import "SiMYOn-Swift.h"
 @import Firebase;
 
 @interface GameOverViewController ()
@@ -91,7 +90,8 @@
 
 - (IBAction)returnAction:(id)sender {
      if ([Facebook hasActiveSession]) {
-         [self saveScores];
+         [Ranking saveScoresWithName:self.lblPlayerName.text
+                               score:self.lblFinalScore.text];
      }
     
     [FIRAnalytics logEventWithName:@"myo" parameters:@{@"using" : self.usingMyo ? @"Y" : @"N" }];
@@ -149,14 +149,6 @@
             }
         }];
     }
-}
-
-- (void) saveScores {
-    Player *player = [[Player alloc] init];
-    player.name = self.lblPlayerName.text;
-    player.score = self.lblFinalScore.text;
-    
-    [[RankingFirebase getInstance] saveScoreWithPlayer:player];
 }
 
 - (void)noConnetionPopupAnimation {

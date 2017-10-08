@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "Util.h"
 #import <Parse/Parse.h>
+#import "SiMYOn-Swift.h"
 
 @implementation Ranking
 
@@ -37,16 +38,11 @@
     }];
 }
 
-+ (void) saveScoresInParseWithName:(NSString *)name
-                             score:(NSNumber *)score
-                       andUsingMyo:(BOOL)useMyo {
++ (void) saveScoresWithName:(NSString *)name
+                      score:(NSString *)score {
     
-    PFObject *ranking  = [PFObject objectWithClassName:RANKING];
-    ranking[NAME]      = name;
-    ranking[SCORE]     = score;
-    ranking[USING_MYO] = [NSNumber numberWithBool:useMyo];
-    
-    [ranking saveInBackground];
+    Player *player = [Player new];
+    [[RankingFirebase getInstance] saveScoreWithPlayer:player];
 }
 
 + (Player *) getPlayer:(id)object {
