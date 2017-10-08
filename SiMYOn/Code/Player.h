@@ -12,5 +12,6 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *score;
+@property (nonatomic) NSString *dateTime;
 
 @end
