@@ -679,7 +679,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_ROOT}/Parse/Parse/Resources/en.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

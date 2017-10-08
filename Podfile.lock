@@ -41,8 +41,6 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - Parse (1.15.3):
-    - Bolts/Tasks (~> 1.8)
 
 DEPENDENCIES:
   - Crashlytics
@@ -52,7 +50,6 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - MBProgressHUD (~> 0.9.1)
-  - Parse
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -69,8 +66,7 @@ SPEC CHECKSUMS:
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  Parse: cdc0f1f975ee8be0409e66f21b05df4ae067047c
 
-PODFILE CHECKSUM: f4ee8815f7edaf399ef8866f4ee6ccac230c2d39
+PODFILE CHECKSUM: c498eef61eed8d7e2721fe0409f8551899fc94d7
 
 COCOAPODS: 1.3.1

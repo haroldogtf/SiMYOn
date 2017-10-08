@@ -9,7 +9,6 @@
 #import "Ranking.h"
 #import "Constants.h"
 #import "Util.h"
-#import <Parse/Parse.h>
 #import "SiMYOn-Swift.h"
 
 @implementation Ranking
@@ -40,16 +39,6 @@
     player.name = name;
     player.score = score;
     [[RankingFirebase getInstance] saveScoreWithPlayer:player];
-}
-
-+ (Player *) getPlayer:(id)object {
-    PFObject * parsePlayer = (PFObject *)object;
-    
-    Player *player = [[Player alloc]init];
-    player.name = parsePlayer[NAME];
-    player.score = [NSString stringWithFormat:@"%@", parsePlayer[SCORE]];
-    
-    return player;
 }
 
 @end

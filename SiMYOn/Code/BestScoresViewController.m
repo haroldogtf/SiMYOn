@@ -148,15 +148,6 @@
     [self updateScoreWithIndex:11 labelName:self.lblPlayer12 andLabelScore:self.lblScorePlayer12];
 }
 
-- (Player *) getScore:(int) index {
-    @try {
-        return [Ranking getPlayer:self.bestScores[index]];
-    }
-    @catch (NSException * e) {
-        return nil;
-    }
-}
-
 - (void)showLastRankings
 {
     self.lblPlayer9.hidden      = NO;

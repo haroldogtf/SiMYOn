@@ -17,6 +17,5 @@ typedef void (^BestScoresBlock)(NSArray *bestScores);
 + (void) getBestScores:(BestScoresBlock)block;
 + (void) saveScoresWithName:(NSString *)name
                       score:(NSString *)score;
-+ (Player *) getPlayer:(id)object;
 
 @end
