@@ -94,7 +94,7 @@
                                score:self.lblFinalScore.text];
      }
     
-    [FIRAnalytics logEventWithName:self.usingMyo ? @"myo-using-yes" : @"myo-using-no"
+    [FIRAnalytics logEventWithName:self.usingMyo ? @"myo_using" : @"myo_not_using"
                         parameters:nil];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
