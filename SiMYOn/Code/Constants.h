@@ -67,6 +67,7 @@ typedef enum {
 #define TURN             @"turn"
 #define NAME             @"name"
 #define SCORE            @"score"
+#define DATE_TIME        @"date_time"
 #define PLAYER_NAME      @"playerName"
 #define PLAYER           @"player"
 #define PLAYER_1         @"player1"

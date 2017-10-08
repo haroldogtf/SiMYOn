@@ -20,5 +20,14 @@ class RankingFirebase: NSObject {
         }
         return sharedInstance
     }
-        
+    
+    func saveScore(player: Player) {
+        let ranking = sharedInstance.firebase.child(RANKING)
+        let position = ranking.childByAutoId()
+        position.child(NAME).setValue(player.name)
+        position.child(SCORE).setValue(player.score)
+        position.child(DATE_TIME).setValue(String(describing: Date()))
+    }
+
+    
 }
