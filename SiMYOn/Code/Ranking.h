@@ -15,6 +15,7 @@ typedef void (^BestScoresBlock)(NSArray *bestScores, NSError *error);
 
 + (void) configureInitialRanking;
 + (void) getScoresFromParse:(BestScoresBlock)block;
++ (void) getBestScores;
 + (void) saveScoresWithName:(NSString *)name
                       score:(NSString *)score;
 + (Player *) getPlayer:(id)object;

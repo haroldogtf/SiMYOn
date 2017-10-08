@@ -28,20 +28,20 @@
 }
 
 + (void) getScoresFromParse:(BestScoresBlock)block {
-    
-    PFQuery *query = [PFQuery queryWithClassName:RANKING];
-    [query addDescendingOrder:SCORE];
-    [query addAscendingOrder: CREATED_AT];
-    query.limit = TOP_RANKING;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *scores, NSError *error) {
-        block(scores, error);
-    }];
+    block(nil, nil);
 }
+
++ (void) getBestScores {
+    [[RankingFirebase getInstance] getBestScores];
+}
+
 
 + (void) saveScoresWithName:(NSString *)name
                       score:(NSString *)score {
     
     Player *player = [Player new];
+    player.name = name;
+    player.score = score;
     [[RankingFirebase getInstance] saveScoreWithPlayer:player];
 }
 

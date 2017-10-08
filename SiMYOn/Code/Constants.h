@@ -127,9 +127,7 @@ typedef enum {
 #define CLEAN_TIME     .5
 #define ANIMATION_TIME .35
 
-//Parse
-#define PARSE_APPLICATION_ID @"mxVK7rpNAZjBeIzkJ2qojoALb3aPb2Vate5X4I6Q"
-#define PARSE_CLIENT_KEY     @"IzHTVKmzOUZQFz5rkRi1VReErvmbFyvLgwf2DOjF"
+//Ranking
 #define TOP_RANKING          12
 
 #endif
