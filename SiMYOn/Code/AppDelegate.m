@@ -34,7 +34,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [FIRApp configure];
     [Fabric with:@[[Crashlytics class]]];
     [Myo configureMyo];
-    [Ranking configureParse:launchOptions];
     [Ranking configureInitialRanking];
     [self configureSound];
     [self configureNavigation];

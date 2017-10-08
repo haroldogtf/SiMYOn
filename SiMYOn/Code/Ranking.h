@@ -13,7 +13,6 @@
 
 typedef void (^BestScoresBlock)(NSArray *bestScores, NSError *error);
 
-+ (void) configureParse:(NSDictionary *)launchOptions;
 + (void) configureInitialRanking;
 + (void) getScoresFromParse:(BestScoresBlock)block;
 + (void) saveScoresInParseWithName:(NSString *)name
