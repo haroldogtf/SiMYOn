@@ -16,7 +16,6 @@
 #import "BestScoresViewController.h"
 #import "CreditsViewController.h"
 #import <MyoKit/MyoKit.h>
-#import "SiMYOn-Swift.h"
 
 @interface MainViewController ()
 

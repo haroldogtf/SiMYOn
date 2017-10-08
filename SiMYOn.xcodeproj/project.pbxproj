@@ -312,10 +312,10 @@
 			children = (
 				0974004A1A864BBE0012E465 /* Assets */,
 				097400411A8635990012E465 /* Frameworks */,
+				0922C1FC1F885A2E00CC6739 /* SiMYOn-Bridging-Header.h */,
 				097400171A8630B30012E465 /* Info.plist */,
 				09C82BA21F51C778004E745F /* GoogleService-Info.plist */,
 				09AC603F1AF6E76D00963EB6 /* main.m */,
-				0922C1FC1F885A2E00CC6739 /* SiMYOn-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
