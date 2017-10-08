@@ -90,7 +90,6 @@ typedef enum {
 #define INITAL_NAME      @"Player"
 #define INITIAL_SCORE    @"0"
 #define IN_ANIMATION     @"inAnimation"
-#define TEST_CONNECTION  @"https://www.parse.com"
 #define RANKING          @"ranking"
 #define CREATED_AT       @"createdAt"
 #define USING_MYO        @"using_myo"

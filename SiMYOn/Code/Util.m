@@ -10,6 +10,7 @@
 #import "Util.h"
 #import "Constants.h"
 #import <UIKit/UIKit.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @implementation Util
 
@@ -20,18 +21,18 @@
 }
 
 + (BOOL) hasInternetConnection {
-    NSMutableURLRequest *request;
-    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:TEST_CONNECTION]];
-    [request setHTTPMethod:@"HEAD"];
     
-    NSHTTPURLResponse *response;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error: NULL];
-    
-    BOOL hasInternet = NO;
-    if([response statusCode] == 200) {
-        hasInternet = YES;
-    }
-    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    BOOL connected;
+    BOOL hasInternet;
+    const char *host = "www.google.com";
+    SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(NULL, host);
+    SCNetworkReachabilityFlags flags;
+    connected = SCNetworkReachabilityGetFlags(reachability, &flags);
+    hasInternet = NO;
+    hasInternet = connected && (flags & kSCNetworkFlagsReachable) && !(flags & kSCNetworkFlagsConnectionRequired);
+    CFRelease(reachability);
+
     return hasInternet;
 }
 
