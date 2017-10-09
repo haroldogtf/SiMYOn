@@ -42,7 +42,7 @@ class RankingFirebase: NSObject {
                 }
                 
                 array = array.sorted(by: { $0.score == $1.score ? ($0.dateTime < $1.dateTime)
-                                                                : ($0.score > $1.score)})
+                                                                : (Int($0.score)! > Int($1.score)!)})
                 completion(array)
             })
     }
