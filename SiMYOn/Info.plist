@@ -80,6 +80,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>To play with Myo Armband it is necessary to use bluetooth</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
