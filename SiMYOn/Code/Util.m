@@ -40,11 +40,16 @@
     
     NSString *model;
     
-    switch ([self getIphoneModel]) {
-        case IPHONE_5_5C_5S_MODEL: model = NIB_IPHONE_5_5C_5S; break;
-        case IPHONE_6_MODEL:       model = NIB_IPHONE_6;       break;
-        case IPHONE_6_PLUS_MODEL:  model = NIB_IPHONE_6_PLUS;  break;
-        default:                   model = NIB_NOT_SUPPORTED;  break;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        model = NIB_IPAD;
+        
+    } else {
+        switch ([self getIphoneModel]) {
+            case IPHONE_5_5C_5S_MODEL: model = NIB_IPHONE_5_5C_5S; break;
+            case IPHONE_6_MODEL:       model = NIB_IPHONE_6;       break;
+            case IPHONE_6_PLUS_MODEL:  model = NIB_IPHONE_6_PLUS;  break;
+            default:                   model = NIB_NOT_SUPPORTED;  break;
+        }    
     }
         
     if([model isEqualToString:NIB_NOT_SUPPORTED]) {
