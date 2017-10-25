@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
+            <connections>
+                <outlet property="btnSound" destination="Hvk-56-W6h" id="p2q-lG-gQM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvs-tB-Wuv" userLabel="imgBackground">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bracelet.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytP-Iu-fhV" userLabel="imgBracelet">
+                    <rect key="frame" x="70" y="139" width="174" height="429"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="174" id="KAQ-Fp-TaI"/>
+                        <constraint firstAttribute="height" constant="429" id="sme-9i-c0h"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psB-Zn-q2Y" userLabel="btnPlay">
+                    <rect key="frame" x="78" y="146" width="158" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="6ae-ai-l2E"/>
+                        <constraint firstAttribute="height" constant="62" id="kb7-Ua-kys"/>
+                    </constraints>
+                    <state key="normal" image="btn_play.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="gameStarterAction:" destination="-1" eventType="touchUpInside" id="mF4-6j-PbF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-Ws-Jxg" userLabel="btnInstructions">
+                    <rect key="frame" x="78" y="242" width="158" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="CPn-g9-zKx"/>
+                        <constraint firstAttribute="height" constant="62" id="WhC-5c-7cv"/>
+                    </constraints>
+                    <state key="normal" image="btn_instructions.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="intructionsAction:" destination="-1" eventType="touchUpInside" id="1ZC-Ff-dxY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-4N-AnA" userLabel="btnBestScores">
+                    <rect key="frame" x="78" y="338" width="158" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="62" id="KNg-G7-Dds"/>
+                        <constraint firstAttribute="width" constant="158" id="vgZ-cR-WFQ"/>
+                    </constraints>
+                    <state key="normal" image="btn_best_scores.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="bestScoresAction:" destination="-1" eventType="touchUpInside" id="a8h-DF-9db"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiN-Ck-LMq" userLabel="btnCredits">
+                    <rect key="frame" x="78" y="435" width="158" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="mi5-3V-5Nd"/>
+                        <constraint firstAttribute="height" constant="62" id="u4Z-rG-95t"/>
+                    </constraints>
+                    <state key="normal" image="btn_credits.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="creditsAction:" destination="-1" eventType="touchUpInside" id="WaQ-8r-ff1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hvk-56-W6h" userLabel="btnSound">
+                    <rect key="frame" x="277" y="26" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hvk-56-W6h" secondAttribute="height" multiplier="1:1" id="bDD-8T-GM4"/>
+                    </constraints>
+                    <state key="normal" image="btn_sound_on.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="soundAction:" destination="-1" eventType="touchUpInside" id="viM-sb-PFs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ytP-Iu-fhV" firstAttribute="centerX" secondItem="wvs-tB-Wuv" secondAttribute="centerX" constant="-3" id="3RF-CJ-Ufu"/>
+                <constraint firstItem="ytP-Iu-fhV" firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="41w-1i-huc"/>
+                <constraint firstItem="Hvk-56-W6h" firstAttribute="width" secondItem="wvs-tB-Wuv" secondAttribute="height" multiplier="35:568" id="BSa-aT-jiN"/>
+                <constraint firstItem="3co-Ws-Jxg" firstAttribute="top" secondItem="psB-Zn-q2Y" secondAttribute="bottom" constant="34" id="G6w-Fs-LT7"/>
+                <constraint firstItem="ytP-Iu-fhV" firstAttribute="centerX" secondItem="3co-Ws-Jxg" secondAttribute="centerX" id="JU9-lO-GFH"/>
+                <constraint firstAttribute="bottom" secondItem="wvs-tB-Wuv" secondAttribute="bottom" id="K2G-Hr-ZtT"/>
+                <constraint firstItem="yiN-Ck-LMq" firstAttribute="top" secondItem="Q2y-4N-AnA" secondAttribute="bottom" constant="35" id="KSt-Hh-cre"/>
+                <constraint firstItem="Q2y-4N-AnA" firstAttribute="top" secondItem="3co-Ws-Jxg" secondAttribute="bottom" constant="34" id="Khy-Ov-RBv"/>
+                <constraint firstItem="ytP-Iu-fhV" firstAttribute="centerX" secondItem="psB-Zn-q2Y" secondAttribute="centerX" id="L0b-qP-z8y"/>
+                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N0A-Ho-u7S"/>
+                <constraint firstItem="Hvk-56-W6h" firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" constant="-8" id="c87-wA-pYf"/>
+                <constraint firstItem="yiN-Ck-LMq" firstAttribute="centerX" secondItem="ytP-Iu-fhV" secondAttribute="centerX" id="fMP-Fs-zqg"/>
+                <constraint firstItem="ytP-Iu-fhV" firstAttribute="top" secondItem="psB-Zn-q2Y" secondAttribute="top" constant="-7" id="gdj-II-QwA"/>
+                <constraint firstItem="Q2y-4N-AnA" firstAttribute="centerX" secondItem="ytP-Iu-fhV" secondAttribute="centerX" id="hIJ-I5-LEn"/>
+                <constraint firstAttribute="trailing" secondItem="wvs-tB-Wuv" secondAttribute="trailing" id="lsg-Fj-MdR"/>
+                <constraint firstItem="wvs-tB-Wuv" firstAttribute="top" secondItem="Hvk-56-W6h" secondAttribute="bottom" constant="-61" id="ppw-j9-nCc"/>
+                <constraint firstItem="wvs-tB-Wuv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vLA-q3-g3F"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="418" y="356"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bracelet.png" width="350" height="858"/>
+        <image name="btn_best_scores.png" width="313" height="126"/>
+        <image name="btn_credits.png" width="313" height="126"/>
+        <image name="btn_instructions.png" width="313" height="126"/>
+        <image name="btn_play.png" width="313" height="126"/>
+        <image name="btn_sound_on.png" width="78" height="54"/>
+        <image name="menu.png" width="640" height="1136"/>
+    </resources>
+</document>
