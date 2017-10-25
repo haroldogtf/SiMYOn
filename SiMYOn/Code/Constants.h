@@ -21,8 +21,16 @@ typedef enum {
     IPHONE_5_5C_5S_MODEL,
     IPHONE_6_MODEL,
     IPHONE_6_PLUS_MODEL,
+    IPHONE_X_MODEL,
     IPHONE_NOT_SUPPORTED_MODEL
 } IPhoneModel;
+
+typedef enum {
+    IPAD_9_7_MODEL,
+    IPAD_10_5_MODEL,
+    IPAD_12_9_MODEL,
+    IPAD_NOT_SUPPORTED_MODEL
+} IPadModel;
 
 //Application
 #define APP_IDENTIFIER [[NSBundle mainBundle] bundleIdentifier]
@@ -31,9 +39,13 @@ typedef enum {
 #define OFFLINE_RANKING 8
 
 //Util
-#define IPHONE_5_5C_5S_HEIGHT      568
-#define IPHONE_6_HEIGHT            667
-#define IPHONE_6_PLUS_HEIGHT       736
+#define IPHONE_5_5C_5S_HEIGHT 568
+#define IPHONE_6_HEIGHT       667
+#define IPHONE_6_PLUS_HEIGHT  736
+#define IPHONE_X_HEIGHT       812
+#define IPAD_9_7_HEIGHT       1024
+#define IPAD_10_5_HEIGHT      1112
+#define IPAD_12_9_HEIGHT      1366
 
 //Nibs
 #define NIB_MENU           @"MainViewController"
@@ -45,7 +57,10 @@ typedef enum {
 #define NIB_IPHONE_5_5C_5S @""
 #define NIB_IPHONE_6       @"_6"
 #define NIB_IPHONE_6_PLUS  @"_6Plus"
-#define NIB_IPAD           @"_iPad"
+#define NIB_IPHONE_X       @"_X"
+#define NIB_IPAD_9_7       @"_iPad_9.7"
+#define NIB_IPAD_10_5      @"_iPad_10.5"
+#define NIB_IPAD_12_9      @"_iPad_12.9"
 
 //Strings
 #define SIMYON           @"SiMYOn"
