@@ -61,7 +61,7 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.dimBackground = YES;
-    hud.labelText = LOADING;
+    hud.label.text = LOADING;
     
     __weak typeof(self) this = self;
     __block BOOL hasInternet;
