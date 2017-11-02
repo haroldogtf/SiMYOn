@@ -115,6 +115,7 @@
 		09E5478A1A9E92F900985223 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E547891A9E92F900985223 /* libz.dylib */; };
 		09E5478C1A9E930200985223 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E5478B1A9E930200985223 /* libsqlite3.dylib */; };
 		09E547931AA3DE0600985223 /* font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09E547921AA3D9A000985223 /* font.ttf */; };
+		09EBD88D1FAB8FC40036E51F /* GameViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09EBD88C1FAB8FC40036E51F /* GameViewController_6Plus.xib */; };
 		2C72282CEA7F82A7F8B8A3E7 /* libPods-SiMYOn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB6AB0A5DBBF0FFD9B46AFE /* libPods-SiMYOn.a */; };
 /* End PBXBuildFile section */
 
@@ -245,6 +246,7 @@
 		09E547891A9E92F900985223 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		09E5478B1A9E930200985223 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		09E547921AA3D9A000985223 /* font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = font.ttf; path = SiMYOn/Assets/font.ttf; sourceTree = "<group>"; };
+		09EBD88C1FAB8FC40036E51F /* GameViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameViewController_6Plus.xib; path = Views/GameViewController_6Plus.xib; sourceTree = "<group>"; };
 		263B8C490DC5606848657BEA /* Pods-SiMYOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.release.xcconfig"; sourceTree = "<group>"; };
 		4FB6AB0A5DBBF0FFD9B46AFE /* libPods-SiMYOn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SiMYOn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB68EB20EDF53B253600FB2 /* Pods-SiMYOn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiMYOn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SiMYOn/Pods-SiMYOn.debug.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				09E377B81FA016E100662BC7 /* SyncViewController_iPad.xib */,
 				09E377B21FA016E000662BC7 /* GameViewController.xib */,
 				09E377AC1FA016DF00662BC7 /* GameViewController_6.xib */,
+				09EBD88C1FAB8FC40036E51F /* GameViewController_6Plus.xib */,
 				09E377B01FA016E000662BC7 /* GameViewController_X.xib */,
 				09E377C91FA016E200662BC7 /* GameViewController_iPad_9.7.xib */,
 				09E377AB1FA016DF00662BC7 /* GameViewController_iPad_10.5.xib */,
@@ -678,6 +681,7 @@
 				098C62F31B60276F002181F0 /* back_to_menu.png in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 				0974008F1A880A130012E465 /* btn_instructions.png in Resources */,
+				09EBD88D1FAB8FC40036E51F /* GameViewController_6Plus.xib in Resources */,
 				09E377D31FA016E200662BC7 /* GameViewController.xib in Resources */,
 				09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
