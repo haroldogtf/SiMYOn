@@ -26,7 +26,7 @@
 - (id)initIsPlaySound:(BOOL)isPlaySound
 {    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self = [super initWithNibName:[NIB_SYNC stringByAppendingString:@"_iPad"]
+        self = [super initWithNibName:[Util selectNibNameByModel:NIB_SYNC]
                                bundle:nil];
     } else {
         self = [super init];

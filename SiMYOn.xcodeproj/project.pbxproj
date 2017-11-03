@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090E0FCD1FAD1CCB00488E68 /* SyncViewController_iPad_9.7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090E0FCA1FAD1CCA00488E68 /* SyncViewController_iPad_9.7.xib */; };
+		090E0FCE1FAD1CCB00488E68 /* SyncViewController_iPad_10.5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090E0FCB1FAD1CCA00488E68 /* SyncViewController_iPad_10.5.xib */; };
+		090E0FCF1FAD1CCB00488E68 /* SyncViewController_iPad_12.9.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090E0FCC1FAD1CCB00488E68 /* SyncViewController_iPad_12.9.xib */; };
 		0922C2001F885A5600CC6739 /* RankingFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0922C1FF1F885A5600CC6739 /* RankingFirebase.swift */; };
 		09483E201AD3ED5900FFBF6F /* bracelet.png in Resources */ = {isa = PBXBuildFile; fileRef = 09483E1F1AD3ED5900FFBF6F /* bracelet.png */; };
 		09549D471AA3FCFF002C228C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09549D461AA3FCFF002C228C /* CoreBluetooth.framework */; };
@@ -86,7 +89,6 @@
 		09E377D61FA016E200662BC7 /* MainViewController_iPad_10.5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377B51FA016E000662BC7 /* MainViewController_iPad_10.5.xib */; };
 		09E377D71FA016E200662BC7 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377B61FA016E000662BC7 /* GameOverViewController.xib */; };
 		09E377D81FA016E200662BC7 /* GameViewController_iPad_12.9.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377B71FA016E000662BC7 /* GameViewController_iPad_12.9.xib */; };
-		09E377D91FA016E200662BC7 /* SyncViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377B81FA016E100662BC7 /* SyncViewController_iPad.xib */; };
 		09E377DA1FA016E200662BC7 /* MainViewController_6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377B91FA016E100662BC7 /* MainViewController_6Plus.xib */; };
 		09E377DB1FA016E200662BC7 /* MainViewController_X.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377BA1FA016E100662BC7 /* MainViewController_X.xib */; };
 		09E377DC1FA016E200662BC7 /* BestScoresViewController_X.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E377BB1FA016E100662BC7 /* BestScoresViewController_X.xib */; };
@@ -120,6 +122,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090E0FCA1FAD1CCA00488E68 /* SyncViewController_iPad_9.7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad_9.7.xib; path = Views/SyncViewController_iPad_9.7.xib; sourceTree = "<group>"; };
+		090E0FCB1FAD1CCA00488E68 /* SyncViewController_iPad_10.5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad_10.5.xib; path = Views/SyncViewController_iPad_10.5.xib; sourceTree = "<group>"; };
+		090E0FCC1FAD1CCB00488E68 /* SyncViewController_iPad_12.9.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad_12.9.xib; path = Views/SyncViewController_iPad_12.9.xib; sourceTree = "<group>"; };
 		0922C1FC1F885A2E00CC6739 /* SiMYOn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SiMYOn-Bridging-Header.h"; sourceTree = "<group>"; };
 		0922C1FF1F885A5600CC6739 /* RankingFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankingFirebase.swift; path = Code/RankingFirebase.swift; sourceTree = "<group>"; };
 		09483E1F1AD3ED5900FFBF6F /* bracelet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bracelet.png; path = SiMYOn/Assets/bracelet.png; sourceTree = "<group>"; };
@@ -217,7 +222,6 @@
 		09E377B51FA016E000662BC7 /* MainViewController_iPad_10.5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_iPad_10.5.xib; path = Views/MainViewController_iPad_10.5.xib; sourceTree = "<group>"; };
 		09E377B61FA016E000662BC7 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameOverViewController.xib; path = Views/GameOverViewController.xib; sourceTree = "<group>"; };
 		09E377B71FA016E000662BC7 /* GameViewController_iPad_12.9.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameViewController_iPad_12.9.xib; path = Views/GameViewController_iPad_12.9.xib; sourceTree = "<group>"; };
-		09E377B81FA016E100662BC7 /* SyncViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SyncViewController_iPad.xib; path = Views/SyncViewController_iPad.xib; sourceTree = "<group>"; };
 		09E377B91FA016E100662BC7 /* MainViewController_6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_6Plus.xib; path = Views/MainViewController_6Plus.xib; sourceTree = "<group>"; };
 		09E377BA1FA016E100662BC7 /* MainViewController_X.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainViewController_X.xib; path = Views/MainViewController_X.xib; sourceTree = "<group>"; };
 		09E377BB1FA016E100662BC7 /* BestScoresViewController_X.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BestScoresViewController_X.xib; path = Views/BestScoresViewController_X.xib; sourceTree = "<group>"; };
@@ -375,7 +379,9 @@
 				09E377B51FA016E000662BC7 /* MainViewController_iPad_10.5.xib */,
 				09E377B31FA016E000662BC7 /* MainViewController_iPad_12.9.xib */,
 				09E377C81FA016E200662BC7 /* SyncViewController.xib */,
-				09E377B81FA016E100662BC7 /* SyncViewController_iPad.xib */,
+				090E0FCA1FAD1CCA00488E68 /* SyncViewController_iPad_9.7.xib */,
+				090E0FCB1FAD1CCA00488E68 /* SyncViewController_iPad_10.5.xib */,
+				090E0FCC1FAD1CCB00488E68 /* SyncViewController_iPad_12.9.xib */,
 				09E377B21FA016E000662BC7 /* GameViewController.xib */,
 				09E377AC1FA016DF00662BC7 /* GameViewController_6.xib */,
 				09EBD88C1FAB8FC40036E51F /* GameViewController_6Plus.xib */,
@@ -638,7 +644,6 @@
 				09E377DC1FA016E200662BC7 /* BestScoresViewController_X.xib in Resources */,
 				09E377E31FA016E200662BC7 /* BestScoresViewController_6.xib in Resources */,
 				09E377CD1FA016E200662BC7 /* GameViewController_6.xib in Resources */,
-				09E377D91FA016E200662BC7 /* SyncViewController_iPad.xib in Resources */,
 				09A3E1221A9BE3BA0016FC24 /* game_ready.png in Resources */,
 				09A3E1021A99045E0016FC24 /* best_scores.png in Resources */,
 				09E377E21FA016E200662BC7 /* GameOverViewController_6.xib in Resources */,
@@ -681,8 +686,10 @@
 				098C62F31B60276F002181F0 /* back_to_menu.png in Resources */,
 				097400241A8630B30012E465 /* Images.xcassets in Resources */,
 				0974008F1A880A130012E465 /* btn_instructions.png in Resources */,
+				090E0FCF1FAD1CCB00488E68 /* SyncViewController_iPad_12.9.xib in Resources */,
 				09EBD88D1FAB8FC40036E51F /* GameViewController_6Plus.xib in Resources */,
 				09E377D31FA016E200662BC7 /* GameViewController.xib in Resources */,
+				090E0FCE1FAD1CCB00488E68 /* SyncViewController_iPad_10.5.xib in Resources */,
 				09A3E1121A9BCB280016FC24 /* game_miss.png in Resources */,
 				097400881A880A130012E465 /* blip1.mp3 in Resources */,
 				09CE76CE1AAA91DD00244ABF /* best_scores_loading.png in Resources */,
@@ -695,6 +702,7 @@
 				09E377CF1FA016E200662BC7 /* BestScoresViewController.xib in Resources */,
 				09E377EB1FA016E200662BC7 /* MainViewController_iPad_9.7.xib in Resources */,
 				09C82BA31F51C778004E745F /* GoogleService-Info.plist in Resources */,
+				090E0FCD1FAD1CCB00488E68 /* SyncViewController_iPad_9.7.xib in Resources */,
 				09E377DD1FA016E200662BC7 /* InstructionsViewController.xib in Resources */,
 				09E377E51FA016E200662BC7 /* MainViewController_6.xib in Resources */,
 				09A3E11C1A9BD2340016FC24 /* btn_sync_no_myo.png in Resources */,
