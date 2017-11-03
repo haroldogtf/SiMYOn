@@ -37,7 +37,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game.png" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-Pz-ddC" userLabel="imgBackground">
-                    <rect key="frame" x="-40" y="0.0" width="456" height="814"/>
+                    <rect key="frame" x="-40" y="-3" width="456" height="817"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lost_sync.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhz-Ia-HEv" userLabel="imgPopupLostSync">
